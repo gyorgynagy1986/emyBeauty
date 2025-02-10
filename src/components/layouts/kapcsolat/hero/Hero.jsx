@@ -2,9 +2,6 @@ import React from "react";
 import style from "./Hero.module.css";
 import Image from "next/image";
 
-import Object from "@/components/astract/Object";
-import Button from "@/components/button/Button";
-
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { contact } from "@/data/photos";

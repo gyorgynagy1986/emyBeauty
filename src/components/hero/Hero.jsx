@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./Hero.module.css";
 import Image from "next/image";
-import heroImage from "../../../public/assets/hero/1.png";
 import Button from "../button/Button";
 import Button2 from "../button/Button2";
 import Object from "../astract/Object";
