@@ -1,12 +1,40 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --pGlobal: 0 3vw;
+  --h2: 2.8rem;
+  --title:2.6rem;
+  --titleSmall:2.2rem;
+  --h3: 1.9rem;
+  --p: 1.5rem;
+  --a:1.4rem;
+  --color-blue: #004e9d;
+  --color-p: #222222b2;
+  --maxWidth:120rem;
+  --pL:2.3rem;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (min-width: 1980px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --h2: calc(2.8rem * 1.2);
+    --title: calc(2.6rem * 1.2);
+    --titleSmall: calc(2.2rem * 1.2);
+    --h3: calc(1.9rem * 1.2);
+    --p: calc(1.5rem * 1.1);
+    --a: calc(1.4rem * 1.2);
+    --maxWidth: calc(120rem * 1.2);
+    --pL:2.5rem;
+  }
+}
+
+:root {
+  --color-fs-topNav: #8c6831;
+}
+
+
+@media screen and (max-width: 600px) {
+  :root {
+    
+    --title:2.4rem;
+   
   }
 }
 
@@ -14,14 +42,13 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-size: 62.5%;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(176.79deg, #fbf8f7 3.82%, #FBF2ED 63.8%);
 }
 
 * {
@@ -33,10 +60,50 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  font-family: var(--font-jost);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+h2 {
+  font-family: var(--font-libre);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 34px;
+  color: var(--color-blue);
+}
+
+h3 {
+  font-family: var(--font-libre);
+  color: var(--color-blue);
+  font-weight: 500;
+  line-height: 26px;
+}
+
+h4 {
+  font-family: var(--font-fig);
+}
+
+p {
+  font-size: var(--p);
+  font-family: var(--font-fig);
+  font-weight: 400;
+  line-height:var(--pL);
+  color: var(--color-p);
+}
+
+
+.slick-dots li button:before {
+  color: #004E9D !important;
+  font-size: 1rem !important;
+}
+
+.slick-dots {
+  bottom: -6rem !important;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: #004E9D !important;
+}
+
+.slick-next:before, .slick-next:before {
+  color: #004E9D !important;
 }

@@ -1,0 +1,75 @@
+.container {
+  height: 59px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(
+    91.23deg,
+    #fce2ba 21.19%,
+    #fff4e3 42.48%,
+    #fce2ba 64.52%,
+    #ffdaa4 97.21%
+  );
+
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: 3.5rem;
+  }
+}
+
+.scrollText {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.textGroup {
+  display: flex;
+  animation: scrollLeft 40s linear infinite;
+  -webkit-animation: scrollLeft 40s linear infinite;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: #9fd131;
+  border-radius: 50%;
+  margin: 0 1.75rem; /* Equal space on both sides of the dot */
+}
+
+.pDark {
+  color: #8c6831 !important;
+}
+
+.p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 35.64px;
+  color: #8c6831;
+}
+
+.p2 {
+  color: #8c6831;
+}
+
+@media screen and (max-width: 768px) {
+  .p {
+    font-size: 16px;
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

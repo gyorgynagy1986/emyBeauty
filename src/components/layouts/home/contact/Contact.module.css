@@ -1,0 +1,93 @@
+.sections {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 12rem;
+    padding-right: 12rem;
+    min-height: 60.3rem;
+    max-width: var(--maxWidth);
+    background-color: white;
+    margin-inline: auto;
+    border: 1px solid transparent; /* set border width + make it transparent */
+    border-image: linear-gradient(
+      162.8deg, 
+      rgba(36, 144, 232, 0.2) -4.69%, 
+      rgba(19, 114, 198, 0.2) 58.82%, 
+      rgba(0, 78, 157, 0.2) 99.47%
+    ) 1;
+  }
+  
+  .textContainer {
+    width: 50%;
+    height: auto;
+    max-width: 43.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .textContainer2 {
+    width: 50%;
+    height: auto;
+    max-width: 43.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  
+  .titleContainer {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    gap: 4rem;
+  }
+  
+  .text {
+    text-align: center;
+  }
+
+  
+  .text p {
+min-height: 8.8rem;  }
+  
+  .text p:nth-child(1) {
+    margin-bottom: 2.5rem;
+  }
+  
+  .text p span {
+    font-weight: bold;
+    color: var(--color-blue);
+  }
+  
+  .titleContainer h2 {
+    font-size: var(--h2);
+  }
+  
+
+  
+  
+  .helper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+  
+  }
+
+  .btnContainer {
+    display: flex;
+    gap: 2rem;
+  }

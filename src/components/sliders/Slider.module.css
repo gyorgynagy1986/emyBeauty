@@ -1,0 +1,46 @@
+.SwiperContainer {
+  height: max-content;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.itemContainer {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  min-height: 40.24rem;
+  border: 1px solid transparent; /* set border width + make it transparent */
+  border-image: linear-gradient(
+    162.8deg, 
+    rgba(36, 144, 232, 0.2) -4.69%, 
+    rgba(19, 114, 198, 0.2) 58.82%, 
+    rgba(0, 78, 157, 0.2) 99.47%
+  ) 1;
+
+}
+
+.photoContainer {
+  height: 200px;
+}
+
+.textContainer {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+}
+
+.textContainer h3 {
+  font-size: var(--h3);
+  text-align: center;
+  width: 80%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

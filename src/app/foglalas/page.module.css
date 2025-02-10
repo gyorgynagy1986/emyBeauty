@@ -1,0 +1,271 @@
+.pageContainer {
+    width: 100%;
+
+    position: relative;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+
+  }
+
+  .backgroundVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .3;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .innerContainer {
+    background: #004f9ddc;
+    backdrop-filter: blur(10px);
+    padding: 4rem;
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+  }
+  
+  .h2 {
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 34px;
+    color: white;
+  }
+  
+  .p {
+    font-size: var(--p);
+    font-weight: 400;
+    line-height: 22px;
+    color: white;
+
+    
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+
+  .input,
+  .select,
+  .textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border:none;
+    background-color: #ffffff32;
+    font-size: 1.5rem !important;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 22px;
+    font-family: var(--font-jost);
+  }
+
+  .input::placeholder {
+
+    font-size: 1.5rem !important;
+    color: #ffffff64;
+    font-size: 1.5rem;
+    line-height: 22px;
+    font-weight: 300;
+    font-family: var(--font-fig);
+  }
+
+  .textarea::placeholder {
+    font-size: 1.5rem !important;
+    color: #ffffff64;
+    font-size: 1.5rem;
+    line-height: 22px;
+    font-weight: 300;
+    font-family: var(--font-fig);
+  
+  }
+  
+  .input:focus,
+  .select:focus,
+  .textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+  }
+  
+  .errorInput {
+    border-color: #ff4d4f;
+  }
+  
+  .errorText {
+    color: #ffb0b2;
+    font-size: 1.4rem;
+    margin-top: 0.25rem;
+    display: block;
+    font-family: var(--font-fig);
+  }
+  
+  .textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .checkboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .checkbox {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .label {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-family: var(--font-fig);
+  }
+  
+  .submitButton {
+    background: linear-gradient(91.23deg, #FCE2BA 21.19%, #FCE2BA 64.52%, #FFDAA4 97.21%);
+    color: #8C6831;
+    padding: 1rem;
+    font-weight: 600;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submitButton:hover:not(:disabled) {
+    background-color: #357abd;
+  }
+  
+  .submitButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .submitting {
+    opacity: 0.7;
+  }
+  
+  .successMessage {
+    background: linear-gradient(91.23deg, #FCE2BA 21.19%, #FCE2BA 64.52%, #FFDAA4 97.21%);
+    color: #8C6831;
+    font-size: 1.4rem;
+    font-family: var(--font-fig);
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .submitError {
+    background-color: #fff1f0;
+    border: 1px solid #ffccc7;
+    color: #ff4d4f;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .select {
+    /* meglévő stílusok maradnak */
+    background-color: #ffffff32;
+    color: white;
+    font-size: 1.5rem !important;
+    /* új stílusok a select elemhez */
+    appearance: none; /* eltávolítja az alapértelmezett nyilat */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1L6 6L11 1' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+  
+  /* A lenyíló opciók stílusa */
+  .select option {
+    background-color: #004E9D; /* kék háttér */
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  
+  /* Hover effekt az opciókra */
+  .select option:hover {
+    background-color: #0066cc;
+  }
+  
+  /* Kiválasztott opció stílusa */
+  .select option:checked {
+    background-color: #003366;
+  }
+  
+  /* Placeholder szöveg stílusa */
+  .select option[value=""] {
+    color: #ffffff64;
+  }
+
+
+  .select {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    background-color: #ffffff32;
+    font-size: 1.5rem !important;
+    color: white;
+    font-family: var(--font-jost);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1L6 6L11 1' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+  
+  .select option {
+    background-color: #004E9D;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  
+  /* Automata kijelölés színének módosítása */
+  .select option:hover,
+  .select option:focus,
+  .select option:active,
+  .select option:checked {
+    background-color: #201a1a32 !important;
+    color: rgb(34, 29, 29) !important;
+  }
+  
+  /* Az IE és Edge böngészőkre is alkalmazzuk */
+  .select::-ms-value {
+    background-color: #ffffff32;
+    color: white;
+  }
+  
+  /* Webkit alapú böngészőkre (Chrome, Safari) */
+  .select option:checked,
+  .select option:hover {
+    box-shadow: 0 0 10px 100px #ffffff32 inset;
+    -webkit-text-fill-color: white;
+  }
+  
+  /* Placeholder stílus */
+  .select option[value=""] {
+    color: #ffffff64;
+  }

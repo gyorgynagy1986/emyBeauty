@@ -1,0 +1,10 @@
+{
+  "emmet.preferences": {
+    "ClassName with formated string": {
+      "prefix": "cla",
+      "body": ["className = {`", "   ${1:}", "`}"],
+      "description": "ClassName with formated string"
+    }
+  },
+  "editor.suggest.showClasses": true
+}
