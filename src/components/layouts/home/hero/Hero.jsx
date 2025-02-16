@@ -15,7 +15,7 @@ const Hero = () => {
       <Image
         alt={alt.name}
         quality={100}
-        fill
+        className={style.image}
         priority
         size={size.fullsize}
         src={mainPage.heroPhoto}

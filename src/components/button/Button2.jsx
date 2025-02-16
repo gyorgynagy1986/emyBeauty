@@ -5,7 +5,7 @@ import Link from "next/link";
 const Button2 = () => {
   return (
     <>
-      <Link href='' className={style.button2}>Kérj konzultációt!</Link>;
+      <Link href='' className={style.button2}>Kérj konzultációt!</Link>
     </>
   );
 };
