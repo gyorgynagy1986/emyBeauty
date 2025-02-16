@@ -18,7 +18,7 @@
     --title: calc(2.6rem * 1.2);
     --titleSmall: calc(2.2rem * 1.2);
     --h3: calc(1.9rem * 1.2);
-    --p: calc(1.5rem * 1.1);
+    --p: calc(1.5rem * 1.15);
     --a: calc(1.4rem * 1.2);
     --maxWidth: calc(120rem * 1.2);
     --pL:2.5rem;
@@ -61,6 +61,10 @@ a {
   color: inherit;
   text-decoration: none;
   font-family: var(--font-jost);
+}
+
+h1 {
+  font-family: var(--font-libre);
 }
 
 h2 {
@@ -107,3 +111,4 @@ p {
 .slick-next:before, .slick-next:before {
   color: #004E9D !important;
 }
+

@@ -5,6 +5,7 @@ import Footer from "@/components/layouts/footer/Footer";
 
 const libre = Libre_Bodoni({
   variable: "--font-libre",
+  style: ['normal', 'italic'],
   subsets: ["latin"],
 });
 

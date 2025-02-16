@@ -1,8 +1,23 @@
 .container {
   background-color: var(--color-blue);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding:10rem 5vw;
+  padding:10rem 5vw 0rem 5vw;
+  justify-content: space-between;
+}
+
+.legalContainer {
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+  color: white;
+}
+
+
+.legalContainer p {
+  color: white;
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .contentContainer {
@@ -102,4 +117,51 @@ color: white;
 
 .helperContainerText a {
   font-size: var(--a);
+}
+
+
+
+/* Mobil nézet */
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 4rem 2vw 0 2vw;
+  }
+
+  .contentContainer {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .textLeft {
+    display: none;
+  }
+
+  .textCenter {
+    width: 100%;
+  }
+
+  .textCenter > div:first-child,
+  .textCenter > div:last-child {
+    display: none;
+  }
+
+
+  .helperContainerIamge {
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .textRight {
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .legalContainer {
+    width: 100%;
+    text-align: center;
+    padding-top: 4rem;
+  }
 }

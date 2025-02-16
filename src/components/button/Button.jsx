@@ -1,11 +1,16 @@
 import React from "react";
-import style from "./Button.module.css"; // Remove the trailing slash
+import style from "./Button.module.css";
 import Link from "next/link";
 
-const Button = () => {
+const Button = ({ yellow, onClick }) => {
   return (
-      <Link className={style.button} href="/foglalas"> Foglalj időpontot</Link>
-    
+    <Link 
+      className={`${style.button} ${yellow ? style.color : ''}`} 
+      href="/foglalas"
+      onClick={onClick}
+    > 
+      Foglalj időpontot
+    </Link>
   );
 };
 

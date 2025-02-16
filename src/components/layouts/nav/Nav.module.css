@@ -1,5 +1,4 @@
 /* TOPNAV*/
-
 .container {
   height: 3.8rem;
   background: linear-gradient(
@@ -37,7 +36,6 @@
 }
 
 /* NAV*/
-
 .navContainer {
   width: 100%;
   height: 120px;
@@ -46,6 +44,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+
+@media screen and (max-width: 1160px) {
+  .logo {
+    width: 210px;
+  }
 }
 
 .ul {
@@ -62,14 +67,72 @@
   color: #222222;
 }
 
-.leftContainer {
+.rightContainer {
   display: flex;
   align-items: center;
   gap: 3rem;
   padding-top: 2rem;
 }
 
-.actice {
+@media screen and (max-width: 1160px) {
+  .rightContainer {
+    padding-top: 0rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .rightContainer {
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    height: 100dvh;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .navContainer {
+    height:90px;
+
+  }
+
+  .mobileMenuOpen {
+    display: flex;
+  }
+
+  .ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .ul li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .ul li:last-child {
+    border-bottom: none;
+  }
+}
+
+.hamburgerMenu {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+  .hamburgerMenu {
+    display: block;
+  }
+}
+
+.active {
   font-weight: 600;
   color: #004e9d;
   text-decoration: underline;

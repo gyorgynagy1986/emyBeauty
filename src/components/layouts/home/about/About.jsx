@@ -2,10 +2,12 @@ import React from "react";
 import styles from "./About.module.css";
 import Object from "@/components/astract/Object";
 import Image from "next/image";
+import Link from "next/link";
 
 import { mainPage } from "@/data/photos";
 import { alt } from "@/data/alt";
 import { size } from "@/data/size";
+import Button4 from "@/components/button/Button4";
 
 const About = () => {
   return (
@@ -31,8 +33,12 @@ const About = () => {
               önbizalom természetes ragyogása életre keljen.
             </p>
           </div>
-          <button>Tudj meg többet rólam!</button>
-        </div>
+          <div className={styles.buttonContainer}>
+            <Button4 /> 
+
+          </div>
+
+       </div>
      
         <div className={styles.photoContainer}>
           <Image sizes={size.fullsize} src={mainPage.photoMainPage} alt={alt.name} />

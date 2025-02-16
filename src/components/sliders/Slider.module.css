@@ -1,7 +1,7 @@
 .SwiperContainer {
   height: max-content;
-  padding-left: 2vw;
-  padding-right: 2vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 
 .itemContainer {
@@ -43,4 +43,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  .sliderContainer :global(.slick-prev),
+  .sliderContainer :global(.slick-next) {
+    display: none !important;
+  }
 }

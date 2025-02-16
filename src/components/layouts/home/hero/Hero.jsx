@@ -1,14 +1,13 @@
 import React from "react";
 import style from "./Hero.module.css";
 import Image from "next/image";
-import Button from "../button/Button";
-import Button2 from "../button/Button2";
-import Object from "../astract/Object";
+import Button from "../../../button/Button";
+import Button2 from "../../../button/Button2";
+import Object from "../../../astract/Object";
 
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { mainPage } from "@/data/photos";
-
 
 const Hero = () => {
   return (
@@ -17,6 +16,7 @@ const Hero = () => {
         alt={alt.name}
         quality={100}
         fill
+        priority
         size={size.fullsize}
         src={mainPage.heroPhoto}
       />

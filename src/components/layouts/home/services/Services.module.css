@@ -1,6 +1,7 @@
 .section {
   display: flex;
   justify-content: center;
+ padding: 6rem 4vw;
 
 }
 
@@ -21,17 +22,55 @@
   gap: 4rem;
 }
 
+.btnContainer {
+  max-width: 360px;
+  display: flex;
+  width: 100%;
+  padding-top: 6rem;
+  margin-inline: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .titleContainer {
+    padding-top: 6rem;
+
+  }
+  .section {
+
+   padding: 6rem 2vw;
+  
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+
+    padding: 6rem 1vw;
+   
+   }
+}
+
+@media screen and (max-width: 600px) {
+  .titleContainer {
+    padding-top: 2rem;
+
+  }
+
+  .btnContainer {
+    max-width: 100%;
+  }
+
+}
+
 .titleContainer h2 {
   font-size: var(--h2);
 }
 
 .container {
   width: 100%;
-  max-width: 120rem;
+  max-width: var(--maxWidth)
 }
 
-.btnContainer {
-    padding-top: 6rem;
-    display: flex;
-    justify-content: center;
-}

@@ -1,10 +1,11 @@
 import React from "react";
 import style from "./Button.module.css";
+import Link from "next/link";
 
 const Button2 = () => {
   return (
     <>
-      <button className={style.button2}>Kérj konzultációt!</button>;
+      <Link href='' className={style.button2}>Kérj konzultációt!</Link>;
     </>
   );
 };

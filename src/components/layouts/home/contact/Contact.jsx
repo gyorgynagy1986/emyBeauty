@@ -20,8 +20,8 @@ const Contact = () => {
                 Minden vendégem teljes figyelmet és személyre szabott törődést
                 kap a lefoglalt időpontban.
               </p>
-              <Object />
             </div>
+              <Object />
             <div className={styles.btnContainer}>
             <Button />
             <Button2 />
@@ -39,8 +39,8 @@ const Contact = () => {
                 bizalommal, és foglalj időpontot személyre szabott kezelésre egy
                 nyugodt, igényes környezetben!
               </p>
-              <Object />
             </div>
+              <Object />
             <div style={{marginTop:'0px'}} className={styles.btnContainer}>
 
             <Button3 />

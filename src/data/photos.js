@@ -16,9 +16,19 @@ import photoAbout6 from "../../public/assets/pages/about/6.png";
 /* kapcsolat  */
 import map1 from "../../public/assets/pages/kapocslat/1.png";
 import map2 from "../../public/assets/pages/kapocslat/3.png";
-
 /* kapcsolat  */
 
+/* SERVICES */
+import serices1 from "../../public/assets/pages/services/1.png";
+import serices2 from "../../public/assets/pages/services/2.png";
+import serices3 from "../../public/assets/pages/services/3.png";
+import serices4 from "../../public/assets/pages/services/4.png";
+import serices5 from "../../public/assets/pages/services/5.png";
+import serices6 from "../../public/assets/pages/services/6.png";
+import serices7 from "../../public/assets/pages/services/7.png";
+import slug1 from "../../public/assets/pages/services/slug/1.png";
+
+/* SERVICES DONE */
 
 /* FOOTER */
 import footerPhoto from "../../public/assets/logos/logoFooter.svg";
@@ -51,7 +61,21 @@ export const contact = {
 /* kapcsolat  */
 
 
-/* ABOUT PAGE DONE */
+/* SERVICES  */
+export const servicesPage = {
+  serices1: serices1,
+  serices2: serices2,
+  serices3: serices3,
+  serices4: serices4,
+  serices5: serices5,
+  serices6: serices6,
+  serices7: serices7,
+  slug1: slug1,
+
+
+};
+/* SERVICES DONE */
+
 
 /* FOOTER */
 export const footer = {

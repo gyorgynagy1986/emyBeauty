@@ -20,199 +20,68 @@ function MultipleItems() {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      }
+    ]
   };
+
+  const slides = [
+    {
+      image: photo,
+      title: "Gyémántfejes mikrodermabrázió",
+      description: "A gyémántfejes mikrodermabrázió egy fájdalommentes, bőrhámlasztó kezelés, amely eltávolítja az elha..."
+    },
+    {
+      image: photo2,
+      title: "SQT® Bio Mikrotűs kezelés",
+      description: "Az SQT® bio mikrotűs kezelés természetes szilícium mikrotűkkel serkenti a bőr megújulását, fesze.."
+    },
+    {
+      image: photo3,
+      title: "Tű nélküli mezoterápia - Elektroporáció",
+      description: "A tű nélküli mezoterápia fájdalommentesen juttat hatóanyagokat a bőr mélyére elektr.."
+    }
+  ];
+
   return (
-    <div className="slider-container">
+    <div className={styles.sliderContainer}>
       <Slider {...settings}>
-        <div className={styles.SwiperContainer}>
-          <div className={styles.itemContainer}>
-            <div className={styles.photoContainer}>
-              <Image
-                sizes={size.fullsize}
-                alt={alt.name}
-                src={photo}
-                className={styles.img}
-              ></Image>
-            </div>
-            <div className={styles.textContainer}>
-              <h3>Gyémántfejes mikrodermabrázió</h3>
-              <Object />
-              <p>
-                A gyémántfejes mikrodermabrázió egy fájdalommentes, bőrhámlasztó
-                kezelés, amely eltávolítja az elha...
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.SwiperContainer}>
-          <div className={styles.itemContainer}>
-            <div className={styles.photoContainer}>
-              <Image
-                sizes={size.fullsize}
-                alt={alt.name}
-                src={photo2}
-                className={styles.img}
-              ></Image>
-            </div>
-            <div className={styles.textContainer}>
-              <h3>SQT® Bio Mikrotűs kezelés</h3>
-              <Object />
-              <p>
-                Az SQT® bio mikrotűs kezelés természetes szilícium mikrotűkkel
-                serkenti a bőr megújulását, fesze..
-              </p>
+        {[...slides, ...slides, ...slides].map((slide, index) => (
+          <div key={index} className={styles.SwiperContainer}>
+            <div className={styles.itemContainer}>
+              <div className={styles.photoContainer}>
+                <Image
+                  sizes={size.fullsize}
+                  alt={alt.name}
+                  src={slide.image}
+                  className={styles.img}
+                />
+              </div>
+              <div className={styles.textContainer}>
+                <h3>{slide.title}</h3>
+                <Object />
+                <p>{slide.description}</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className={styles.SwiperContainer}>
-          <div className={styles.itemContainer}>
-            <div className={styles.photoContainer}>
-              <Image
-                sizes={size.fullsize}
-                alt={alt.name}
-                src={photo3}
-                className={styles.img}
-              ></Image>
-            </div>
-            <div className={styles.textContainer}>
-              <h3>Tű nélküli mezoterápia - Elektroporáció</h3>
-              <Object />
-              <p>
-                A tű nélküli mezoterápia fájdalommentesen juttat hatóanyagokat a
-                bőr mélyére elektr..
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.SwiperContainer}>
-          <div className={styles.itemContainer}>
-            <div className={styles.photoContainer}>
-              <Image
-                sizes={size.fullsize}
-                alt={alt.name}
-                src={photo}
-                className={styles.img}
-              ></Image>
-            </div>
-            <div className={styles.textContainer}>
-              <h3>Gyémántfejes mikrodermabrázió</h3>
-              <Object />
-              <p>
-                A gyémántfejes mikrodermabrázió egy fájdalommentes, bőrhámlasztó
-                kezelés, amely eltávolítja az elha...
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.SwiperContainer}>
-          <div className={styles.itemContainer}>
-            <div className={styles.photoContainer}>
-              <Image
-                sizes={size.fullsize}
-                alt={alt.name}
-                src={photo2}
-                className={styles.img}
-              ></Image>
-            </div>
-            <div className={styles.textContainer}>
-              <h3>SQT® Bio Mikrotűs kezelés</h3>
-              <Object />
-              <p>
-                Az SQT® bio mikrotűs kezelés természetes szilícium mikrotűkkel
-                serkenti a bőr megújulását, fesze..
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.SwiperContainer}>
-          <div className={styles.itemContainer}>
-            <div className={styles.photoContainer}>
-              <Image
-                sizes={size.fullsize}
-                alt={alt.name}
-                src={photo3}
-                className={styles.img}
-              ></Image>
-            </div>
-            <div className={styles.textContainer}>
-              <h3>Tű nélküli mezoterápia - Elektroporáció</h3>
-              <Object />
-              <p>
-                A tű nélküli mezoterápia fájdalommentesen juttat hatóanyagokat a
-                bőr mélyére elektr..
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.SwiperContainer}>
-          <div className={styles.itemContainer}>
-            <div className={styles.photoContainer}>
-              <Image
-                sizes={size.fullsize}
-                alt={alt.name}
-                src={photo}
-                className={styles.img}
-              ></Image>
-            </div>
-            <div className={styles.textContainer}>
-              <h3>Gyémántfejes mikrodermabrázió</h3>
-              <Object />
-              <p>
-                A gyémántfejes mikrodermabrázió egy fájdalommentes, bőrhámlasztó
-                kezelés, amely eltávolítja az elha...
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.SwiperContainer}>
-          <div className={styles.itemContainer}>
-            <div className={styles.photoContainer}>
-              <Image
-                sizes={size.fullsize}
-                alt={alt.name}
-                src={photo2}
-                className={styles.img}
-              ></Image>
-            </div>
-            <div className={styles.textContainer}>
-              <h3>SQT® Bio Mikrotűs kezelés</h3>
-              <Object />
-              <p>
-                Az SQT® bio mikrotűs kezelés természetes szilícium mikrotűkkel
-                serkenti a bőr megújulását, fesze..
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.SwiperContainer}>
-          <div className={styles.itemContainer}>
-            <div className={styles.photoContainer}>
-              <Image
-                sizes={size.fullsize}
-                alt={alt.name}
-                src={photo3}
-                className={styles.img}
-              ></Image>
-            </div>
-            <div className={styles.textContainer}>
-              <h3>Tű nélküli mezoterápia - Elektroporáció</h3>
-              <Object />
-              <p>
-                A tű nélküli mezoterápia fájdalommentesen juttat hatóanyagokat a
-                bőr mélyére elektr..
-              </p>
-            </div>
-          </div>
-        </div>
+        ))}
       </Slider>
     </div>
   );

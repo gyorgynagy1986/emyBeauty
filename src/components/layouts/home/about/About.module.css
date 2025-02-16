@@ -1,6 +1,5 @@
 .sections {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding: 6rem 5vw;
 }
 
 .container {
@@ -14,7 +13,7 @@
   max-width: var(--maxWidth);
   background-color: white;
   margin-inline: auto;
-  border: 1px solid transparent; /* set border width + make it transparent */
+  border: 1px solid transparent;
   border-image: linear-gradient(
     162.8deg, 
     rgba(36, 144, 232, 0.2) -4.69%, 
@@ -64,17 +63,17 @@
   font-size: var(--h2);
 }
 
-.textContainer button {
-  box-shadow: 0px 2px 10px 0px #181a284d;
-  background: #004e9d;
-  padding: 1.2rem 3rem;
-  gap: 0.6rem;
-  color: white;
-  border: none;
-  width: max-content;
+.buttonContainer {
+  padding: 0 ;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 360px;
 }
 
-.photoContainer  img{
+
+.photoContainer img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -86,5 +85,123 @@
   display: flex;
   justify-content: center;
   gap: 8rem;
+}
 
+/* Laptop és nagyobb tablet */
+@media screen and (max-width: 1280px) {
+  .container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .helper {
+    gap: 4rem;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    min-height: 50rem;
+  }
+
+  .sections {
+    padding: 6rem 3vw;
+  }
+
+  .helper {
+    gap: 3rem;
+  }
+
+  .textContainer {
+    gap: 3rem;
+  }
+
+  .titleContainer {
+    gap: 3rem;
+  }
+}
+
+/* Kis tablet */
+@media screen and (max-width: 900px) {
+  .sections {
+    padding: 4rem 2vw;
+  }
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 2rem;
+  }
+
+  .helper {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .textContainer,
+  .photoContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .photoContainer {
+    order: -1;
+    width: 100%;
+  }
+
+  .text {
+    max-width: 600px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+
+}
+
+/* Mobil */
+@media screen and (max-width: 600px) {
+  .sections {
+    padding: 3rem 2vw;
+  }
+
+  .container {
+    min-height: auto;
+  }
+
+  .helper {
+    gap: 3rem;
+  }
+
+  .textContainer {
+    gap: 2rem;
+  }
+
+  .titleContainer {
+    gap: 2rem;
+  }
+
+  .photoContainer {
+    max-width: 100%;
+  }
+
+  .text p:nth-child(1) {
+    margin-bottom: 1.5rem;
+  }
+
+  .textContainer button {
+    padding: 1rem 2.5rem;
+  }
+
+  
+.buttonContainer {
+  padding: 0 5vw;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
 }

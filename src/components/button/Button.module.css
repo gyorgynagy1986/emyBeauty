@@ -1,7 +1,7 @@
 .button {
   background: #004e9d;
   color: white;
-  padding: 1rem 5rem;
+  padding: 1rem 2rem;
   font-family: var(--font-jost);
   font-size: 1.4rem;
   font-weight: 500;
@@ -17,7 +17,7 @@
     #ffdaa4 97.21%
   );
   color: #8c6831;
-  padding: 1rem 5rem;
+  padding: 1rem 2rem;
   font-family: var(--font-jost);
   font-size: 1.4rem;
   font-weight: 600;
@@ -25,14 +25,43 @@
   cursor: pointer;
 }
 
+.color {
+  background: linear-gradient(
+    91.23deg,
+    #fce2ba 21.19%,
+    #fce2ba 64.52%,
+    #ffdaa4 97.21%
+  );
+  color: #8c6831;
+}
 
 .button3 {
   background: #004e9d;
   color: white;
-  padding: 1rem 5rem;
+  padding: 1rem 2rem;
   font-family: var(--font-jost);
   font-size: 1.4rem;
   font-weight: 600;
   border: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 900px) {
+  .button {
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+
+  .button2 {
+    text-align: center;
+    width: 100%;
+  }
+
+  .button3 {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+

@@ -1,5 +1,25 @@
+import { contact } from "@/data/photos";
+
 export const contacts = {
   tel: "+36203426618",
   insta: "emykee_boreszteta",
   facebook: "EmyBeautyStudio",
 };
+
+
+export const locations = [
+  {
+    title: "Szeged",
+    businessName: "EmyBeautyEstetics™️",
+    address: "Nádas utca 14./a",
+    phone: "+36 20 342 66 18",
+    mapSrc: contact.map1,
+  },
+  {
+    title: "Budapest",
+    businessName: "Waio Hair",
+    address: "XIII. kerület, Szabolcs utca 23-25.",
+    phone: "+36 20 342 66 18",
+    mapSrc: contact.map2,
+  },
+];
