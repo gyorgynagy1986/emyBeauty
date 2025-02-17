@@ -24,16 +24,49 @@
   color: var(--color-fs-topNav);
 }
 
+@media screen and (max-width: 600px) {
+  .containerItems {
+   justify-content: space-between;
+   width: 100%;
+  }
+}
+
 .contatctContainer {
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
 
+
+
+.socialHelper {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .socialHelper {
+    gap: 2rem;
+  }
+}
+
+
 .contatctContainer img {
   width: 1.5rem;
   height: 1.5rem;
 }
+
+@media screen and (max-width: 600px) {
+  .contatctContainer img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
 
 /* NAV*/
 .navContainer {
@@ -146,4 +179,13 @@
   font-size: 1.5rem;
   font-weight: 600;
   border: none;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  .socialText {
+    display: none;
+  }
 }

@@ -26,6 +26,43 @@
       1;
   }
   
+  .topBar {
+    width: 100%;
+    background-color: white;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(
+        162.8deg,
+        rgba(36, 144, 232, 0.2) -4.69%,
+        rgba(19, 114, 198, 0.2) 58.82%,
+        rgba(0, 78, 157, 0.2) 99.47%
+      )
+      1;
+  }
+  
+  .items {
+    width: auto;
+    padding: var(--pGlobal);
+    padding-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    overflow: auto;
+  }
+  
+  .items a {
+   font-size: 14px;
+   font-weight: 500;
+   font-family: var(--font-fig);
+   line-height: 0;
+   white-space: nowrap;
+  }
+
+  .active {
+    color: var(--color-blue);
+   }
+
   @media (min-width: 1980px) {
       .helper {
           max-width: 1100px;

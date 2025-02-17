@@ -6,17 +6,20 @@ import Footer from "@/components/layouts/footer/Footer";
 const libre = Libre_Bodoni({
   variable: "--font-libre",
   style: ['normal', 'italic'],
+  weight:["400", "500", "600"],
   subsets: ["latin"],
 });
 
 const jost = Jost({
   variable: "--font-jost",
+  weight:["400", "500", "600"],
   subsets: ["latin"],
 });
 
 
 const fig = Figtree({
   variable: "--font-fig",
+  weight:["400", "500", "600"],
   subsets: ["latin"],
 });
 

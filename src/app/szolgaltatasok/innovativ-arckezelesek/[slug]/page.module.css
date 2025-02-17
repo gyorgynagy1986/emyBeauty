@@ -26,6 +26,8 @@
     1;
 }
 
+
+
 @media (min-width: 1980px) {
     .helper {
         max-width: 1100px;
@@ -190,3 +192,5 @@
   .priceItems p:nth-child(1) {
     font-weight: bold;
   }
+
+

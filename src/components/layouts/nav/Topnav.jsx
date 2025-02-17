@@ -18,14 +18,27 @@ const Topnav = () => {
           <a href={`tel:${contacts.tel}`}> {contacts.tel}</a>
         </div>
 
-        <div className={styles.contatctContainer}>
-          <Image priority alt={alt.name} sizes={size.fullsize} src={insta} />
-          <a href=""> {contacts.insta}</a>
-        </div>
+        <div className={styles.socialHelper}>
+          <div className={styles.contatctContainer}>
+            <Image priority alt={alt.name} sizes={size.fullsize} src={insta} />
+            <a className={styles.socialText} href="">
+              {" "}
+              {contacts.insta}
+            </a>
+          </div>
 
-        <div className={styles.contatctContainer}>
-          <Image priority alt={alt.name} sizes={size.fullsize} src={facebook} />
-          <a href=""> {contacts.facebook}</a>
+          <div className={styles.contatctContainer}>
+            <Image
+              priority
+              alt={alt.name}
+              sizes={size.fullsize}
+              src={facebook}
+            />
+            <a className={styles.socialText} href="">
+              {" "}
+              {contacts.facebook}
+            </a>
+          </div>
         </div>
       </div>
     </div>

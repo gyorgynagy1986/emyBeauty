@@ -3,12 +3,14 @@
   width: 100%;
   min-height: calc(800px - 158px);
   display: flex;
+  flex-direction: column; /* Ensure proper stacking on small screens */
   padding: 6rem 3vw;
 }
 
 @media screen and (max-width: 1024px) {
   .container {
-    height: 100%;
+    height: auto;
+    padding: 4rem 2vw;
   }
 }
 
@@ -22,7 +24,7 @@
   padding: 12rem;
   gap: 8rem;
   background: white;
-  border: 1px solid transparent; /* set border width + make it transparent */
+  border: 1px solid transparent;
   border-image: linear-gradient(
       162.8deg,
       rgba(36, 144, 232, 0.2) -4.69%,
@@ -32,29 +34,32 @@
     1;
 }
 
-@media screen and (min-width: 1980px) {
-  .helper {
-    gap: 15rem;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   .helper {
-    padding: 4rem;
+    padding: 4rem 2rem;
+    gap: 4rem;
   }
 }
 
 .contentContainer {
   width: 100%;
   display: flex;
+  flex-direction: row;
   gap: 8rem;
   max-width: 1200px;
+}
+
+@media screen and (max-width: 767px) {
+  .contentContainer {
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+  }
 }
 
 .leftContainrt {
   width: 50%;
   height: inherit;
-  background-color: aqua;
   max-height: 800px;
 }
 
@@ -63,6 +68,12 @@
   height: 100%;
   object-fit: cover;
   max-height: 800px;
+}
+
+@media screen and (max-width: 767px) {
+  .leftContainrt {
+    width: 100%;
+  }
 }
 
 .rightContainrt {
@@ -74,6 +85,13 @@
   align-items: center;
   text-align: center;
   gap: 4rem;
+}
+
+@media screen and (max-width: 767px) {
+  .rightContainrt {
+    width: 100%;
+    gap: 2rem;
+  }
 }
 
 .rightContainrt h3 {

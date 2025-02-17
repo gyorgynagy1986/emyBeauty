@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Abstract from "@/components/astract/Object";
 import Image from "next/image";
 import Link from "next/link";
+import icon from '../../../public/assets/icon/right.svg'
 
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
@@ -29,7 +30,11 @@ const page = () => {
   return (
     <div className={styles.container}>
       <div className={styles.topBar}>
-        <div className={styles.items}></div>
+        <div className={styles.items}>
+          <Link href='/'>FŐOLDAL</Link>
+          <Image style={{marginBottom:'1px'}} alt={alt.name} size={size.fullsize} src={icon} />
+          <Link className={styles.active} href='/szolgaltatasok'>SZOLGÁLTATÁSOK</Link>
+        </div>
       </div>
       <section className={styles.containerHelper}>
         <div className={styles.titleContainer}>
