@@ -1,0 +1,147 @@
+.topBar {
+  width: 100%;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(
+      162.8deg,
+      rgba(36, 144, 232, 0.2) -4.69%,
+      rgba(19, 114, 198, 0.2) 58.82%,
+      rgba(0, 78, 157, 0.2) 99.47%
+    )
+    1;
+}
+
+
+.items {
+  width: auto;
+  padding: var(--pGlobal);
+  padding-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  overflow: auto;
+}
+
+.items a {
+ font-size: 14px;
+ font-weight: 500;
+ font-family: var(--font-fig);
+ line-height: 0;
+ white-space: nowrap;
+}
+
+.active {
+ color: var(--color-blue);
+}
+.container {
+  background-color: white;
+}
+
+.containerHelper {
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleContainer h1 {
+  font-weight: 500;
+  font-style: italic;
+  font-size: var(--h2);
+  line-height: 34px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--color-blue);
+}
+
+.itemsContainer {
+  max-width: var(--maxWidth);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: 4rem 5vw;
+}
+
+@media screen and (max-width:1000px) {
+  .itemsContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .itemsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ServiceItem {
+  max-width: 37.8rem;
+  box-shadow: 0px -2px 30px 0px #854e0f0f;
+  border: 1px solid transparent;
+  border-image: linear-gradient(
+      162.8deg,
+      rgba(36, 144, 232, 0.2) -4.69%,
+      rgba(19, 114, 198, 0.2) 58.82%,
+      rgba(0, 78, 157, 0.2) 99.47%
+    )
+    1;
+}
+
+@media screen and (max-width:1000px) {
+  .ServiceItem {
+    max-width: 100%;
+  }
+}
+
+.img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.titleContainer {
+  min-height: 86px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.titleContainer a {
+  font-family: var(--font-fig);
+  font-weight: 500;
+  font-size: 1.9rem;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--color-blue);
+}
+
+
+.titleContainer p {
+  max-width: 60.3rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.ServiceItemInfo {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
+}

@@ -5,7 +5,7 @@ import emyMainPageAbout from "../../public/assets/emy.webp";
 
 /* ABOUT PAGE */
 import heroPhotoAbout from "../../public/assets/pages/about/hero.webp";
-import photoAbout1 from "../../public/assets/pages/about/1.png";
+import photoAbout1 from "../../public/assets/pages/about/1.jpg";
 import photoAbout2 from "../../public/assets/pages/about/2.png";
 import photoAbout3 from "../../public/assets/pages/about/3.png";
 import photoAbout4 from "../../public/assets/pages/about/4.png";

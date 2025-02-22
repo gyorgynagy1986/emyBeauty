@@ -61,6 +61,7 @@
 
 .itemsHelper {
   display: flex;
+  justify-content: center;
   gap: 8rem;
   height: 100%;
   width: 100%;

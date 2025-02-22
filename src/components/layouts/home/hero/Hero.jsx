@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import style from "./Hero.module.css";
 import Image from "next/image";
@@ -9,7 +11,12 @@ import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { mainPage } from "@/data/photos";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Hero = () => {
+  AOS.init();
+
   return (
     <div className={style.container}>
       <Image
@@ -19,8 +26,25 @@ const Hero = () => {
         priority
         size={size.fullsize}
         src={mainPage.heroPhoto}
+        data-aos="fade"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true"
       />
-      <div className={style.leftContanier}>
+      <div
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="800"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true"
+        data-aos-anchor-placement="top-center"
+        className={style.leftContanier}
+      >
         <div className={style.helper}>
           <h1 className={style.h1}>
             Sok szeretettel köszöntelek az Emy Beauty Estetics weboldalán!
@@ -35,9 +59,18 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className={style.buttonContainer}>
+          <div
+            data-aos="fade"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={style.buttonContainer}
+          >
             <Button />
-            <Button2 />
+            <Button2 className={style.leftContanier} />
           </div>
         </div>
       </div>

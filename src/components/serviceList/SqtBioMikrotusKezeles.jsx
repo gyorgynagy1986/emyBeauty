@@ -3,7 +3,7 @@ import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
 import Abstract from "@/components/astract/Object";
-import icon from "../../../public/assets/icon/right.svg";
+import icon from "../../../../public/assets/icon/right.svg";
 import Link from "next/link";
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
@@ -29,7 +29,7 @@ export default function SqtBioMikrotusKezeles() {
             size={size.fullsize}
             src={icon}
           />
-          <Link  href="/szolgaltatasok/innovativ-arckezelesek">
+          <Link href="/szolgaltatasok/innovativ-arckezelesek">
             INNOVATÍV ARCKEZELÉSEK
           </Link>
           <Image
@@ -38,8 +38,8 @@ export default function SqtBioMikrotusKezeles() {
             size={size.fullsize}
             src={icon}
           />
-           <Link className={styles.active} href="/szolgaltatasok">
-           SQT® BIO MIKROTŰS KEZELÉS
+          <Link className={styles.active} href="/szolgaltatasok">
+            SQT® BIO MIKROTŰS KEZELÉS
           </Link>
         </div>
       </div>
