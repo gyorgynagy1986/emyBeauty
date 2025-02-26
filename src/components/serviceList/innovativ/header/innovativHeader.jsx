@@ -6,7 +6,7 @@ import { alt } from "@/data/alt";
 import icon from "../../../../../public/assets/icon/right.svg";
 import styles from "./../serviceList.module.css";
 
-const innovativHeader = () => {
+const InovativHeader = ({ activePage }) => {
   return (
     <div className={styles.topBar}>
       <div className={styles.items}>
@@ -34,11 +34,11 @@ const innovativHeader = () => {
           src={icon}
         />
         <Link className={styles.active} href="/szolgaltatasok">
-          GENO-LED ALACSONY INTENZITÁSÚ LED FÉNY
+          {activePage}
         </Link>
       </div>
     </div>
   );
 };
 
-export default innovativHeader;
+export default InovativHeader;

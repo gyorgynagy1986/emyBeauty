@@ -3,7 +3,7 @@ import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
 import Abstract from "@/components/astract/Object";
-import innovativHeader from '../innovativ/header/innovativHeader'
+import InovativHeader from './header/innovativHeader'
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
@@ -12,7 +12,7 @@ import styles from "./serviceList.module.css";
 export default function GenoLedKezelés() {
   return (
     <>
-      <innovativHeader activePage='GENO-LED alacsony intenzitású LED fény' />
+      <InovativHeader activePage='GENO-LED alacsony intenzitású LED fény' />
 
       <section className={styles.container}>
         <div className={styles.helper}>
@@ -58,9 +58,9 @@ export default function GenoLedKezelés() {
               Az alacsony intenzitású LED fényterápia előnyei
             </h2>
             <ul>
-              <li>1. Biztonságos: Fájdalommentesen és biztonsággal kezeli a bőrproblémákat, a bőr károsítása (pl. hőkárosodás, fény okozta öregedés) nélkül, melyek a hagyományos lézerek hátrányaként ismertek.</li>
-              <li>2. Hatékony: Kiváló és erőteljes fényes forrás, a speciális infravörös fénytartományhoz közeli SM LED gondoskodik a kimagasló hatásról, felépülési idő nélkül.</li>
-              <li>3. Okos: Többféle bőrproblémára alkalmazható: különböző hullámhosszúságú fényt sugároz a bőrbe. (423 és 640 nm között)</li>
+              <li>Biztonságos: Fájdalommentesen és biztonsággal kezeli a bőrproblémákat, a bőr károsítása (pl. hőkárosodás, fény okozta öregedés) nélkül, melyek a hagyományos lézerek hátrányaként ismertek.</li>
+              <li>Hatékony: Kiváló és erőteljes fényes forrás, a speciális infravörös fénytartományhoz közeli SM LED gondoskodik a kimagasló hatásról, felépülési idő nélkül.</li>
+              <li>Okos: Többféle bőrproblémára alkalmazható: különböző hullámhosszúságú fényt sugároz a bőrbe. (423 és 640 nm között)</li>
             </ul>
             <Abstract />
           </div>

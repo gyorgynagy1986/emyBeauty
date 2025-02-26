@@ -1,3 +1,9 @@
+@media screen and (max-width: 600px) {
+  .socialText {
+    display: none;
+  }
+}/* A meglévő CSS-t megtartom és kiegészítem a Framer Motion animációkhoz szükséges elemekkel */
+
 /* TOPNAV*/
 .container {
   height: 3.8rem;
@@ -13,6 +19,10 @@
   justify-content: flex-end;
   align-items: center;
   padding: var(--pGlobal);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001; /* Magasabb z-index, hogy a Nav felett legyen */
 }
 
 .containerItems {
@@ -37,8 +47,6 @@
   gap: 0.6rem;
 }
 
-
-
 .socialHelper {
   display: flex;
   gap: 3rem;
@@ -46,14 +54,11 @@
   align-items: center;
 }
 
-
-
 @media screen and (max-width: 600px) {
   .socialHelper {
     gap: 2rem;
   }
 }
-
 
 .contatctContainer img {
   width: 1.5rem;
@@ -67,7 +72,6 @@
   }
 }
 
-
 /* NAV*/
 .navContainer {
   width: 100%;
@@ -77,7 +81,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  position: fixed;
+  top: 3.8rem; /* TopNav magassága */
+  left: 0;
+  z-index: 1000;
 }
 
 @media screen and (max-width: 1160px) {
@@ -107,6 +114,13 @@
   padding-top: 2rem;
 }
 
+/* Desktop navigáció */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
 @media screen and (max-width: 1160px) {
   .rightContainer {
     padding-top: 0rem;
@@ -116,40 +130,72 @@
 @media screen and (max-width: 1100px) {
   .rightContainer {
     display: none;
-    position: absolute;
-    top: 90px;
+    position: fixed;
+    top: calc(3.8rem + 90px); /* TopNav + NavContainer magassága mobilnézetben */
     left: 0;
     width: 100%;
     background-color: white;
-    height: 100dvh;
+    height: calc(100dvh - 3.8rem - 90px); /* Teljes magasság - TopNav - NavContainer */
     flex-direction: column;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    overflow: hidden; /* Animációhoz szükséges */
   }
 
   .navContainer {
-    height:90px;
-
+    height: 90px;
   }
 
   .mobileMenuOpen {
     display: flex;
   }
 
-  .ul {
+  /* Desktop navigáció elrejtése mobilnézetben */
+  .desktopNav {
+    display: none;
+  }
+
+  /* Mobil navigáció tartalom konténer */
+  .mobileNavContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+    position: relative; /* Biztosítja, hogy a gomb pozicionálható legyen */
+  }
+
+  .mobileNavContent .ul {
     flex-direction: column;
     width: 100%;
     align-items: center;
+    overflow-y: auto; /* Csak a lista legyen görgethető, ha túl hosszú */
+    flex: 1; /* Kitölti a rendelkezésre álló teret */
+    max-height: calc(100% - 80px); /* Több helyet hagyunk a gombnak */
+    padding-bottom: 10px; /* Extra padding a lista alján */
+  }
+  
+  .buttonContainer {
+    position: sticky;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 10px 0;
+    z-index: 2;
+    box-shadow: 0 -4px 10px -8px rgba(0, 0, 0, 0.1);
   }
 
-  .ul li {
+  .mobileNavContent .ul li {
     width: 100%;
     text-align: center;
     border-bottom: 1px solid #eee;
   }
 
-  .ul li:last-child {
+  .mobileNavContent .ul li:last-child {
     border-bottom: none;
   }
 }
@@ -181,11 +227,13 @@
   border: none;
 }
 
+/* Mainhez szükséges tartalék hely a fixed navigációnak */
+body {
+  padding-top: calc(3.8rem + 120px); /* TopNav + NavContainer magassága */
+}
 
-
-
-@media screen and (max-width: 600px) {
-  .socialText {
-    display: none;
+@media screen and (max-width: 1100px) {
+  body {
+    padding-top: calc(3.8rem + 90px); /* TopNav + NavContainer magassága mobilnézetben */
   }
 }

@@ -3,8 +3,7 @@ import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
 import Abstract from "@/components/astract/Object";
-import icon from "../../../../public/assets/icon/right.svg";
-import Link from "next/link";
+import InovativHeader from '@/components/serviceList/innovativ/header/innovativHeader';
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
@@ -13,36 +12,8 @@ import styles from "./serviceList.module.css";
 export default function MikrodermabrazioGyemantfejes() {
   return (
     <>
-      <div className={styles.topBar}>
-        <div className={styles.items}>
-          <Link href="/">FŐOLDAL</Link>
-          <Image
-            style={{ marginBottom: "1px" }}
-            alt={alt.name}
-            size={size.fullsize}
-            src={icon}
-          />
-          <Link href="/szolgaltatasok">SZOLGÁLTATÁSOK</Link>
-          <Image
-            style={{ marginBottom: "1px" }}
-            alt={alt.name}
-            size={size.fullsize}
-            src={icon}
-          />
-          <Link href="/szolgaltatasok/innovativ-kezelesek">
-            INNOVATÍV KEZELÉSEK
-          </Link>
-          <Image
-            style={{ marginBottom: "1px" }}
-            alt={alt.name}
-            size={size.fullsize}
-            src={icon}
-          />
-          <Link className={styles.active} href="/szolgaltatasok">
-            MIKRODERMABRÁZIÓ - GYÉMÁNTFEJES TECHNOLOGIA
-          </Link>
-        </div>
-      </div>
+           <InovativHeader activePage="MIKRODERMABRÁZIÓ - Gyémántfejes technológia" />
+
 
       <section className={styles.container}>
         <div className={styles.helper}>

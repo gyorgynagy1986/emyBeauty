@@ -3,18 +3,16 @@ import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
 import Abstract from "@/components/astract/Object";
-import icon from "../../../../public/assets/icon/right.svg";
-import Link from "next/link";
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
-import innovativHeader from "./header/innovativHeader";
+import InovativHeader from '@/components/serviceList/innovativ/header/innovativHeader';
 
 export default function GenosysSnowcell() {
   return (
     <>
-      <innovativHeader activePage="Genosys SNOWCELL" />
+      <InovativHeader activePage="Genosys SNOWCELL" />
 
       <section className={styles.container}>
         <div className={styles.helper}>
@@ -84,21 +82,21 @@ export default function GenosysSnowcell() {
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Mik a kezelés előnyei?</h2>
             <ul>
-              <li>1. Csökkenti a meglévő hiperpigmentációt</li>
+              <li>Csökkenti a meglévő hiperpigmentációt</li>
               <li>
-                2. Megakadályozza a pigmentanyagok lerakódását a bőr felső
+                 Megakadályozza a pigmentanyagok lerakódását a bőr felső
                 rétegében
               </li>
               <li>
-                3. Meggátolja a melanin termelődését, így megelőzi az újabb
+                 Meggátolja a melanin termelődését, így megelőzi az újabb
                 foltok megjelenését
               </li>
-              <li>4. Fiatalítja a bőrt</li>
-              <li>5. Stimulálja a kollagén termelődését</li>
-              <li>6. Biztonságosan hámlasztja a felszíni hámsejteket</li>
-              <li>7. Frissíti a bőrfelszínt és egységesíti a bőr tónusát</li>
+              <li>Fiatalítja a bőrt</li>
+              <li>Stimulálja a kollagén termelődését</li>
+              <li>Biztonságosan hámlasztja a felszíni hámsejteket</li>
+              <li>Frissíti a bőrfelszínt és egységesíti a bőr tónusát</li>
               <li>
-                8. Kezeli a szeplőket, öregségi foltokat, gyulladás utáni
+                Kezeli a szeplőket, öregségi foltokat, gyulladás utáni
                 hiperpigmentációt is
               </li>
             </ul>
