@@ -6,7 +6,7 @@ import MikrodermabrazioGyemantfejes from "@/components/serviceList/innovativ/Mik
 import OneNeedProMikrotus from "@/components/serviceList/innovativ/OneNeedProMikrotus";
 
 
-export default async function Page({ params }) {
+export default async function page({ params }) {
   const { slug } = params;
 
   if (slug === "tu-nelkuli-mezoterapia") {

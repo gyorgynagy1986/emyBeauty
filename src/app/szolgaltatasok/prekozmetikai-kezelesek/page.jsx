@@ -24,7 +24,7 @@ const ServiceItem = ({ src, title, slug, text }) => (
   </div>
 );
 
-const Page = () => {
+const page = () => {
   const serviceItems = [
     {
       src: servicesPage.serices5,
@@ -104,4 +104,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

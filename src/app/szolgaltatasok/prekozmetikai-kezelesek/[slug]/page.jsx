@@ -6,7 +6,7 @@ import OneNeedPro from "@/components/serviceList/prekozmatikai-kezelesek/OneNeed
 import HollywoodCarbonPeeling from "@/components/serviceList/prekozmatikai-kezelesek/HollywoodCarbonPeeling";
 import DeepShootSkinBooster from "@/components/serviceList/prekozmatikai-kezelesek/DeepShootSkinBooster";
 
-export default async function Page({ params }) {
+export default async function page({ params }) {
   const { slug } = params;
 
   if (slug === "secret-rf") {

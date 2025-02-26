@@ -11,7 +11,7 @@ const services = [
   "Hajápolás",
 ];
 
-const AppointmentForm = () => {
+const page = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -239,4 +239,4 @@ const AppointmentForm = () => {
   );
 };
 
-export default AppointmentForm;
+export default page;
