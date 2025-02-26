@@ -68,7 +68,7 @@ const Marketing2 = () => {
               és várom a közelgő találkozásainkat!
             </p>
 
-            <Object />
+            <Ob />
             <Button2 />
           </div>
         </div>
