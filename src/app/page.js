@@ -1,5 +1,3 @@
-"use client"
-
 import React from "react";
 import Hero from "@/components/layouts/home/hero/Hero";
 import Banner from "@/components/banner/Banner";
