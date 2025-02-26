@@ -8,7 +8,7 @@ import { alt } from "@/data/alt";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Object from "@/components/astract/Object";
+import Ob from "@/components/astract/Object";
 
 import photo from "../../../public/assets/swiper/1.png";
 import photo2 from "../../../public/assets/swiper/2.png";
@@ -76,7 +76,7 @@ function MultipleItems() {
               </div>
               <div className={styles.textContainer}>
                 <h3>{slide.title}</h3>
-                <Object />
+                <Ob />
                 <p>{slide.description}</p>
               </div>
             </div>

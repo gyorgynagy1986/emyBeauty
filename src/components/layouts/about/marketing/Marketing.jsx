@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Marketing.module.css";
 import Image from "next/image";
-import Object from "@/components/astract/Object";
+import Ob from "@/components/astract/Object";
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { aboutPage } from "@/data/photos";
@@ -59,7 +59,7 @@ const Marketing = () => {
             <MarketingItem key={item.id} {...item} />
           ))}
         </div>
-        <Object />
+        <Ob />
         <div className={style.itemsHelper}>
           {marketingContent.slice(2).map((item) => (
             <MarketingItem key={item.id} {...item} />

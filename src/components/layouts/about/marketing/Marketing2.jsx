@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Marketing2.module.css";
 import Image from "next/image";
 
-import Object from "@/components/astract/Object";
+import Ob from "@/components/astract/Object";
 import Button from "@/components/button/Button5";
 import Button2 from "@/components/button/Button6";
 
@@ -43,7 +43,7 @@ const Marketing2 = () => {
               kedvencem. Ez az egyik legmodernebb, műtét nélküli bőrfiatalító
               eljárás, amely fokozza a bőr természetes kollagéntermelését.
             </p>
-            <Object />
+            <Ob />
             <Button />
           </div>
         </div>

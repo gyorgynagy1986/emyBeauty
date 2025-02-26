@@ -5,7 +5,7 @@ import style from "./Hero.module.css";
 import Image from "next/image";
 import Button from "../../../button/Button";
 import Button2 from "../../../button/Button2";
-import Object from "../../../astract/Object";
+import Ob from "../../../astract/Object";
 
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
@@ -50,7 +50,7 @@ const Hero = () => {
             Sok szeretettel köszöntelek az Emy Beauty Estetics weboldalán!
           </h1>
           <div>
-            <Object />
+            <Ob />
           </div>
           <div>
             <p className={style.p}>

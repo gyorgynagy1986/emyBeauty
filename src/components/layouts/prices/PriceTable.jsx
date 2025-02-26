@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./PriceTable.module.css";
-import Object from "@/components/astract/Object";
+import Ob from "@/components/astract/Object";
 
 const allServices = [
   {
@@ -91,7 +91,7 @@ const PriceTable = () => {
       <div className={styles.helper}>
         <div className={styles.titleContainer}>
           <h1 className={styles.title}>Árak</h1>
-          <Object />
+          <Ob />
         </div>
         
         {allServices.map((serviceCategory, index) => (

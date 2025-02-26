@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./About.module.css";
-import Object from "@/components/astract/Object";
+import Ob from "@/components/astract/Object";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -32,7 +32,7 @@ const About = () => {
           >
             <div className={styles.titleContainer}>
               <h2>Rólam</h2>
-              <Object />
+              <Ob />
             </div>
             <div className={styles.text}>
               <p>
