@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Hero.module.css";
 import Image from "next/image";
-import Object from "@/components/astract/Object";
+import Object from "@/components/astract/ObjectElement";
 import Button from "@/components/button/Button";
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
@@ -23,8 +23,10 @@ const LocationCard = ({ title, businessName, address, phone, mapSrc }) => (
       <div className={style.textContainer}>
         <p className={style.name}>{businessName}</p>
         <p className={style.address}>{address}</p>
-        <a className={style.tel} href={`tel:${phone}`}>{phone}</a>
-        </div>
+        <a className={style.tel} href={`tel:${phone}`}>
+          {phone}
+        </a>
+      </div>
       <Button yellow={true} />
     </div>
   </div>

@@ -2,9 +2,8 @@
 
 import React from "react";
 import styles from "./About.module.css";
-import Ob from "@/components/astract/Object";
+import Ob from "@/components/astract/ObjectElement";
 import Image from "next/image";
-import Link from "next/link";
 
 import { mainPage } from "@/data/photos";
 import { alt } from "@/data/alt";
@@ -52,13 +51,16 @@ const About = () => {
             </div>
           </div>
 
-          <div  data-aos="fade-left"
+          <div
+            data-aos="fade-left"
             data-aos-offset="150"
             data-aos-delay="150"
             data-aos-duration="1500"
             data-aos-easing="ease"
             data-aos-mirror="true"
-            data-aos-once="true" className={styles.photoContainer}>
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               sizes={size.fullsize}
               src={mainPage.photoMainPage}

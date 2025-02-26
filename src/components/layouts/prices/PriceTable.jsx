@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./PriceTable.module.css";
-import Ob from "@/components/astract/Object";
+import Ob from "@/components/astract/ObjectElement";
 
 const allServices = [
   {
@@ -11,7 +11,7 @@ const allServices = [
       { name: "Szolgáltatás neve", price: "15.990 Ft", perUse: "/alkalom" },
       { name: "Szolgáltatás neve", price: "15.990 Ft" },
       { name: "Szolgáltatás neve", price: "15.990 Ft" },
-    ]
+    ],
   },
   {
     category: "Szolgáltatás kategória 2",
@@ -21,7 +21,7 @@ const allServices = [
       { name: "Szolgáltatás neve", price: "15.990 Ft", perUse: "/alkalom" },
       { name: "Szolgáltatás neve", price: "15.990 Ft" },
       { name: "Szolgáltatás neve", price: "15.990 Ft" },
-    ]
+    ],
   },
   {
     category: "Szolgáltatás kategória 3",
@@ -31,7 +31,7 @@ const allServices = [
       { name: "Szolgáltatás neve", price: "15.990 Ft", perUse: "/alkalom" },
       { name: "Szolgáltatás neve", price: "15.990 Ft" },
       { name: "Szolgáltatás neve", price: "15.990 Ft" },
-    ]
+    ],
   },
   {
     category: "Szolgáltatás kategória 4",
@@ -41,7 +41,7 @@ const allServices = [
       { name: "Szolgáltatás neve", price: "15.990 Ft", perUse: "/alkalom" },
       { name: "Szolgáltatás neve", price: "15.990 Ft" },
       { name: "Szolgáltatás neve", price: "15.990 Ft" },
-    ]
+    ],
   },
   {
     category: "Szolgáltatás kategória 5",
@@ -51,7 +51,7 @@ const allServices = [
       { name: "Szolgáltatás neve", price: "15.990 Ft", perUse: "/alkalom" },
       { name: "Szolgáltatás neve", price: "15.990 Ft" },
       { name: "Szolgáltatás neve", price: "15.990 Ft" },
-    ]
+    ],
   },
   {
     category: "Szolgáltatás kategória 5",
@@ -61,8 +61,8 @@ const allServices = [
       { name: "Szolgáltatás neve", price: "15.990 Ft", perUse: "/alkalom" },
       { name: "Szolgáltatás neve", price: "15.990 Ft" },
       { name: "Szolgáltatás neve", price: "15.990 Ft" },
-    ]
-  }
+    ],
+  },
 ];
 
 // Szolgáltatási lista komponens
@@ -93,9 +93,9 @@ const PriceTable = () => {
           <h1 className={styles.title}>Árak</h1>
           <Ob />
         </div>
-        
+
         {allServices.map((serviceCategory, index) => (
-          <ServiceList 
+          <ServiceList
             key={index}
             category={serviceCategory.category}
             items={serviceCategory.items}

@@ -2,7 +2,7 @@ import React from "react";
 import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
-import Abstract from "@/components/astract/Object";
+import Abstract from "@/components/astract/ObjectElement";
 import icon from "../../../../public/assets/icon/right.svg";
 import Link from "next/link";
 import { size } from "@/data/size";
@@ -10,7 +10,6 @@ import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
 import ImageSkincareHeader from "./header/ImageSkincareHeader";
-
 
 export default function IPeelOrmedic() {
   return (

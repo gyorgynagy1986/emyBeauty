@@ -2,7 +2,7 @@ import React from "react";
 import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
-import Abstract from "@/components/astract/Object";
+import Abstract from "@/components/astract/ObjectElement";
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";

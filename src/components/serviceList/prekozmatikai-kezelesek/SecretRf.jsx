@@ -2,7 +2,7 @@ import React from "react";
 import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
-import Abstract from "@/components/astract/Object";
+import Abstract from "@/components/astract/ObjectElement";
 import icon from "../../../../public/assets/icon/right.svg";
 import Link from "next/link";
 import { size } from "@/data/size";
@@ -29,8 +29,8 @@ export default function SecretRF() {
             size={size.fullsize}
             src={icon}
           />
-         <Link href="/szolgaltatasok/prekozmetikai-kezelesek">
-           PREKOZMETIKAI KEZELÉSEK
+          <Link href="/szolgaltatasok/prekozmetikai-kezelesek">
+            PREKOZMETIKAI KEZELÉSEK
           </Link>
           <Image
             style={{ marginBottom: "1px" }}

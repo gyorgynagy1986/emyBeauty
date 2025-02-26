@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./Contact.module.css";
-import Ob from "@/components/astract/Object";
+import Ob from "@/components/astract/ObjectElement";
 import Button from "@/components/button/Button";
 import Button2 from "@/components/button/Button2";
 import Button3 from "@/components/button/Button4";
@@ -89,7 +89,7 @@ const Contact = () => {
                 nyugodt, igényes környezetben!
               </p>
             </div>
-            <Object />
+            <Ob />
             <div
               data-aos="fade-up"
               data-aos-offset="100"

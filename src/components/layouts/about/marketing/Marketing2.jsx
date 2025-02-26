@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Marketing2.module.css";
 import Image from "next/image";
 
-import Ob from "@/components/astract/Object";
+import Ob from "@/components/astract/ObjectElement";
 import Button from "@/components/button/Button5";
 import Button2 from "@/components/button/Button6";
 

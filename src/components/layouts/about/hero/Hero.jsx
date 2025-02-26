@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Hero.module.css";
 import Image from "next/image";
 
-import Ob from "@/components/astract/Object";
+import Ob from "@/components/astract/ObjectElement";
 import Button from "@/components/button/Button";
 
 import { size } from "@/data/size";

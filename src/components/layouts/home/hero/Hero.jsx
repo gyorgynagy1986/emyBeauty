@@ -5,7 +5,7 @@ import style from "./Hero.module.css";
 import Image from "next/image";
 import Button from "../../../button/Button";
 import Button2 from "../../../button/Button2";
-import Ob from "../../../astract/Object";
+import Ob from "../../../astract/ObjectElement";
 
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
