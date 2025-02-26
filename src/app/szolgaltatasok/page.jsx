@@ -23,8 +23,8 @@ const page = () => {
   
   const serviceItems = [
     { src: servicesPage.serices1, title: "Prekozmetikai kezelések", slug: "prekozmetikai-kezelesek" },
-    { src: servicesPage.serices2, title: "Innovatív kezelések", slug: "innovativ-arckezelesek" },
-    { src: servicesPage.serices3, title: "Innovatív Arckezelések", slug: "innovativ-arckezelesek" }, 
+    { src: servicesPage.serices2, title: "Innovatív kezelések", slug: "innovativ-kezelesek" },
+    { src: servicesPage.serices3, title: "IMAGE Skincare Protokolok", slug: "image-skincare-protokolok" }, 
   ];
 
   return (
