@@ -33,18 +33,13 @@ export default function IPeelAcneLift() {
             </div>
           </div>
 
-          {/* --- Videó --- */}
-          <div className={styles.videoContainer}>
-            <video 
-              controls
-              width="100%" 
-              height="auto"
-              poster={servicesPage.thumbnails?.acneLift || ""}
-              className={styles.serviceVideo}
-            >
-              <source src="/video2.mp4" type="video/mp4" />
-              Az Ön böngészője nem támogatja a videó lejátszását.
-            </video>
+          {/* --- Kép --- */}
+          <div className={styles.photoContainer}>
+            <Image
+              alt={alt.name}
+              src={servicesPage.slug1}
+              sizes={size.fullsize}
+            />
           </div>
 
           {/* --- 1. szekció --- */}
