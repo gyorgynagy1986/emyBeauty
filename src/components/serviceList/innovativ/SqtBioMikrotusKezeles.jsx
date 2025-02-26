@@ -8,7 +8,7 @@ import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
-import InovativHeader from "@/components/serviceList/innovativ/header/InnovativHeader";
+import InovativHeader from "@/components/serviceList/innovativ/header/innovativHeader";
 
 export default function SqtBioMikrotusKezeles() {
   return (
