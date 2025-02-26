@@ -1,102 +1,21 @@
-@media screen and (max-width: 600px) {
-  .socialText {
-    display: none;
-  }
-}/* A meglévő CSS-t megtartom és kiegészítem a Framer Motion animációkhoz szükséges elemekkel */
-
-/* TOPNAV*/
-.container {
-  height: 3.8rem;
-  background: linear-gradient(
-    91.23deg,
-    #fce2ba 21.19%,
-    #fff4e3 42.48%,
-    #fce2ba 64.52%,
-    #ffdaa4 97.21%
-  );
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: var(--pGlobal);
-}
-
-@media screen and (max-width: 1100px) {
-  .container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1001; /* Magasabb z-index, hogy a Nav felett legyen */
-  }
-}
-
-.containerItems {
-  width: auto;
-  display: flex;
-  gap: 3rem;
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: var(--color-fs-topNav);
-}
-
-@media screen and (max-width: 600px) {
-  .containerItems {
-   justify-content: space-between;
-   width: 100%;
-  }
-}
-
-.contatctContainer {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.socialHelper {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-  align-items: center;
-}
-
-@media screen and (max-width: 600px) {
-  .socialHelper {
-    gap: 2rem;
-  }
-}
-
-.contatctContainer img {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-@media screen and (max-width: 600px) {
-  .contatctContainer img {
-    width: 2rem;
-    height: 2rem;
-  }
-}
-
-/* NAV*/
+/* NAV */
 .navContainer {
   width: 100%;
   height: 120px;
+  
   background-color: #ffffff;
   padding: var(--pGlobal);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  position: fixed;
+  top: 3.8rem; /* TopNav height */
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-@media screen and (max-width: 1100px) {
-  .navContainer {
-    position: fixed;
-    top: 3.8rem; /* TopNav magassága */
-    left: 0;
-    z-index: 1000;
-    height: 90px;
-  }
+.logo {
+  width: auto;
 }
 
 @media screen and (max-width: 1160px) {
@@ -126,7 +45,7 @@
   padding-top: 2rem;
 }
 
-/* Desktop navigáció */
+/* Desktop navigation */
 .desktopNav {
   display: flex;
   align-items: center;
@@ -140,35 +59,35 @@
 }
 
 @media screen and (max-width: 1100px) {
+  .navContainer {
+    height: 90px;
+  }
+
   .rightContainer {
     display: none;
     position: fixed;
-    top: calc(3.8rem + 90px); /* TopNav + NavContainer magassága mobilnézetben */
+    top: calc(3.8rem + 90px); /* TopNav + NavContainer height in mobile view */
     left: 0;
     width: 100%;
     background-color: white;
-    height: calc(100dvh - 3.8rem - 90px); /* Teljes magasság - TopNav - NavContainer */
+    height: calc(100dvh - 3.8rem - 90px); /* Full height - TopNav - NavContainer */
     flex-direction: column;
-    padding: 2rem;
+    padding: 2rem 2rem 0 2rem; /* No padding at the bottom, handled by the button */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    overflow: hidden; /* Animációhoz szükséges */
-  }
-
-  .navContainer {
-    height: 90px;
+    overflow: hidden; /* Required for animation */
   }
 
   .mobileMenuOpen {
     display: flex;
   }
 
-  /* Desktop navigáció elrejtése mobilnézetben */
+  /* Hide desktop navigation in mobile view */
   .desktopNav {
     display: none;
   }
 
-  /* Mobil navigáció tartalom konténer */
+  /* Mobile navigation content container */
   .mobileNavContent {
     width: 100%;
     display: flex;
@@ -176,29 +95,17 @@
     align-items: center;
     gap: 2rem;
     height: 100%;
-    position: relative; /* Biztosítja, hogy a gomb pozicionálható legyen */
+    position: relative; /* Ensures the button can be positioned */
   }
 
   .mobileNavContent .ul {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    overflow-y: auto; /* Csak a lista legyen görgethető, ha túl hosszú */
-    flex: 1; /* Kitölti a rendelkezésre álló teret */
-    max-height: calc(100% - 80px); /* Több helyet hagyunk a gombnak */
-    padding-bottom: 10px; /* Extra padding a lista alján */
-  }
-  
-  .buttonContainer {
-    position: sticky;
-    bottom: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    padding: 10px 0;
-    z-index: 2;
-    box-shadow: 0 -4px 10px -8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Only the list should be scrollable if too long */
+    flex: 1; /* Fills the available space */
+    max-height: calc(100% - 80px); /* Leave more space for the button */
+    padding-bottom: 10px; /* Extra padding at the bottom of the list */
   }
 
   .mobileNavContent .ul li {
@@ -209,6 +116,18 @@
 
   .mobileNavContent .ul li:last-child {
     border-bottom: none;
+  }
+
+  .buttonContainer {
+    position: sticky;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 10px 0;
+    z-index: 2;
+    box-shadow: 0 -4px 10px -8px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -238,4 +157,3 @@
   font-weight: 600;
   border: none;
 }
-

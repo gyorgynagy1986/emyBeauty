@@ -111,3 +111,14 @@ p {
 .slick-next:before, .slick-next:before {
   color: #004E9D !important;
 }
+
+body {
+  padding-top: 15.8rem;
+}
+
+
+@media screen and (max-width: 1100px) {
+  body {
+    padding-top: calc(3.8rem + 9rem);
+  }
+}

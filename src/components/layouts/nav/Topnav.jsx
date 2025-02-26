@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import styles from "./Nav.module.css";
+import styles from "./TopNav.module.css"; // Külön CSS modul
 import { contacts } from "@/data/contact";
 import { alt } from "@/data/alt";
 import { size } from "@/data/size";

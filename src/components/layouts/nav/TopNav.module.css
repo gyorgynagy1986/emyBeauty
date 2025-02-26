@@ -1,0 +1,73 @@
+/* TOPNAV */
+.container {
+  height: 3.8rem;
+  background: linear-gradient(
+    91.23deg,
+    #fce2ba 21.19%,
+    #fff4e3 42.48%,
+    #fce2ba 64.52%,
+    #ffdaa4 97.21%
+  );
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: var(--pGlobal);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1002;
+}
+
+.containerItems {
+  width: auto;
+  display: flex;
+  gap: 3rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--color-fs-topNav);
+}
+
+@media screen and (max-width: 600px) {
+  .containerItems {
+   justify-content: space-between;
+   width: 100%;
+  }
+}
+
+.contatctContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.socialHelper {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .socialHelper {
+    gap: 2rem;
+  }
+}
+
+.contatctContainer img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .contatctContainer img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .socialText {
+    display: none;
+  }
+}

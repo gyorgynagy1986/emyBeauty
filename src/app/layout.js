@@ -1,6 +1,7 @@
 import { Libre_Bodoni, Jost, Figtree } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/layouts/nav/Nav";
+import Topnav from "@/components/layouts/nav/Topnav";
 import Footer from "@/components/layouts/footer/Footer";
 
 const libre = Libre_Bodoni({
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="hu">
       <body className={`${jost.variable} ${fig.variable} ${libre.variable}`}>
+       <Topnav />
         <Nav />
         {children}
         <Footer />

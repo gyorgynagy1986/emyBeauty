@@ -29,25 +29,25 @@ const Hero = () => {
         size={size.fullsize}
         src={mainPage.heroPhoto}
         data-aos="fade"
-        data-aos-offset="200"
+        data-aos-offset="50"
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"
         data-aos-mirror="true"
         data-aos-once="true"
       />
-      <div
-        data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="800"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="true"
-        data-aos-once="true"
-        data-aos-anchor-placement="top-center"
-        className={style.leftContanier}
-      >
-        <div className={style.helper}>
+      <div className={style.leftContanier}>
+        <div
+          data-aos="fade"
+          data-aos-offset="-50"
+          data-aos-delay="50"
+          data-aos-duration="800"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+          data-aos-anchor-placement="top-center"
+          className={style.helper}
+        >
           <h1 className={style.h1}>
             Sok szeretettel köszöntelek az Emy Beauty Estetics weboldalán!
           </h1>
