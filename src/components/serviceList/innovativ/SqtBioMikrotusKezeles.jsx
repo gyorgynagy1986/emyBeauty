@@ -8,12 +8,12 @@ import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
-import InovativHeader from '@/components/serviceList/innovativ/header/innovativHeader';
+import InovativHeader from "@/components/serviceList/innovativ/header/InnovativHeader";
 
 export default function SqtBioMikrotusKezeles() {
   return (
     <>
-           <InovativHeader activePage="SQT® Bio Mikrotűs szivacstű kezelés" />
+      <InovativHeader activePage="SQT® Bio Mikrotűs szivacstű kezelés" />
 
       <section className={styles.container}>
         <div className={styles.helper}>

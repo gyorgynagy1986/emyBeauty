@@ -3,7 +3,7 @@ import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
 import Abstract from "@/components/astract/Object";
-import InovativHeader from './header/innovativHeader'
+import InovativHeader from "./header/InnovativHeader";
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
@@ -12,19 +12,26 @@ import styles from "./serviceList.module.css";
 export default function GenoLedKezelés() {
   return (
     <>
-      <InovativHeader activePage='GENO-LED alacsony intenzitású LED fény' />
+      <InovativHeader activePage="GENO-LED alacsony intenzitású LED fény" />
 
       <section className={styles.container}>
         <div className={styles.helper}>
           {/* --- Fő cím + szöveg --- */}
           <div className={styles.titleContainer}>
             <div className={styles.titleHelper}>
-              <h1 className={styles.title}>GENO-LED alacsony intenzitású LED fény</h1>
+              <h1 className={styles.title}>
+                GENO-LED alacsony intenzitású LED fény
+              </h1>
               <Abstract />
             </div>
 
             <p>
-              A GENO-LED alacsony intenzitású fényterápiája LED fénnyel oldja meg a komplikált bőrproblémákat. Elősegíti a bőr regenerálódását és nyugtatását, és különböző hullámhosszúságú fényt sugároz a bőrbe (423 és 640 nm között). Az eszköz 287 speciális, infravörös tartományhoz közeli SMD LED összetevőket alkalmaz, ezért kimagasló a hatást biztosít.
+              A GENO-LED alacsony intenzitású fényterápiája LED fénnyel oldja
+              meg a komplikált bőrproblémákat. Elősegíti a bőr regenerálódását
+              és nyugtatását, és különböző hullámhosszúságú fényt sugároz a
+              bőrbe (423 és 640 nm között). Az eszköz 287 speciális, infravörös
+              tartományhoz közeli SMD LED összetevőket alkalmaz, ezért kimagasló
+              a hatást biztosít.
             </p>
 
             <div className={styles.buttonContainer}>
@@ -47,7 +54,12 @@ export default function GenoLedKezelés() {
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>GENO-LED fényterápia</h2>
             <p>
-              A GENO-LED fénysugárzó eszköz, mely fájdalommentesen és biztonságosan elejét veszi a hagyományos lézerforrások kockázatainak, pl. a hőkárosodásnak és a fény okozta öregedésnek. Egyik legfontosabb előnye például, hogy a szöveteket és a szemeket érő mellékhatás és károsítás minimális, az alacsony intenzitású energia révén.
+              A GENO-LED fénysugárzó eszköz, mely fájdalommentesen és
+              biztonságosan elejét veszi a hagyományos lézerforrások
+              kockázatainak, pl. a hőkárosodásnak és a fény okozta öregedésnek.
+              Egyik legfontosabb előnye például, hogy a szöveteket és a szemeket
+              érő mellékhatás és károsítás minimális, az alacsony intenzitású
+              energia révén.
             </p>
             <Abstract />
           </div>
@@ -58,41 +70,61 @@ export default function GenoLedKezelés() {
               Az alacsony intenzitású LED fényterápia előnyei
             </h2>
             <ul>
-              <li>Biztonságos: Fájdalommentesen és biztonsággal kezeli a bőrproblémákat, a bőr károsítása (pl. hőkárosodás, fény okozta öregedés) nélkül, melyek a hagyományos lézerek hátrányaként ismertek.</li>
-              <li>Hatékony: Kiváló és erőteljes fényes forrás, a speciális infravörös fénytartományhoz közeli SM LED gondoskodik a kimagasló hatásról, felépülési idő nélkül.</li>
-              <li>Okos: Többféle bőrproblémára alkalmazható: különböző hullámhosszúságú fényt sugároz a bőrbe. (423 és 640 nm között)</li>
+              <li>
+                Biztonságos: Fájdalommentesen és biztonsággal kezeli a
+                bőrproblémákat, a bőr károsítása (pl. hőkárosodás, fény okozta
+                öregedés) nélkül, melyek a hagyományos lézerek hátrányaként
+                ismertek.
+              </li>
+              <li>
+                Hatékony: Kiváló és erőteljes fényes forrás, a speciális
+                infravörös fénytartományhoz közeli SM LED gondoskodik a
+                kimagasló hatásról, felépülési idő nélkül.
+              </li>
+              <li>
+                Okos: Többféle bőrproblémára alkalmazható: különböző
+                hullámhosszúságú fényt sugároz a bőrbe. (423 és 640 nm között)
+              </li>
             </ul>
             <Abstract />
           </div>
 
           {/* --- 3. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>
-              A LED fényterápia hatása
-            </h2>
+            <h2 className={styles.title}>A LED fényterápia hatása</h2>
             <p>
-              A LED fény egy bizonyos frekvencián a bőr rétegeibe jutva megújulásra ösztönzi a bőrsejteket. Fokozza a kollagén termelését, melynek hatására a kor előre haladtának jelei csökkennek. A bizonyított anti-aging hatáson kívül javítja a bőr kondícióját, a nap okozta foltokat és a bőrkárosodást. Az arcon kívül az egész testen alkalmazható, hiszen számos pozitív hatása van a szervezetre is. Segítségével testünk képes előállítani D-vitamint, vitalizálja, energetizálja szervezetünket, és csökkenti az ízületi fájdalmakat, gyulladást.
+              A LED fény egy bizonyos frekvencián a bőr rétegeibe jutva
+              megújulásra ösztönzi a bőrsejteket. Fokozza a kollagén termelését,
+              melynek hatására a kor előre haladtának jelei csökkennek. A
+              bizonyított anti-aging hatáson kívül javítja a bőr kondícióját, a
+              nap okozta foltokat és a bőrkárosodást. Az arcon kívül az egész
+              testen alkalmazható, hiszen számos pozitív hatása van a
+              szervezetre is. Segítségével testünk képes előállítani D-vitamint,
+              vitalizálja, energetizálja szervezetünket, és csökkenti az ízületi
+              fájdalmakat, gyulladást.
             </p>
             <Abstract />
           </div>
 
           {/* --- 4. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>Mi a különbség a LED terápiás fények között?</h2>
+            <h2 className={styles.title}>
+              Mi a különbség a LED terápiás fények között?
+            </h2>
             <p>
-              A LED fényterápiás színek nemcsak a hangulatunkra hatnak, hanem testi egészségünket is pozitívan befolyásolják.
+              A LED fényterápiás színek nemcsak a hangulatunkra hatnak, hanem
+              testi egészségünket is pozitívan befolyásolják.
             </p>
             <p>
-              Az alacsony intenzitású LED-terápiában a leggyakrabban alkalmazott hullámhosszok a vörös, a sárga, zöld és a kék tartományokba esnek:
+              Az alacsony intenzitású LED-terápiában a leggyakrabban alkalmazott
+              hullámhosszok a vörös, a sárga, zöld és a kék tartományokba esnek:
             </p>
             <Abstract />
           </div>
 
           {/* --- 5. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>
-              Piros fény
-            </h2>
+            <h2 className={styles.title}>Piros fény</h2>
             <ul className={styles.ul2Col}>
               <li>Hullámhossz: 640 nm</li>
               <li>Behatolási mélység: 1-6 mm</li>
@@ -110,9 +142,7 @@ export default function GenoLedKezelés() {
 
           {/* --- 6. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>
-              Kék fény
-            </h2>
+            <h2 className={styles.title}>Kék fény</h2>
             <ul className={styles.ul2Col}>
               <li>Hullámhossz: 423 nm</li>
               <li>Behatolási mélység: 1 mm</li>
@@ -123,16 +153,20 @@ export default function GenoLedKezelés() {
               <li>Aknés, gyulladt bőr kezeléséhez</li>
             </ul>
             <p>
-              Fontos megjegyzés a kék színű LED fénnyel kapcsolatosan: Az alacsony intenzitású LED fényterápiás eszközben NINCS UV fény! A LED fényterápia során használt kék fény nem összetévesztendő a nagy energiájú látható fénnyel, ami a Napból és a kék fényt kibocsátó eszközökből (mint mobiltelefon, elektromos berendezések) érkezik. A napfény káros sugarai ellen fényvédelemmel védekezünk. A LED terápiás maszk kék színe kíméletesen kezeli a bőrt.
+              Fontos megjegyzés a kék színű LED fénnyel kapcsolatosan: Az
+              alacsony intenzitású LED fényterápiás eszközben NINCS UV fény! A
+              LED fényterápia során használt kék fény nem összetévesztendő a
+              nagy energiájú látható fénnyel, ami a Napból és a kék fényt
+              kibocsátó eszközökből (mint mobiltelefon, elektromos berendezések)
+              érkezik. A napfény káros sugarai ellen fényvédelemmel védekezünk.
+              A LED terápiás maszk kék színe kíméletesen kezeli a bőrt.
             </p>
             <Abstract />
           </div>
 
           {/* --- 7. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>
-              Zöld fény
-            </h2>
+            <h2 className={styles.title}>Zöld fény</h2>
             <ul className={styles.ul2Col}>
               <li>Hullámhossz: 532 nm</li>
               <li>Behatolási mélység: 0,5-2 mm</li>
@@ -140,16 +174,16 @@ export default function GenoLedKezelés() {
               <li>Javítja az érzékeny bőrt</li>
               <li>Csillapítja az elmét, ellazítja testét</li>
               <li>Javítja a nem kívánatos barna foltokat</li>
-              <li>Ajánlott bőregységesítő, halványító kezelés kiegészítésére</li>
+              <li>
+                Ajánlott bőregységesítő, halványító kezelés kiegészítésére
+              </li>
             </ul>
             <Abstract />
           </div>
 
           {/* --- 8. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>
-              Sárga fény
-            </h2>
+            <h2 className={styles.title}>Sárga fény</h2>
             <ul className={styles.ul2Col}>
               <li>Hullámhossz: 583 nm</li>
               <li>Behatolási mélység: 1-2 mm</li>
@@ -163,18 +197,25 @@ export default function GenoLedKezelés() {
 
           {/* --- Árazás --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>Mennyibe kerül a LED fényterápiás kezelés?</h2>
+            <h2 className={styles.title}>
+              Mennyibe kerül a LED fényterápiás kezelés?
+            </h2>
             <div className={styles.priceContainer}>
               <div className={styles.priceItems}>
                 <p>Arc, nyak, dekoltázs (20 perc)</p>
                 <p>14.000 Ft</p>
               </div>
               <div className={styles.priceItems}>
-                <p>6 alkalmas bőrmegújító kezelés sorozat bérletben (20 perc)</p>
+                <p>
+                  6 alkalmas bőrmegújító kezelés sorozat bérletben (20 perc)
+                </p>
                 <p>6+1 alkalom AJÁNDÉK</p>
               </div>
               <div className={styles.priceItems}>
-                <p>Bármely kezeléshez választható kiegészítő szolgáltatásként (20 perc)</p>
+                <p>
+                  Bármely kezeléshez választható kiegészítő szolgáltatásként (20
+                  perc)
+                </p>
                 <p>Legyen szépülésed, pihenésed még teljesebb!</p>
               </div>
             </div>

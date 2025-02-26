@@ -7,7 +7,7 @@ import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
-import InovativHeader from '@/components/serviceList/innovativ/header/innovativHeader';
+import InovativHeader from "@/components/serviceList/innovativ/header/InnovativHeader";
 
 export default function GenosysSnowcell() {
   return (
@@ -84,12 +84,12 @@ export default function GenosysSnowcell() {
             <ul>
               <li>Csökkenti a meglévő hiperpigmentációt</li>
               <li>
-                 Megakadályozza a pigmentanyagok lerakódását a bőr felső
+                Megakadályozza a pigmentanyagok lerakódását a bőr felső
                 rétegében
               </li>
               <li>
-                 Meggátolja a melanin termelődését, így megelőzi az újabb
-                foltok megjelenését
+                Meggátolja a melanin termelődését, így megelőzi az újabb foltok
+                megjelenését
               </li>
               <li>Fiatalítja a bőrt</li>
               <li>Stimulálja a kollagén termelődését</li>

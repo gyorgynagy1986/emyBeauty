@@ -3,7 +3,7 @@ import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
 import Abstract from "@/components/astract/Object";
-import InovativHeader from "@/components/serviceList/innovativ/header/innovativHeader";
+import InovativHeader from "@/components/serviceList/innovativ/header/InnovativHeader";
 
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";

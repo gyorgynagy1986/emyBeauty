@@ -1,30 +1,25 @@
-//mport React from 'react'
-//mport PriceTable from '../../components/layouts/prices/PriceTable'
-//
-//xport const metadata = {
-// title: 'Árak - Emy kozmetika',
-// openGraph: {
-//   title: 'Árak - Emy kozmetika',
-//   description: 'Árak',
-// },
-//
-//
-//onst page = () => {
-// return (
-//   <>
-//   <PriceTable />
-//   </>
-// )
-//
-//
-//xport default page
-
 import React from 'react'
+import PriceTable from '../../components/layouts/prices/PriceTable'
 
-const page = () => {
-  return (
-    <div>page</div>
-  )
+export const metadata = {
+ title: 'Árak - Emy kozmetika',
+ openGraph: {
+   title: 'Árak - Emy kozmetika',
+   description: 'Árak',
+ }
+
 }
 
-export default page
+
+const page = () => {
+ return (
+   <>
+   <PriceTable />
+   </>
+ ) 
+
+}
+
+
+export default page;
+
