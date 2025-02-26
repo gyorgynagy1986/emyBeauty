@@ -1,6 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import style from "./Hero.module.css";
 import Image from "next/image";
 import Button from "../../../button/Button";
@@ -11,11 +13,11 @@ import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { mainPage } from "@/data/photos";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 const Hero = () => {
-  AOS.init();
+  // Initialize AOS only on client-side after component mounts
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div className={style.container}>
@@ -54,7 +56,7 @@ const Hero = () => {
           </div>
           <div>
             <p className={style.p}>
-              Ez a „BÉKE SZIGETE” ahol nyugalom vár rád, ahol nem csak a bőröd,
+              Ez a „BÉKE SZIGETE" ahol nyugalom vár rád, ahol nem csak a bőröd,
               hanem lelked is kisimul, megszépül.
             </p>
           </div>

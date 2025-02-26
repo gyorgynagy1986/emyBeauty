@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "aos": "^3.0.0-beta.6",
+    "aos": "^2.3.4",
     "framer-motion": "^12.4.7",
     "libphonenumber-js": "^1.11.19",
     "lucide-react": "^0.475.0",

@@ -1,6 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import "aos/dist/aos.css";
+import AOS from "aos";
 import styles from "./About.module.css";
 import Ob from "@/components/astract/ObjectElement";
 import Image from "next/image";
@@ -10,11 +12,11 @@ import { alt } from "@/data/alt";
 import { size } from "@/data/size";
 import Button4 from "@/components/button/Button4";
 
-import "aos/dist/aos.css";
-import AOS from "aos";
-
 const About = () => {
-  AOS.init();
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <section className={styles.sections}>
       <div className={styles.container}>

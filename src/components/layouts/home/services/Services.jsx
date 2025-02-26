@@ -1,15 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import "aos/dist/aos.css";
+import AOS from "aos";
 import styles from "@/components/layouts/home/services/Services.module.css";
 import Ob from "@/components/astract/ObjectElement";
 import SliderServices from "@/components/sliders/SliderServices";
 import Button from "@/components/button/Button3";
-import "aos/dist/aos.css";
-import AOS from "aos";
+
 
 const Services = () => {
-  AOS.init();
+  // Initialize AOS only on client-side after component mounts
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <section className={styles.section}>

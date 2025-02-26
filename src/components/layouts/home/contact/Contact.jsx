@@ -1,17 +1,21 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import styles from "./Contact.module.css";
 import Ob from "@/components/astract/ObjectElement";
 import Button from "@/components/button/Button";
 import Button2 from "@/components/button/Button2";
 import Button3 from "@/components/button/Button4";
 
-import "aos/dist/aos.css";
-import AOS from "aos";
+
 
 const Contact = () => {
-  AOS.init();
+  // Initialize AOS only on client-side after component mounts
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <section className={styles.sections}>
