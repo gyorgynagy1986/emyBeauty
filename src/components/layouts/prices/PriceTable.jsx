@@ -85,7 +85,7 @@ const ServiceList = ({ category, items }) => (
 );
 
 // Fő komponens
-const Hero = () => {
+const PriceTable = () => {
   return (
     <section className={styles.container}>
       <div className={styles.helper}>
@@ -106,4 +106,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default PriceTable;

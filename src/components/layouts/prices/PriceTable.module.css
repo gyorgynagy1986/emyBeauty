@@ -6,11 +6,6 @@
   padding: 6rem 3vw;
 }
 
-@media screen and (max-width: 1024px) {
-  .container {
-   
-  }
-}
 
 .helper {
   width: 100%;

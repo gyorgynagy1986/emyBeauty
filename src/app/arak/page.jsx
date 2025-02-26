@@ -1,5 +1,5 @@
 import React from 'react'
-import PriceTable from '@/components/layouts/prices/PriceTable'
+import PriceTable from '../../components/layouts/prices/PriceTable'
 
 export const metadata = {
   title: 'Árak - Emy kozmetika',
