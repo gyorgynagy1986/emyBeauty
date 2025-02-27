@@ -1,7 +1,7 @@
 .container {
   position: relative;
   width: 100%;
-  height: calc(100vh - 158px);
+  height: calc(100vh - 198px);
   min-height: calc(800px - 158px);
   object-fit: cover;
   display: flex;

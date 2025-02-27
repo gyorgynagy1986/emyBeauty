@@ -1,7 +1,12 @@
-import React from "react";
+"use client"
+
+import React, { useEffect } from "react";
 import style from "./Marketing.module.css";
 import Image from "next/image";
 import Ob from "@/components/astract/ObjectElement";
+import "aos/dist/aos.css";
+import AOS from "aos";
+
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { aboutPage } from "@/data/photos";
@@ -37,8 +42,14 @@ const marketingContent = [
   },
 ];
 
-const MarketingItem = ({ image, title, description }) => (
-  <div className={style.itemContainer}>
+const MarketingItem = ({ image, title, description, index }) => (
+  <div 
+    className={style.itemContainer}
+    data-aos="fade-up"
+    data-aos-delay={100 + (index * 100)} // Növekvő késleltetés a sorrendben
+    data-aos-duration="800"
+    data-aos-offset="100"
+  >
     <div className={style.ImageContainer}>
       <Image alt={alt.name} sizes={size.fullsize} src={image} fill />
     </div>
@@ -50,22 +61,43 @@ const MarketingItem = ({ image, title, description }) => (
 );
 
 const Marketing = () => {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      easing: 'ease-out-cubic'
+    });
+  }, []);
+
   return (
     <section className={style.container}>
       <div className={style.helper}>
         <div className={style.itemsHelper}>
-          {marketingContent.slice(0, 2).map((item) => (
-            <MarketingItem key={item.id} {...item} />
+          {marketingContent.slice(0, 2).map((item, index) => (
+            <MarketingItem key={item.id} index={index} {...item} />
           ))}
         </div>
-        <Ob />
+        
+        <div
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-duration="800"
+        >
+          <Ob />
+        </div>
+        
         <div className={style.itemsHelper}>
-          {marketingContent.slice(2).map((item) => (
-            <MarketingItem key={item.id} {...item} />
+          {marketingContent.slice(2).map((item, index) => (
+            <MarketingItem key={item.id} index={index + 2} {...item} />
           ))}
         </div>
 
-        <p className={style.promo}>
+        <p 
+          className={style.promo}
+          data-aos="fade-up"
+          data-aos-delay="600"
+          data-aos-duration="1000"
+          data-aos-offset="50"
+        >
           "Mindennap az motivál, hogy segítsek az embereknek megtalálni és
           kifejezni egyéni szépségüket, és felfedezni a bennük rejlő Istennőt.
           <br />

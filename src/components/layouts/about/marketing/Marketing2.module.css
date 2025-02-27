@@ -1,3 +1,5 @@
+
+
 .container {
   position: relative;
   width: 100%;
@@ -102,4 +104,82 @@
   line-height: 34px;
   text-align: center;
   color: var(--color-blue);
+}
+
+/* Ezeket a stílusokat add hozzá a Marketing2.module.css fájlhoz */
+
+/* Gördülékenyebb átmenetek az animált elemekhez */
+.contentContainer,
+.leftContainrt,
+.rightContainrt,
+.rightContainrt > * {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Finom árnyék a képeknek */
+.leftContainrt {
+  overflow: hidden;
+  
+}
+
+.leftContainrt[data-aos].aos-animate {
+}
+
+/* Img hover effekt */
+.leftContainrt img {
+  transition: transform 0.6s ease;
+}
+
+.leftContainrt:hover img {
+  transform: scale(1.05);
+}
+
+/* A szövegek megjelenésének finomítása */
+.rightContainrt > h3 {
+  position: relative;
+}
+
+.rightContainrt > h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, rgba(36, 144, 232, 0.7), rgba(0, 78, 157, 0.7));
+  transition: width 0.8s ease;
+}
+
+.rightContainrt > h3[data-aos].aos-animate::after {
+  width: 50px;
+}
+
+/* Tartalomkonténer hover effekt */
+.contentContainer {
+  transition: transform 0.3s ease;
+}
+
+
+
+/* Ob elem animáció */
+@keyframes subtle-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+div[data-aos="fade-up"].aos-animate > svg {
+  animation: subtle-pulse 4s infinite ease-in-out;
+}
+
+/* Reszponzív igazítások */
+@media screen and (max-width: 1024px) {
+  .leftContainrt[data-aos].aos-animate,
+  .contentContainer[data-aos].aos-animate {
+  }
+  
+  .rightContainrt > h3[data-aos].aos-animate::after {
+    width: 40px;
+  }
 }

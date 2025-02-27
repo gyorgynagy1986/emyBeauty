@@ -190,3 +190,61 @@
   }
 }
 
+/* Ezeket a stílusokat add hozzá a Marketing.module.css fájlhoz */
+
+/* Gördülékenyebb átmenetek az animált elemekhez */
+.itemContainer,
+.promo,
+.helper > div {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Finom árnyékok megjelenéskor */
+.itemContainer {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.itemContainer[data-aos="fade-up"].aos-animate {
+}
+
+/* Hover effektek - opcionális */
+.itemContainer:hover {
+  transform: translateY(-5px);
+}
+
+/* Kép finom scale animáció */
+.ImageContainer {
+  overflow: hidden;
+}
+
+.ImageContainer img {
+  transition: transform 0.6s ease;
+}
+
+.itemContainer:hover .ImageContainer img {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+
+/* Idézet stílusok */
+.promo {
+  transition: text-shadow 0.5s ease;
+}
+
+.promo[data-aos="fade-up"].aos-animate {
+}
+
+/* Ob elem finom pulzálás - opcionális */
+@keyframes subtle-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+div[data-aos="fade-up"].aos-animate > svg {
+  animation: subtle-pulse 4s infinite ease-in-out;
+}
