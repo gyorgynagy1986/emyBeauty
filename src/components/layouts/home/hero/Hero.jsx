@@ -57,13 +57,13 @@ const Hero = () => {
         <div className={style.leftContanier}>
           {/* Szöveg tartalom Parallax effektekkel */}
           <Parallax
-            translateY={isMobile ? [50, 0] : [0, 0]} // Mobilon fade-up animáció
+            translateY={[0, 0]}
             scale={[1, isMobile ? 1 : 1.1]} // Mobilon nincs nagyítás
-            opacity={isMobile ? [0, 1] : [1, 1]} // Mobilon fade animáció
+            opacity={isMobile ? [1, 0] : [1, 1]} // Mobilon halványodás görgetéskor
             easing="linear" // Lineáris átmenet a görgetéssel
             className={style.helper}
             startScroll={0}
-            endScroll={isMobile ? 300 : 600}
+            endScroll={isMobile ? 600 : 900}
           >
             <h1 className={style.h1}>
               Sok szeretettel köszöntelek az Emy Beauty Estetics weboldalán!
@@ -78,7 +78,7 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* Gombok normál módon, fade effekttel */}
+            {/* Gombok normál módon */}
             <div className={style.buttonContainer}>
               <Button />
               <Button2 className={style.leftContanier} />
