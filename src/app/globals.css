@@ -113,12 +113,12 @@ p {
 }
 
 body {
-  padding-top: 15.8rem;
+  padding-top: 13.8rem;
 }
 
 
 @media screen and (max-width: 1100px) {
   body {
-    padding-top: calc(3.8rem + 9rem);
+    padding-top: calc(3.8rem + 7rem);
   }
 }
