@@ -6,17 +6,10 @@ import Image from "next/image";
 import Button from "../../../button/Button";
 import Button2 from "../../../button/Button2";
 import Ob from "../../../astract/ObjectElement";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { mainPage } from "@/data/photos";
-
-// GSAP csak kliens oldalon elérhető, regisztráljuk a ScrollTrigger plugint
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -26,7 +19,7 @@ const Hero = () => {
   const buttonsRef = useRef(null);
 
   useEffect(() => {
-    // Képernyőméret ellenőrzése és isMobile állapot beállítása
+    // Képernyőméret ellenőrzése
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -34,108 +27,86 @@ const Hero = () => {
     // Kezdeti ellenőrzés
     checkIfMobile();
 
-    // Eseményfigyelő hozzáadása a képernyőméret változásához
-    window.addEventListener('resize', checkIfMobile);
-
-    // GSAP animációk inicializálása
-    const initAnimations = () => {
-      if (!heroRef.current || !imageRef.current || !textContentRef.current || !buttonsRef.current) return;
-
-      // Töröljük a korábbi ScrollTrigger-eket, ha vannak
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      
-      // Belépési animációk
-      // Kép fade-in animáció
-      gsap.fromTo(
-        imageRef.current,
-        { opacity: 0 },
-        { 
-          opacity: 1, 
-          duration: 1.2, 
-          ease: "power2.out" 
-        }
-      );
-      
-      // Szöveg fade-in animáció (mobil nézetben alulról jön fel)
-      gsap.fromTo(
-        textContentRef.current,
-        { 
-          opacity: 0,
-          y: isMobile ? 50 : 0 
-        },
-        { 
-          opacity: 1, 
-          y: 0,
-          duration: 1, 
-          ease: "power2.out",
-          delay: 0.3
-        }
-      );
-      
-      // Gombok fade-in animáció
-      gsap.fromTo(
-        buttonsRef.current,
-        { opacity: 0 },
-        { 
-          opacity: 1, 
-          duration: 0.8, 
-          ease: "power2.out",
-          delay: 0.6
-        }
-      );
-      
-      // Görgetési animációk csak desktop nézetben
-      if (!isMobile) {
-        // Kép növekedése görgetéskor
-        gsap.fromTo(
-          imageRef.current,
-          { scale: 1 },
-          {
-            scale: 1.15,
-            duration: 1,
-            scrollTrigger: {
-              trigger: heroRef.current,
-              start: "top top",
-              end: "bottom top",
-              scrub: 0.5
-            }
-          }
-        );
-        
-        // Szöveg növekedése görgetéskor
-        gsap.fromTo(
-          textContentRef.current,
-          { scale: 1 },
-          {
-            scale: 1.1,
-            duration: 1,
-            scrollTrigger: {
-              trigger: heroRef.current,
-              start: "top top",
-              end: "bottom top",
-              scrub: 0.5
-            }
-          }
-        );
+    // Belépési animációk (csak egyszer futnak le)
+    const setupEntryAnimations = () => {
+      // Alaphelyzetbe állítjuk az elemeket
+      if (imageRef.current) {
+        imageRef.current.style.opacity = '0';
       }
+      
+      if (textContentRef.current) {
+        textContentRef.current.style.opacity = '0';
+        textContentRef.current.style.transform = isMobile ? 'translateY(50px)' : 'translateY(0)';
+      }
+      
+      if (buttonsRef.current) {
+        buttonsRef.current.style.opacity = '0';
+      }
+      
+      // Kép animáció - natív DOM manipuláció
+      setTimeout(() => {
+        if (imageRef.current) {
+          imageRef.current.style.transition = 'opacity 1s linear';
+          imageRef.current.style.opacity = '1';
+        }
+      }, 100);
+      
+      // Szöveg animáció - natív DOM manipuláció
+      setTimeout(() => {
+        if (textContentRef.current) {
+          textContentRef.current.style.transition = 'opacity 1s linear, transform 1s linear';
+          textContentRef.current.style.opacity = '1';
+          textContentRef.current.style.transform = 'translateY(0)';
+        }
+      }, 400);
+      
+      // Gombok animáció - natív DOM manipuláció
+      setTimeout(() => {
+        if (buttonsRef.current) {
+          buttonsRef.current.style.transition = 'opacity 0.8s linear';
+          buttonsRef.current.style.opacity = '1';
+        }
+      }, 700);
     };
 
-    // Animációkat inicializáljuk egy kis késleltetéssel a DOM frissítés miatt
-    const timer = setTimeout(() => {
-      initAnimations();
-    }, 100);
-
-    // Újrainicializáljuk az animációkat képernyőméret változáskor
-    window.addEventListener('resize', initAnimations);
-
-    // Takarítás
+    // Futtatjuk a belépési animációkat
+    setupEntryAnimations();
+    
+    // Natív scroll eseményfigyelő a pixel-perfect nagyításhoz
+    const handleScroll = () => {
+      if (isMobile || !heroRef.current || !imageRef.current || !textContentRef.current) return;
+      
+      // Kiszámoljuk, hogy mennyire görgettünk túl a hero elemen
+      const heroRect = heroRef.current.getBoundingClientRect();
+      
+      // Milyen messzire görgettünk, a hero elem tetejéhez képest
+      const scrollProgress = Math.min(Math.max(-heroRect.top / heroRect.height, 0), 1);
+      
+      // Képet és szöveget azonnal nagyítjuk a görgetés arányában
+      imageRef.current.style.transition = 'none'; // Kikapcsoljuk az átmenetet a pixel-perfect követéshez
+      textContentRef.current.style.transition = 'none'; // Kikapcsoljuk az átmenetet a pixel-perfect követéshez
+      
+      // Kép nagyítása 1.0 - 1.15 között
+      const imageScale = 1 + (scrollProgress * 0.15);
+      imageRef.current.style.transform = `scale(${imageScale})`;
+      
+      // Szöveg nagyítása 1.0 - 1.1 között
+      const textScale = 1 + (scrollProgress * 0.1);
+      textContentRef.current.style.transform = `scale(${textScale})`;
+    };
+    
+    // Scroll eseménykezelő hozzáadása
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Eseményfigyelő a képernyőméret változásához
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Komponens leválasztásakor takarítunk
     return () => {
-      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', checkIfMobile);
-      window.removeEventListener('resize', initAnimations);
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [isMobile]);
+  }, [isMobile]); // Csak akkor futtatjuk újra, ha az isMobile érték változik
 
   return (
     <div ref={heroRef} className={style.container}>
@@ -145,7 +116,7 @@ const Hero = () => {
         quality={100}
         className={style.image}
         priority
-        size={size.fullsize}
+        sizes={size.fullsize}
         src={mainPage.heroPhoto}
       />
       <div className={style.leftContanier}>

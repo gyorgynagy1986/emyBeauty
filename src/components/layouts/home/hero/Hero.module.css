@@ -155,29 +155,33 @@
 }
 
 
-
-/* Ezeket a stílusokat add hozzá a meglévő Hero.module.css fájlodhoz */
+/* Hero.module.css kiegészítések a natív pixel-perfect animációkhoz */
 
 .image {
-  will-change: transform;
   transform-origin: center center;
-  transition: transform 0.4s ease;
+  will-change: transform, opacity;
+  /* Kezdeti átmenet a belépési animációhoz */
+  transition: opacity 1s linear;
 }
 
 .helper {
-  will-change: transform;
   transform-origin: center left;
-  transition: transform 0.4s ease;
+  will-change: transform, opacity;
+  /* Kezdeti átmenet a belépési animációhoz */
+  transition: opacity 1s linear, transform 1s linear;
 }
 
 .buttonContainer {
   will-change: opacity;
+  /* Kezdeti átmenet a belépési animációhoz */
+  transition: opacity 0.8s linear;
 }
 
 /* Gondoskodunk arról, hogy az overflow megfelelő legyen a scale animációhoz */
 .container {
   position: relative;
   overflow: hidden;
+  isolation: isolate; /* Modern stacking context létrehozása */
 }
 
 /* Mobilon némi extra igazítás */
