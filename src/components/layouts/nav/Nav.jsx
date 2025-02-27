@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./Nav.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -18,43 +18,69 @@ const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  
+  // Új változók a folyamatos görgetés követéséhez
+  const upScrollThreshold = 80; // Hány pixelt kell folyamatosan felfelé görgetni
+  const upScrollCounter = useRef(0);
 
   const { scrollY } = useScroll();
 
-  // Scroll event monitoring for showing/hiding navigation
+  // Módosított scroll esemény figyelés
   useMotionValueEvent(scrollY, "change", (latest) => {
-    // If menu is open, don't hide the navigation
+    // Ha a menü nyitva van, ne rejtsd el a navigációt
     if (isMenuOpen) {
       return;
     }
 
-    // Determine the scroll direction
+    // Görgetés irányának meghatározása
     const direction = latest < lastScrollY ? "up" : "down";
+    const scrollDifference = Math.abs(latest - lastScrollY);
     
-    // Show when scrolling up, hide when scrolling down (only Nav)
     if (direction === "down" && latest > 100 && isVisible) {
+      // Lefelé görgetésnél azonnal elrejtjük
       setIsVisible(false);
-    } else if (direction === "up" && !isVisible) {
-      setIsVisible(true);
+      upScrollCounter.current = 0; // Nullázzuk a felfelé számlálót
+    } else if (direction === "up") {
+      // Felfelé görgetésnél csak akkor jelenítjük meg, ha elérjük a küszöbértéket
+      upScrollCounter.current += scrollDifference;
+      
+      if (upScrollCounter.current >= upScrollThreshold && !isVisible) {
+        setIsVisible(true);
+      }
     }
     
-    // Update the last scroll position
+    // Ha ismét lefelé kezdünk görgetni, nullázzuk a felfelé számlálót
+    if (direction === "down") {
+      upScrollCounter.current = 0;
+    }
+    
+    // Utolsó görgetési pozíció frissítése
     setLastScrollY(latest);
   });
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     
-    // When menu is open, prevent scrolling and make navigation visible
+    // Ha a menü nyitva van, megakadályozzuk a görgetést és láthatóvá tesszük a navigációt
     if (!isMenuOpen) {
+      // Teljesen letiltjuk a görgetést a body elemen
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+      document.body.style.top = `-${window.scrollY}px`;
       setIsVisible(true);
     } else {
-      document.body.style.overflow = "auto";
+      // Visszaállítjuk a görgetést
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+      document.body.style.top = "";
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
   };
 
-  // Animation variants for mobile menu
+  // Animációs variánsok a mobil menühöz
   const mobileMenuVariants = {
     closed: {
       opacity: 0,
@@ -68,7 +94,7 @@ const Nav = () => {
     },
     open: {
       opacity: 1,
-      height: "calc(100dvh - 3.8rem - 90px)", // Height is full screen minus TopNav and NavContainer
+      height: "calc(100dvh - 3.8rem - 90px)", // A képernyő teljes magassága mínusz TopNav és NavContainer
       transition: {
         duration: 0.1,
         when: "beforeChildren",
@@ -90,7 +116,7 @@ const Nav = () => {
     }
   };
 
-  // Watch for window resize to close menu
+  // Ablak átméretezés figyelése a menü bezárásához
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1100 && isMenuOpen) {
@@ -111,11 +137,11 @@ const Nav = () => {
       variants={{
         visible: { 
           top: '3.8rem', // TopNav magassága
-          transition: { duration: 0.2, ease: "easeOut" }
+          transition: { duration: 0.35, ease: "easeOut" }
         },
         hidden: { 
           top: '-120px', // navContainer magassága negatívban
-          transition: { duration: 0.2, ease: "easeIn" }
+          transition: { duration: 0.5, ease: "easeIn" }
         }
       }}
     >
@@ -162,11 +188,11 @@ const Nav = () => {
         </AnimatePresence>
       </motion.div>
 
-      {/* Unified menu container that changes responsively */}
+      {/* Egységesített menü konténer, amely reszponzívan változik */}
       <div 
         className={`${styles.rightContainer} ${isMenuOpen ? styles.mobileMenuOpen : ''}`}
       >
-        {/* Desktop menu - only visible in desktop view */}
+        {/* Asztali menü - csak asztali nézetben látható */}
         <div className={styles.desktopNav}>
           <ul className={styles.ul}>
             {links.map((linkItem) => (
@@ -183,7 +209,7 @@ const Nav = () => {
           <Button />
         </div>
 
-        {/* Mobile menu - only visible in mobile view and animates */}
+        {/* Mobil menü - csak mobil nézetben látható és animált */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
@@ -208,10 +234,7 @@ const Nav = () => {
                     <Link
                       href={linkItem.href}
                       className={path === linkItem.href ? styles.active : undefined}
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        document.body.style.overflow = "auto";
-                      }}
+                      onClick={toggleMenu} // Használjuk a toggleMenu függvényt a menü bezárásához
                     >
                       {linkItem.name}
                     </Link>
@@ -224,8 +247,7 @@ const Nav = () => {
                 className={styles.buttonContainer}
               >
                 <Button onClick={() => {
-                  setIsMenuOpen(false);
-                  document.body.style.overflow = "auto";
+                  toggleMenu(); // Használjuk a toggleMenu függvényt a menü bezárásához
                 }} />
               </motion.div>
             </motion.div>
