@@ -153,3 +153,36 @@
     line-height: 5.5rem;
   }
 }
+
+
+
+/* Ezeket a stílusokat add hozzá a meglévő Hero.module.css fájlodhoz */
+
+.image {
+  will-change: transform;
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+}
+
+.helper {
+  will-change: transform;
+  transform-origin: center left;
+  transition: transform 0.4s ease;
+}
+
+.buttonContainer {
+  will-change: opacity;
+}
+
+/* Gondoskodunk arról, hogy az overflow megfelelő legyen a scale animációhoz */
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mobilon némi extra igazítás */
+@media (max-width: 768px) {
+  .helper {
+    transform-origin: center center;
+  }
+}
