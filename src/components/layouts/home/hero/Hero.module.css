@@ -15,7 +15,7 @@
   object-fit: cover;
   z-index: -1;
   left: 0;
-  width: 100%;
+  width: auto;
   height: 100%;
 }
 
@@ -155,36 +155,21 @@
 }
 
 
-/* Hero.module.css kiegészítések a natív pixel-perfect animációkhoz */
 
-.image {
-  transform-origin: center center;
-  will-change: transform, opacity;
-  /* Kezdeti átmenet a belépési animációhoz */
-  transition: opacity 1s linear;
-}
-
-.helper {
-  transform-origin: center left;
-  will-change: transform, opacity;
-  /* Kezdeti átmenet a belépési animációhoz */
-  transition: opacity 1s linear, transform 1s linear;
-}
-
-.buttonContainer {
-  will-change: opacity;
-  /* Kezdeti átmenet a belépési animációhoz */
-  transition: opacity 0.8s linear;
-}
 
 /* Gondoskodunk arról, hogy az overflow megfelelő legyen a scale animációhoz */
 .container {
   position: relative;
   overflow: hidden;
-  isolation: isolate; /* Modern stacking context létrehozása */
 }
 
-/* Mobilon némi extra igazítás */
+/* A scroll-parallax könyvtár saját pozíciókezelésének segítése */
+.leftContanier {
+  z-index: 2;
+  position: relative;
+}
+
+/* Mobilon extra stílusok az animációkhoz */
 @media (max-width: 768px) {
   .helper {
     transform-origin: center center;
