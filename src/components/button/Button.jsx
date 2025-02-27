@@ -6,7 +6,7 @@ const Button = ({ yellow, onClick }) => {
   return (
     <Link 
       className={`${style.button} ${yellow ? style.color : ''}`} 
-      href="/foglalas"
+      href="/idopont-foglalas"
       onClick={onClick}
     > 
       Foglalj időpontot

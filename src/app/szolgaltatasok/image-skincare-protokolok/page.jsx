@@ -96,6 +96,99 @@ const page = () => {
       slug: "i-peel-perfection-lift-forte-intenziv-bormegujito-kezeles",
       text: "Erőteljes, orvosi szintű hámlasztó kezelés a komolyabb bőrproblémákra. Magas koncentrációjú savakkal és retinollal kezeli a mélyebb ráncokat, aknét és pigmentfoltokat tapasztalt felhasználóknak.",
     },
+
+ 
+    
+    // GROUP2 ************************************************* //
+
+
+    // 19. ILLUMINATING ARCKEZELÉS
+    {
+      src: servicesPage.serices7,
+      title: "BE CLEAR TISZTÍTÓ ARCKEZELÉS",
+      slug: "be-clear-tisztito-arckezeles",
+      text: "Antibakteriális összetevőket és nyugtató növényi hatóanyagokat kombinálva nyújt megoldást az aknés bőrproblémákra. Ideális a zsíros, pattanásos bőrre, irritáció nélkül.",
+    },
+
+    {
+      src: servicesPage.serices7,
+      title: "ILLUMINATING ARCKEZELÉS",
+      slug: "illuminating-arckezeles",
+      text: "Innovatív fehérítő és hámlasztó technológiákkal szabadítja meg a bőrt a sötét foltoktól. Azonnali eredmény, ragyogóbb bőrtónus a fakó, érzékeny, fáradt bőrre.",
+    },
+    
+    // 20. THE MAX ŐSSEJTES ARCKEZELÉS
+    {
+      src: servicesPage.serices7,
+      title: "THE MAX ŐSSEJTES ARCKEZELÉS",
+      slug: "the-max-ossejtes-arckezeles",
+      text: "Növényi őssejtekkel regenerálja a bőrt, serkenti a sejtosztódást, csökkenti a ráncokat. Tökéletes az idősödő, megereszkedett, fénykárosodott bőrre.",
+    },
+    
+    // 21. THE MAX CONTOUR KEZELÉS
+    {
+      src: servicesPage.serices7,
+      title: "THE MAX CONTOUR KEZELÉS",
+      slug: "the-max-contour-kezeles",
+      text: "Növényi őssejtek és peptidek kombinációja, amely visszaállítja az arc feszességét. Liftingelő és feltöltő hatást biztosít a megereszkedett, idősödő bőrnek.",
+    },
+    
+    // 22. IMAGE ILUMA ARCKEZELÉS
+    {
+      src: servicesPage.serices7,
+      title: "IMAGE ILUMA ARCKEZELÉS",
+      slug: "image-iluma-arckezeles",
+      text: "Intenzív fehérítő hatóanyagok és növényi őssejt technológia a pigmentációs problémákra. Egyenletesebbé teszi a bőrtónust és megelőzi a foltok kialakulását.",
+    },
+    
+    // 23. IMAGE ÜNNEPI SIGNATURE „GLITZ AND GLOW" KEZELÉS
+    {
+      src: servicesPage.serices7,
+      title: "IMAGE ÜNNEPI SIGNATURE GLITZ AND GLOW KEZELÉS",
+      slug: "image-glitz-and-glow-kezeles",
+      text: "Gyümölcsenzimek, C-vitamin és hialuronsav kombinációja, amely táplál és ragyogást biztosít a fakó, fényét veszített bőrnek.",
+    },
+    
+    // 24. IMAGE ARCFESZESÍTŐ-ÁTALAKÍTÓ KEZELÉS
+    {
+      src: servicesPage.serices7,
+      title: "IMAGE ARCFESZESÍTŐ-ÁTALAKÍTÓ KEZELÉS",
+      slug: "image-arcfeszesito-atalakito-kezeles",
+      text: "Hatékony arcfeszesítő kezelés, amely már egy alkalom után is látható eredményt nyújt. Kisimítja a szarkalábakat, mélyebb ráncokat is csökkenti az idősödő bőrön.",
+    },
+    
+    // 25. IMAGE SKINCARE PROBIOTIKUS TISZTÍTÓ ARCKEZELÉS
+    {
+      src: servicesPage.serices7,
+      title: "IMAGE SKINCARE PROBIOTIKUS TISZTÍTÓ ARCKEZELÉS",
+      slug: "image-probiotikus-tisztito-arckezeles",
+      text: "Probiotikumok és antioxidánsok kombinációja, amely tisztítja és megújítja a bőrt. Hatékony az eltömődött pórusokra, aknéra és a fáradt, megviselt bőrre.",
+    },
+    
+    // 26. MIKROBIOME+ BŐRBARRIER ERŐSÍTŐ KEZELÉS
+    {
+      src: servicesPage.serices7,
+      title: "MIKROBIOME+ BŐRBARRIER ERŐSÍTŐ KEZELÉS",
+      slug: "mikrobiome-borbarrier-erosito-kezeles",
+      text: "Az IMAGE első mikrobiombarát kezelése, amely a bőr védőrétegét erősíti természetes összetevőkkel. Védelmet nyújt a stressz, szárazság ellen.",
+    },
+    
+    // 27. BASIC NYÁRI GLOW RADIANCE REFRESH KEZELES
+    {
+      src: servicesPage.serices7,
+      title: "BASIC NYÁRI GLOW RADIANCE REFRESH KEZELES",
+      slug: "basic-nyari-glow-radiance-refresh-kezeles",
+      text: "Kényeztető, visszatöltő kezelés a napozási károk regenerálására. Az Image Skincare Vital C és Ormedic termékcsaládjainak jótékony hatásaival.",
+    },
+    
+    // 28. I MASK LAPMASZK KEZELÉS
+    {
+      src: servicesPage.serices7,
+      title: "I MASK LAPMASZK KEZELÉS",
+      slug: "i-mask-lapmaszk-kezeles",
+      text: "Gyors hidratáló kezelés 3D hidrogéles lapmaszkkal. Benntartja a nedvességet, segíti a hatóanyagok felszívódását, csökkenti a ráncokat a dehidratált bőrön.",
+    },
+    
   ];
 
   return (
@@ -130,8 +223,8 @@ const page = () => {
           </h1>
           <Abstract />
           <p>
-          Peeling kezelések és személyre szabott bőrminőségjavító kezelési programok 
-          </p>
+          IMAGE Skincare személyre szabott bőrminőségjavító kezelési programok
+          Célja a bőr ragyogásának visszanyerése és megújítása. A kezelések személyre szabottak, figyelembe véve a bőr állapotát, kiegészítve egy alapos arctisztítással. A professzionális, prémium Vital C, Antioxidáns anti-aging, Illuminating, Be Clear, Bio Balance, The Max őssejtes és probiotikus kezelés(ek), mind a tiszta és üde arcbőr elérését szolgálják. Az eredmény egészséges és gyönyörű bőr.          </p>
         </div>
         <div className={styles.itemsContainer}>
           {serviceItems.map((item, index) => (

@@ -10,6 +10,19 @@ import IPeelBetaLift from "@/components/serviceList/image-skincare/IPeelBetaLift
 import IPeelPerfectionLiftForte from "@/components/serviceList/image-skincare/IPeelPerfectionLiftForte";
 import IPeelPerfectionLift from "@/components/serviceList/image-skincare/IPeelPerfectionLift";
 
+  {/*  GROUP2 */}
+
+import BeClearTisztito from "@/components/serviceList/image-skincare/group2/BasicNyariGlow";
+import IlluminatingArckezeles from "@/components/serviceList/image-skincare/group2/IlluminatingArckezeles";
+import TheMaxOssejtes from "@/components/serviceList/image-skincare/group2/TheMaxOssejtes";
+import TheMaxContour from "@/components/serviceList/image-skincare/group2/TheMaxContour";
+import ImageIluma from "@/components/serviceList/image-skincare/group2/ImageIluma";
+import ImageGlitzAndGlow from "@/components/serviceList/image-skincare/group2/ImageGlitzAndGlow";
+import ImageArcfeszesito from "@/components/serviceList/image-skincare/group2/ImageArcfeszesito";
+import ImageProbiotikus from "@/components/serviceList/image-skincare/group2/ImageProbiotikus";
+import MikrobiomeBorbarrier from "@/components/serviceList/image-skincare/group2/MikrobiomeBorbarrier";
+import BasicNyariGlow from "@/components/serviceList/image-skincare/group2/BasicNyariGlow";
+import IMaskLapmaszk from "@/components/serviceList/image-skincare/group2/IMaskLapmaszk";
 
 export default async function Page({ params }) {
   const { slug } = params;
@@ -59,6 +72,42 @@ export default async function Page({ params }) {
     return <IPeelPerfectionLiftForte />;
   }
 
+  {/*  GROUP2 */}
+
+
+  if (slug === "be-clear-tisztito-arckezeles") {
+    return <BeClearTisztito />;
+  }
+  if (slug === "illuminating-arckezeles") {
+    return <IlluminatingArckezeles />;
+  }
+  if (slug === "the-max-ossejtes-arckezeles") {
+    return <TheMaxOssejtes />;
+  }
+  if (slug === "the-max-contour-kezeles") {
+    return <TheMaxContour />;
+  }
+  if (slug === "image-iluma-arckezeles") {
+    return <ImageIluma />;
+  }
+  if (slug === "image-glitz-and-glow-kezeles") {
+    return <ImageGlitzAndGlow />;
+  }
+  if (slug === "image-arcfeszesito-atalakito-kezeles") {
+    return <ImageArcfeszesito />;
+  }
+  if (slug === "image-probiotikus-tisztito-arckezeles") {
+    return <ImageProbiotikus />;
+  }
+  if (slug === "mikrobiome-borbarrier-erosito-kezeles") {
+    return <MikrobiomeBorbarrier />;
+  }
+  if (slug === "basic-nyari-glow-radiance-refresh-kezeles") {
+    return <BasicNyariGlow />;
+  }
+  if (slug === "i-mask-lapmaszk-kezeles") {
+    return <IMaskLapmaszk />;
+  }
 
 
   return <h1>Nincs ilyen oldal.</h1>;

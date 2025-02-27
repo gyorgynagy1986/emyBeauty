@@ -20,7 +20,7 @@ const jost = Jost({
 
 const fig = Figtree({
   variable: "--font-fig",
-  weight:["400", "500", "600"],
+  weight:["300", "400", "500", "600"],
   subsets: ["latin"],
 });
 

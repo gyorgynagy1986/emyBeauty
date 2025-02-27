@@ -45,7 +45,7 @@ const page = () => {
       text: "Komplex bőrmegújító program, mely rádiófrekvenciás bőrfiatalítással, oxigénes kezeléssel és ultrahangos hatóanyag-bejuttatással biztosít friss, fiatalos megjelenést minden bőrtípus számára.",
     },
     {
-      src: servicesPage.serices5,
+      src: servicesPage.asceplus,
       title: "EXOSOME SEJTTERÁPIA",
       slug: "exosome-sejtterapia",
       text: "Forradalmi sejtterápia, mely exoszómákkal serkenti a bőr és a haj regenerációját, fiatalos, ragyogó megjelenést kölcsönözve minden kezelési területen.",

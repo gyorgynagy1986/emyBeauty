@@ -25,6 +25,10 @@ const page = () => {
     { src: servicesPage.serices1, title: "Prekozmetikai kezelések", slug: "prekozmetikai-kezelesek" },
     { src: servicesPage.serices2, title: "Innovatív kezelések", slug: "innovativ-kezelesek" },
     { src: servicesPage.serices3, title: "IMAGE Skincare Protokolok", slug: "image-skincare-protokolok" }, 
+    { src: servicesPage.serices3, title: "Férfi kozmetika", slug: "ferfi-kozmetika" }, 
+    { src: servicesPage.serices3, title: "Esztétikai sminktetoválás", slug: "esztetikai-sminktetovalas" }, 
+    { src: servicesPage.serices3, title: "Wax szőrtelenítés ", slug: "wax-szortelenites" }, 
+
   ];
 
   return (

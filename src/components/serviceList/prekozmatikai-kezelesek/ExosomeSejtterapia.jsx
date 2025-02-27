@@ -68,7 +68,7 @@ export default function ExosomeSejtterapia() {
           <div className={styles.photoContainer}>
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.asceplus}
               sizes={size.fullsize}
             />
           </div>
