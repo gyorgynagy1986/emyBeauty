@@ -1,10 +1,12 @@
 /* MAIN PAGE */
 import heroPhoto from "../../public/assets/hero/hero.webp";
-import emyMainPageAbout from "../../public/assets/emy.webp";
+import emyMainPageAbout from  "../../public/assets/pages/about/hero.webp";
 /* MAIN PAGE DONE */
 
+
+
 /* ABOUT PAGE */
-import heroPhotoAbout from "../../public/assets/pages/about/hero.webp";
+import heroPhotoAbout from  "../../public/assets/emy.webp";
 import photoAbout1 from "../../public/assets/pages/about/1.jpg";
 import photoAbout2 from "../../public/assets/pages/about/2.png";
 import photoAbout3 from "../../public/assets/pages/about/3.png";
@@ -28,6 +30,9 @@ import serices6 from "../../public/assets/pages/services/6.png";
 import serices7 from "../../public/assets/pages/services/7.png";
 import slug1 from "../../public/assets/pages/services/slug/1.png";
 import secret from "../../public/assets/services/secret.webp"
+import secretrf from "../../public/assets/services/gif.gif"
+import oxi2 from "../../public/assets/services/oxi2.jpg"
+
 
 /* FOOTER */
 import footerPhoto from "../../public/assets/logos/logoFooter.svg";
@@ -70,7 +75,9 @@ export const servicesPage = {
   serices6: serices6,
   serices7: serices7,
   slug1: slug1,
-  secret:secret
+  secret:secret,
+  secretrf:secretrf,
+  oxi2:oxi2
 
 };
 /* SERVICES DONE */

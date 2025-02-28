@@ -75,7 +75,7 @@ export default function PollogenOxyGeneo() {
           <div className={styles.photoContainer}>
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.oxi2}
               sizes={size.fullsize}
             />
           </div>

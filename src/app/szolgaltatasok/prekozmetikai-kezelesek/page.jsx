@@ -33,19 +33,19 @@ const page = () => {
       text: "A Secret™ RF egy modern, műtét nélküli bőrfiatalító eljárás, mely mikrotűs és frakcionált rádiófrekvenciás technológiával serkenti a kollagéntermelést, így fiatalosabb, feszesebb bőrt eredményez.",
     },
     {
-      src: servicesPage.serices5,
+      src: servicesPage.secretrf,
       title: "Secret™ Booster",
       slug: "secret-booster",
       text: "A Secret Booster a Secret™ RF mikrotűs frakcionált rádiófrekvenciás kezelés és a feltöltő DEEP SHOOT AA kezelés egyedülálló kombinációja az arcbőr teljes megújításáért."
     },
     {
-      src: servicesPage.serices5,
+      src: servicesPage.oxi2,
       title: "Oxy Geneo™ by Pollogen",
       slug: "pollogen-oxygeneo",
       text: "Komplex bőrmegújító program, mely rádiófrekvenciás bőrfiatalítással, oxigénes kezeléssel és ultrahangos hatóanyag-bejuttatással biztosít friss, fiatalos megjelenést minden bőrtípus számára.",
     },
     {
-      src: servicesPage.asceplus,
+      src: servicesPage.serices5,
       title: "EXOSOME SEJTTERÁPIA",
       slug: "exosome-sejtterapia",
       text: "Forradalmi sejtterápia, mely exoszómákkal serkenti a bőr és a haj regenerációját, fiatalos, ragyogó megjelenést kölcsönözve minden kezelési területen.",

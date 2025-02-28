@@ -230,3 +230,8 @@
       font-weight: bold;
     }
   
+    .img {
+      max-height: 500px;
+      width: 100%;
+      object-fit: contain;
+    }

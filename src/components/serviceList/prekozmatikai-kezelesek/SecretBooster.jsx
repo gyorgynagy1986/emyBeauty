@@ -71,8 +71,9 @@ export default function SecretBooster() {
           <div className={styles.photoContainer}>
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.secretrf}
               sizes={size.fullsize}
+              className={styles.img}
             />
           </div>
 
