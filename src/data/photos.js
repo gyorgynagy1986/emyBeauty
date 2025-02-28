@@ -30,8 +30,26 @@ import serices6 from "../../public/assets/pages/services/6.png";
 import serices7 from "../../public/assets/pages/services/7.png";
 import slug1 from "../../public/assets/pages/services/slug/1.png";
 import secret from "../../public/assets/services/secret.webp"
+import secret3 from "../../public/assets/services/secret3.webp"
 import secretrf from "../../public/assets/services/gif.gif"
+import secret2 from "../../public/assets/services/secretrf.avif"
 import oxi2 from "../../public/assets/services/oxi2.jpg"
+import exo2 from "../../public/assets/services/exo2.webp"
+import exo3 from "../../public/assets/services/exo3.webp"
+import onennedpro from "../../public/assets/services/onennedpro.webp"
+import carbon from "../../public/assets/services/carbon.webp"
+import asceplus from "../../public/assets/services/asceplus.webp"
+import deep from "../../public/assets/services/deep.webp"
+import deep2 from "../../public/assets/services/deep2.png"
+import deep4 from "../../public/assets/services/deep4.webp"
+import deep5 from "../../public/assets/services/deep5.webp"
+import sc3 from "../../public/assets/services/sc3.png"
+import hyd from "../../public/assets/services/hyd.webp"
+import pre from "../../public/assets/services/pre.png"
+import smink2 from "../../public/assets/services/smink2.webp"
+import isp from "../../public/assets/services/isp.webp"
+
+
 
 
 /* FOOTER */
@@ -77,8 +95,23 @@ export const servicesPage = {
   slug1: slug1,
   secret:secret,
   secretrf:secretrf,
-  oxi2:oxi2
-
+  oxi2:oxi2,
+  exo3:exo3,
+  exo2:exo2,
+  onennedpro:onennedpro,
+  asceplus:asceplus,
+  secret2:secret2,
+  carbon:carbon,
+  secret3:secret3,
+  deep:deep,
+  deep2:deep2,
+  deep4:deep4,
+  deep5:deep5,
+  sc3:sc3,
+  hyd:hyd,
+  pre:pre,
+  smink2:smink2,
+  isp:isp
 };
 /* SERVICES DONE */
 

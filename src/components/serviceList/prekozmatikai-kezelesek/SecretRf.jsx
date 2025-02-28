@@ -118,6 +118,14 @@ export default function SecretRF() {
             </ul>
           </div>
 
+          <div className={styles.photoContainer}>
+            <Image
+              alt={alt.name}
+              src={servicesPage.secret3}
+              sizes={size.fullsize}
+            />
+          </div>
+
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>A kezelés menete</h2>
             <p>

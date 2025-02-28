@@ -77,6 +77,8 @@ export default function SecretBooster() {
             />
           </div>
 
+
+
           {/* --- Tartalom blokkok (sectionSubTitles) --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Secret™ RF kezelés</h2>
@@ -94,7 +96,12 @@ export default function SecretBooster() {
               válik, a pórusok összehúzódnak és a ráncok kisimulnak.
             </p>
           </div>
-
+          <Image
+              alt={alt.name}
+              src={servicesPage.sc3}
+              sizes={size.fullsize}
+              className={styles.img}
+            />
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>DEEP SHOOT AA kezelés</h2>
             <p>
@@ -113,6 +120,15 @@ export default function SecretBooster() {
             </p>
           </div>
 
+          <div className={styles.photoContainer}>
+            <Image
+              alt={alt.name}
+              src={servicesPage.secret2}
+              sizes={size.fullsize}
+              className={styles.img}
+            />
+          </div>
+
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Secret™ + DEEP SHOOT AA</h2>
             <p>
@@ -125,7 +141,7 @@ export default function SecretBooster() {
               Ft (170.000 Ft) – Más kedvezménnyel nem összevonható!
             </p>
           </div>
-
+        
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>
               SECRET BOOSTER + EXOSOME SEJTTERÁPIA

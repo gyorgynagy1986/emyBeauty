@@ -66,7 +66,7 @@ export default function DeepShootSkinBooster() {
           <div className={styles.photoContainer}>
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.deep2}
               sizes={size.fullsize}
             />
           </div>
@@ -141,7 +141,7 @@ export default function DeepShootSkinBooster() {
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>
               1. RIBESKIN DEEP SHOOT AA (Anti-Aging) - Többfunkciós
-              öregedésgátlás
+              öregedésgátlás ----- RÓZSA 
             </h2>
             <p>
               Annak érdekében, hogy bőrünk tovább maradjon fiatalos, vagy
@@ -203,7 +203,7 @@ export default function DeepShootSkinBooster() {
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>
               -RIBESKIN DEEP SHOOT HA (Hialuronsav komplex, Hidratálás)
-              hatóanyagai
+              hatóanyagai KÉK VIDEO
             </h2>
             <p>3-féle molekulatömegű hyaluronsav:</p>
             <ul>

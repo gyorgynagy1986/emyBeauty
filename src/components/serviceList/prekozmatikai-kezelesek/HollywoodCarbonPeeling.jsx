@@ -60,7 +60,7 @@ export default function HollywoodCarbonLazeresMedicalPeeling() {
           <div className={styles.photoContainer}>
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.carbon}
               sizes={size.fullsize}
             />
           </div>

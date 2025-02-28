@@ -140,7 +140,7 @@ export default function PollogenOxyGeneo() {
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Kezelési variációk</h2>
             <p>
-              7 féle, nem-invazív kezeléssel a Geneo kezelések mindenki számára
+              9 féle, nem-invazív kezeléssel a Geneo kezelések mindenki számára
               személyre szabhatóak:
             </p>
             <ul>
@@ -151,10 +151,24 @@ export default function PollogenOxyGeneo() {
               <li>
                 <strong>Geneo HYDRATE:</strong> Kék spirulinával, száraz és
                 vízhiányos bőrre
+                <div className={styles.photoContainer}>
+                  <Image
+                    alt={alt.name}
+                    src={servicesPage.hyd}
+                    sizes={size.fullsize}
+                  />
+                </div>
               </li>
+
               <li>
                 <strong>Geneo REVIVE:</strong> Vörös algával, finom és mélyebb
                 ráncokra
+              </li>
+              <li>
+                <strong>Geneo PROTECT:</strong>Erősít és újjáépít
+              </li>
+              <li>
+                <strong>Geneo ENERGIZE:</strong> Smimít és stimulál
               </li>
               <li>
                 <strong>Geneo ILLUMINATE:</strong> C-vitaminnal, egyenetlen
@@ -174,6 +188,8 @@ export default function PollogenOxyGeneo() {
               </li>
             </ul>
           </div>
+
+       
 
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Hasznos kérdések és válaszok</h2>

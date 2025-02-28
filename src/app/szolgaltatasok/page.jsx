@@ -22,11 +22,11 @@ const ServiceItem = ({ src, title, slug }) => (
 const page = () => {
   
   const serviceItems = [
-    { src: servicesPage.serices1, title: "Prekozmetikai Kezelések", slug: "prekozmetikai-kezelesek" },
+    { src: servicesPage.pre, title: "Prekozmetikai Kezelések", slug: "prekozmetikai-kezelesek" },
     { src: servicesPage.serices2, title: "Slow Aging Kezelések ", slug: "innovativ-kezelesek" },
-    { src: servicesPage.serices3, title: "IMAGE Skincare Protokolok", slug: "image-skincare-protokolok" }, 
+    { src: servicesPage.isp, title: "IMAGE Skincare Protokolok", slug: "image-skincare-protokolok" }, 
     { src: servicesPage.serices3, title: "Férfi Kozmetika", slug: "ferfi-kozmetika" }, 
-    { src: servicesPage.serices3, title: "Esztétikai Sminktetoválás", slug: "esztetikai-sminktetovalas" }, 
+    { src: servicesPage.smink2, title: "Esztétikai Sminktetoválás", slug: "esztetikai-sminktetovalas" }, 
     { src: servicesPage.serices3, title: "Wax Szőrtelenítés ", slug: "wax-szortelenites" }, 
 
   ];
