@@ -9,6 +9,8 @@ const page = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [bookingType, setBookingType] = useState("");
 
+  console.log(bookingType)
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,25 +39,25 @@ const page = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    
-    if (name === 'phone') {
-      const numbersOnly = value.replace(/[^\d]/g, '');
-      setFormData(prev => ({
+
+    if (name === "phone") {
+      const numbersOnly = value.replace(/[^\d]/g, "");
+      setFormData((prev) => ({
         ...prev,
-        [name]: numbersOnly
+        [name]: numbersOnly,
       }));
       return;
     }
 
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     }));
 
     if (errors[name]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [name]: ""
+        [name]: "",
       }));
     }
   };
@@ -64,9 +66,9 @@ const page = () => {
     setBookingType(type);
     // Ha konzultációt választ, töröljük a service értéket
     if (type === "Konzultáció") {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        service: ""
+        service: "",
       }));
     }
     setCurrentStep(2);
@@ -75,10 +77,13 @@ const page = () => {
   const goToNextStep = () => {
     if (currentStep === 2) {
       // Ha a második lépésen vagyunk, ellenőrizzük, hogy a service ki van-e választva
-      if (bookingType === "Időpontfoglalás szolgáltatásra" && !formData.service) {
-        setErrors(prev => ({
+      if (
+        bookingType === "Időpontfoglalás szolgáltatásra" &&
+        !formData.service
+      ) {
+        setErrors((prev) => ({
           ...prev,
-          service: "Kérlek válassz szolgáltatást"
+          service: "Kérlek válassz szolgáltatást",
         }));
         return;
       }
@@ -95,16 +100,20 @@ const page = () => {
       name: validateName(formData.name),
       email: validateEmail(formData.email),
       phone: !formData.phone ? "Telefonszám megadása kötelező" : "",
-      consent: !formData.consent ? "Az adatkezelési szabályzat elfogadása kötelező" : ""
+      consent: !formData.consent
+        ? "Az adatkezelési szabályzat elfogadása kötelező"
+        : "",
     };
 
     // Csak akkor ellenőrizzük a szolgáltatást, ha időpontfoglalásról van szó
     if (bookingType === "Időpontfoglalás szolgáltatásra") {
-      newErrors.service = !formData.service ? "Kérlek válassz szolgáltatást" : "";
+      newErrors.service = !formData.service
+        ? "Kérlek válassz szolgáltatást"
+        : "";
     }
 
     setErrors(newErrors);
-    return !Object.values(newErrors).some(error => error);
+    return !Object.values(newErrors).some((error) => error);
   };
 
   const handleSubmit = async (e) => {
@@ -117,56 +126,90 @@ const page = () => {
     }
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setSubmitSuccess(true);
-      // Form reset
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
-        consent: false,
+      // Itt hiányzott az emailData definiálása
+      const emailData = {
+        bookingType,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+        consent: formData.consent,
+      };
+
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(emailData),
       });
-      setBookingType("");
-      setCurrentStep(1);
-      
-      setTimeout(() => setSubmitSuccess(false), 6000);
+
+      // Ellenőrizzük a válasz típusát
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(
+            result.error || "Hiba történt az email küldése során."
+          );
+        }
+
+        // Sikeres küldés
+        setSubmitSuccess(true);
+        // Form reset
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+          consent: false,
+        });
+        setBookingType("");
+        setCurrentStep(1);
+
+        setTimeout(() => setSubmitSuccess(false), 6000);
+      } else {
+        // Ha nem JSON a válasz, kezeljük másképp
+        const textResponse = await response.text();
+        console.error("Nem JSON válasz:", textResponse);
+        throw new Error("A szerver hibás választ küldött.");
+      }
     } catch (error) {
-      setErrors(prev => ({
+      console.error("Form küldési hiba:", error);
+      setErrors((prev) => ({
         ...prev,
-        submit: "Hiba történt a küldés során. Kérlek próbáld újra."
+        submit:
+          error.message || "Hiba történt a küldés során. Kérlek próbáld újra.",
       }));
     } finally {
       setIsSubmitting(false);
     }
   };
-
   return (
     <div className={styles.pageContainer}>
       <video autoPlay muted loop className={styles.backgroundVideo}>
         <source src="/video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      
+
       <div className={styles.container}>
         <div className={styles.innerContainer}>
           <h2 className={styles.h2}>
-            {currentStep === 1 
-              ? "Időpontfoglalás és Konzultáció" 
+            {currentStep === 1
+              ? "Időpontfoglalás és Konzultáció"
               : bookingType === "Időpontfoglalás szolgáltatásra"
-                ? "Időpontfoglalás"
-                : "Konzultáció"
-            }
+              ? "Időpontfoglalás"
+              : "Konzultáció"}
           </h2>
           <p className={styles.p}>
-            {currentStep === 1 
-              ? "Foglalj időpontot vagy kérj konzultációt, és amint lehetőségem van, visszahívlak!" 
+            {currentStep === 1
+              ? "Foglalj időpontot vagy kérj konzultációt, és amint lehetőségem van, visszahívlak!"
               : bookingType === "Időpontfoglalás szolgáltatásra"
-                ? "Foglalj időpontot a kiválasztott szolgáltatásra, és amint lehetőségem van, visszahívlak!"
-                : "Kérj konzultációt, és amint lehetőségem van, visszahívlak!"
-            }
+              ? "Foglalj időpontot a kiválasztott szolgáltatásra, és amint lehetőségem van, visszahívlak!"
+              : "Kérj konzultációt, és amint lehetőségem van, visszahívlak!"}
           </p>
 
           {submitSuccess && (
@@ -179,13 +222,17 @@ const page = () => {
             {/* 1. lépés: Időpontfoglalás vagy konzultáció választása */}
             {currentStep === 1 && (
               <div className={styles.step}>
-                <h3 className={styles.stepTitle}>Milyen típusú időpontot szeretnél foglalni?</h3>
+                <h3 className={styles.stepTitle}>
+                  Milyen típusú időpontot szeretnél foglalni?
+                </h3>
                 <div className={styles.bookingTypeContainer}>
                   {bookingTypes.map((type, index) => (
                     <button
                       key={index}
                       type="button"
-                      className={`${styles.bookingTypeButton} ${bookingType === type ? styles.selected : ''}`}
+                      className={`${styles.bookingTypeButton} ${
+                        bookingType === type ? styles.selected : ""
+                      }`}
                       onClick={() => handleBookingTypeChange(type)}
                     >
                       {type}
@@ -199,15 +246,17 @@ const page = () => {
             {currentStep === 2 && (
               <div className={styles.step}>
                 <h3 className={styles.stepTitle}>
-                  {bookingType === "Időpontfoglalás szolgáltatásra" 
-                    ? "Melyik szolgáltatásra szeretnél időpontot foglalni?" 
+                  {bookingType === "Időpontfoglalás szolgáltatásra"
+                    ? "Melyik szolgáltatásra szeretnél időpontot foglalni?"
                     : "Konzultáció részletei"}
                 </h3>
-                
+
                 {bookingType === "Időpontfoglalás szolgáltatásra" && (
                   <div className={styles.inputWrapper}>
                     <select
-                      className={`${styles.select} ${errors.service ? styles.errorInput : ""}`}
+                      className={`${styles.select} ${
+                        errors.service ? styles.errorInput : ""
+                      }`}
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
@@ -220,27 +269,30 @@ const page = () => {
                         </option>
                       ))}
                     </select>
-                    {errors.service && <span className={styles.errorText}>{errors.service}</span>}
+                    {errors.service && (
+                      <span className={styles.errorText}>{errors.service}</span>
+                    )}
                   </div>
                 )}
-                
+
                 {bookingType === "Konzultáció" && (
                   <p className={styles.consultationInfo}>
-                    Válaszd ezt az opciót, ha szeretnél előzetes konzultációt a szolgáltatásokról,
-                    vagy egyedi igényeid megbeszélése érdekében.
+                    Válaszd ezt az opciót, ha szeretnél előzetes konzultációt a
+                    szolgáltatásokról, vagy egyedi igényeid megbeszélése
+                    érdekében.
                   </p>
                 )}
 
                 <div className={styles.navigationButtons}>
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className={styles.backButton}
                     onClick={goToPreviousStep}
                   >
                     Vissza
                   </button>
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className={styles.nextButton}
                     onClick={goToNextStep}
                   >
@@ -254,44 +306,58 @@ const page = () => {
             {currentStep === 3 && (
               <div className={styles.step}>
                 <h3 className={styles.stepTitle}>Kapcsolati adatok</h3>
-                
+
                 <div className={styles.inputWrapper}>
                   <input
-                    className={`${styles.input} ${errors.name ? styles.errorInput : ""}`}
+                    className={`${styles.input} ${
+                      errors.name ? styles.errorInput : ""
+                    }`}
                     type="text"
                     name="name"
                     placeholder="Név"
                     value={formData.name}
                     onChange={handleChange}
-                    onBlur={() => setErrors(prev => ({ 
-                      ...prev, 
-                      name: validateName(formData.name) 
-                    }))}
+                    onBlur={() =>
+                      setErrors((prev) => ({
+                        ...prev,
+                        name: validateName(formData.name),
+                      }))
+                    }
                     disabled={isSubmitting}
                   />
-                  {errors.name && <span className={styles.errorText}>{errors.name}</span>}
+                  {errors.name && (
+                    <span className={styles.errorText}>{errors.name}</span>
+                  )}
                 </div>
 
                 <div className={styles.inputWrapper}>
                   <input
-                    className={`${styles.input} ${errors.email ? styles.errorInput : ""}`}
+                    className={`${styles.input} ${
+                      errors.email ? styles.errorInput : ""
+                    }`}
                     type="email"
                     name="email"
                     placeholder="E-mail cím"
                     value={formData.email}
                     onChange={handleChange}
-                    onBlur={() => setErrors(prev => ({ 
-                      ...prev, 
-                      email: validateEmail(formData.email) 
-                    }))}
+                    onBlur={() =>
+                      setErrors((prev) => ({
+                        ...prev,
+                        email: validateEmail(formData.email),
+                      }))
+                    }
                     disabled={isSubmitting}
                   />
-                  {errors.email && <span className={styles.errorText}>{errors.email}</span>}
+                  {errors.email && (
+                    <span className={styles.errorText}>{errors.email}</span>
+                  )}
                 </div>
 
                 <div className={styles.inputWrapper}>
                   <input
-                    className={`${styles.input} ${errors.phone ? styles.errorInput : ""}`}
+                    className={`${styles.input} ${
+                      errors.phone ? styles.errorInput : ""
+                    }`}
                     type="tel"
                     name="phone"
                     placeholder="Telefonszám"
@@ -299,7 +365,9 @@ const page = () => {
                     onChange={handleChange}
                     disabled={isSubmitting}
                   />
-                  {errors.phone && <span className={styles.errorText}>{errors.phone}</span>}
+                  {errors.phone && (
+                    <span className={styles.errorText}>{errors.phone}</span>
+                  )}
                 </div>
 
                 <div className={styles.inputWrapper}>
@@ -313,7 +381,11 @@ const page = () => {
                   />
                 </div>
 
-                <div className={`${styles.checkboxContainer} ${errors.consent ? styles.errorInput : ""}`}>
+                <div
+                  className={`${styles.checkboxContainer} ${
+                    errors.consent ? styles.errorInput : ""
+                  }`}
+                >
                   <input
                     className={styles.checkbox}
                     type="checkbox"
@@ -326,26 +398,30 @@ const page = () => {
                     Elfogadom az adatkezelési szabályzatot
                   </label>
                 </div>
-                {errors.consent && <span className={styles.errorText}>{errors.consent}</span>}
+                {errors.consent && (
+                  <span className={styles.errorText}>{errors.consent}</span>
+                )}
 
                 {errors.submit && (
                   <div className={styles.submitError}>{errors.submit}</div>
                 )}
 
                 <div className={styles.navigationButtons}>
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className={styles.backButton}
                     onClick={goToPreviousStep}
                   >
                     Vissza
                   </button>
-                  <button 
-                    type="submit" 
-                    className={`${styles.submitButton} ${isSubmitting ? styles.submitting : ''}`}
+                  <button
+                    type="submit"
+                    className={`${styles.submitButton} ${
+                      isSubmitting ? styles.submitting : ""
+                    }`}
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Küldés folyamatban...' : 'Üzenet küldése'}
+                    {isSubmitting ? "Küldés folyamatban..." : "Üzenet küldése"}
                   </button>
                 </div>
               </div>

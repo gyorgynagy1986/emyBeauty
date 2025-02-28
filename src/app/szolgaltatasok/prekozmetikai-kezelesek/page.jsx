@@ -27,7 +27,7 @@ const ServiceItem = ({ src, title, slug, text }) => (
 const page = () => {
   const serviceItems = [
     {
-      src: servicesPage.serices5,
+      src: servicesPage.secret,
       title: "Secret™ RF",
       slug: "secret-rf",
       text: "A Secret™ RF egy modern, műtét nélküli bőrfiatalító eljárás, mely mikrotűs és frakcionált rádiófrekvenciás technológiával serkenti a kollagéntermelést, így fiatalosabb, feszesebb bőrt eredményez.",

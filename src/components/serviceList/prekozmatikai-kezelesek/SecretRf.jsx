@@ -58,7 +58,7 @@ export default function SecretRF() {
           <div className={styles.photoContainer}>
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.secret}
               sizes={size.fullsize}
             />
           </div>

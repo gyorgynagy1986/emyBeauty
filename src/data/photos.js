@@ -27,7 +27,7 @@ import serices5 from "../../public/assets/pages/services/5.png";
 import serices6 from "../../public/assets/pages/services/6.png";
 import serices7 from "../../public/assets/pages/services/7.png";
 import slug1 from "../../public/assets/pages/services/slug/1.png";
-import asceplus from "../../public/assets/services/asceplus.webp";
+import secret from "../../public/assets/services/secret.webp"
 
 /* FOOTER */
 import footerPhoto from "../../public/assets/logos/logoFooter.svg";
@@ -70,7 +70,7 @@ export const servicesPage = {
   serices6: serices6,
   serices7: serices7,
   slug1: slug1,
-  asceplus:asceplus,
+  secret:secret
 
 };
 /* SERVICES DONE */
