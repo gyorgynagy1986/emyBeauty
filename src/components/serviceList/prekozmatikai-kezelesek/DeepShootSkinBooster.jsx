@@ -29,7 +29,7 @@ export default function DeepShootSkinBooster() {
             size={size.fullsize}
             src={icon}
           />
-          <Link href="/szolgaltatasok/innovativ-arckezelesek">
+          <Link href="/szolgaltatasok/prekozmetikai-kezelesek">
             PREKOZMETIKAI KEZELÉSEK
           </Link>
           <Image
@@ -46,16 +46,18 @@ export default function DeepShootSkinBooster() {
 
       <section className={styles.container}>
         <div className={styles.helper}>
-          {/* --- Fő cím, bevezető szöveg és gombok --- */}
+          {/* --- Fő cím + szöveg --- */}
           <div className={styles.titleContainer}>
             <div className={styles.titleHelper}>
               <h1 className={styles.title}>DEEP SHOOT SKIN BOOSTER</h1>
               <Abstract />
             </div>
+
             <p>
               A legújabb koreai innováció - Előre töltött steril fecskendők és
               Turtlepin III mikrotűs fej
             </p>
+
             <div className={styles.buttonContainer}>
               <Button />
               <Button2 />
@@ -71,8 +73,11 @@ export default function DeepShootSkinBooster() {
             />
           </div>
 
-          {/* --- Tartalom (minden blokk sectionSubTitles osztállyal) --- */}
+          {/* --- 1. szekció --- */}
           <div className={styles.sectionSubTitles}>
+            <h2 className={styles.title}>
+              A DEEP SHOOT SKIN BOOSTER kezelésről
+            </h2>
             <p>
               Az innovatív, előretöltött fecskendő és az arra szerelt 19 üreges
               mikrotű egyedülálló módon teríti szét a bőrben a 3 ml
@@ -105,44 +110,58 @@ export default function DeepShootSkinBooster() {
               követően 50 faktoros fényvédő használata minden időjárási
               körülmény esetén is szükséges.
             </p>
+            <Abstract />
+          </div>
+
+          {/* --- 2. szekció --- */}
+          <div className={styles.sectionSubTitles}>
+            <h2 className={styles.title}>Elérhető hatóanyag komplexek</h2>
             <p>
-              Két féle hatóanyag komplexxel rendelkező DEEP SHOOT booster áll
+              Két féle hatóanyak komplexxel rendelkező DEEP SHOOT booster áll
               rendelkezésre:
             </p>
             <ul>
               <li>DEEP SHOOT AA – anti-aging hatással</li>
               <li>DEEP SHOOT HA – mélyhidratáló hatással</li>
             </ul>
+            <Abstract />
+          </div>
+
+          {/* --- 3. szekció --- */}
+          <div className={styles.sectionSubTitles}>
+            <h2 className={styles.title}>CO2 CARBOXY TERÁPIA</h2>
             <p>
               A Ribeskin DEEP SHOOT kezelést közvetlenül Ribeskin CO2 Carboxy
               terápia előzi meg, mely megfelelően felkészíti a bőrt a
               hatóanyagok befogadására a maximális hatékonyság érdekében.
             </p>
-          </div>
-
-          {/* --- CO2 CARBOXY TERÁPIA --- */}
-          <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>CO2 CARBOXY TERÁPIA:</h2>
             <p>
               Ezzel a kezeléssel készítjük elő, illetve fokozzuk a Deep Shoot
-              boosterek hatékonyságát. 🔷Ebben a kezelésben a bőrt carboxy
-              géllel fedjük be, majd erre egy speciális CO2 aktiváló anyagokat
-              tartalmazó maszkot helyezünk. 🔹Bohr hatás! A gél aktiválódik a
-              felhelyezett maszk alatt, carbon-dioxidot termel amely behatol a
-              pórusokba és elindul a regeneráló, fiatalító és mélytisztító
-              folyamat. 🔹A kezelés végére a pórusok összehúzódnak és
-              detoxikálódnak a felszabaduló CO2 hatás által. Szabályozza a
-              faggyútermelést, feszesíti a bört, kiegyenlíti a bőrtónust.
+              boosterek hatékonyságat.
+            </p>
+            <p>
+              🔷Ebben a kezelésben a bőrt carboxy géllel fedjük be, majd erre
+              egy speciális CO2 aktiváló anyagokat tartalmazó maszkot helyezünk.
+            </p>
+            <p>
+              🔹Bohr hatás! A gél aktiválódik a felhelyezett maszk alatt,
+              carbon-dioxidot termel amely behatol a pórusokba és elindul a
+              regeneraló, fiatalító és mélytisztító folyamat.
+            </p>
+            <p>
+              🔹A kezelés végére a pórusok összehúzódnak és detoxikálódnak a
+              felszabaduló CO2 hatás által. Szabályozza a faggyútermelést,
+              feszesíti a bört, kiegyenlíti a bőrtónust.
             </p>
             <Abstract />
           </div>
 
-          {/* --- DEEP SHOOT AA rész --- */}
+          {/* --- 4. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>
-              1. RIBESKIN DEEP SHOOT AA (Anti-Aging) - Többfunkciós
-              öregedésgátlás ----- RÓZSA 
+              RIBESKIN DEEP SHOOT AA (Anti-Aging)
             </h2>
+            <h3>Többfunkciós öregedésgátlás</h3>
             <p>
               Annak érdekében, hogy bőrünk tovább maradjon fiatalos, vagy
               visszaállítsuk fiatalosságát, alapfeltétel a bőr egészséges
@@ -162,57 +181,68 @@ export default function DeepShootSkinBooster() {
               bőrük szépségét. A DEEP SHOOT AA kulcsfontosságú aktív összetevői
               segítenek fenntartani a bőr fiatalos állapotát.
             </p>
-            <p>-RIBESKIN DEEP SHOOT AA (Anti-Aging) főbb hatóanyagai:</p>
+            <h3>RIBESKIN DEEP SHOOT AA (Anti-Aging) főbb hatóanyagai:</h3>
             <ul>
               <li>
-                Glutation: a bőrben természetesen is előforduló antioxidáns.
-                Védi a bőrt a környezeti hatások okozta öregedéstől,
-                mindemellett hozzájárul az egyenletes, üde bőrkép
+                <strong>Glutation:</strong> a bőrben természetesen is előforduló
+                antioxidáns. Védi a bőrt a környezeti hatások okozta
+                öregedéstől, mindemellett hozzájárul az egyenletes, üde bőrkép
                 kialakulásához. Segít helyreállítani a bőrbarrier rétegét és
                 pigmentfolt halványító hatással bír.
               </li>
               <li>
-                Peptidek: A kötőszövet tömörségének visszaállítását támogatja.
-                (Palmitoyl Tripeptide-5, Octapeptide-7, Galloyl Pentapeptide-33,
-                Copper Tripeptide-1)
+                <strong>Peptidek:</strong> A kötőszövet tömörségének
+                visszaállítását támogatja.(Palmitoyl Tripeptide-5,
+                Octapeptide-7, Galloyl Pentapeptide-33, Copper Tripeptide-1)
               </li>
               <li>
-                Növekedési faktorok: A növekedési faktorok hatására javul a
-                bőrsejtek osztódása, differenciálódása, ezáltal szebb,
-                fiatalosabb lesz a bőrkép. (sh-Polypeptide-9, sh-Polypeptide-3,
-                sh-Polypeptide-22, sh-Polypeptide-1, sh-Pentapeptide-19,
-                sh-Oligopeptide-9, sh-Oligopeptide-2, sh-Oligopeptide-1,
-                sh-Octapeptide-4, sh-Decapeptide-7)
+                <strong>Növekedési faktorok:</strong> A növekedési faktorok
+                hatására javul a bőrsejtek osztódása, differenciálódása, ezáltal
+                szebb, fiatalosabb lesz a bőrkép. (sh-Polypeptide-9,
+                sh-Polypeptide-3, sh-Polypeptide-22, sh-Polypeptide-1,
+                sh-Pentapeptide-19, sh-Oligopeptide-9, sh-Oligopeptide-2,
+                sh-Oligopeptide-1, sh-Octapeptide-4, sh-Decapeptide-7)
               </li>
               <li>
-                B-Vitamin komplex: a B-vitaminok hozzájárulnak a bőr
-                hidratáltságához, a kollagéntermeléshez és a sejtek
-                megújulásához, valamint szabályozzák a faggyútermelést.
+                <strong>B-Vitamin komplex:</strong> a B-vitaminok legjelentősebb
+                előnyeinek egyike, hogy hozzájárulnak a bőr hidratáltságához, a
+                kollagéntermeléshez és támogatják a sejtek megújulását.
+                Szabályozzák a faggyútermelést, továbbá hozzájárulnak a
+                pigmentfoltok megjelenésének megelőzéséhez.
               </li>
               <li>
-                PDRN: DNS-fragmensekből álló molekula, mely elősegíti az
-                angiogenézist, a sejtaktivitást, a kollagénszintézist, a
-                bőrszövet regenerálódását, a bőr revitalizációját, illetve
-                halványítja a pigmentfoltokat.
+                <strong>PDRN:</strong> DNS-fragmensekből álló molekula, mely
+                elősegíti az angiogenézist, a sejtaktivitást, a
+                kollagénszintézist, a bőrszövet regenerálódását, a bőr
+                revitalizációját, illetve halványítja a pigmentfoltokat.
               </li>
             </ul>
             <Abstract />
           </div>
 
-          {/* --- DEEP SHOOT HA rész --- */}
+          {/* --- 5. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>
-              -RIBESKIN DEEP SHOOT HA (Hialuronsav komplex, Hidratálás)
-              hatóanyagai KÉK VIDEO
+              RIBESKIN DEEP SHOOT HA (Hialuronsav komplex)
             </h2>
-            <p>3-féle molekulatömegű hyaluronsav:</p>
+            <h3>Mélyhidratáló hatás</h3>
+            <p>
+              <strong>
+                RIBESKIN DEEP SHOOT HA hatóanyagai 3-féle molekulatömegű
+                hyaluronsav:
+              </strong>
+            </p>
             <ul>
-              <li>Alacsony- (kötőszöveti réteg erősítése)</li>
-              <li>Közepes- (bőr védekezőképességének növelése)</li>
               <li>
-                Nagy molekulatömegű (védi a bőrt a környezeti hatásoktól és a
-                láthatatlan vízveszteségtől) hialuronsav bőrbe juttatása,
-                pótolja és megtartja a bőr nedvességét.
+                <strong>Alacsony-</strong> (kötőszöveti réteg erősítése)
+              </li>
+              <li>
+                <strong>Közepes-</strong> (bőr védekezőképességének növelése)
+              </li>
+              <li>
+                <strong>Nagy molekulatömegű</strong> (védi a bőrt a környezeti
+                hatásoktól és a láthatatlan vízveszteségtől) hialuronsav bőrbe
+                juttatása pótolja és megtartja a bőr nedvességét.
               </li>
             </ul>
             <p>
@@ -226,20 +256,23 @@ export default function DeepShootSkinBooster() {
             <Abstract />
           </div>
 
-          {/* --- Végső ajánlat --- */}
+          {/* --- Árazás --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>
+            <h2 className={styles.title}>Kezelések ára</h2>
+            <p>
               Az alábbi RIBESKIN CO2 Carboxy terápia + DEEP SHOOT kezelések
               közül választhatsz:
-            </h2>
-            <ul>
-              <li>
-                Ribeskin CO2 Carboxy terápia + Deep Shoot AA (60p) 60.000 Ft
-              </li>
-              <li>
-                Ribeskin CO2 Carboxy terápia + Deep Shoot HA (60 perc) 60.000 Ft
-              </li>
-            </ul>
+            </p>
+            <div className={styles.priceContainer}>
+              <div className={styles.priceItems}>
+                <p>Ribeskin CO2 Carboxy terápia + Deep Shoot AA (60p)</p>
+                <p>60.000 Ft</p>
+              </div>
+              <div className={styles.priceItems}>
+                <p>Ribeskin CO2 Carboxy terápia + Deep Shoot HA (60 perc)</p>
+                <p>60.000 Ft</p>
+              </div>
+            </div>
             <Abstract />
           </div>
         </div>

@@ -48,6 +48,13 @@ import hyd from "../../public/assets/services/hyd.webp"
 import pre from "../../public/assets/services/pre.png"
 import smink2 from "../../public/assets/services/smink2.webp"
 import isp from "../../public/assets/services/isp.webp"
+import revive from "../../public/assets/services/revive.jpg"
+import protect from "../../public/assets/services/protect.jpg"
+import illum from "../../public/assets/services/illum.jpg"
+import detox from "../../public/assets/services/detox.jpg"
+import balance from "../../public/assets/services/balance.jpg"
+import glam from "../../public/assets/services/glam.jpg"
+import retouch from "../../public/assets/services/retouch.jpg"
 
 
 
@@ -111,7 +118,14 @@ export const servicesPage = {
   hyd:hyd,
   pre:pre,
   smink2:smink2,
-  isp:isp
+  isp:isp,
+  revive:revive,
+  protect:protect,
+  illum:illum,
+  detox:detox,
+  balance:balance,
+  glam:glam,
+  retouch:retouch,
 };
 /* SERVICES DONE */
 

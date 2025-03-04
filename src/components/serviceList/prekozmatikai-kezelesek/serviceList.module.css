@@ -235,3 +235,7 @@
       width: 100%;
       object-fit: contain;
     }
+
+    .sectionSubTitles h3 {
+      font-size: 1.7rem !important;
+    }

@@ -46,13 +46,27 @@ export default function HollywoodCarbonLazeresMedicalPeeling() {
 
       <section className={styles.container}>
         <div className={styles.helper}>
-          {/* --- Fő cím, bevezető szöveg és gombok --- */}
+          {/* --- Fő cím + szöveg --- */}
           <div className={styles.titleContainer}>
             <div className={styles.titleHelper}>
               <h1 className={styles.title}>
                 Hollywood Carbon Lézeres MEDICAL Peeling
               </h1>
               <Abstract />
+            </div>
+
+            <p>
+              A Carbon Medical Peeling egy hosszú távon is látványos
+              eredményekkel járó bőrrejuvenációs kezelés, mely a hő energiáját
+              használja fel, ebből kifolyólag fájdalommentesen és irritáció
+              nélkül alkalmazhatjuk. Hatására a meglévő hegek halványulnak, a
+              bőr pigmentállománya egységesebbé válik, az újabb aknék és
+              mitesszerek kialakulása hétről hétre mérséklődik.
+            </p>
+
+            <div className={styles.buttonContainer}>
+              <Button />
+              <Button2 />
             </div>
           </div>
 
@@ -64,13 +78,10 @@ export default function HollywoodCarbonLazeresMedicalPeeling() {
               sizes={size.fullsize}
             />
           </div>
-          <div className={styles.buttonContainer}>
-            <Button />
-            <Button2 />
-          </div>
-          {/* --- Tartalom (minden blokk sectionSubTitles osztállyal) --- */}
+
+          {/* --- 1. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>A Carbon Medical Peeling lényege</h2>
+            <h2 className={styles.title}>Mi az a Carbon Medical Peeling?</h2>
             <p>
               A Carbon Medical Peeling egy hosszú távon is látványos
               eredményekkel járó bőrrejuvenációs kezelés, mely a hő energiáját
@@ -96,8 +107,10 @@ export default function HollywoodCarbonLazeresMedicalPeeling() {
               eredménnyel lehet alkalmazni a zsíros, tág pórusú, esetleg
               gyulladt-aknés bőrön is.
             </p>
+            <Abstract />
           </div>
 
+          {/* --- 2. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Alkalmazási területek</h2>
             <ul>
@@ -108,8 +121,10 @@ export default function HollywoodCarbonLazeresMedicalPeeling() {
               <li>Napkárosodott bőr</li>
               <li>Ráncok halványítása</li>
             </ul>
+            <Abstract />
           </div>
 
+          {/* --- 3. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>
               Carbon Medical Peeling lézeres kezelés menete
@@ -117,9 +132,9 @@ export default function HollywoodCarbonLazeresMedicalPeeling() {
             <ul>
               <li>
                 <strong>A bőr felkészítése:</strong> 1 héttel a kezelés előtt
-                mellőzni kell a retinolos termékek használatát és beilleszteni a
-                napi rutinba a fényvédő alkalmazását, mivel a kezelés utáni
-                időszakban elengedhetetlen.
+                mellőzni kell a retinolos termékek használatát és a beilleszteni
+                a napi rutinba a fényvédő alkalmazását, mivel használata a
+                kezelés utáni időszakban elengedhetetlen.
               </li>
               <li>
                 <strong>A kezelés:</strong> A kezelés típusától függően
@@ -127,37 +142,47 @@ export default function HollywoodCarbonLazeresMedicalPeeling() {
                 nanotechnológiás carbongélt. A szén részecskéi bejutnak a bőr
                 pórusainak mélyébe, miközben felszívják az olajat, a faggyút és
                 a szennyeződéseket, valamint csökkentik a baktériumok számát. A
-                lézer hatására a szén részecskék a pórusokban szétrobbannak, így
-                eltávolítják a szennyező anyagokat a bőrből.
+                lézer hatására a szén részecskék a pórusokban szétrobbannnak és
+                így eltávolítják a szennyező anyagokat a bőrből.
               </li>
               <li>
                 <strong>Utóápolás:</strong> Kezeléseim minden esetben
                 utóápolással végezem orvoskozmetikai termékekkel, fokozva az
                 elvárt eredményt. A kezelés után a bőr kiszáradhat, hámlás
-                jelentkezhet. A megfelelő hidratálásról otthon is gondoskodni
-                szükséges, legalább 1 hétig elengedhetetlen a fényvédő
-                használata, továbbá ez idő alatt kerülni kell a további
-                hámlasztási eljárásokat és a retinolos termékeket.
+                jelentkezhet. A bőrkomfort elérése érdekében a megfelelő
+                hidratálásról otthon is gondoskodni szükséges, legalább 1 hétig
+                elengedhetetlen a fényvédő használata, továbbá ez idő alatt
+                kerülni kell a további hámlasztási eljárásokat és a retinolos
+                termékeket.
               </li>
             </ul>
+            <Abstract />
           </div>
 
+          {/* --- 4. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>Anti-Aging és Akne kezelés esetén</h2>
+            <h2 className={styles.title}>Kezelési ciklusok</h2>
+            <h3>ANTI-AGING KEZELÉS ESETÉN:</h3>
             <p>
-              <strong>Anti-Aging:</strong> A carbon peeling kezelést 3-6
-              alkalommal javasolom, 2-4 hetes időközönként, majd 2-3 havonta
-              egy-egy fenntartó kezelésen ajánlott részt venni.
+              A carbon peeling kezelést 3-6 alkalommal javasolom, 2-4 hetes
+              időközönként, majd 2-3 havonta egy-egy fenntartó kezelésen
+              ajánlott részt venni.
+            </p>
+            <h3>AKNE KEZELÉS ESETÉN:</h3>
+            <p>
+              A carbon peeling kezelést 3-4 naponta lehet ismételni, tehát
+              hetente maximum 2 alkalommal. A kezelések alkalmával folyamatosan
+              javuló bőrképet kapunk. Általánosan 4-6 kezelés javasolt.
             </p>
             <p>
-              <strong>Akne:</strong> A carbon peeling kezelést 3-4 naponta lehet
-              ismételni, tehát hetente maximum 2 alkalommal. Általánosan 4-6
-              kezelés javasolt. A minimum hathetes folyamat során heti egy
-              alkalommal végzünk karbon lézeres kezelést, mely alkalmanként
-              összesen 30 percet vesz igénybe.
+              A minimum hathetes folyamat során heti egy alkalommal végzünk
+              karbon lézeres kezelést, mely alkalmanként összesen 30 percet vesz
+              igénybe.
             </p>
+            <Abstract />
           </div>
 
+          {/* --- 5. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Otthoni utóápolás</h2>
             <p>
@@ -166,42 +191,47 @@ export default function HollywoodCarbonLazeresMedicalPeeling() {
               szoláriumot is. A fényvédő krémet nem lehet mellőzni, és
               fokozottan figyelmet kell fordítani a folyadékbevitelre is.
             </p>
+            <Abstract />
           </div>
 
+          {/* --- 6. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>Kontraindikációk</h2>
-            <ul className={styles.ul2Col}>
+            <h2 className={styles.title}>KONTRAINDIKÁCIÓK</h2>
+            <p>A kezelés nem végezhető az alábbi esetekben:</p>
+            <ul>
               <li>Ha a vendég pacemaker-el él</li>
               <li>
                 Ha a kezelendő területen bőrsérülés vagy kóros bőrelváltozás
                 található
               </li>
-              <li>Diabetes</li>
+              <li> Diabetes</li>
               <li>Ismert keloid hajlamban</li>
               <li>Súlyos hipertónia</li>
               <li>Vérzékenység, vagy vérhígító gyógyszerek alkalmazása</li>
               <li>Terhesség, szoptatás</li>
               <li>Daganatos betegség</li>
-              <li>Immun betegség</li>
-              <li>HIV/AIDS</li>
-              <li>Epilepszia</li>
-              <li>Belsőleges retinol kezelés</li>
+              <li> Immun betegség</li>
+              <li> HIV/AIDS</li>
+              <li> Epilepszia</li>
+              <li> Belsőleges retinol kezelés</li>
             </ul>
+            <Abstract />
           </div>
 
           {/* --- Árazás --- */}
           <div className={styles.sectionSubTitles}>
-            <h1 className={styles.title}>Kezelések ára</h1>
+            <h2 className={styles.title}>Kezelések ára</h2>
             <div className={styles.priceContainer}>
               <div className={styles.priceItems}>
-                <p>CARBON PEEL Classic</p>
-                <p>30 perc - 29.900 Ft</p>
+                <p>CARBON PEEL Classic 30 perc</p>
+                <p>29.900 Ft</p>
               </div>
               <div className={styles.priceItems}>
-                <p>CARBON PEEL Exosomes + Geno LED FÉNYTERÁPIA</p>
-                <p>60 perc - 60.000 Ft</p>
+                <p>CARBON PEEL Exosomes +Geno LED FÉNYTERÁPIA 60 perc</p>
+                <p>60.000 Ft</p>
               </div>
             </div>
+            <Abstract />
           </div>
         </div>
       </section>

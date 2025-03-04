@@ -46,12 +46,13 @@ export default function OneNeedPro() {
 
       <section className={styles.container}>
         <div className={styles.helper}>
-          {/* --- Fő cím, bevezető szöveg és gombok --- */}
+          {/* --- Fő cím + szöveg --- */}
           <div className={styles.titleContainer}>
             <div className={styles.titleHelper}>
               <h1 className={styles.title}>1 NEED PRO</h1>
               <Abstract />
             </div>
+
             <p>
               Az 1 NEED PRO mikrotűs kezelés egy speciális bőrfiatalító eljárás,
               amely mikrotűk segítségével serkenti a bőr természetes
@@ -59,6 +60,7 @@ export default function OneNeedPro() {
               mezoterápia, más néven SKINPEN vagy DERMAPEN kezelések egyik
               változata.
             </p>
+
             <div className={styles.buttonContainer}>
               <Button />
               <Button2 />
@@ -74,7 +76,7 @@ export default function OneNeedPro() {
             />
           </div>
 
-          {/* --- Tartalom (minden blokk sectionSubTitles osztállyal) --- */}
+          {/* --- 1. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Hatékony bőrfelszín-megújítás</h2>
             <p>
@@ -84,131 +86,152 @@ export default function OneNeedPro() {
               kezelőfejének köszönhetően végezhető vele mikrotűs, micropricking
               (mikroszúrás) és nano peel is.
             </p>
+            <Abstract />
           </div>
 
+          {/* --- 2. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Sokrétű megoldás</h2>
             <p>
-              Egyedülálló technológiájának köszönhetően az 1NeedPro nem csupán a
-              finom- és mély ráncok csökkentését, valamint az arcbőr
-              textúrájának javítását támogatja, hanem enyhíti a bőrhibákat és a
-              pigmentfoltokat is. Kiválóan kezeli a szemkörnyéki ráncokat, a tág
-              pórusokat és a rosaceát.
+              Egyedülálló technológiájának köszönhetően a 1NeedPro azon kívül,
+              hogy a finom- és mély ráncok csökkentését és az arcbőr
+              textúrájának javítását támogatja, enyhíti a bőrhibákat és a
+              pigmentfoltokat. Kiválóan kezeli a szemkörnyéki ráncokat, a tág
+              pórusokat és a rosaceát is. Az ilyen típusú eljárások célja a bőr
+              feszesítése, textúrájának javítása és az eltérő bőrproblémák
+              kezelése.
             </p>
+            <Abstract />
           </div>
 
+          {/* --- 3. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Hogyan működik?</h2>
             <p>
               A mikrotűs kezelés során az aprótűk mikroszkopikus sérüléseket
-              ejtenek a bőr felszínén, amelyek serkentik a bőr természetes
-              gyógyulási folyamatát az új kollagén és elasztin termelésével. A
-              kezelést kombináljuk különböző hatóanyagokkal – például
-              hialuronsav, vitaminok és antioxidánsok – hogy a hatóanyagok
-              mélyebben eljussanak a bőr rétegeibe.
+              ejtenek a bőr felszínén. Ezek a mikrosérülések serkentik a bőr
+              természetes gyógyulási folyamatát, amely új kollagén és elasztin
+              termelésével jár. A kollagén az a fehérje, amely a bőrt feszessé
+              és rugalmassá teszi, míg az elasztin biztosítja annak
+              rugalmasságát. A 1NEED PRO mikrotűs kezelést kombináljuk különböző
+              hatóanyagokkal, például hialuronsav, vitaminok és antioxidánsok
+              bőrbe juttatásával a bőr mélyebb rétegeibe.
             </p>
+            <Abstract />
           </div>
 
+          {/* --- 4. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Biztonságos kezelés</h2>
             <p>
-              A készülék fejlesztői létrehoztak egy szilikon kupakot, amely
-              összegyűjti a kezelőfej belsejébe került kórokozókat. Így a
-              NOFLOW® steril, szabadalmaztatott kezelőfej kidobásával
-              biztosítjuk, hogy a keresztfertőzés minden lehetőségét
-              felszámoltuk.
+              A gép fejlesztői a kezelőfejen kívül létrehoztak egy szilikon
+              kupakot, amely összegyűjti a kezelőfej belsejébe került
+              kórokozókat. Így az eljárás végén, a NOFLOW® steril,
+              szabadalmaztatott kezelőfej kidobásával biztosak lehetünk abban,
+              hogy a keresztfertőzés minden lehetőségével felszámoltunk.
             </p>
+            <Abstract />
           </div>
 
+          {/* --- 5. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Milyen előnyei vannak?</h2>
             <ul>
               <li>
-                <strong>Bőr fiatalítása:</strong> Serkenti a kollagéntermelést,
-                ami feszesebbé és rugalmasabbá teszi a bőrt, csökkenti a
-                ráncokat és a finom vonalakat.
+                Bőr fiatalítása: Serkenti a kollagéntermelést, ami feszesebbé és
+                rugalmasabbá teszi a bőrt, valamint csökkenti a ráncokat és a
+                finom vonalakat.
               </li>
               <li>
-                <strong>Hegek és striák halványítása:</strong> Elősegíti az
-                aknés hegek, műtéti hegek vagy striák megjelenésének
-                csökkentését.
+                Hegek és striák halványítása: A kezelés elősegíti az aknes
+                hegek, műtéti hegek vagy striák megjelenésének csökkentését.
               </li>
               <li>
-                <strong>Pigmentfoltok halványítása:</strong> Segít a
-                napkárosodott bőr és pigmentfoltok kezelésében.
+                Pigmentfoltok halványítása: Segíthet a napkárosodott bőr és
+                pigmentfoltok kezelésében.
               </li>
               <li>
-                <strong>Bőr textúrájának javítása:</strong> A bőr simább,
-                egyenletesebb lesz, és javul a tónusa.
+                Bőr textúrájának javítása: A bőr simább, egyenletesebb lesz, és
+                javul a tónusa.
               </li>
               <li>
-                <strong>Pórusok méretének csökkentése:</strong> A mikrotűs
-                kezelés segít csökkenteni a pórusok láthatóságát.
+                Pórusok méretének csökkentése: A mikrotűs kezelés segíthet
+                csökkenteni a pórusok láthatóságát.
               </li>
             </ul>
+            <Abstract />
           </div>
 
+          {/* --- 6. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Kinek ajánlott?</h2>
             <p>
-              Az 1NeedPro kezelést azoknak ajánljuk, akik szeretnék javítani
-              bőrük állapotát, megfiatalítani azt, vagy csökkenteni a hegek,
-              ráncok és striák megjelenését. Különösen ajánlott:
+              Azoknak, akik szeretnék javítani bőrük állapotát, megfiatalítani
+              azt, vagy csökkenteni a hegek, ráncok és striák megjelenését.
+              Különösen ajánlott:
             </p>
             <ul>
-              <li>Érett bőr esetén a kollagéntermelés fokozására.</li>
+              <li> Érett bőr esetén a kollagéntermelés fokozására.</li>
               <li>Akne után maradt hegek kezelésére.</li>
-              <li>Striák és bőrfeszesség-csökkenés ellen.</li>
+              <li> Striák és bőrfeszesség-csökkenés ellen.</li>
               <li>Pigmentációs problémák vagy napkárosodott bőr esetén.</li>
             </ul>
+            <Abstract />
           </div>
 
+          {/* --- 7. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Mire kell figyelni a kezelés után?</h2>
             <p>
-              A mikrotűs kezelés után a bőr ideiglenesen vörös lehet, és enyhe
-              irritáció léphet fel, de ez hamar elmúlik. Fontos a megfelelő
-              fényvédelem és hidratálás, mivel a bőr érzékenyebbé válik a külső
-              hatásokra.
+              A mikrotűs kezelés után a bőr ideiglenesen vörös lehet és enyhe
+              irritáció léphet fel, de ez hamar elmúlik. A kezelés után fontos a
+              megfelelő fényvédelem és hidratálás, mivel a bőr érzékenyebbé
+              válik a külső hatásokra.
             </p>
+            <Abstract />
           </div>
 
+          {/* --- 8. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Kezelés menete</h2>
             <ul>
               <li>
-                <strong>Konzultáció:</strong> A kezelés előtt alapos konzultáció
-                történik, amely során felmérjük a bőr állapotát, megismerjük az
-                otthon használt kozmetikumokat, napozási szokásokat és
-                bőrproblémákat.
+                <strong>Konzultáció:</strong> A kezelés előtt egy alapos,
+                teljeskörű konzultációra kerül sor, ahol felmérjük a bőr
+                állapotát, kitérve az otthon használt kozmetikumokra, napozási
+                szokásokra, bőrproblémákra.
               </li>
               <li>
-                <strong>Előkészítés:</strong> A kezelési terület tisztítása és
-                enzimes peeling. Fertőtlenítés után érzéstelenítő krémet
-                alkalmazunk a kellemetlenség minimalizálása érdekében.
+                <strong>Előkészítés:</strong> A kezelési terület tisztítása +
+                Enzimes peeling. Fertőtlenítés után érzéstelenítő krémet
+                alkalmazunk a bőrön, ennek segítségével minimalizáljuk a
+                kellemetlenség érzését.
               </li>
               <li>
                 <strong>A kezelés:</strong> A 1NeedPro eszköz apró tűi a bőrbe
-                hatolnak. A tűk mikrocsatornákat hoznak létre, amelyek serkentik
-                a sejtmegújulást és segítik a hatóanyagok extracelluláris térbe
-                juttatását. A Nano Peel esetében mechanikai hámlasztást végzünk,
-                mely peelinggel kombinálva kiválóan alkalmas a bőr
-                fiatalítására, hiperpigmentációra és az öregedési jelek
-                csökkentésére.
+                hatolnak. Legyen szó mikrotű – vagy mikroszúrásról, a tűk a
+                sejtmembrán falán kezelőfejtől függően, mikrocsatornákat hoznak
+                létre, ami serkenti a sejtmegújulás folyamatát, illetve segít a
+                hatóanyagokat mélyen az extracelluláris térbe juttatni. A Nano
+                Peel – esetében a mélyebb rétegek érintése nélkül, mechanikai
+                hámlasztást végzünk, melynek használata peelinggel ajánlott,
+                ezáltal kiválóan alkalmas megoldást jelent foltokra, az öregedés
+                jeleire, hiperpigmentációra és a bőr fiatalítására egyaránt.
               </li>
               <li>
-                <strong>Bőrnyugtatás:</strong> GENO LED FÉNYTERÁPIA alkalmazása.
+                <strong>Bőrnyugtatás:</strong> GENO LED FÉNYTERÁPIA
               </li>
               <li>
-                <strong>Befejező ápolás:</strong> A kezelt területet bőrnyugtató
-                termékekkel és fényvédővel ápoljuk.
+                <strong>Befejező ápolás:</strong> Utolsó lépésként, a kezelt
+                területet bőrnyugtató termékekkel és fényvédővel ápolom.
               </li>
             </ul>
+            <Abstract />
           </div>
 
           {/* --- Árazás --- */}
           <div className={styles.sectionSubTitles}>
-            <h1 className={styles.title}>Kezelések ára</h1>
+            <h2 className={styles.title}>Kezelések ára</h2>
             <div className={styles.priceContainer}>
               <div className={styles.priceItems}>
                 <p>1NeedPro</p>
@@ -219,6 +242,7 @@ export default function OneNeedPro() {
                 <p>1 alkalom + ASCEplus EXOSOME ampulla arckezelés 80.000 Ft</p>
               </div>
             </div>
+            <Abstract />
           </div>
         </div>
       </section>

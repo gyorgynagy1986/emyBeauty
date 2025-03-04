@@ -10,7 +10,7 @@ import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
 
-export default function SecretRF() {
+export default function SecretRfKezelés() {
   return (
     <>
       <div className={styles.topBar}>
@@ -29,8 +29,8 @@ export default function SecretRF() {
             size={size.fullsize}
             src={icon}
           />
-          <Link href="/szolgaltatasok/prekozmetikai-kezelesek">
-            PREKOZMETIKAI KEZELÉSEK
+          <Link href="/szolgaltatasok/innovativ-kezelesek">
+            INNOVATÍV KEZELÉSEK
           </Link>
           <Image
             style={{ marginBottom: "1px" }}
@@ -39,18 +39,32 @@ export default function SecretRF() {
             src={icon}
           />
           <Link className={styles.active} href="/szolgaltatasok">
-            SECRET™ RF
+            SECRET™ RF MIKROTŰS RÁDIÓFREKVENCIÁS KEZELÉS
           </Link>
         </div>
       </div>
 
       <section className={styles.container}>
         <div className={styles.helper}>
-          {/* --- Fő cím, bevezető szöveg és gombok --- */}
+          {/* --- Fő cím + szöveg --- */}
           <div className={styles.titleContainer}>
             <div className={styles.titleHelper}>
-              <h1 className={styles.title}>SECRET™ RF</h1>
+              <h1 className={styles.title}>Mi a Secret™ RF?</h1>
               <Abstract />
+            </div>
+
+            <p>
+              A Secret RF kezelés a ma elérhető egyik legmodernebb műtét nélküli
+              bőrfiatalítás, mely különböző mélységekben segít újramodellezni a
+              kollagénállomány szerkezetet. A kezelés forradalmian új mikrotűs
+              eljárást alkalmaz, hogy a frakcionális rádiófrekvenciás energiát
+              oda juttassa, ahol arra a legnagyobb szükség van és a bőr minden
+              rétegét kezeli.
+            </p>
+
+            <div className={styles.buttonContainer}>
+              <Button />
+              <Button2 />
             </div>
           </div>
 
@@ -62,60 +76,106 @@ export default function SecretRF() {
               sizes={size.fullsize}
             />
           </div>
-          <div className={styles.buttonContainer}>
-            <Button />
-            <Button2 />
-          </div>
-          {/* --- Tartalom blokkok (minden blokk sectionSubTitles osztállyal) --- */}
+
+          {/* --- 1. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>A Secret™ RF kezelés bemutatása</h2>
-            <p>
-              A Secret RF kezelés a ma elérhető egyik legmodernebb műtét nélküli
-              bőrfiatalítás, mely különböző mélységekben segít újramodellezni a
-              kollagénállomány szerkezetét. A kezelés forradalmian új mikrotűs
-              eljárást alkalmaz, hogy a frakcionális rádiófrekvenciás energiát
-              oda juttassa, ahol arra a legnagyobb szükség van, és a bőr minden
-              rétegét kezeli.
-            </p>
+            <h2 className={styles.title}>
+              A SECRET™ RF három rendkívül hatékony technológia hatását ötvözi
+            </h2>
+            <ul>
+              <li>1. A mikrotűk</li>
+              <li>
+                2. Frakcionált rádiófrekvenciával, hőt juttattak a bőrszövetek
+                mélyére, serkentve az új kollagén, elasztin és hialuronsav
+                termelését, illetve
+              </li>
+              <li>3. LED fényterápiát, a tökéletes rejuvenációért</li>
+            </ul>
+            <Abstract />
           </div>
 
+          {/* --- 2. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>A SECRET™ RF három technológiája</h2>
-            <ul>
-              <li>
-                <strong>Mikrotűk:</strong> A bőr felszínén precíz
-                mikro-szúrásokat hoznak létre.
-              </li>
-              <li>
-                <strong>Frakcionált rádiófrekvencia:</strong> Hőt juttat a
-                bőrszövetek mélyére, serkentve az új kollagén, elasztin és
-                hialuronsav termelését.
-              </li>
-              <li>
-                <strong>LED fényterápia:</strong> Tökéletes rejuvenáció
-                érdekében alkalmazzuk.
-              </li>
-            </ul>
+            <h2 className={styles.title}>SECRET FRAKCIONÁLT RÁDIÓFREKVENCIA</h2>
+            <p>
+              Bőrünk öregedése, és rugalmasságának elvesztése ellen már fiatal
+              korban érdemes tenni, hiszen a környezeti tényezők mellett a
+              stressz, és a napsugárzás is hatással van ránk. Az idő múlásával a
+              kötőszövetek megereszkednek, kitágulnak a pórusok, apróbb ráncok
+              jelennek meg az arcon, nyakon és dekoltázson.
+            </p>
+            <p>
+              A frakcionált mikrotűs RF kezelés a mai legmodernebb, klinikailag
+              bizonyított eljárás, mely a frakcionált rádiófrekvencia és a
+              mikrotűs kezelések előnyös kombinációja. Az RF energia hőhatása a
+              bőr mélyebb rétegeiben a kollagén rostokat gerjeszti, lebontja a
+              régi kollagéneket, és elindítja az új kollagén termelődést
+              (neokollagenezis), míg a tűszúrások a bőrfelszínen apró
+              sérüléseket okoznak. A bőr felszíni és a bőr mélyebb rétegeiben
+              végzett kezelés eredményeképp a bőr megfiatalodik, rugalmassá,
+              tónusosabbá válik, és a pórusok összehúzódnak, a ráncok
+              kisimulnak.
+            </p>
+            <p>
+              Az innovatív bőrfiatalító és feszesítő eljárás gyors eredményeket
+              kínál az arc, nyak, dekoltázs területén, egészen a kézfejig,
+              vagyis a legszembetűnőbb területeken. Csökkenti a ráncokat,
+              szabályozza a faggyútermelést, és hatékonyan kezeli a tág
+              pórusokat. Ezen kívül lifting, anti-aging és anti-cellulit hatása
+              is van, és hatékony megoldást nyújt a striák kezelésére, valamint
+              a műtéti hegek halványítására is.
+            </p>
+            <Abstract />
           </div>
 
+          {/* --- 3. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>Miért fontos a kezelés?</h2>
-            <p>
-              Bőrünk öregedése és rugalmasságának elvesztése ellen már fiatal
-              korban érdemes tenni, hiszen a környezeti tényezők, a stressz és a
-              napsugárzás mind hozzájárulnak a bőr öregedéséhez. A Secret RF
-              kezelés:
-            </p>
+            <h2 className={styles.title}>
+              A kezelés széleskörű megoldást nyújt a bőr különböző problémáira
+            </h2>
             <ul>
-              <li>Csökkenti a ráncokat</li>
-              <li>
-                Fiatalítja az arcot, nyakat, dekoltázst és akár a kézfejet
-              </li>
-              <li>Szabályozza a faggyútermelést</li>
-              <li>Összehúzza a tág pórusokat</li>
-              <li>Feszesítő, lifting hatású</li>
-              <li>Anti-cellulit és stria kezelésre is alkalmas</li>
+              <li>Ráncok csökkentése</li>
+              <li>Bőrfiatalítás</li>
+              <li>Szarkalábak csökkentése</li>
+              <li>Bőr tónusának javítása, petyhüdtség és feszesség növelése</li>
+              <li>Aknés hegek csökkentése</li>
+              <li>Tág pórusok összehúzása</li>
+              <li>Sötét karikák a szem alatt</li>
+              <li>Fakó, sápadt bőrszín javítása</li>
+              <li>Fokozott hónalji izzadás kezelése</li>
+              <li>Megereszkedett felkar, térd és has feszesítése</li>
+              <li>Striák kezelése</li>
             </ul>
+            <Abstract />
+          </div>
+
+          {/* --- 4. szekció --- */}
+          <div className={styles.sectionSubTitles}>
+            <h2 className={styles.title}>A kezelés menete</h2>
+            <p>
+              A kezelőfejen egyszer használatos, 25 apró tűt tartalmazó,
+              mikro-motorral vezérelt fej helyezkedik el. A tűk elektródákként
+              működnek, és a bőrbe szúrva közvetlenül, nagy pontossággal
+              juttatják el a rádiófrekvenciát. A tűk hossza változtatható (0,5 -
+              3,5mm között), attól függően, hogy mi a célterület és milyen a
+              kezelt bőr vastagsága.
+            </p>
+            <p>
+              A SECRET frakcionált mikrotűs RF készülék 2Mhz-es frakcionált
+              bipoláris rádiófrekvenciát használ. A kezelőfej 25 vagy 64 nagyon
+              vékony, speciális bevonatú, izolált tűvel rendelkezik egy
+              négyzetben egyenletesen elosztva. Az RF bőrfiatalító kezelés alatt
+              minden "lövés" során egyidejűleg hatol be a kezelőfej az összes
+              tűvel a bőr előre beállított mélységébe. Ezzel egy időben a
+              beszúrt tűkre előre beállított energiájú RF áram impulzus érkezik,
+              mely csak a tű hegyén (szigetelő bevonatának köszönhetően) folyik,
+              így kizárólag pontosan a dermis előre kiválasztott rétegét
+              melegíti, ezáltal hatásosabbá teszi a kezelést és a bőr kevésbé
+              sérül. A folyamat rövid ideig tart, kb. 0,1 másodpercig, majd a
+              tűk eltávolítására kerül sor. Ez a lokalizált hőhatás stimulálja a
+              kollagén rostokat, így fokozott kollagéntermelődést eredményez.
+            </p>
+            <Abstract />
           </div>
 
           <div className={styles.photoContainer}>
@@ -126,88 +186,115 @@ export default function SecretRF() {
             />
           </div>
 
+          {/* --- 5. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>A kezelés menete</h2>
-            <p>
-              A kezelés során a kezelőfej, amely 25 apró tűt tartalmaz (0,5–3,5
-              mm hosszúságban, a céltól és a bőr vastagságától függően),
-              mikro-motorral vezérelt. A tűk, mint elektródák, közvetlenül a
-              bőrbe szúrva az előre beállított mélységbe juttatják az RF áram
-              impulzusait. A 2Mhz-es frakcionált bipoláris rádiófrekvencia
-              kizárólag a dermis kiválasztott rétegét melegíti, így pontos és
-              hatékony stimulációt biztosít, miközben a bőr sérülését
-              minimalizálja.
-            </p>
-            <div style={{ width: "100%" }}>
-              {" "}
-              <p style={{ fontWeight: "bold" }}>A kezelés főbb lépései:</p>
-            </div>
+            <h2 className={styles.title}>A kezelés főbb lépései</h2>
             <ul>
-              <li>Bőr tisztítása és peeling</li>
+              <li>Bőr tisztítása</li>
+              <li>Peeling</li>
               <li>Érzéstelenítés</li>
-              <li>Rádiófrekvenciás és mikrotűs kezelés</li>
+              <li>Rádiófrekvencia és mikrotűs kezelés</li>
               <li>Utóápolás és fényvédelem</li>
             </ul>
+            <Abstract />
           </div>
 
+          {/* --- Árazás --- */}
           <div className={styles.sectionSubTitles}>
-            <h1 className={styles.title}>Kezelések ára</h1>
+            <h2 className={styles.title}>Kezelések ára</h2>
             <div className={styles.priceContainer}>
               <div className={styles.priceItems}>
                 <p>1 Alkalmas Arc kezelés (60 perc)</p>
-                <p>100.000 Ft-tól</p>
-                <p>Bérlet: 300.000 Ft (3+1 alkalom ajándék)</p>
+                <p>100.000Ft-tól</p>
               </div>
               <div className={styles.priceItems}>
-                <p>Teljes Arc + Nyak kezelés</p>
+                <p>Bérlet</p>
+                <p>300.000 Ft (3+ 1 Alkalom Ajándék)</p>
+              </div>
+              <div className={styles.priceItems}>
+                <p>Teljes Arc +Nyak / 1 Alkalom</p>
                 <p>110.000 Ft</p>
-                <p>Bérlet: 330.000 Ft (3+1 alkalom ajándék)</p>
               </div>
               <div className={styles.priceItems}>
-                <p>Teljes Arc, Nyak + Dekoltázs kezelés</p>
+                <p>Bérlet</p>
+                <p>330.000 Ft (3+1 Alkalom Ajándék)</p>
+              </div>
+              <div className={styles.priceItems}>
+                <p>Teljes Arc-Nyak+Dekoltázs /1 Alkalom</p>
                 <p>130.000 Ft</p>
-                <p>Bérlet: 390.000 Ft (3+1 alkalom ajándék)</p>
+              </div>
+              <div className={styles.priceItems}>
+                <p>Bérlet</p>
+                <p>390.000 Ft (3+ 1 Alkalom Ajándék)</p>
               </div>
             </div>
+            <Abstract />
           </div>
 
+          {/* --- 6. szekció --- */}
           <div className={styles.sectionSubTitles}>
-            <h2 className={styles.title}>Gyakran ismételt kérdések</h2>
+            <h2 className={styles.title}>Hasznos kérdések és válaszok</h2>
+            <h3>Mennyi idő alatt látható a kezelés hatása?</h3>
             <p>
-              <strong>Mennyi idő alatt látható a kezelés hatása?</strong>
-              <br />A teljes eredmény 3 hét után válik jól láthatóvá, mivel a
-              bőr mélyebb rétegeiben stimulált kollagénnek időbe telik az új
-              termelődés. Általában 3-4 alkalom javasolt, amelyet 4-6 hetente
-              ismételünk. Komolyabb problémák esetén havonta is ismételhető, az
-              eredmény akár 1-2 évig megmarad.
+              A frakcionált mikrotűs RF eljárás teljes eredménye 3 hét után
+              válik jól láthatóvá, mert a bőr mélyebb rétegeiben stimulált
+              kollagénnek időbe telik, míg elindítja az új kollagén termelését.
+              Egyénre szabott arcfiatalítási terv alapján, általában 3-4 alkalom
+              javasolt, amit 4-6 hetente szükséges ismételni. Komolyabb
+              problémák esetén, igény szerint havonta folyamatosan ismételhető.
+              A bőrfiatalítás hatékony eredményt nyújt, 1-2 évig megmarad.
             </p>
+
+            <h3>Hány éves kortól ajánlott a kezelés?</h3>
             <p>
-              <strong>Hány éves kortól ajánlott a kezelés?</strong>
-              <br />
-              Prevenciós célból már 20-30 éves kortól ajánlott, de ráncok, hegek
-              és tág pórusok esetén bármely életkorban végezhető.
+              Személyre szabott arcfiatalítási terv alapján, már 20-30 éves
+              kortól végezhető prevenciós célból. Nemcsak ránctalanításra, hanem
+              aknés hegek csökkentésére és pórusok összehúzására is ajánlott. A
+              kezelés eredményeként a bőr feszesebb, rugalmasabb és fiatalosabb
+              lesz.
             </p>
+
+            <h3>Milyen testrészen végezhető a kezelés?</h3>
             <p>
-              <strong>Milyen testrészeken végezhető a kezelés?</strong>
-              <br />
-              Az arc, nyak, dekoltázs és szemkörnyéken is alkalmazható.
-              Különböző konfigurációjú kezelőfejekkel a test más területein,
-              például hónaljon vagy felkaron is végezhető.
+              Arc, nyak, dekoltázs és szemkörnyéken is végezhető. A szemhéj
+              teljes felszíne kezelhető egészen a szempillákig. Hónalji izzadás
+              és testbőr feszesítés céljából is alkalmazható – ehhez egy
+              speciális kar áll rendelkezésünkre, amelyen nem 25, hanem 64
+              arannyal bevont tű található. Ennek köszönhetően nagyobb felületet
+              kezelhetünk egyszerre, nagyobb intenzitással, maximális
+              hatékonyság érdekében.
             </p>
+
+            <h3>Mennyi időt vesz igénybe a regenerálódás?</h3>
             <p>
-              <strong>Mennyi idő a regenerálódás?</strong>
-              <br />A bőrpirosodás és ödéma általában 2-3 órán belül elmúlik.
-              Extrém esetekben vagy érzékeny pácienseknél tovább tarthat, de a
-              bőr maximális gyógyulása érdekében javasolt az előírt utóápolás.
+              A kezelés során megjelenő bőrpirosodás és ödéma a legtöbb esetben
+              2-3 órán belül elmúlik. Extrém esetekben, illetve nagyon érzékeny
+              személyeknél ez tovább tarthat. Kiterjedt érelváltozások, szteroid
+              szedése vagy thread lifting eljáráson átesett pácienseknél
+              hosszabb ideig tartó ödéma léphet fel. A kezelt területen a bőr
+              tisztulása miatt átmenetileg pattanások is megjelenhetnek. Erősebb
+              beállítások esetén apró hegek alakulhatnak ki a tűszúrások nyomán,
+              de ezek egy héten belül gyógyulnak. A bőr maximális gyógyulása
+              érdekében ajánlott a javasolt ápoló termékek használata.
             </p>
+
+            <h3>Mire kell odafigyelni a kezelést követően?</h3>
             <p>
-              <strong>Mire kell odafigyelni a kezelés után?</strong>
-              <br />A kezelés után 24 órán belül nem ajánlott sportolni vagy
-              szaunázni. Legalább egy hétig kerülni kell a hámlasztást,
-              radírozást, és 3-4 hétig nem végezhető kozmetikai beavatkozás a
-              kezelt területen. Magas faktorszámú UV fényvédő használata
-              kötelező.
+              A kezelést követően 24 órán belül nem szabad sportolni vagy
+              szaunázni. Legalább egy hétig teljes mértékben kerülni kell a
+              hámlasztást, és a bőrfelület radírozását. Továbbá, 3-4 hétig nem
+              engedélyezett kozmetikai vagy kozmetológiai beavatkozásokat
+              végezni a kezelt területen. Magas faktorszámú, jó minőségű UV
+              fényvédő krém használata kötelező legalább 10 napon át a kezelés
+              után, és ebben az időszakban nem szabad szoláriumba menni.
             </p>
+
+            <h3>Milyen időközönként ajánlott megismétélni a beavatkozást?</h3>
+            <p>
+              Az ideális eredmény eléréséhez 4 hetente, összesen 3-4 alkalommal
+              érdemes elvégezni a kezelést.
+            </p>
+            <Abstract />
           </div>
         </div>
       </section>
