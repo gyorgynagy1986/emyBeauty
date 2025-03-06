@@ -55,8 +55,27 @@ import detox from "../../public/assets/services/detox.jpg"
 import balance from "../../public/assets/services/balance.jpg"
 import glam from "../../public/assets/services/glam.jpg"
 import retouch from "../../public/assets/services/retouch.jpg"
+import ormedic from "../../public/assets/services/ormedic.webp"
+
+import facelift from "../../public/assets/services/facelift.png"
+import wr from "../../public/assets/services/wr.webp"
+import wrforte from "../../public/assets/services/wrforte.webp"
+import lightlift from "../../public/assets/services/lightlift.webp"
+import lightliftforte from "../../public/assets/services/lightliftforte.webp"
+import ance from "../../public/assets/services/ance.webp"
+import perfectionlift from "../../public/assets/services/perfectionlift.webp"
+import perfectionliftforte from "../../public/assets/services/perfectionliftforte.webp"
+import betalfit from "../../public/assets/services/betalfit.webp"
 
 
+  /* INNOVATIV KEZELESEK  */
+  import sqt1 from "../../public/assets/services/innovativ/sqt1.webp"
+  import sqt2 from "../../public/assets/services/innovativ/sqt2.webp" 
+  import sqt3 from "../../public/assets/services/innovativ/sqt3.webp"
+  import sqt4 from "../../public/assets/services/innovativ/sqt4.webp"
+
+
+/* SERVICES  END*/
 
 
 /* FOOTER */
@@ -126,6 +145,25 @@ export const servicesPage = {
   balance:balance,
   glam:glam,
   retouch:retouch,
+  sqt1:sqt1,  
+  sqt2:sqt2,
+  sqt3:sqt3,
+  sqt4:sqt4,
+  ormedic:ormedic,
+  facelift:facelift,
+  wr:wr,
+  wrforte:wrforte,
+  lightlift:lightlift,
+  lightliftforte:lightliftforte,
+  ance:ance,
+  perfectionlift:perfectionlift,
+  perfectionliftforte:perfectionliftforte,
+  betalfit:betalfit
+
+  /* INNOVATIV KEZELESEK  */
+
+
+
 };
 /* SERVICES DONE */
 

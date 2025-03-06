@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
@@ -10,7 +12,52 @@ import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
 
+// AOS import
+import "aos/dist/aos.css";
+import AOS from "aos";
+
 export default function PollogenOxyGeneo() {
+  // Képernyőméret figyelése
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Képernyőméret ellenőrzése és isMobile állapot beállítása
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Kezdeti ellenőrzés
+    checkIfMobile();
+
+    // AOS inicializálása
+    AOS.init();
+
+    // Mobilon frissítsük az AOS-t a state változás után
+    if (isMobile) {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    }
+
+    // Eseményfigyelő a képernyőméret változásához
+    window.addEventListener("resize", () => {
+      const wasMobile = isMobile;
+      checkIfMobile();
+
+      // Ha változott a nézet típusa, frissítsük az AOS-t
+      if (wasMobile !== isMobile) {
+        setTimeout(() => {
+          AOS.refresh();
+        }, 100);
+      }
+    });
+
+    // Komponens leválasztásakor takarítunk
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, [isMobile]);
+
   return (
     <>
       <div className={styles.topBar}>
@@ -47,7 +94,16 @@ export default function PollogenOxyGeneo() {
       <section className={styles.container}>
         <div className={styles.helper}>
           {/* --- Fő cím + szöveg --- */}
-          <div className={styles.titleContainer}>
+          <div
+            data-aos={isMobile ? "fade" : "fade-right"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1500"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.titleContainer}
+          >
             <div className={styles.titleHelper}>
               <h1 className={styles.title}>
                 POLLOGEN Oxy Geneo™ - Komplex bőrmegújító program
@@ -74,7 +130,16 @@ export default function PollogenOxyGeneo() {
           </div>
 
           {/* --- Kép --- */}
-          <div className={styles.photoContainer}>
+          <div
+            data-aos={isMobile ? "fade" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1500"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.oxi2}
@@ -83,7 +148,15 @@ export default function PollogenOxyGeneo() {
           </div>
 
           {/* --- 1. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>A kezelés részletei</h2>
             <p>
               A kezeléshez használt OxyGeneo™ orvos-kozmetikai gép az egyetlen
@@ -100,7 +173,15 @@ export default function PollogenOxyGeneo() {
           </div>
 
           {/* --- 2. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Miért érdemes az OxyGeneo kezelést választani?
             </h2>
@@ -121,7 +202,15 @@ export default function PollogenOxyGeneo() {
           </div>
 
           {/* --- 3. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Felhasznált technológiák</h2>
             <h3>TriPollar®</h3>
             <p>
@@ -165,7 +254,15 @@ export default function PollogenOxyGeneo() {
           </div>
 
           {/* --- 4. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Választható kezeléstípusok</h2>
             <p>
               7 féle, nem-invazív kezeléssel a Geneo kezelések mindenki számára
@@ -176,7 +273,15 @@ export default function PollogenOxyGeneo() {
                 <strong>Geneo BALANCE</strong> (Bambusz szénnel, zsíros és
                 pattanásos bőrre): Megtisztítja, megnyugtatja és mattítja a
                 zsíros bőrt, javítva annak textúráját és megjelenését.
-                <div className={styles.photoContainer}>
+                <div
+                  data-aos="fade"
+                  data-aos-offset="50"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                  data-aos-once="true"
+                  className={styles.photoContainer}
+                >
                   <Image
                     alt={alt.name}
                     src={servicesPage.balance}
@@ -191,7 +296,15 @@ export default function PollogenOxyGeneo() {
                 bőrt, hidratált, ragyogó és feltöltött megjelenést kölcsönözve
                 neki. Emellett javítja a bőr barrier funkcióját, csökkenti a
                 bőrpírt és a gyulladásokat.
-                <div className={styles.photoContainer}>
+                <div
+                  data-aos="fade"
+                  data-aos-offset="50"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                  data-aos-once="true"
+                  className={styles.photoContainer}
+                >
                   <Image
                     alt={alt.name}
                     src={servicesPage.hyd}
@@ -203,7 +316,15 @@ export default function PollogenOxyGeneo() {
                 <strong>Geneo REVIVE</strong> (Vörös algával, finom és mélyebb
                 ráncokra): Növeli a bőr feszességét és rugalmasságát, valamint
                 segít megelőzni az idő előtti öregedést.
-                <div className={styles.photoContainer}>
+                <div
+                  data-aos="fade"
+                  data-aos-offset="50"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                  data-aos-once="true"
+                  className={styles.photoContainer}
+                >
                   <Image
                     alt={alt.name}
                     src={servicesPage.revive}
@@ -216,7 +337,15 @@ export default function PollogenOxyGeneo() {
                 tónusra, pigmentfoltokra és szürke, fáradt bőrre): Egységesíti a
                 bőrtónust, javítja a pigmentációt, megfiatalítja a bőrt, és véd
                 a napkárosodástól.
-                <div className={styles.photoContainer}>
+                <div
+                  data-aos="fade"
+                  data-aos-offset="50"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                  data-aos-once="true"
+                  className={styles.photoContainer}
+                >
                   <Image
                     alt={alt.name}
                     src={servicesPage.illum}
@@ -231,7 +360,15 @@ export default function PollogenOxyGeneo() {
                 öregedési jelek, mint a finom vonalak, ráncok és foltok
                 megjelenését. Emellett méregteleníti a bőrt, proaktívan kezelve
                 az öregedés látható jeleit.
-                <div className={styles.photoContainer}>
+                <div
+                  data-aos="fade"
+                  data-aos-offset="50"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                  data-aos-once="true"
+                  className={styles.photoContainer}
+                >
                   <Image
                     alt={alt.name}
                     src={servicesPage.detox}
@@ -245,7 +382,15 @@ export default function PollogenOxyGeneo() {
                 kollagéntermelést és a bőrsejtek megújulását, így visszaállítja
                 az arcbőr hidratáltságát, vitalitását, rugalmasságát,
                 feszességét és egészségét.
-                <div className={styles.photoContainer}>
+                <div
+                  data-aos="fade"
+                  data-aos-offset="50"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                  data-aos-once="true"
+                  className={styles.photoContainer}
+                >
                   <Image
                     alt={alt.name}
                     src={servicesPage.glam}
@@ -259,7 +404,15 @@ export default function PollogenOxyGeneo() {
                 ajánlott, különösen olajos és korpás bőrre. Javítja az aknés
                 elváltozásokat, elősegíti a tiszta bőrt és a jobb textúrát.
                 Természetes retusáló hatása van.
-                <div className={styles.photoContainer}>
+                <div
+                  data-aos="fade"
+                  data-aos-offset="50"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                  data-aos-once="true"
+                  className={styles.photoContainer}
+                >
                   <Image
                     alt={alt.name}
                     src={servicesPage.retouch}
@@ -269,7 +422,15 @@ export default function PollogenOxyGeneo() {
               </li>
               <li>
                 <strong>Geneo PROTECT</strong>
-                <div className={styles.photoContainer}>
+                <div
+                  data-aos="fade"
+                  data-aos-offset="50"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                  data-aos-once="true"
+                  className={styles.photoContainer}
+                >
                   <Image
                     alt={alt.name}
                     src={servicesPage.protect}
@@ -282,7 +443,15 @@ export default function PollogenOxyGeneo() {
           </div>
 
           {/* --- 5. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Gyakori kérdések</h2>
             <h3>Kinek jó választás az OxyGeneo™ kezelés?</h3>
             <p>
@@ -319,7 +488,15 @@ export default function PollogenOxyGeneo() {
           </div>
 
           {/* --- Árazás --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Kezelések ára</h2>
             <div className={styles.priceContainer}>
               <div className={styles.priceItems}>

@@ -43,7 +43,7 @@ export default function SqtBioMikrotusKezeles() {
           <div className={styles.photoContainer}>
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.sqt1}
               sizes={size.fullsize} // Ha különböző méretadatokat használunk
               // size objektumból v. fixen
             />
@@ -62,7 +62,14 @@ export default function SqtBioMikrotusKezeles() {
             </p>
             <Abstract />
           </div>
-
+          <div className={styles.photoContainer}>
+            <Image
+              alt={alt.name}
+              src={servicesPage.sqt4}
+              sizes={size.fullsize} // Ha különböző méretadatokat használunk
+              // size objektumból v. fixen
+            />
+          </div>
           {/* --- 2. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>
@@ -79,7 +86,14 @@ export default function SqtBioMikrotusKezeles() {
             </p>
             <Abstract />
           </div>
-
+          <div className={styles.photoContainer}>
+            <Image
+              alt={alt.name}
+              src={servicesPage.sqt2}
+              sizes={size.fullsize} // Ha különböző méretadatokat használunk
+              // size objektumból v. fixen
+            />
+          </div>
           {/* --- 3. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>
@@ -115,7 +129,14 @@ export default function SqtBioMikrotusKezeles() {
             </ul>
             <Abstract />
           </div>
-
+          <div className={styles.photoContainer}>
+            <Image
+              alt={alt.name}
+              src={servicesPage.sqt3}
+              sizes={size.fullsize} // Ha különböző méretadatokat használunk
+              // size objektumból v. fixen
+            />
+          </div>
           {/* --- 4. szekció --- */}
           <div className={styles.sectionSubTitles}>
             <h2 className={styles.title}>Milyen bőrtípusnál alkalmazható?</h2>

@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
@@ -10,7 +12,52 @@ import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
 
+// AOS import
+import "aos/dist/aos.css";
+import AOS from "aos";
+
 export default function OneNeedPro() {
+  // Képernyőméret figyelése
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Képernyőméret ellenőrzése és isMobile állapot beállítása
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Kezdeti ellenőrzés
+    checkIfMobile();
+    
+    // AOS inicializálása
+    AOS.init();
+    
+    // Mobilon frissítsük az AOS-t a state változás után
+    if (isMobile) {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    }
+
+    // Eseményfigyelő a képernyőméret változásához
+    window.addEventListener('resize', () => {
+      const wasMobile = isMobile;
+      checkIfMobile();
+      
+      // Ha változott a nézet típusa, frissítsük az AOS-t
+      if (wasMobile !== isMobile) {
+        setTimeout(() => {
+          AOS.refresh();
+        }, 100);
+      }
+    });
+    
+    // Komponens leválasztásakor takarítunk
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, [isMobile]);
+
   return (
     <>
       <div className={styles.topBar}>
@@ -47,7 +94,16 @@ export default function OneNeedPro() {
       <section className={styles.container}>
         <div className={styles.helper}>
           {/* --- Fő cím + szöveg --- */}
-          <div className={styles.titleContainer}>
+          <div 
+            data-aos={isMobile ? "fade" : "fade-right"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1500"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.titleContainer}
+          >
             <div className={styles.titleHelper}>
               <h1 className={styles.title}>1 NEED PRO</h1>
               <Abstract />
@@ -68,7 +124,16 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- Kép --- */}
-          <div className={styles.photoContainer}>
+          <div 
+            data-aos={isMobile ? "fade" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1500"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.onennedpro}
@@ -77,7 +142,15 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 1. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Hatékony bőrfelszín-megújítás</h2>
             <p>
               A különböző kezelőfejek lehetőséget biztosítanak egyéni
@@ -90,7 +163,15 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 2. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Sokrétű megoldás</h2>
             <p>
               Egyedülálló technológiájának köszönhetően a 1NeedPro azon kívül,
@@ -105,7 +186,15 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 3. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Hogyan működik?</h2>
             <p>
               A mikrotűs kezelés során az aprótűk mikroszkopikus sérüléseket
@@ -121,7 +210,15 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 4. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Biztonságos kezelés</h2>
             <p>
               A gép fejlesztői a kezelőfejen kívül létrehoztak egy szilikon
@@ -134,7 +231,15 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 5. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Milyen előnyei vannak?</h2>
             <ul>
               <li>
@@ -163,7 +268,15 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 6. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Kinek ajánlott?</h2>
             <p>
               Azoknak, akik szeretnék javítani bőrük állapotát, megfiatalítani
@@ -180,7 +293,15 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 7. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Mire kell figyelni a kezelés után?</h2>
             <p>
               A mikrotűs kezelés után a bőr ideiglenesen vörös lehet és enyhe
@@ -192,7 +313,15 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 8. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Kezelés menete</h2>
             <ul>
               <li>
@@ -230,7 +359,15 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- Árazás --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Kezelések ára</h2>
             <div className={styles.priceContainer}>
               <div className={styles.priceItems}>

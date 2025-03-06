@@ -24,6 +24,15 @@ const fig = Figtree({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: 'Emy Beauty Estetics',
+  description: '...',
+  openGraph: {
+      title: 'Emy Beauty Estetics',
+      description: '',
+    },
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="hu">

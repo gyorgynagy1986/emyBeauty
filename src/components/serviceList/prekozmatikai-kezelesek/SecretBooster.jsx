@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
@@ -10,7 +12,52 @@ import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
 
+// AOS import
+import "aos/dist/aos.css";
+import AOS from "aos";
+
 export default function SecretBooster() {
+  // Képernyőméret figyelése
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Képernyőméret ellenőrzése és isMobile állapot beállítása
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Kezdeti ellenőrzés
+    checkIfMobile();
+    
+    // AOS inicializálása
+    AOS.init();
+    
+    // Mobilon frissítsük az AOS-t a state változás után
+    if (isMobile) {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    }
+
+    // Eseményfigyelő a képernyőméret változásához
+    window.addEventListener('resize', () => {
+      const wasMobile = isMobile;
+      checkIfMobile();
+      
+      // Ha változott a nézet típusa, frissítsük az AOS-t
+      if (wasMobile !== isMobile) {
+        setTimeout(() => {
+          AOS.refresh();
+        }, 100);
+      }
+    });
+    
+    // Komponens leválasztásakor takarítunk
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, [isMobile]);
+
   return (
     <>
       <div className={styles.topBar}>
@@ -47,7 +94,16 @@ export default function SecretBooster() {
       <section className={styles.container}>
         <div className={styles.helper}>
           {/* --- Fő cím + szöveg --- */}
-          <div className={styles.titleContainer}>
+          <div 
+            data-aos={isMobile ? "fade" : "fade-right"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1500"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.titleContainer}
+          >
             <div className={styles.titleHelper}>
               <h1 className={styles.title}>SECRET BOOSTER</h1>
               <Abstract />
@@ -70,7 +126,16 @@ export default function SecretBooster() {
           </div>
 
           {/* --- Kép --- */}
-          <div className={styles.photoContainer}>
+          <div 
+            data-aos={isMobile ? "fade" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1500"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.secretrf}
@@ -80,7 +145,15 @@ export default function SecretBooster() {
           </div>
 
           {/* --- 1. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>A kezelés összetevői</h2>
             <p>
               1. A Secret RF kezelés a ma elérhető egyik legmodernebb műtét
@@ -96,7 +169,15 @@ export default function SecretBooster() {
           </div>
 
           {/* --- 2. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>1. Secret™ RF kezelés</h2>
             <p>
               A frakcionált mikrotűs RF kezelés a mai legmodernebb, klinikailag
@@ -113,7 +194,15 @@ export default function SecretBooster() {
             <Abstract />
           </div>
 
-          <div className={styles.photoContainer}>
+          <div 
+            data-aos={isMobile ? "fade" : "fade-right"}
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1500"
+            data-aos-easing="ease"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.sc3}
@@ -123,7 +212,15 @@ export default function SecretBooster() {
           </div>
 
           {/* --- 3. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>2. DEEP SHOOT AA kezelés</h2>
             <p>
               A DEEP SHOOT AA booster 3 ml hatóanyagkoktélt juttat 0,5 mm mélyen
@@ -139,7 +236,16 @@ export default function SecretBooster() {
             </p>
             <Abstract />
           </div>
-          <div className={styles.photoContainer}>
+
+          <div 
+            data-aos={isMobile ? "fade" : "fade-left"}
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1500"
+            data-aos-easing="ease"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.secret2}
@@ -149,7 +255,15 @@ export default function SecretBooster() {
           </div>
 
           {/* --- 4. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               SECRET BOOSTER + EXOSOME SEJTTERÁPA
             </h2>
@@ -178,7 +292,15 @@ export default function SecretBooster() {
           </div>
 
           {/* --- Árazás --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Kezelések ára</h2>
             <div className={styles.priceContainer}>
               <div className={styles.priceItems}>

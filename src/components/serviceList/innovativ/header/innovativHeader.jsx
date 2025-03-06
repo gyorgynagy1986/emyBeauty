@@ -24,7 +24,7 @@ const InovativHeader = ({ activePage }) => {
           size={size.fullsize}
           src={icon}
         />
-        <Link href="/szolgaltatasok/innovativ-kezelesek">
+        <Link href="/szolgaltatasok/slow-aging-kezelesek">
           INNOVATÍV KEZELÉSEK
         </Link>
         <Image

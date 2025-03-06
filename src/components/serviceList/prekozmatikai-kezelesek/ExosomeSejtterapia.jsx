@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
@@ -10,7 +12,52 @@ import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
 
+// AOS import
+import "aos/dist/aos.css";
+import AOS from "aos";
+
 export default function ExosomeSejtterapia() {
+  // Képernyőméret figyelése
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Képernyőméret ellenőrzése és isMobile állapot beállítása
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Kezdeti ellenőrzés
+    checkIfMobile();
+    
+    // AOS inicializálása
+    AOS.init();
+    
+    // Mobilon frissítsük az AOS-t a state változás után
+    if (isMobile) {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    }
+
+    // Eseményfigyelő a képernyőméret változásához
+    window.addEventListener('resize', () => {
+      const wasMobile = isMobile;
+      checkIfMobile();
+      
+      // Ha változott a nézet típusa, frissítsük az AOS-t
+      if (wasMobile !== isMobile) {
+        setTimeout(() => {
+          AOS.refresh();
+        }, 100);
+      }
+    });
+    
+    // Komponens leválasztásakor takarítunk
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, [isMobile]);
+
   return (
     <>
       <div className={styles.topBar}>
@@ -47,7 +94,16 @@ export default function ExosomeSejtterapia() {
       <section className={styles.container}>
         <div className={styles.helper}>
           {/* --- Fő cím + szöveg --- */}
-          <div className={styles.titleContainer}>
+          <div 
+            data-aos={isMobile ? "fade" : "fade-right"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1500"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.titleContainer}
+          >
             <div className={styles.titleHelper}>
               <h1 className={styles.title}>
                 EXOSOME SEJTTERÁPIA - Forradalmi innováció az orvosesztétikában
@@ -68,7 +124,16 @@ export default function ExosomeSejtterapia() {
           </div>
 
           {/* --- Kép --- */}
-          <div className={styles.photoContainer}>
+          <div 
+            data-aos={isMobile ? "fade" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1500"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.exo2}
@@ -77,7 +142,15 @@ export default function ExosomeSejtterapia() {
           </div>
 
           {/* --- 1. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Mit érdemes tudni az exosome terápiáról?
             </h2>
@@ -113,7 +186,15 @@ export default function ExosomeSejtterapia() {
           </div>
 
           {/* --- 2. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Hogyan kell felkészülni egy kezelésre?
             </h2>
@@ -135,7 +216,15 @@ export default function ExosomeSejtterapia() {
           </div>
 
           {/* --- 3. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>A kezelés jótékony hatásai</h2>
             <ul>
               <li>
@@ -164,7 +253,15 @@ export default function ExosomeSejtterapia() {
           </div>
 
           {/* --- 4. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Kinek ajánlott az EXOSOME sejtterápiás kezelés?
             </h2>
@@ -211,7 +308,15 @@ export default function ExosomeSejtterapia() {
           </div>
 
           {/* --- Árazás --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="150"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Kezelések ára</h2>
             <div className={styles.priceContainer}>
               <div className={styles.priceItems}>

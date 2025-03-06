@@ -5,8 +5,26 @@ import GenosysSnowcell from "@/components/serviceList/innovativ/GenosysSnowcell"
 import MikrodermabrazioGyemantfejes from "@/components/serviceList/innovativ/MikrodermabrazioGyemantfejes";
 import OneNeedProMikrotus from "@/components/serviceList/innovativ/OneNeedProMikrotus";
 
+export async function generateMetadata({ params, searchParams }, parent) {
+  // read route params
+  const { slug } = await params;
+  
+  // Készítsünk egy térképet a tényleges címekhez
+  const titleMap = {
+    "tu-nelkuli-mezoterapia": "TŰ NÉLKÜLI MEZOTERÁPIA - ELEKTROPORÁCIÓ",
+    "geno-led-alacsony-intenzitasu-led-feny": "GENO-LED ALACSONY INTENZITÁSÚ LED FÉNY",
+    "sqt-bio-mikrotus-kezeles": "SQT® BIO MIKROTŰS SZIVACSTŰ KEZELÉS",
+    "genosys-snowcell": "GENOSYS SNOWCELL",
+    "mikrodermabrazio-gyemantfejes-technologia": "MIKRODERMABRÁZIÓ - GYÉMÁNTFEJES TECHNOLOGIA",
+    "1-need-pro-mikrotus-kezeles": "1 NEED PRO MIKROTŰS KEZELÉS"
+  };
 
-export default async function page({ params }) {
+  return {
+    title: titleMap[slug] || slug,
+  };
+}
+
+export default async function Page({ params,}) {
   const { slug } = params;
 
   if (slug === "tu-nelkuli-mezoterapia") {

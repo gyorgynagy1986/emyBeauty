@@ -16,9 +16,10 @@ const ServiceItem = ({ src, title, slug, text }) => (
       alt={alt.name}
       size={size.fullsize}
       src={src}
+      priority
     />
     <div className={styles.titleContainer}>
-      <Link href={`/szolgaltatasok/innovativ-kezelesek/${slug}`}>{title}</Link>
+      <Link href={`/szolgaltatasok/slow-aging-kezelesek/${slug}`}>{title}</Link>
     </div>
     <div className={styles.ServiceItemInfo}>
       <Abstract />
@@ -46,7 +47,7 @@ const page = () => {
 
     // 3. SQT® BIO MIKROTŰS SZIVACSTŰ KEZELÉS
     {
-      src: servicesPage.serices3,
+      src: servicesPage.sqt4,
       title: "SQT® BIO MIKROTŰS SZIVACSTŰ KEZELÉS",
       slug: "/sqt-bio-mikrotus-kezeles",
       text: "3 millió természetes szilícium mikrotűvel serkenti a bőr anyagcseréjét. Fájdalommentes megoldás, amely természetes módon rövidíti a bőr megújulási ciklusát és halványítja a pigmentfoltokat.",
@@ -92,9 +93,9 @@ const page = () => {
           />
           <Link
             className={styles.active}
-            href="/szolgaltatasok/innovativ-kezelesek"
+            href="/szolgaltatasok/slow-aging-kezelesek"
           >
-            INNOVATÍV KEZELÉSEK 
+            INNOVATÍV KEZELÉSEK
           </Link>
         </div>
       </div>

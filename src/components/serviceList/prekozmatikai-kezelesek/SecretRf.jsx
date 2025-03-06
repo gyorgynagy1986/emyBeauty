@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
@@ -9,12 +11,62 @@ import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 export default function SecretRfKezelés() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Képernyőméret ellenőrzése és isMobile állapot beállítása
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Kezdeti ellenőrzés
+    checkIfMobile();
+
+    // AOS inicializálása
+    AOS.init();
+
+    // Mobilon frissítsük az AOS-t a state változás után
+    if (isMobile) {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    }
+
+    // Eseményfigyelő a képernyőméret változásához
+    window.addEventListener("resize", () => {
+      const wasMobile = isMobile;
+      checkIfMobile();
+
+      // Ha változott a nézet típusa, frissítsük az AOS-t
+      if (wasMobile !== isMobile) {
+        setTimeout(() => {
+          AOS.refresh();
+        }, 100);
+      }
+    });
+
+    // Komponens leválasztásakor takarítunk
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, [isMobile]);
+
   return (
     <>
       <div className={styles.topBar}>
-        <div className={styles.items}>
+        <div
+          data-aos="fade-down"
+          data-aos-offset="50"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease"
+          data-aos-once="true"
+          className={styles.items}
+        >
           <Link href="/">FŐOLDAL</Link>
           <Image
             style={{ marginBottom: "1px" }}
@@ -29,7 +81,7 @@ export default function SecretRfKezelés() {
             size={size.fullsize}
             src={icon}
           />
-          <Link href="/szolgaltatasok/innovativ-kezelesek">
+          <Link href="/szolgaltatasok/slow-aging-kezelesek">
             INNOVATÍV KEZELÉSEK
           </Link>
           <Image
@@ -47,7 +99,15 @@ export default function SecretRfKezelés() {
       <section className={styles.container}>
         <div className={styles.helper}>
           {/* --- Fő cím + szöveg --- */}
-          <div className={styles.titleContainer}>
+          <div
+            data-aos={isMobile ? "fade" : "fade-right"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1500"
+            data-aos-easing="ease"
+            data-aos-once="true"
+            className={styles.titleContainer}
+          >
             <div className={styles.titleHelper}>
               <h1 className={styles.title}>Mi a Secret™ RF?</h1>
               <Abstract />
@@ -69,7 +129,15 @@ export default function SecretRfKezelés() {
           </div>
 
           {/* --- Kép --- */}
-          <div className={styles.photoContainer}>
+          <div
+            data-aos={isMobile ? "fade" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1500"
+            data-aos-easing="ease"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.secret}
@@ -78,7 +146,15 @@ export default function SecretRfKezelés() {
           </div>
 
           {/* --- 1. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="150"
+            data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-easing="ease"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               A SECRET™ RF három rendkívül hatékony technológia hatását ötvözi
             </h2>
@@ -95,7 +171,15 @@ export default function SecretRfKezelés() {
           </div>
 
           {/* --- 2. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>SECRET FRAKCIONÁLT RÁDIÓFREKVENCIA</h2>
             <p>
               Bőrünk öregedése, és rugalmasságának elvesztése ellen már fiatal
@@ -129,7 +213,15 @@ export default function SecretRfKezelés() {
           </div>
 
           {/* --- 3. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos={isMobile ? "fade-up" : "fade-right"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               A kezelés széleskörű megoldást nyújt a bőr különböző problémáira
             </h2>
@@ -150,7 +242,15 @@ export default function SecretRfKezelés() {
           </div>
 
           {/* --- 4. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos={isMobile ? "fade-up" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>A kezelés menete</h2>
             <p>
               A kezelőfejen egyszer használatos, 25 apró tűt tartalmazó,
@@ -178,7 +278,15 @@ export default function SecretRfKezelés() {
             <Abstract />
           </div>
 
-          <div className={styles.photoContainer}>
+          <div
+            data-aos="zoom-in"
+            data-aos-offset="150"
+            data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.secret3}
@@ -187,7 +295,15 @@ export default function SecretRfKezelés() {
           </div>
 
           {/* --- 5. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>A kezelés főbb lépései</h2>
             <ul>
               <li>Bőr tisztítása</li>
@@ -200,7 +316,15 @@ export default function SecretRfKezelés() {
           </div>
 
           {/* --- Árazás --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos={isMobile ? "fade-up" : "fade-right"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Kezelések ára</h2>
             <div className={styles.priceContainer}>
               <div className={styles.priceItems}>
@@ -232,7 +356,15 @@ export default function SecretRfKezelés() {
           </div>
 
           {/* --- 6. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div
+            data-aos={isMobile ? "fade-up" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="150"
+            data-aos-duration="1200"
+            data-aos-easing="ease"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Hasznos kérdések és válaszok</h2>
             <h3>Mennyi idő alatt látható a kezelés hatása?</h3>
             <p>

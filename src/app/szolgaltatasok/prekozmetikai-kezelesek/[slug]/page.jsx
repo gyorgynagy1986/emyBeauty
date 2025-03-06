@@ -6,7 +6,27 @@ import OneNeedPro from "@/components/serviceList/prekozmatikai-kezelesek/OneNeed
 import HollywoodCarbonPeeling from "@/components/serviceList/prekozmatikai-kezelesek/HollywoodCarbonPeeling";
 import DeepShootSkinBooster from "@/components/serviceList/prekozmatikai-kezelesek/DeepShootSkinBooster";
 
-export default async function page({ params }) {
+export async function generateMetadata({ params, searchParams }, parent) {
+  // read route params
+  const { slug } = await params;
+  
+  // Készítsünk egy térképet a tényleges címekhez
+  const titleMap = {
+    "secret-rf": "Secret™ RF",
+    "secret-booster": "Secret™ Booster",
+    "pollogen-oxygeneo": "Oxy Geneo™ by Pollogen",
+    "exosome-sejtterapia": "EXOSOME SEJTTERÁPIA",
+    "1-need-pro": "1 NEED PRO",
+    "hollywood-carbon-peeling": "Hollywood Carbon Lézeres MEDICAL Peeling",
+    "deep-shoot-skin-booster": "DEEP SHOOT SKIN BOOSTER"
+  };
+
+  return {
+    title: titleMap[slug] || slug,
+  };
+}
+
+export default async function Page({ params }) {
   const { slug } = params;
 
   if (slug === "secret-rf") {

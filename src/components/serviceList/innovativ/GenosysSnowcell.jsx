@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
@@ -9,7 +11,52 @@ import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
 import InovativHeader from "@/components/serviceList/innovativ/header/innovativHeader";
 
+// AOS import
+import "aos/dist/aos.css";
+import AOS from "aos";
+
 export default function GenosysSnowcell() {
+  // Képernyőméret figyelése
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Képernyőméret ellenőrzése és isMobile állapot beállítása
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Kezdeti ellenőrzés
+    checkIfMobile();
+    
+    // AOS inicializálása
+    AOS.init();
+    
+    // Mobilon frissítsük az AOS-t a state változás után
+    if (isMobile) {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    }
+
+    // Eseményfigyelő a képernyőméret változásához
+    window.addEventListener('resize', () => {
+      const wasMobile = isMobile;
+      checkIfMobile();
+      
+      // Ha változott a nézet típusa, frissítsük az AOS-t
+      if (wasMobile !== isMobile) {
+        setTimeout(() => {
+          AOS.refresh();
+        }, 100);
+      }
+    });
+    
+    // Komponens leválasztásakor takarítunk
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, [isMobile]);
+
   return (
     <>
       <InovativHeader activePage="Genosys SNOWCELL" />
@@ -17,7 +64,16 @@ export default function GenosysSnowcell() {
       <section className={styles.container}>
         <div className={styles.helper}>
           {/* --- Fő cím + szöveg --- */}
-          <div className={styles.titleContainer}>
+          <div 
+            data-aos={isMobile ? "fade-up" : "fade-right"}
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.titleContainer}
+          >
             <div className={styles.titleHelper}>
               <h1 className={styles.title}>Genosys SNOWCELL</h1>
               <Abstract />
@@ -35,17 +91,33 @@ export default function GenosysSnowcell() {
           </div>
 
           {/* --- Kép --- */}
-          <div className={styles.photoContainer}>
+          <div 
+            data-aos={isMobile ? "fade-up" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.slug1}
-              sizes={size.fullsize} // Ha különböző méretadatokat használunk
-              // size objektumból v. fixen
+              sizes={size.fullsize}
             />
           </div>
 
           {/* --- 1. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Genosys SNOWCELL</h2>
             <p>
               Egyenetlen a bőröd tónusa? Hiperpigmentációval küzdesz? Idősödés
@@ -60,7 +132,15 @@ export default function GenosysSnowcell() {
           </div>
 
           {/* --- 2. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>A Genosys SnowCell újdonsága</h2>
             <p>
               A Genosys SnowCell újdonsága és hatékonysága abban rejlik, hogy
@@ -79,7 +159,15 @@ export default function GenosysSnowcell() {
           </div>
 
           {/* --- 3. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Mik a kezelés előnyei?</h2>
             <ul>
               <li>Csökkenti a meglévő hiperpigmentációt</li>
@@ -104,7 +192,15 @@ export default function GenosysSnowcell() {
           </div>
 
           {/* --- 4. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Kinek ajánlott?</h2>
             <p>
               Az új innovatív Genosys SnowCell eljárás tökéletes választás lehet
@@ -118,7 +214,15 @@ export default function GenosysSnowcell() {
           </div>
 
           {/* --- 5. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Hogyan történik egy kezelés és mennyi időt vesz igénybe?
             </h2>
@@ -136,7 +240,15 @@ export default function GenosysSnowcell() {
           </div>
 
           {/* --- 6. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Hány alkalom szükséges a látványos eredmény eléréséhez?
             </h2>
@@ -151,7 +263,15 @@ export default function GenosysSnowcell() {
           </div>
 
           {/* --- 7. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Mire kell figyelni a kezelés előtt és a kezelés után?
             </h2>
@@ -163,7 +283,15 @@ export default function GenosysSnowcell() {
           </div>
 
           {/* --- 8. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Milyen esetekben nem ajánlott a kezelés?
             </h2>
@@ -175,7 +303,15 @@ export default function GenosysSnowcell() {
           </div>
 
           {/* --- Árazás --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Kezelések ára</h2>
             <div className={styles.priceContainer}>
               <div className={styles.priceItems}>

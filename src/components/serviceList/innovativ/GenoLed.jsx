@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
@@ -9,7 +11,52 @@ import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
 
+// AOS import
+import "aos/dist/aos.css";
+import AOS from "aos";
+
 export default function GenoLedKezelés() {
+  // Képernyőméret figyelése
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Képernyőméret ellenőrzése és isMobile állapot beállítása
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Kezdeti ellenőrzés
+    checkIfMobile();
+    
+    // AOS inicializálása
+    AOS.init();
+    
+    // Mobilon frissítsük az AOS-t a state változás után
+    if (isMobile) {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    }
+
+    // Eseményfigyelő a képernyőméret változásához
+    window.addEventListener('resize', () => {
+      const wasMobile = isMobile;
+      checkIfMobile();
+      
+      // Ha változott a nézet típusa, frissítsük az AOS-t
+      if (wasMobile !== isMobile) {
+        setTimeout(() => {
+          AOS.refresh();
+        }, 100);
+      }
+    });
+    
+    // Komponens leválasztásakor takarítunk
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, [isMobile]);
+
   return (
     <>
       <InovativHeader activePage="GENO-LED alacsony intenzitású LED fény" />
@@ -17,7 +64,16 @@ export default function GenoLedKezelés() {
       <section className={styles.container}>
         <div className={styles.helper}>
           {/* --- Fő cím + szöveg --- */}
-          <div className={styles.titleContainer}>
+          <div 
+            data-aos={isMobile ? "fade-up" : "fade-right"}
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.titleContainer}
+          >
             <div className={styles.titleHelper}>
               <h1 className={styles.title}>
                 GENO-LED alacsony intenzitású LED fény
@@ -41,17 +97,33 @@ export default function GenoLedKezelés() {
           </div>
 
           {/* --- Kép --- */}
-          <div className={styles.photoContainer}>
+          <div 
+            data-aos={isMobile ? "fade-up" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.slug1}
-              sizes={size.fullsize} // Ha különböző méretadatokat használunk
-              // size objektumból v. fixen
+              sizes={size.fullsize}
             />
           </div>
 
           {/* --- 1. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>GENO-LED fényterápia</h2>
             <p>
               A GENO-LED fénysugárzó eszköz, mely fájdalommentesen és
@@ -65,7 +137,15 @@ export default function GenoLedKezelés() {
           </div>
 
           {/* --- 2. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Az alacsony intenzitású LED fényterápia előnyei
             </h2>
@@ -90,7 +170,15 @@ export default function GenoLedKezelés() {
           </div>
 
           {/* --- 3. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>A LED fényterápia hatása</h2>
             <p>
               A LED fény egy bizonyos frekvencián a bőr rétegeibe jutva
@@ -107,7 +195,15 @@ export default function GenoLedKezelés() {
           </div>
 
           {/* --- 4. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Mi a különbség a LED terápiás fények között?
             </h2>
@@ -123,7 +219,15 @@ export default function GenoLedKezelés() {
           </div>
 
           {/* --- 5. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Piros fény</h2>
             <ul className={styles.ul2Col}>
               <li>Hullámhossz: 640 nm</li>
@@ -141,7 +245,15 @@ export default function GenoLedKezelés() {
           </div>
 
           {/* --- 6. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Kék fény</h2>
             <ul className={styles.ul2Col}>
               <li>Hullámhossz: 423 nm</li>
@@ -165,7 +277,15 @@ export default function GenoLedKezelés() {
           </div>
 
           {/* --- 7. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Zöld fény</h2>
             <ul className={styles.ul2Col}>
               <li>Hullámhossz: 532 nm</li>
@@ -182,7 +302,15 @@ export default function GenoLedKezelés() {
           </div>
 
           {/* --- 8. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Sárga fény</h2>
             <ul className={styles.ul2Col}>
               <li>Hullámhossz: 583 nm</li>
@@ -196,7 +324,15 @@ export default function GenoLedKezelés() {
           </div>
 
           {/* --- Árazás --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Mennyibe kerül a LED fényterápiás kezelés?
             </h2>
