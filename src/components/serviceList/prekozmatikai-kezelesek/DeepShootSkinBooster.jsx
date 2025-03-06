@@ -97,8 +97,8 @@ export default function DeepShootSkinBooster() {
           <div 
             data-aos={isMobile ? "fade" : "fade-right"}
             data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1500"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             data-aos-easing="ease"
             data-aos-mirror="true"
             data-aos-once="true"
@@ -124,8 +124,8 @@ export default function DeepShootSkinBooster() {
           <div 
             data-aos={isMobile ? "fade" : "fade-left"}
             data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1500"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             data-aos-easing="ease"
             data-aos-mirror="true"
             data-aos-once="true"
@@ -190,8 +190,8 @@ export default function DeepShootSkinBooster() {
           <div 
             data-aos="fade-up"
             data-aos-offset="100"
-            data-aos-delay="200"
-            data-aos-duration="1200"
+            data-aos-delay="100"
+            data-aos-duration="800"
             data-aos-easing="ease-in-out"
             data-aos-once="true"
             className={styles.sectionSubTitles}
@@ -212,8 +212,8 @@ export default function DeepShootSkinBooster() {
           <div 
             data-aos="fade-up"
             data-aos-offset="100"
-            data-aos-delay="150"
-            data-aos-duration="1200"
+            data-aos-delay="100"
+            data-aos-duration="800"
             data-aos-easing="ease-in-out"
             data-aos-once="true"
             className={styles.sectionSubTitles}
@@ -249,8 +249,8 @@ export default function DeepShootSkinBooster() {
           <div 
             data-aos="fade-up"
             data-aos-offset="100"
-            data-aos-delay="150"
-            data-aos-duration="1200"
+            data-aos-delay="100"
+            data-aos-duration="800"
             data-aos-easing="ease-in-out"
             data-aos-once="true"
             className={styles.sectionSubTitles}
@@ -321,8 +321,8 @@ export default function DeepShootSkinBooster() {
           <div 
             data-aos="fade-up"
             data-aos-offset="100"
-            data-aos-delay="150"
-            data-aos-duration="1000"
+            data-aos-delay="100"
+            data-aos-duration="800"
             data-aos-easing="ease-in-out"
             data-aos-once="true"
             className={styles.sectionSubTitles}
@@ -365,8 +365,8 @@ export default function DeepShootSkinBooster() {
           <div 
             data-aos="fade-up"
             data-aos-offset="100"
-            data-aos-delay="150"
-            data-aos-duration="1000"
+            data-aos-delay="100"
+            data-aos-duration="800"
             data-aos-easing="ease-in-out"
             data-aos-once="true"
             className={styles.sectionSubTitles}

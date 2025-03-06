@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Abstract from "@/components/astract/ObjectElement";
 import Image from "next/image";
@@ -9,8 +11,20 @@ import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 
-const ServiceItem = ({ src, title, slug, text }) => (
-  <div className={styles.ServiceItem}>
+// AOS import
+import "aos/dist/aos.css";
+import AOS from "aos";
+
+const ServiceItem = ({ src, title, slug, text, index }) => (
+  <div 
+    data-aos="fade-up"
+    data-aos-offset="100"
+    data-aos-delay={100 + (index * 50)} // Fokozatos késleltetés minden kártyának
+    data-aos-duration="800"
+    data-aos-easing="ease-in-out"
+    data-aos-once="true"
+    className={styles.ServiceItem}
+  >
     <Image
       className={styles.img}
       alt={alt.name}
@@ -29,6 +43,47 @@ const ServiceItem = ({ src, title, slug, text }) => (
 );
 
 const page = () => {
+  // Képernyőméret figyelése
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Képernyőméret ellenőrzése és isMobile állapot beállítása
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Kezdeti ellenőrzés
+    checkIfMobile();
+    
+    // AOS inicializálása
+    AOS.init();
+    
+    // Mobilon frissítsük az AOS-t a state változás után
+    if (isMobile) {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    }
+
+    // Eseményfigyelő a képernyőméret változásához
+    window.addEventListener('resize', () => {
+      const wasMobile = isMobile;
+      checkIfMobile();
+      
+      // Ha változott a nézet típusa, frissítsük az AOS-t
+      if (wasMobile !== isMobile) {
+        setTimeout(() => {
+          AOS.refresh();
+        }, 100);
+      }
+    });
+    
+    // Komponens leválasztásakor takarítunk
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, [isMobile]);
+
   const serviceItems = [
     {
       src: servicesPage.serices1,
@@ -95,13 +150,21 @@ const page = () => {
             className={styles.active}
             href="/szolgaltatasok/slow-aging-kezelesek"
           >
-            INNOVATÍV KEZELÉSEK
+          SLOW AGING KEZELÉSEK
           </Link>
         </div>
       </div>
       <section className={styles.containerHelper}>
-        <div className={styles.titleContainer}>
-          <h1>Innovatív kezelések</h1>
+        <div 
+          data-aos="fade-up"
+          data-aos-offset="150"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+          data-aos-easing="ease"
+          data-aos-once="true"
+          className={styles.titleContainer}
+        >
+          <h1>Slow Aging Kezelések</h1>
           <Abstract />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
@@ -112,7 +175,7 @@ const page = () => {
         </div>
         <div className={styles.itemsContainer}>
           {serviceItems.map((item, index) => (
-            <ServiceItem key={index} {...item} />
+            <ServiceItem key={index} index={index} {...item} />
           ))}
         </div>
       </section>

@@ -97,8 +97,8 @@ export default function SecretBooster() {
           <div 
             data-aos={isMobile ? "fade" : "fade-right"}
             data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1500"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             data-aos-easing="ease"
             data-aos-mirror="true"
             data-aos-once="true"
@@ -129,8 +129,8 @@ export default function SecretBooster() {
           <div 
             data-aos={isMobile ? "fade" : "fade-left"}
             data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1500"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             data-aos-easing="ease"
             data-aos-mirror="true"
             data-aos-once="true"
@@ -147,10 +147,11 @@ export default function SecretBooster() {
           {/* --- 1. szekció --- */}
           <div 
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="200"
-            data-aos-duration="1200"
-            data-aos-easing="ease-in-out"
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -171,10 +172,11 @@ export default function SecretBooster() {
           {/* --- 2. szekció --- */}
           <div 
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="200"
-            data-aos-duration="1200"
-            data-aos-easing="ease-in-out"
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -196,10 +198,11 @@ export default function SecretBooster() {
 
           <div 
             data-aos={isMobile ? "fade" : "fade-right"}
-            data-aos-offset="100"
-            data-aos-delay="150"
-            data-aos-duration="1500"
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.photoContainer}
           >
@@ -214,10 +217,11 @@ export default function SecretBooster() {
           {/* --- 3. szekció --- */}
           <div 
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="200"
-            data-aos-duration="1200"
-            data-aos-easing="ease-in-out"
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -239,10 +243,11 @@ export default function SecretBooster() {
 
           <div 
             data-aos={isMobile ? "fade" : "fade-left"}
-            data-aos-offset="100"
-            data-aos-delay="150"
-            data-aos-duration="1500"
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.photoContainer}
           >
@@ -257,10 +262,11 @@ export default function SecretBooster() {
           {/* --- 4. szekció --- */}
           <div 
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="200"
-            data-aos-duration="1200"
-            data-aos-easing="ease-in-out"
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -294,10 +300,11 @@ export default function SecretBooster() {
           {/* --- Árazás --- */}
           <div 
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="150"
+            data-aos-offset="150"
+            data-aos-delay="100"
             data-aos-duration="1000"
-            data-aos-easing="ease-in-out"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >

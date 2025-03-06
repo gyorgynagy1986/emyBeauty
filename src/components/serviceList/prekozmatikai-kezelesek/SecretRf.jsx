@@ -82,7 +82,7 @@ export default function SecretRfKezelés() {
             src={icon}
           />
           <Link href="/szolgaltatasok/slow-aging-kezelesek">
-            INNOVATÍV KEZELÉSEK
+            SLOW AGING KEZELÉSEK
           </Link>
           <Image
             style={{ marginBottom: "1px" }}
@@ -102,9 +102,10 @@ export default function SecretRfKezelés() {
           <div
             data-aos={isMobile ? "fade" : "fade-right"}
             data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1500"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.titleContainer}
           >
@@ -132,9 +133,10 @@ export default function SecretRfKezelés() {
           <div
             data-aos={isMobile ? "fade" : "fade-left"}
             data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1500"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.photoContainer}
           >
@@ -149,9 +151,10 @@ export default function SecretRfKezelés() {
           <div
             data-aos="fade-up"
             data-aos-offset="150"
-            data-aos-delay="200"
-            data-aos-duration="1200"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -173,10 +176,10 @@ export default function SecretRfKezelés() {
           {/* --- 2. szekció --- */}
           <div
             data-aos="fade-up"
-            data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1200"
-            data-aos-easing="ease"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -215,10 +218,10 @@ export default function SecretRfKezelés() {
           {/* --- 3. szekció --- */}
           <div
             data-aos={isMobile ? "fade-up" : "fade-right"}
-            data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1200"
-            data-aos-easing="ease"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -244,10 +247,10 @@ export default function SecretRfKezelés() {
           {/* --- 4. szekció --- */}
           <div
             data-aos={isMobile ? "fade-up" : "fade-left"}
-            data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1200"
-            data-aos-easing="ease"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -280,9 +283,9 @@ export default function SecretRfKezelés() {
 
           <div
             data-aos="zoom-in"
-            data-aos-offset="150"
-            data-aos-delay="200"
-            data-aos-duration="1200"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
             data-aos-easing="ease-in-out"
             data-aos-once="true"
             className={styles.photoContainer}
@@ -297,10 +300,10 @@ export default function SecretRfKezelés() {
           {/* --- 5. szekció --- */}
           <div
             data-aos="fade-up"
-            data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1200"
-            data-aos-easing="ease"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -318,10 +321,10 @@ export default function SecretRfKezelés() {
           {/* --- Árazás --- */}
           <div
             data-aos={isMobile ? "fade-up" : "fade-right"}
-            data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1200"
-            data-aos-easing="ease"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -358,10 +361,10 @@ export default function SecretRfKezelés() {
           {/* --- 6. szekció --- */}
           <div
             data-aos={isMobile ? "fade-up" : "fade-left"}
-            data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1200"
-            data-aos-easing="ease"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >

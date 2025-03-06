@@ -15,11 +15,18 @@
   margin-inline: auto;
   border: 1px solid transparent;
   border-image: linear-gradient(
-    162.8deg, 
-    rgba(36, 144, 232, 0.2) -4.69%, 
-    rgba(19, 114, 198, 0.2) 58.82%, 
-    rgba(0, 78, 157, 0.2) 99.47%
-  ) 1;
+      162.8deg,
+      rgba(36, 144, 232, 0.2) -4.69%,
+      rgba(19, 114, 198, 0.2) 58.82%,
+      rgba(0, 78, 157, 0.2) 99.47%
+    )
+    1;
+}
+
+@media screen and (min-width: 1980px) {
+  .container {
+    min-height: 80.3rem;
+  }
 }
 
 .textContainer {
@@ -32,9 +39,6 @@
   justify-content: center;
   gap: 4rem;
 }
-
-
-
 
 .photoContainer {
   width: 50%;
@@ -68,7 +72,7 @@
 }
 
 .buttonContainer {
-  padding: 0 ;
+  padding: 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -76,12 +80,25 @@
   max-width: 360px;
 }
 
-
 .photoContainer img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   max-height: 550px;
+}
+
+.photoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 1980px) {
+
+
+  .photoContainer img {
+    max-height: 90%;
+  }
 }
 
 .helper {
@@ -157,7 +174,6 @@
     width: 100%;
   }
 
-
   .photoContainer img {
     max-height: 800px;
   }
@@ -167,8 +183,6 @@
     padding-left: 2rem;
     padding-right: 2rem;
   }
-
-
 }
 
 /* Mobil */
@@ -205,13 +219,12 @@
     padding: 1rem 2.5rem;
   }
 
-  
-.buttonContainer {
-  padding: 0 5vw;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-}
+  .buttonContainer {
+    padding: 0 5vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
 }

@@ -97,8 +97,8 @@ export default function PollogenOxyGeneo() {
           <div
             data-aos={isMobile ? "fade" : "fade-right"}
             data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1500"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             data-aos-easing="ease"
             data-aos-mirror="true"
             data-aos-once="true"
@@ -133,8 +133,8 @@ export default function PollogenOxyGeneo() {
           <div
             data-aos={isMobile ? "fade" : "fade-left"}
             data-aos-offset="150"
-            data-aos-delay="150"
-            data-aos-duration="1500"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             data-aos-easing="ease"
             data-aos-mirror="true"
             data-aos-once="true"
@@ -150,10 +150,11 @@ export default function PollogenOxyGeneo() {
           {/* --- 1. szekció --- */}
           <div
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="200"
-            data-aos-duration="1200"
-            data-aos-easing="ease-in-out"
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -175,10 +176,11 @@ export default function PollogenOxyGeneo() {
           {/* --- 2. szekció --- */}
           <div
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="200"
-            data-aos-duration="1200"
-            data-aos-easing="ease-in-out"
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -204,10 +206,11 @@ export default function PollogenOxyGeneo() {
           {/* --- 3. szekció --- */}
           <div
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="150"
-            data-aos-duration="1200"
-            data-aos-easing="ease-in-out"
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -256,10 +259,11 @@ export default function PollogenOxyGeneo() {
           {/* --- 4. szekció --- */}
           <div
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="150"
-            data-aos-duration="1200"
-            data-aos-easing="ease-in-out"
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -275,10 +279,11 @@ export default function PollogenOxyGeneo() {
                 zsíros bőrt, javítva annak textúráját és megjelenését.
                 <div
                   data-aos="fade"
-                  data-aos-offset="50"
+                  data-aos-offset="150"
                   data-aos-delay="100"
                   data-aos-duration="1000"
                   data-aos-easing="ease"
+                  data-aos-mirror="true"
                   data-aos-once="true"
                   className={styles.photoContainer}
                 >
@@ -298,10 +303,11 @@ export default function PollogenOxyGeneo() {
                 bőrpírt és a gyulladásokat.
                 <div
                   data-aos="fade"
-                  data-aos-offset="50"
+                  data-aos-offset="150"
                   data-aos-delay="100"
                   data-aos-duration="1000"
                   data-aos-easing="ease"
+                  data-aos-mirror="true"
                   data-aos-once="true"
                   className={styles.photoContainer}
                 >
@@ -318,10 +324,11 @@ export default function PollogenOxyGeneo() {
                 segít megelőzni az idő előtti öregedést.
                 <div
                   data-aos="fade"
-                  data-aos-offset="50"
+                  data-aos-offset="150"
                   data-aos-delay="100"
                   data-aos-duration="1000"
                   data-aos-easing="ease"
+                  data-aos-mirror="true"
                   data-aos-once="true"
                   className={styles.photoContainer}
                 >
@@ -339,10 +346,11 @@ export default function PollogenOxyGeneo() {
                 a napkárosodástól.
                 <div
                   data-aos="fade"
-                  data-aos-offset="50"
+                  data-aos-offset="150"
                   data-aos-delay="100"
                   data-aos-duration="1000"
                   data-aos-easing="ease"
+                  data-aos-mirror="true"
                   data-aos-once="true"
                   className={styles.photoContainer}
                 >
@@ -362,10 +370,11 @@ export default function PollogenOxyGeneo() {
                 az öregedés látható jeleit.
                 <div
                   data-aos="fade"
-                  data-aos-offset="50"
+                  data-aos-offset="150"
                   data-aos-delay="100"
                   data-aos-duration="1000"
                   data-aos-easing="ease"
+                  data-aos-mirror="true"
                   data-aos-once="true"
                   className={styles.photoContainer}
                 >
@@ -384,10 +393,11 @@ export default function PollogenOxyGeneo() {
                 feszességét és egészségét.
                 <div
                   data-aos="fade"
-                  data-aos-offset="50"
+                  data-aos-offset="150"
                   data-aos-delay="100"
                   data-aos-duration="1000"
                   data-aos-easing="ease"
+                  data-aos-mirror="true"
                   data-aos-once="true"
                   className={styles.photoContainer}
                 >
@@ -406,10 +416,11 @@ export default function PollogenOxyGeneo() {
                 Természetes retusáló hatása van.
                 <div
                   data-aos="fade"
-                  data-aos-offset="50"
+                  data-aos-offset="150"
                   data-aos-delay="100"
                   data-aos-duration="1000"
                   data-aos-easing="ease"
+                  data-aos-mirror="true"
                   data-aos-once="true"
                   className={styles.photoContainer}
                 >
@@ -424,10 +435,11 @@ export default function PollogenOxyGeneo() {
                 <strong>Geneo PROTECT</strong>
                 <div
                   data-aos="fade"
-                  data-aos-offset="50"
+                  data-aos-offset="150"
                   data-aos-delay="100"
                   data-aos-duration="1000"
                   data-aos-easing="ease"
+                  data-aos-mirror="true"
                   data-aos-once="true"
                   className={styles.photoContainer}
                 >
@@ -445,10 +457,11 @@ export default function PollogenOxyGeneo() {
           {/* --- 5. szekció --- */}
           <div
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="150"
-            data-aos-duration="1200"
-            data-aos-easing="ease-in-out"
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
@@ -490,10 +503,11 @@ export default function PollogenOxyGeneo() {
           {/* --- Árazás --- */}
           <div
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="150"
+            data-aos-offset="150"
+            data-aos-delay="100"
             data-aos-duration="1000"
-            data-aos-easing="ease-in-out"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >

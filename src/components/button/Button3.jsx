@@ -7,7 +7,7 @@ import Link from "next/link";
 
 
 const Button3 = () => {
-  return <Link href='' className={style.button3}> <Image alt={alt.name} src={icon} /> Tekintsd meg az összes szolgáltatásom!</Link>;
+  return <Link href='/szolgaltatasok' className={style.button3}> <Image alt={alt.name} src={icon} /> Tekintsd meg az összes szolgáltatásom!</Link>;
 };
 
 export default Button3;

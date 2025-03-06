@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Button2 from "@/components/button/Button2";
 import Button from "@/components/button/Button";
 import Image from "next/image";
@@ -10,7 +12,52 @@ import { servicesPage } from "@/data/photos";
 import styles from "./serviceList.module.css";
 import InovativHeader from "@/components/serviceList/innovativ/header/innovativHeader";
 
+// AOS import
+import "aos/dist/aos.css";
+import AOS from "aos";
+
 export default function SqtBioMikrotusKezeles() {
+  // Képernyőméret figyelése
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Képernyőméret ellenőrzése és isMobile állapot beállítása
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Kezdeti ellenőrzés
+    checkIfMobile();
+    
+    // AOS inicializálása
+    AOS.init();
+    
+    // Mobilon frissítsük az AOS-t a state változás után
+    if (isMobile) {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    }
+
+    // Eseményfigyelő a képernyőméret változásához
+    window.addEventListener('resize', () => {
+      const wasMobile = isMobile;
+      checkIfMobile();
+      
+      // Ha változott a nézet típusa, frissítsük az AOS-t
+      if (wasMobile !== isMobile) {
+        setTimeout(() => {
+          AOS.refresh();
+        }, 100);
+      }
+    });
+    
+    // Komponens leválasztásakor takarítunk
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, [isMobile]);
+
   return (
     <>
       <InovativHeader activePage="SQT® Bio Mikrotűs szivacstű kezelés" />
@@ -18,7 +65,16 @@ export default function SqtBioMikrotusKezeles() {
       <section className={styles.container}>
         <div className={styles.helper}>
           {/* --- Fő cím + szöveg --- */}
-          <div className={styles.titleContainer}>
+          <div 
+            data-aos={isMobile ? "fade-up" : "fade-right"}
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.titleContainer}
+          >
             <div className={styles.titleHelper}>
               <h1 className={styles.title}>
                 SQT® Bio Mikrotűs szivacstű kezelés
@@ -40,17 +96,33 @@ export default function SqtBioMikrotusKezeles() {
           </div>
 
           {/* --- Kép --- */}
-          <div className={styles.photoContainer}>
+          <div 
+            data-aos={isMobile ? "fade-up" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.sqt1}
-              sizes={size.fullsize} // Ha különböző méretadatokat használunk
-              // size objektumból v. fixen
+              sizes={size.fullsize}
             />
           </div>
 
           {/* --- 1. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Pontosan mi ez a szivacstű?</h2>
             <p>
               A szivacstű egy olyan termék, amely a Spongilla nemzetségbe
@@ -62,16 +134,31 @@ export default function SqtBioMikrotusKezeles() {
             </p>
             <Abstract />
           </div>
-          <div className={styles.photoContainer}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.sqt4}
-              sizes={size.fullsize} // Ha különböző méretadatokat használunk
-              // size objektumból v. fixen
+              sizes={size.fullsize}
             />
           </div>
           {/* --- 2. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Mitől különleges az SQT® bio mikrotűs kezelés?
             </h2>
@@ -86,16 +173,31 @@ export default function SqtBioMikrotusKezeles() {
             </p>
             <Abstract />
           </div>
-          <div className={styles.photoContainer}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.sqt2}
-              sizes={size.fullsize} // Ha különböző méretadatokat használunk
-              // size objektumból v. fixen
+              sizes={size.fullsize}
             />
           </div>
           {/* --- 3. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Az SQT® bio mikrotűs kezelés előnyei
             </h2>
@@ -129,16 +231,31 @@ export default function SqtBioMikrotusKezeles() {
             </ul>
             <Abstract />
           </div>
-          <div className={styles.photoContainer}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
             <Image
               alt={alt.name}
               src={servicesPage.sqt3}
-              sizes={size.fullsize} // Ha különböző méretadatokat használunk
-              // size objektumból v. fixen
+              sizes={size.fullsize}
             />
           </div>
           {/* --- 4. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>Milyen bőrtípusnál alkalmazható?</h2>
             <p>
               A kémiai vagy gyógynövényes hámlasztó kezelésekkel ellentétben az
@@ -153,7 +270,15 @@ export default function SqtBioMikrotusKezeles() {
           </div>
 
           {/* --- 5. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Milyen bőrproblémára ajánlott az SQT bio mikrotűs kezelés?
             </h2>
@@ -170,7 +295,15 @@ export default function SqtBioMikrotusKezeles() {
           </div>
 
           {/* --- 6. szekció --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Hány alkalom szükséges a látványos eredmény eléréséhez?
             </h2>
@@ -183,7 +316,15 @@ export default function SqtBioMikrotusKezeles() {
           </div>
 
           {/* --- Árazás --- */}
-          <div className={styles.sectionSubTitles}>
+          <div 
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+            className={styles.sectionSubTitles}
+          >
             <h2 className={styles.title}>
               Mennyibe kerül az SQT bio mikrotűs kezelés?
             </h2>

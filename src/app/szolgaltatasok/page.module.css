@@ -23,15 +23,15 @@
 }
 
 .items a {
- font-size: 14px;
- font-weight: 500;
- font-family: var(--font-fig);
- line-height: 0;
- white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-fig);
+  line-height: 120%;
+  white-space: nowrap;
 }
 
 .active {
- color: var(--color-blue);
+  color: var(--color-blue);
 }
 
 .container {
@@ -71,13 +71,13 @@
   padding: 4rem 3vw;
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width: 1000px) {
   .itemsContainer {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .itemsContainer {
     grid-template-columns: 1fr;
   }
@@ -96,8 +96,7 @@
     1;
 }
 
-
-@media screen and (max-width:1000px) {
+@media screen and (max-width: 1000px) {
   .ServiceItem {
     max-width: 100%;
   }
