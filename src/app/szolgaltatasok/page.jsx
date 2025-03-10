@@ -25,25 +25,29 @@ const animationVariants = [
 ];
 
 const ServiceItem = ({ src, title, slug, index }) => (
-  <div 
-    data-aos={animationVariants[index % animationVariants.length]}
-    data-aos-offset="100"
-    data-aos-delay={100 + (index * 30)} 
-    data-aos-duration="800"
-    data-aos-easing="ease-in-out"
-    data-aos-once="true"
-    className={styles.ServiceItem}
-  >
-    <Image
-      className={styles.img}
-      alt={alt.name}
-      size={size.fullsize}
-      src={src}
-    />
-    <div className={styles.titleContainer}>
-      <Link href={`/szolgaltatasok/${slug}`}>{title}</Link>
+  <Link href={`/szolgaltatasok/${slug}`} className={styles.serviceLink}>
+    <div 
+      data-aos={animationVariants[index % animationVariants.length]}
+      data-aos-offset="100"
+      data-aos-delay={100 + (index * 30)} 
+      data-aos-duration="800"
+      data-aos-easing="ease-in-out"
+      data-aos-once="true"
+      className={styles.ServiceItem}
+    >
+      <div className={styles.imageWrapper}>
+        <Image
+          className={styles.img}
+          alt={alt.name}
+          size={size.fullsize}
+          src={src}
+        />
+      </div>
+      <div className={styles.titleContainer}>
+        <span>{title}</span>
+      </div>
     </div>
-  </div>
+  </Link>
 );
 
 const Page = () => {
@@ -77,7 +81,7 @@ const Page = () => {
     { src: servicesPage.pre, title: "Prekozmetikai Kezelések", slug: "prekozmetikai-kezelesek" },
     { src: servicesPage.serices2, title: "Slow Aging Kezelések ", slug: "slow-aging-kezelesek" },
     { src: servicesPage.isp, title: "IMAGE Skincare Protokolok", slug: "image-skincare-protokolok" },
-    { src: servicesPage.serices3, title: "Férfi Kozmetika", slug: "ferfi-kozmetika" },
+    { src: servicesPage.ferfi, title: "Férfi Kozmetika", slug: "ferfi-kozmetika" },
     { src: servicesPage.smink2, title: "Esztétikai Sminktetoválás", slug: "esztetikai-sminktetovalas" },
     { src: servicesPage.serices3, title: "Wax Szőrtelenítés ", slug: "wax-szortelenites" },
   ];

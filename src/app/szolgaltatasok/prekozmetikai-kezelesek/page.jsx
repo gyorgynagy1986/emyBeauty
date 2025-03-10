@@ -28,27 +28,35 @@ const ServiceItem = ({ src, title, slug, text, index }) => {
   // Use animation variants array instead of just alternating between two
   const animation = animationVariants[index % animationVariants.length];
   
+  // Function to limit text to 300 characters and add ellipsis if needed
+  const limitText = (text, limit = 300) => {
+    if (text.length <= limit) return text;
+    return text.slice(0, limit).trim() + '...';
+  };
+  
   return (
-    <div 
-      data-aos={animation}
-      data-aos-offset="100"
-      data-aos-delay={100 + (index * 50)} // Slightly reduced delay from 150 to 100 for better responsiveness
-      data-aos-duration="1000" // Slightly reduced from 1200ms to 1000ms for snappier feel
-      data-aos-easing="ease-in-out"
-      data-aos-once="true"
-      className={styles.ServiceItem}
-    >
-      <Image className={styles.img} priority alt={alt.name} size={size.fullsize} src={src} />
-      <div className={styles.titleContainer}>
-        <Link href={`/szolgaltatasok/prekozmetikai-kezelesek/${slug}`}>
-          {title}
-        </Link>
+    <Link href={`/szolgaltatasok/prekozmetikai-kezelesek/${slug}`} className={styles.serviceLink}>
+      <div 
+        data-aos={animation}
+        data-aos-offset="100"
+        data-aos-delay={100 + (index * 50)} // Slightly reduced delay from 150 to 100 for better responsiveness
+        data-aos-duration="1000" // Slightly reduced from 1200ms to 1000ms for snappier feel
+        data-aos-easing="ease-in-out"
+        data-aos-once="true"
+        className={styles.ServiceItem}
+      >
+        <div className={styles.imageWrapper}>
+          <Image className={styles.img} priority alt={alt.name} size={size.fullsize} src={src} />
+        </div>
+        <div className={styles.titleContainer}>
+          <span>{title}</span>
+        </div>
+        <div className={styles.ServiceItemInfo}>
+          <Abstract />
+          <p>{limitText(text)}</p>
+        </div>
       </div>
-      <div className={styles.ServiceItemInfo}>
-        <Abstract />
-        <p>{text}</p>
-      </div>
-    </div>
+    </Link>
   );
 };
 
@@ -144,6 +152,12 @@ const page = () => {
       title: "DEEP SHOOT SKIN BOOSTER",
       slug: "deep-shoot-skin-booster",
       text: "Legújabb koreai innováció: előretöltött steril fecskendők és Turtlepin III mikrotűs fej kombinációja, mely akár 30x hatékonyabb felszívódást biztosít, maximalizálva a hatóanyag-bejuttatást és serkentve a bőr megújulását.",
+    },
+    {
+      src: servicesPage.plasma,
+      title: "Plazma G –RÁDIÓFREKVENCIÁS ARCKEZELÉS",
+      slug: "plazma-g",
+      text: "A CollAge egy frakcionált, mátrixpontos rádiófrekvenciás eljárás, mely a mono- és bipoláris rádiófrekvenciát ötvözi. A különlegessége, hogy rendkívül mélyen, ugyanakkor nagyon sűrűn hat a 36 aranyozott pont elektródának köszönhetően.",
     },
   ];
 

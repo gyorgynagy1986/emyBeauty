@@ -69,5 +69,12 @@
 @media screen and (max-width: 600px) {
   .socialText {
     display: none;
-  }
+  } 
+
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

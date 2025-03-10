@@ -28,6 +28,11 @@
   font-family: var(--font-fig);
   line-height: 120%;
   white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.items a:hover {
+  color: var(--color-blue);
 }
 
 .active {
@@ -83,6 +88,18 @@
   }
 }
 
+/* This is the Link wrapper around each ServiceItem */
+.serviceLink {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.serviceLink:hover {
+  transform: translateY(-5px);
+}
+
 .ServiceItem {
   max-width: 37.8rem;
   box-shadow: 0px -2px 30px 0px #854e0f0f;
@@ -94,6 +111,12 @@
       rgba(0, 78, 157, 0.2) 99.47%
     )
     1;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.ServiceItem:hover {
+  box-shadow: 0px 5px 25px 0px rgba(0, 78, 157, 0.15);
 }
 
 @media screen and (max-width: 1000px) {
@@ -102,10 +125,21 @@
   }
 }
 
+.imageWrapper {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
 .img {
   width: 100%;
-  max-height: 250px;
+  height: 250px;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ServiceItem:hover .img {
+  transform: scale(1.1);
 }
 
 .titleContainer {
@@ -113,9 +147,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s ease;
 }
 
-.titleContainer a {
+.ServiceItem:hover .titleContainer {
+  background-color: rgba(0, 78, 157, 0.03);
+}
+
+.titleContainer span {
   font-family: var(--font-fig);
   font-weight: 500;
   font-size: 1.9rem;
@@ -123,4 +162,9 @@
   letter-spacing: 0%;
   text-align: center;
   color: var(--color-blue);
+  transition: color 0.3s ease;
+}
+
+.ServiceItem:hover .titleContainer span {
+  color: #0063c7;
 }

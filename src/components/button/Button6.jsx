@@ -1,16 +1,17 @@
 import React from "react";
 import style from "./Button.module.css";
-import icon from '../../../public/assets/icon/eye.svg'
+import Link from "next/link";
 import Image from "next/image";
 import { alt } from "@/data/alt";
+import icon from "../../../public/assets/icon/map.svg";
 
-const Button6 = () => {
+const Button4 = () => {
   return (
-    <>
-    <button  className={style.button3}> <Image alt={alt.name} src={icon} /> Válassz elérhetőségeim közül!</button>;
-    </>
-  )
-  
+    <Link href="/kapcsolat" className={style.button3}>
+      {" "}
+      <Image alt={alt.name} src={icon} /> Válassz az elérhetőségeim közül
+    </Link>
+  );
 };
 
-export default Button6;
+export default Button4;

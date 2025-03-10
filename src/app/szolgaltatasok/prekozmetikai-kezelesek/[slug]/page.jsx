@@ -5,6 +5,8 @@ import ExosomeSejtterapia from "@/components/serviceList/prekozmatikai-kezelesek
 import OneNeedPro from "@/components/serviceList/prekozmatikai-kezelesek/OneNeedPro";
 import HollywoodCarbonPeeling from "@/components/serviceList/prekozmatikai-kezelesek/HollywoodCarbonPeeling";
 import DeepShootSkinBooster from "@/components/serviceList/prekozmatikai-kezelesek/DeepShootSkinBooster";
+import PlasmaG from "@/components/serviceList/prekozmatikai-kezelesek/PlazmaG";
+
 
 export async function generateMetadata({ params, searchParams }, parent) {
   // read route params
@@ -18,7 +20,8 @@ export async function generateMetadata({ params, searchParams }, parent) {
     "exosome-sejtterapia": "EXOSOME SEJTTERÁPIA",
     "1-need-pro": "1 NEED PRO",
     "hollywood-carbon-peeling": "Hollywood Carbon Lézeres MEDICAL Peeling",
-    "deep-shoot-skin-booster": "DEEP SHOOT SKIN BOOSTER"
+    "deep-shoot-skin-booster": "DEEP SHOOT SKIN BOOSTER",
+    "plazma-g": "Plazma G –RÁDIÓFREKVENCIÁS ARCKEZELÉS",
   };
 
   return {
@@ -56,6 +59,11 @@ export default async function Page({ params }) {
   if (slug === "deep-shoot-skin-booster") {
     return <DeepShootSkinBooster />;
   }
+
+  if (slug === "plazma-g") {
+    return <PlasmaG />;
+  }
+  
 
   // Egyébként dobhatsz hibaoldalt,
   // vagy visszaadhatsz valami alapértelmezett UI-t:

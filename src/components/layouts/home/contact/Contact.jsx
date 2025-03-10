@@ -7,7 +7,7 @@ import styles from "./Contact.module.css";
 import Ob from "@/components/astract/ObjectElement";
 import Button from "@/components/button/Button";
 import Button2 from "@/components/button/Button2";
-import Button3 from "@/components/button/Button4";
+import Button3 from "@/components/button/Button6";
 
 
 

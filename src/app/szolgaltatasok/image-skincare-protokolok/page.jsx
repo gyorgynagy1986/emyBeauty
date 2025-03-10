@@ -17,39 +17,54 @@ import AOS from "aos";
 
 // Animation variants for more diversity
 const animationVariants = [
-  "fade-up", 
-  "fade-right", 
-  "fade-left", 
-  "zoom-in", 
-  "flip-up", 
-  "slide-up"
+  "fade-up",
+  "fade-right",
+  "fade-left",
+  "zoom-in",
+  "flip-up",
+  "slide-up",
 ];
 
-const ServiceItem = ({ src, title, slug, text, index }) => (
-  <div 
-    data-aos={animationVariants[index % animationVariants.length]}
-    data-aos-offset="100"
-    data-aos-delay={100 + (index * 30)} // Shorter delay between items due to many products
-    data-aos-duration="800"
-    data-aos-easing="ease-in-out"
-    data-aos-once="true"
-    className={styles.ServiceItem}
-  >
-    <Image
-      className={styles.img}
-      alt={alt.name}
-      size={size.fullsize}
-      src={src}
-    />
-    <div className={styles.titleContainer}>
-      <Link href={`/szolgaltatasok/image-skincare-protokolok/${slug}`}>{title}</Link>
-    </div>
-    <div className={styles.ServiceItemInfo}>
-      <Abstract />
-      <p>{text}</p>
-    </div>
-  </div>
-);
+const ServiceItem = ({ src, title, slug, text, index }) => {
+  // Function to limit text to 300 characters and add ellipsis if needed
+  const limitText = (text, limit = 150) => {
+    if (text.length <= limit) return text;
+    return text.slice(0, limit).trim() + "...";
+  };
+
+  return (
+    <Link
+      href={`/szolgaltatasok/image-skincare-protokolok/${slug}`}
+      className={styles.serviceLink}
+    >
+      <div
+        data-aos={animationVariants[index % animationVariants.length]}
+        data-aos-offset="100"
+        data-aos-delay={100 + index * 30}
+        data-aos-duration="800"
+        data-aos-easing="ease-in-out"
+        data-aos-once="true"
+        className={styles.ServiceItem}
+      >
+        <div className={styles.imageWrapper}>
+          <Image
+            className={styles.img}
+            alt={alt.name}
+            size={size.fullsize}
+            src={src}
+          />
+        </div>
+        <div className={styles.titleContainer}>
+          <span>{title}</span>
+        </div>
+        <div className={styles.ServiceItemInfo}>
+          <Abstract />
+          <p>{limitText(text)}</p>
+        </div>
+      </div>
+    </Link>
+  );
+};
 
 const page = () => {
   // Screen size tracking
@@ -62,11 +77,11 @@ const page = () => {
       offset: 120,
       delay: 0,
       duration: 800,
-      easing: 'ease-in-out',
+      easing: "ease-in-out",
       once: true,
       mirror: false,
-      anchorPlacement: 'top-bottom',
-      disable: false
+      anchorPlacement: "top-bottom",
+      disable: false,
     });
 
     // Screen size check function
@@ -74,7 +89,7 @@ const page = () => {
       const wasMobile = isMobile;
       const newIsMobile = window.innerWidth <= 768;
       setIsMobile(newIsMobile);
-      
+
       // Only refresh AOS when switching between mobile/desktop
       if (wasMobile !== newIsMobile) {
         setTimeout(() => {
@@ -85,20 +100,20 @@ const page = () => {
 
     // Initial check
     checkIfMobile();
-    
+
     // Event listener for screen size changes
-    window.addEventListener('resize', checkIfMobile);
-    
+    window.addEventListener("resize", checkIfMobile);
+
     // Refresh AOS on window resize for better responsiveness
     const handleResize = () => {
       AOS.refresh();
     };
-    window.addEventListener('resize', handleResize);
-    
+    window.addEventListener("resize", handleResize);
+
     // Cleanup on component unmount
     return () => {
-      window.removeEventListener('resize', checkIfMobile);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", checkIfMobile);
+      window.removeEventListener("resize", handleResize);
     };
   }, [isMobile]);
 
@@ -129,7 +144,8 @@ const page = () => {
     },
     {
       src: servicesPage.lightliftforte,
-      title: "I PEEL | LIGHTENING LIFT® FORTE - INTENZÍV BŐRVILÁGOSÍTÓ HÁMLASZTÁS",
+      title:
+        "I PEEL | LIGHTENING LIFT® FORTE - INTENZÍV BŐRVILÁGOSÍTÓ HÁMLASZTÁS",
       slug: "i-peel-lightening-lift-forte-intenzive-borvilagosito-hamlasztas",
       text: "Intenzív bőrvilágosító kezelés magasabb koncentrációjú hatóanyagokkal a makacsabb pigmentációs problémákra. Mélyebb hámlasztást biztosít és hatékonyan kezeli az erősebb elszíneződéseket.",
     },
@@ -157,7 +173,7 @@ const page = () => {
       slug: "i-peel-beta-lift-aknekezelo-hamlasztas",
       text: "Orvosi szintű, intenzív tisztító hámlasztás aknéra hajlamos, olajos bőrre. Szalicilsavval mélyen tisztítja a pórusokat, szabályozza a faggyútermelést és megelőzi az újabb pattanások kialakulását.",
     },
-    
+
     {
       src: servicesPage.perfectionlift,
       title: "I PEEL | PERFECTION LIFT™ - BŐRMEGÚJÍTÓ KEZELÉS",
@@ -171,10 +187,7 @@ const page = () => {
       text: "Erőteljes, orvosi szintű hámlasztó kezelés a komolyabb bőrproblémákra. Magas koncentrációjú savakkal és retinollal kezeli a mélyebb ráncokat, aknét és pigmentfoltokat tapasztalt felhasználóknak.",
     },
 
- 
-    
     // GROUP2 ************************************************* //
-
 
     // 19. ILLUMINATING ARCKEZELÉS
     {
@@ -190,7 +203,7 @@ const page = () => {
       slug: "illuminating-arckezeles",
       text: "Innovatív fehérítő és hámlasztó technológiákkal szabadítja meg a bőrt a sötét foltoktól. Azonnali eredmény, ragyogóbb bőrtónus a fakó, érzékeny, fáradt bőrre.",
     },
-    
+
     // 20. THE MAX ŐSSEJTES ARCKEZELÉS
     {
       src: servicesPage.serices7,
@@ -198,7 +211,7 @@ const page = () => {
       slug: "the-max-ossejtes-arckezeles",
       text: "Növényi őssejtekkel regenerálja a bőrt, serkenti a sejtosztódást, csökkenti a ráncokat. Tökéletes az idősödő, megereszkedett, fénykárosodott bőrre.",
     },
-    
+
     // 21. THE MAX CONTOUR KEZELÉS
     {
       src: servicesPage.serices7,
@@ -206,7 +219,7 @@ const page = () => {
       slug: "the-max-contour-kezeles",
       text: "Növényi őssejtek és peptidek kombinációja, amely visszaállítja az arc feszességét. Liftingelő és feltöltő hatást biztosít a megereszkedett, idősödő bőrnek.",
     },
-    
+
     // 22. IMAGE ILUMA ARCKEZELÉS
     {
       src: servicesPage.serices7,
@@ -214,7 +227,7 @@ const page = () => {
       slug: "image-iluma-arckezeles",
       text: "Intenzív fehérítő hatóanyagok és növényi őssejt technológia a pigmentációs problémákra. Egyenletesebbé teszi a bőrtónust és megelőzi a foltok kialakulását.",
     },
-    
+
     // 23. IMAGE ÜNNEPI SIGNATURE „GLITZ AND GLOW" KEZELÉS
     {
       src: servicesPage.serices7,
@@ -222,7 +235,7 @@ const page = () => {
       slug: "image-glitz-and-glow-kezeles",
       text: "Gyümölcsenzimek, C-vitamin és hialuronsav kombinációja, amely táplál és ragyogást biztosít a fakó, fényét veszített bőrnek.",
     },
-    
+
     // 24. IMAGE ARCFESZESÍTŐ-ÁTALAKÍTÓ KEZELÉS
     {
       src: servicesPage.serices7,
@@ -230,7 +243,7 @@ const page = () => {
       slug: "image-arcfeszesito-atalakito-kezeles",
       text: "Hatékony arcfeszesítő kezelés, amely már egy alkalom után is látható eredményt nyújt. Kisimítja a szarkalábakat, mélyebb ráncokat is csökkenti az idősödő bőrön.",
     },
-    
+
     // 25. IMAGE SKINCARE PROBIOTIKUS TISZTÍTÓ ARCKEZELÉS
     {
       src: servicesPage.serices7,
@@ -238,7 +251,7 @@ const page = () => {
       slug: "image-probiotikus-tisztito-arckezeles",
       text: "Probiotikumok és antioxidánsok kombinációja, amely tisztítja és megújítja a bőrt. Hatékony az eltömődött pórusokra, aknéra és a fáradt, megviselt bőrre.",
     },
-    
+
     // 26. MIKROBIOME+ BŐRBARRIER ERŐSÍTŐ KEZELÉS
     {
       src: servicesPage.serices7,
@@ -246,7 +259,7 @@ const page = () => {
       slug: "mikrobiome-borbarrier-erosito-kezeles",
       text: "Az IMAGE első mikrobiombarát kezelése, amely a bőr védőrétegét erősíti természetes összetevőkkel. Védelmet nyújt a stressz, szárazság ellen.",
     },
-    
+
     // 27. BASIC NYÁRI GLOW RADIANCE REFRESH KEZELES
     {
       src: servicesPage.serices7,
@@ -254,7 +267,7 @@ const page = () => {
       slug: "basic-nyari-glow-radiance-refresh-kezeles",
       text: "Kényeztető, visszatöltő kezelés a napozási károk regenerálására. Az Image Skincare Vital C és Ormedic termékcsaládjainak jótékony hatásaival.",
     },
-    
+
     // 28. I MASK LAPMASZK KEZELÉS
     {
       src: servicesPage.serices7,
@@ -262,7 +275,6 @@ const page = () => {
       slug: "i-mask-lapmaszk-kezeles",
       text: "Gyors hidratáló kezelés 3D hidrogéles lapmaszkkal. Benntartja a nedvességet, segíti a hatóanyagok felszívódását, csökkenti a ráncokat a dehidratált bőrön.",
     },
-    
   ];
 
   return (
@@ -292,7 +304,7 @@ const page = () => {
         </div>
       </div>
       <section className={styles.containerHelper}>
-        <div 
+        <div
           data-aos="fade-up"
           data-aos-offset="150"
           data-aos-delay="100"
@@ -304,8 +316,13 @@ const page = () => {
           <h1>IMAGE Skincare Protokolok</h1>
           <Abstract />
           <p>
-          IMAGE Skincare személyre szabott bőrminőségjavító kezelési programok
-          Célja a bőr ragyogásának visszanyerése és megújítása. A kezelések személyre szabottak, figyelembe véve a bőr állapotát, kiegészítve egy alapos arctisztítással. A professzionális, prémium Vital C, Antioxidáns anti-aging, Illuminating, Be Clear, Bio Balance, The Max őssejtes és probiotikus kezelés(ek), mind a tiszta és üde arcbőr elérését szolgálják. Az eredmény egészséges és gyönyörű bőr.
+            IMAGE Skincare személyre szabott bőrminőségjavító kezelési programok
+            Célja a bőr ragyogásának visszanyerése és megújítása. A kezelések
+            személyre szabottak, figyelembe véve a bőr állapotát, kiegészítve
+            egy alapos arctisztítással. A professzionális, prémium Vital C,
+            Antioxidáns anti-aging, Illuminating, Be Clear, Bio Balance, The Max
+            őssejtes és probiotikus kezelés(ek), mind a tiszta és üde arcbőr
+            elérését szolgálják. Az eredmény egészséges és gyönyörű bőr.
           </p>
         </div>
         <div className={styles.itemsContainer}>

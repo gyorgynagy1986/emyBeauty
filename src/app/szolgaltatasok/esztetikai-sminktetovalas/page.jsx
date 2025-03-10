@@ -1,12 +1,22 @@
 import React from "react";
 import styles from "./page.module.css";
-import Abstract from "@/components/astract/ObjectElement";
 import Image from "next/image";
 import Link from "next/link";
 import icon from "../../../../public/assets/icon/right.svg";
 
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
+import Sminktetovalas from "@/components/serviceList/sminktetovalas/Sminktetovalas";
+
+export const metadata = {
+  title: 'Esztétikai sminktetoválás - Emy Beauty Estetics',
+  description: '...',
+  openGraph: {
+      title: 'Esztétikai sminktetoválás - Emy Beauty Estetics',
+      description: '',
+    },
+}
+ 
 
 const page = () => {
   return (
@@ -35,14 +45,7 @@ const page = () => {
           </Link>
         </div>
       </div>
-      <section className={styles.containerHelper}>
-        <div className={styles.titleContainer}>
-          <h1>Esztétikai sminktetoválás</h1>
-          <Abstract />
-          <p>Hamarosan</p>
-        </div>
-        <div className={styles.itemsContainer}></div>
-      </section>
+      <Sminktetovalas />
     </div>
   );
 };

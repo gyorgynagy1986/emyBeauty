@@ -67,12 +67,24 @@ import perfectionlift from "../../public/assets/services/perfectionlift.webp"
 import perfectionliftforte from "../../public/assets/services/perfectionliftforte.webp"
 import betalfit from "../../public/assets/services/betalfit.webp"
 
+import plasma from "../../public/assets/services/prekozmetika/plasma.webp"
+import plasma2 from "../../public/assets/services/prekozmetika/plasma2.webp"
+
 
   /* INNOVATIV KEZELESEK  */
   import sqt1 from "../../public/assets/services/innovativ/sqt1.webp"
   import sqt2 from "../../public/assets/services/innovativ/sqt2.webp" 
   import sqt3 from "../../public/assets/services/innovativ/sqt3.webp"
   import sqt4 from "../../public/assets/services/innovativ/sqt4.webp"
+
+    /* SMINK TETOVÁLÁS   */
+
+  import t1 from "../../public/assets/services/tetovalas/1.webp"
+  import t2 from "../../public/assets/services/tetovalas/2.webp" 
+  import t3 from "../../public/assets/services/tetovalas/3.webp"
+  import t4 from "../../public/assets/services/tetovalas/4.webp"
+
+  import ferfi from "../../public/assets/services/ferfi.webp"
 
 
 /* SERVICES  END*/
@@ -158,12 +170,15 @@ export const servicesPage = {
   ance:ance,
   perfectionlift:perfectionlift,
   perfectionliftforte:perfectionliftforte,
-  betalfit:betalfit
+  betalfit:betalfit,
+  plasma:plasma,
+  plasma2:plasma2,
+  t1:t1,
+  t2:t2,
+  t3:t3,  
+  t4:t4, 
 
-  /* INNOVATIV KEZELESEK  */
-
-
-
+  ferfi:ferfi
 };
 /* SERVICES DONE */
 

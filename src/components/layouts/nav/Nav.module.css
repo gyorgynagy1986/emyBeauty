@@ -2,7 +2,6 @@
 .navContainer {
   width: 100%;
   height: 100px;
-  
   background-color: #ffffff;
   padding: var(--pGlobal);
   display: flex;
@@ -11,10 +10,20 @@
   position: fixed;
   top: 3.8rem; /* TopNav height */
   z-index: 1000;
+  transition: box-shadow 0.3s ease;
+}
+
+.navContainer:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
   width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.03);
 }
 
 @media screen and (max-width: 1160px) {
@@ -35,7 +44,27 @@
   padding: 1.2rem;
   cursor: pointer;
   color: #222222;
+  position: relative;
+  transition: color 0.3s ease;
 }
+
+.ul li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0.8rem;
+  left: 50%;
+  background-color: #004e9d;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.ul li:hover {
+  color: #004e9d;
+}
+
+
 
 .rightContainer {
   display: flex;
@@ -79,6 +108,18 @@
 
   .mobileMenuOpen {
     display: flex;
+    animation: slideIn 0.3s ease-out forwards;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Hide desktop navigation in mobile view */
@@ -111,6 +152,15 @@
     width: 100%;
     text-align: center;
     border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .mobileNavContent .ul li:hover {
+    background-color: #f8f9fa;
+  }
+
+  .mobileNavContent .ul li::after {
+    display: none;
   }
 
   .mobileNavContent .ul li:last-child {
@@ -127,12 +177,22 @@
     padding: 10px 0;
     z-index: 2;
     box-shadow: 0 -4px 10px -8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .buttonContainer:hover {
+    box-shadow: 0 -4px 12px -6px rgba(0, 0, 0, 0.15);
   }
 }
 
 .hamburgerMenu {
   display: none;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hamburgerMenu:hover {
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 1100px) {
@@ -155,4 +215,35 @@
   font-size: 1.5rem;
   font-weight: 600;
   border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #0063c7;
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(0, 78, 157, 0.3);
+}
+
+.button:hover::before {
+  left: 0;
+}
+
+.button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 78, 157, 0.4);
 }

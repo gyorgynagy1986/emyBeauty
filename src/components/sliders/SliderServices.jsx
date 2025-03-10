@@ -2,6 +2,7 @@
 
 import Slider from "react-slick";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Slider.module.css";
 import { size } from "@/data/size";
 import { alt } from "@/data/alt";
@@ -41,7 +42,8 @@ export default function ServicesPage() {
     },
     {
       src: servicesPage.lightliftforte,
-      title: "I PEEL | LIGHTENING LIFT® FORTE - INTENZÍV BŐRVILÁGOSÍTÓ HÁMLASZTÁS",
+      title:
+        "I PEEL | LIGHTENING LIFT® FORTE - INTENZÍV BŐRVILÁGOSÍTÓ HÁMLASZTÁS",
       slug: "i-peel-lightening-lift-forte-intenzive-borvilagosito-hamlasztas",
       text: "Intenzív bőrvilágosító kezelés magasabb koncentrációjú hatóanyagokkal a makacsabb pigmentációs problémákra. Mélyebb hámlasztást biztosít és hatékonyan kezeli az erősebb elszíneződéseket.",
     },
@@ -182,7 +184,7 @@ export default function ServicesPage() {
       title: "1 NEED PRO MIKROTŰS KEZELÉS",
       slug: "/1-need-pro-mikrotus-kezeles",
       text: "Speciális bőrfiatalító eljárás, amely mikrotűkkel serkenti a kollagéntermelést. Cserélhető kezelőfejekkel személyre szabható, kezeli a ráncokat, pigmentfoltokat és a tág pórusokat.",
-    }
+    },
   ];
 
   // Slider beállítások - megtartva az eredeti struktúrát
@@ -193,7 +195,7 @@ export default function ServicesPage() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     responsive: [
       {
         breakpoint: 1024,
@@ -214,44 +216,54 @@ export default function ServicesPage() {
       },
     ],
   };
+  // Szöveg rövidítése
+  const truncateText = (text, maxLength = 100) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength) + "...";
+  };
 
-  // Szöveg rövidítése az eredeti mintában látható módon
- // Szöveg rövidítése általánosan
-const truncateText = (text, maxLength = 100) => {
-  if (text.length <= maxLength) return text;
-  return text.substring(0, maxLength) + "...";
-};
+  // Cím rövidítése 820px szélességtől
+  const truncateTitle = (title, maxLength = 45) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 820) {
+      return title.length > maxLength
+        ? title.substring(0, maxLength) + "..."
+        : title;
+    }
+    return title;
+  };
 
-// Cím rövidítése 820px szélességtől
-const truncateTitle = (title, maxLength = 45) => {
-  if (typeof window !== "undefined" && window.innerWidth <= 820) {
-    return title.length > maxLength ? title.substring(0, maxLength) + "..." : title;
-  }
-  return title;
-};
+  // A URL összeállítása a szolgáltatáshoz
+  const getServiceUrl = (service) => {
+    return `${service.path}/${service.slug}`;
+  };
 
-return (
-  <div className={styles.sliderContainer}>
-    <Slider {...settings}>
-      {serviceItems.map((service, index) => (
-        <div key={index} className={styles.SwiperContainer}>
-          <div className={styles.itemContainer}>
-            <div className={styles.photoContainer}>
-              <Image
-                sizes={size.fullsize}
-                alt={service.title || alt.name}
-                src={service.src}
-                className={styles.img}
-              />
-            </div>
-            <div className={styles.textContainer}>
-              <h3>{truncateTitle(service.title)}</h3>
-              <Ob />
-              <p>{truncateText(service.text)}</p>
-            </div>
+  return (
+    <div className={styles.sliderContainer}>
+      <Slider {...settings}>
+        {serviceItems.map((service, index) => (
+          <div key={index} className={styles.SwiperContainer}>
+            <Link href={getServiceUrl(service)} className={styles.serviceLink}>
+              <div className={styles.itemContainer}>
+                <div className={styles.photoContainer}>
+                  <div className={styles.imageWrapper}>
+                    <Image
+                      sizes={size.fullsize}
+                      alt={service.title || alt.name}
+                      src={service.src}
+                      className={styles.img}
+                    />
+                  </div>
+                </div>
+                <div className={styles.textContainer}>
+                  <h3>{truncateTitle(service.title)}</h3>
+                  <Ob />
+                  <p>{truncateText(service.text)}</p>
+                </div>
+              </div>
+            </Link>
           </div>
-        </div>
-      ))}
-    </Slider>
-  </div>
-);}
+        ))}
+      </Slider>
+    </div>
+  );
+}

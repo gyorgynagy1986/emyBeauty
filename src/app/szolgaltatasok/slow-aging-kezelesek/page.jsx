@@ -28,31 +28,41 @@ const ServiceItem = ({ src, title, slug, text, index }) => {
   // Use animation variants array for diversity
   const animation = animationVariants[index % animationVariants.length];
   
+  // Function to limit text to 300 characters and add ellipsis if needed
+  const limitText = (text, limit = 300) => {
+    if (text.length <= limit) return text;
+    return text.slice(0, limit).trim() + '...';
+  };
+  
   return (
-    <div 
-      data-aos={animation}
-      data-aos-offset="100"
-      data-aos-delay={100 + (index * 50)} 
-      data-aos-duration="1000"
-      data-aos-easing="ease-in-out"
-      data-aos-once="true"
-      className={styles.ServiceItem}
-    >
-      <Image
-        className={styles.img}
-        alt={alt.name}
-        size={size.fullsize}
-        src={src}
-        priority
-      />
-      <div className={styles.titleContainer}>
-        <Link href={`/szolgaltatasok/slow-aging-kezelesek/${slug}`}>{title}</Link>
+    <Link href={`/szolgaltatasok/slow-aging-kezelesek/${slug}`} className={styles.serviceLink}>
+      <div 
+        data-aos={animation}
+        data-aos-offset="100"
+        data-aos-delay={100 + (index * 50)} 
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-once="true"
+        className={styles.ServiceItem}
+      >
+        <div className={styles.imageWrapper}>
+          <Image
+            className={styles.img}
+            alt={alt.name}
+            size={size.fullsize}
+            src={src}
+            priority
+          />
+        </div>
+        <div className={styles.titleContainer}>
+          <span>{title}</span>
+        </div>
+        <div className={styles.ServiceItemInfo}>
+          <Abstract />
+          <p>{limitText(text)}</p>
+        </div>
       </div>
-      <div className={styles.ServiceItemInfo}>
-        <Abstract />
-        <p>{text}</p>
-      </div>
-    </div>
+    </Link>
   );
 };
 

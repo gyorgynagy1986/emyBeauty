@@ -4,6 +4,8 @@ export const contacts = {
   tel: "+36203426618",
   insta: "emykee_boreszteta",
   facebook: "EmyBeautyStudio",
+  instaLink: "https://www.instagram.com/emykee_boreszteta/",
+  facebookLink: "https://www.facebook.com/EmyBeautyStudio",
 };
 
 

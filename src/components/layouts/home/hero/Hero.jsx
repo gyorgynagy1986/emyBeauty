@@ -53,7 +53,7 @@ const Hero = () => {
           <Parallax
             translateY={[0, 0]}
             scale={[1, isMobile ? 1 : 1.1]} // Mobilon nincs nagyítás
-            opacity={isMobile ? [1, 0] : [1, 0]} // Mobilon halványodás görgetéskor
+            opacity={isMobile ? [1, 0.3] : [1, 0.3]} // Mobilon halványodás görgetéskor
             easing="linear" // Lineáris átmenet a görgetéssel
             className={style.helper}
             startScroll={0}
