@@ -81,7 +81,7 @@
 
 .textContainer a {
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1.7rem;
   line-height: 22px;
   letter-spacing: 0%;
   text-align: center;
@@ -192,4 +192,111 @@
   outline: none; /* Remove default outline */
   border: 1px solid #2490e8; /* Your desired focus border color */
   box-shadow: 0 0 5px rgba(36, 144, 232, 0.5); /* Optional: add a subtle glow effect */
+}
+
+
+/* Ezeket a kiegészítő stílusokat add hozzá a meglévő CSS fájlodhoz */
+
+/* Adatkezelési tájékoztató elfogadása checkbox stílusok */
+.consentGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.consentLabel {
+
+}
+
+.consentCheckbox {
+  margin-right: 0.8rem;
+  min-width: 1.3rem;
+  height: 1.4rem;
+  accent-color: #004e9d;
+}
+
+.consentText {
+  font-size: 1.7rem;
+  font-family: var(--font-fig);
+  color: #666;
+}
+
+.consentText a {
+  color: #004e9d;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.consentText a:hover {
+  color: #0070e0;
+}
+
+/* Sikeres üzenet küldés stílusok */
+.successContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  min-height: 300px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.successIcon {
+  margin-bottom: 1.5rem;
+  transform: scale(0);
+  animation: popIn 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.successTitle {
+  font-size: 1.5rem;
+  color: #004e9d;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.successText {
+  color: #666;
+  max-width: 28rem;
+  line-height: 1.6;
+}
+
+/* Hibaüzenetek */
+.submitError {
+  color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.1);
+  padding: 0.8rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* Animációk */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Reszponzív igazítások */
+@media screen and (max-width: 600px) {
+  .consentLabel {
+    align-items: flex-start;
+  }
+  
+  .consentCheckbox {
+    margin-top: 0.3rem;
+  }
+  
+  .successContainer {
+    padding: 1rem;
+  }
 }

@@ -15,72 +15,95 @@ import { servicesPage } from "@/data/photos";
 import "aos/dist/aos.css";
 import AOS from "aos";
 
-const ServiceItem = ({ src, title, slug, text, index }) => (
-  <div 
-    data-aos="fade-up"
-    data-aos-offset="100"
-    data-aos-delay={100 + (index * 50)} // Fokozatos késleltetés minden kártyának
-    data-aos-duration="800"
-    data-aos-easing="ease-in-out"
-    data-aos-once="true"
-    className={styles.ServiceItem}
-  >
-    <Image
-      className={styles.img}
-      alt={alt.name}
-      size={size.fullsize}
-      src={src}
-      priority
-    />
-    <div className={styles.titleContainer}>
-      <Link href={`/szolgaltatasok/slow-aging-kezelesek/${slug}`}>{title}</Link>
+// Animation variants for more diversity
+const animationVariants = [
+  "fade-up", 
+  "fade-right", 
+  "fade-left", 
+  "zoom-in", 
+  "flip-up"
+];
+
+const ServiceItem = ({ src, title, slug, text, index }) => {
+  // Use animation variants array for diversity
+  const animation = animationVariants[index % animationVariants.length];
+  
+  return (
+    <div 
+      data-aos={animation}
+      data-aos-offset="100"
+      data-aos-delay={100 + (index * 50)} 
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-once="true"
+      className={styles.ServiceItem}
+    >
+      <Image
+        className={styles.img}
+        alt={alt.name}
+        size={size.fullsize}
+        src={src}
+        priority
+      />
+      <div className={styles.titleContainer}>
+        <Link href={`/szolgaltatasok/slow-aging-kezelesek/${slug}`}>{title}</Link>
+      </div>
+      <div className={styles.ServiceItemInfo}>
+        <Abstract />
+        <p>{text}</p>
+      </div>
     </div>
-    <div className={styles.ServiceItemInfo}>
-      <Abstract />
-      <p>{text}</p>
-    </div>
-  </div>
-);
+  );
+};
 
 const page = () => {
-  // Képernyőméret figyelése
+  // Screen size tracking
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Képernyőméret ellenőrzése és isMobile állapot beállítása
+    // Initialize AOS with settings to prevent horizontal scroll
+    AOS.init({
+      offset: 120,
+      delay: 0,
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false,
+      anchorPlacement: 'top-bottom',
+      disable: false,
+      disableHorizontalScroll: true // Add this to prevent horizontal scroll
+    });
+
+    // Screen size check function
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    // Kezdeti ellenőrzés
-    checkIfMobile();
-    
-    // AOS inicializálása
-    AOS.init();
-    
-    // Mobilon frissítsük az AOS-t a state változás után
-    if (isMobile) {
-      setTimeout(() => {
-        AOS.refresh();
-      }, 100);
-    }
-
-    // Eseményfigyelő a képernyőméret változásához
-    window.addEventListener('resize', () => {
       const wasMobile = isMobile;
-      checkIfMobile();
+      const newIsMobile = window.innerWidth <= 768;
+      setIsMobile(newIsMobile);
       
-      // Ha változott a nézet típusa, frissítsük az AOS-t
-      if (wasMobile !== isMobile) {
+      // Only refresh AOS when switching between mobile/desktop
+      if (wasMobile !== newIsMobile) {
         setTimeout(() => {
           AOS.refresh();
         }, 100);
       }
-    });
+    };
+
+    // Initial check
+    checkIfMobile();
     
-    // Komponens leválasztásakor takarítunk
+    // Event listener for screen size changes
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Refresh AOS on window resize for better responsiveness
+    const handleResize = () => {
+      AOS.refresh();
+    };
+    window.addEventListener('resize', handleResize);
+    
+    // Cleanup on component unmount
     return () => {
       window.removeEventListener('resize', checkIfMobile);
+      window.removeEventListener('resize', handleResize);
     };
   }, [isMobile]);
 
@@ -91,16 +114,12 @@ const page = () => {
       slug: "/tu-nelkuli-mezoterapia",
       text: "Nobel-díjas hatásmechanizmusra épülő, tű nélküli mezoterápiás kezelés. A hatóanyagok 90%-a mély szövetekbe hatol, maximálisan hidratálja a bőrt és látványosan csökkenti a ráncokat.",
     },
-
-    // 2. GENO-LED ALACSONY INTENZITÁSÚ LED FÉNY
     {
       src: servicesPage.serices2,
       title: "GENO-LED ALACSONY INTENZITÁSÚ LED FÉNY",
       slug: "/geno-led-alacsony-intenzitasu-led-feny",
       text: "Komplikált bőrproblémákat old meg LED fénnyel. A 287 speciális LED összetevő különböző hullámhosszúságú fényt sugározva regenerálja és nyugtatja a bőrt, mellékhatások nélkül.",
     },
-
-    // 3. SQT® BIO MIKROTŰS SZIVACSTŰ KEZELÉS
     {
       src: servicesPage.sqt4,
       title: "SQT® BIO MIKROTŰS SZIVACSTŰ KEZELÉS",
@@ -113,7 +132,6 @@ const page = () => {
       slug: "/genosys-snowcell",
       text: "Innovatív pigmentációkezelő és bőrfiatalító eljárás, amely gátolja a melanin termelődését. Nyáron is alkalmazható, halványítja a foltokat és stimulálja a kollagén termelődést.",
     },
-
     {
       src: servicesPage.serices5,
       title: "MIKRODERMABRÁZIÓ - GYÉMÁNTFEJES TECHNOLOGIA",

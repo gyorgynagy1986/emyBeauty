@@ -30,20 +30,14 @@
   gap: 2rem;
   justify-content: center;
   align-items: center;
-  min-height: 250px;
+  min-height: 258px;
 }
 
 .textContainer h3 {
-  font-size: 18px;
+  font-size: 17px;
   text-align: center;
-  width: 80%;
+  width: 100%;
 }
-@media screen and (max-width: 1024px) {
-  .textContainer h3 {
-  
-  }
-}
-
 
 .img {
   width: 100%;

@@ -38,21 +38,15 @@ const Hero = () => {
     <ParallaxProvider>
       <div className={style.container}>
         {/* Kép Parallax effektekkel */}
-        <Parallax
-          translateY={[0, 0]}
-          scale={[1, isMobile ? 1 : 1.15]} // Mobilon nincs nagyítás
-          easing="linear" // Lineáris átmenet a görgetéssel
-          className={style.imageWrapper}
-        >
           <Image
             alt={alt.name}
             quality={100}
             className={style.image}
             priority
+            fill
             sizes={size.fullsize}
             src={mainPage.heroPhoto}
           />
-        </Parallax>
 
         <div className={style.leftContanier}>
           {/* Szöveg tartalom Parallax effektekkel */}

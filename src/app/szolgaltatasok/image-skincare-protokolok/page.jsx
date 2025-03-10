@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Abstract from "@/components/astract/ObjectElement";
 import Image from "next/image";
@@ -9,8 +11,30 @@ import { size } from "@/data/size";
 import { alt } from "@/data/alt";
 import { servicesPage } from "@/data/photos";
 
-const ServiceItem = ({ src, title, slug, text }) => (
-  <div className={styles.ServiceItem}>
+// AOS import
+import "aos/dist/aos.css";
+import AOS from "aos";
+
+// Animation variants for more diversity
+const animationVariants = [
+  "fade-up", 
+  "fade-right", 
+  "fade-left", 
+  "zoom-in", 
+  "flip-up", 
+  "slide-up"
+];
+
+const ServiceItem = ({ src, title, slug, text, index }) => (
+  <div 
+    data-aos={animationVariants[index % animationVariants.length]}
+    data-aos-offset="100"
+    data-aos-delay={100 + (index * 30)} // Shorter delay between items due to many products
+    data-aos-duration="800"
+    data-aos-easing="ease-in-out"
+    data-aos-once="true"
+    className={styles.ServiceItem}
+  >
     <Image
       className={styles.img}
       alt={alt.name}
@@ -28,6 +52,56 @@ const ServiceItem = ({ src, title, slug, text }) => (
 );
 
 const page = () => {
+  // Screen size tracking
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Initialize AOS once
+    AOS.init({
+      // Global settings
+      offset: 120,
+      delay: 0,
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false,
+      anchorPlacement: 'top-bottom',
+      disable: false
+    });
+
+    // Screen size check function
+    const checkIfMobile = () => {
+      const wasMobile = isMobile;
+      const newIsMobile = window.innerWidth <= 768;
+      setIsMobile(newIsMobile);
+      
+      // Only refresh AOS when switching between mobile/desktop
+      if (wasMobile !== newIsMobile) {
+        setTimeout(() => {
+          AOS.refresh();
+        }, 100);
+      }
+    };
+
+    // Initial check
+    checkIfMobile();
+    
+    // Event listener for screen size changes
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Refresh AOS on window resize for better responsiveness
+    const handleResize = () => {
+      AOS.refresh();
+    };
+    window.addEventListener('resize', handleResize);
+    
+    // Cleanup on component unmount
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobile]);
+
   const serviceItems = [
     {
       src: servicesPage.serices7,
@@ -218,17 +292,25 @@ const page = () => {
         </div>
       </div>
       <section className={styles.containerHelper}>
-        <div className={styles.titleContainer}>
-          <h1>IMAGE Skincare Protokolok 
-          </h1>
+        <div 
+          data-aos="fade-up"
+          data-aos-offset="150"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+          data-aos-easing="ease"
+          data-aos-once="true"
+          className={styles.titleContainer}
+        >
+          <h1>IMAGE Skincare Protokolok</h1>
           <Abstract />
           <p>
           IMAGE Skincare személyre szabott bőrminőségjavító kezelési programok
-          Célja a bőr ragyogásának visszanyerése és megújítása. A kezelések személyre szabottak, figyelembe véve a bőr állapotát, kiegészítve egy alapos arctisztítással. A professzionális, prémium Vital C, Antioxidáns anti-aging, Illuminating, Be Clear, Bio Balance, The Max őssejtes és probiotikus kezelés(ek), mind a tiszta és üde arcbőr elérését szolgálják. Az eredmény egészséges és gyönyörű bőr.          </p>
+          Célja a bőr ragyogásának visszanyerése és megújítása. A kezelések személyre szabottak, figyelembe véve a bőr állapotát, kiegészítve egy alapos arctisztítással. A professzionális, prémium Vital C, Antioxidáns anti-aging, Illuminating, Be Clear, Bio Balance, The Max őssejtes és probiotikus kezelés(ek), mind a tiszta és üde arcbőr elérését szolgálják. Az eredmény egészséges és gyönyörű bőr.
+          </p>
         </div>
         <div className={styles.itemsContainer}>
           {serviceItems.map((item, index) => (
-            <ServiceItem key={index} {...item} />
+            <ServiceItem key={index} index={index} {...item} />
           ))}
         </div>
       </section>

@@ -1,4 +1,5 @@
 "use client";
+
 import Slider from "react-slick";
 import Image from "next/image";
 import styles from "./Slider.module.css";
@@ -215,34 +216,42 @@ export default function ServicesPage() {
   };
 
   // Szöveg rövidítése az eredeti mintában látható módon
-  const truncateText = (text, maxLength = 100) => {
-    if (text.length <= maxLength) return text;
-    return text.substring(0, maxLength) + "...";
-  };
+ // Szöveg rövidítése általánosan
+const truncateText = (text, maxLength = 100) => {
+  if (text.length <= maxLength) return text;
+  return text.substring(0, maxLength) + "...";
+};
 
-  return (
-    <div className={styles.sliderContainer}>
-      <Slider {...settings}>
-        {serviceItems.map((service, index) => (
-          <div key={index} className={styles.SwiperContainer}>
-            <div className={styles.itemContainer}>
-              <div className={styles.photoContainer}>
-                <Image
-                  sizes={size.fullsize}
-                  alt={service.title || alt.name}
-                  src={service.src}
-                  className={styles.img}
-                />
-              </div>
-              <div className={styles.textContainer}>
-                <h3>{service.title}</h3>
-                <Ob />
-                <p>{truncateText(service.text)}</p>
-              </div>
+// Cím rövidítése 820px szélességtől
+const truncateTitle = (title, maxLength = 45) => {
+  if (typeof window !== "undefined" && window.innerWidth <= 820) {
+    return title.length > maxLength ? title.substring(0, maxLength) + "..." : title;
+  }
+  return title;
+};
+
+return (
+  <div className={styles.sliderContainer}>
+    <Slider {...settings}>
+      {serviceItems.map((service, index) => (
+        <div key={index} className={styles.SwiperContainer}>
+          <div className={styles.itemContainer}>
+            <div className={styles.photoContainer}>
+              <Image
+                sizes={size.fullsize}
+                alt={service.title || alt.name}
+                src={service.src}
+                className={styles.img}
+              />
+            </div>
+            <div className={styles.textContainer}>
+              <h3>{truncateTitle(service.title)}</h3>
+              <Ob />
+              <p>{truncateText(service.text)}</p>
             </div>
           </div>
-        ))}
-      </Slider>
-    </div>
-  );
-}
+        </div>
+      ))}
+    </Slider>
+  </div>
+);}

@@ -9,8 +9,9 @@ const page = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [bookingType, setBookingType] = useState("");
 
-  console.log(bookingType)
+  console.log(bookingType);
 
+  // FORM ÁLLAPOT (Ide beillesztettük a date és time mezőket is)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,6 +19,8 @@ const page = () => {
     service: "",
     message: "",
     consent: false,
+    date: "", // ÚJ
+    time: "", // ÚJ
   });
 
   const [errors, setErrors] = useState({});
@@ -76,7 +79,7 @@ const page = () => {
 
   const goToNextStep = () => {
     if (currentStep === 2) {
-      // Ha a második lépésen vagyunk, ellenőrizzük, hogy a service ki van-e választva
+      // Ha a második lépésen vagyunk, ellenőrizzük, hogy a service ki van-e választva (csak akkor, ha "Időpontfoglalás szolgáltatásra")
       if (
         bookingType === "Időpontfoglalás szolgáltatásra" &&
         !formData.service
@@ -95,6 +98,7 @@ const page = () => {
     setCurrentStep(currentStep - 1);
   };
 
+  // VALIDÁCIÓS FÜGGVÉNY (igény szerint bővíthető a date/time mezők ellenőrzésével is)
   const validateForm = () => {
     const newErrors = {
       name: validateName(formData.name),
@@ -110,7 +114,24 @@ const page = () => {
       newErrors.service = !formData.service
         ? "Kérlek válassz szolgáltatást"
         : "";
+      // Ha kötelező a dátum és idő, itt is ellenőrizhetjük
+      if (!formData.date) {
+        newErrors.date = "Kérlek válassz dátumot";
+      }
+      if (!formData.time) {
+        newErrors.time = "Kérlek válassz időpontot";
+      }
     }
+
+    // Ha konzultációnál is kötelezőnek szeretnéd, itt ugyanez:
+    // if (bookingType === "Konzultáció") {
+    //   if (!formData.date) {
+    //     newErrors.date = "Kérlek válassz dátumot";
+    //   }
+    //   if (!formData.time) {
+    //     newErrors.time = "Kérlek válassz időpontot";
+    //   }
+    // }
 
     setErrors(newErrors);
     return !Object.values(newErrors).some((error) => error);
@@ -126,7 +147,7 @@ const page = () => {
     }
 
     try {
-      // Itt hiányzott az emailData definiálása
+      // Az emailData objektumba átemeljük a date és time mezőket is
       const emailData = {
         bookingType,
         name: formData.name,
@@ -135,6 +156,8 @@ const page = () => {
         service: formData.service,
         message: formData.message,
         consent: formData.consent,
+        date: formData.date, // ÚJ
+        time: formData.time, // ÚJ
       };
 
       const response = await fetch("/api/send-email", {
@@ -145,7 +168,6 @@ const page = () => {
         body: JSON.stringify(emailData),
       });
 
-      // Ellenőrizzük a válasz típusát
       const contentType = response.headers.get("content-type");
       if (contentType && contentType.indexOf("application/json") !== -1) {
         const result = await response.json();
@@ -166,13 +188,14 @@ const page = () => {
           service: "",
           message: "",
           consent: false,
+          date: "",
+          time: "",
         });
         setBookingType("");
         setCurrentStep(1);
 
         setTimeout(() => setSubmitSuccess(false), 6000);
       } else {
-        // Ha nem JSON a válasz, kezeljük másképp
         const textResponse = await response.text();
         console.error("Nem JSON válasz:", textResponse);
         throw new Error("A szerver hibás választ küldött.");
@@ -188,6 +211,7 @@ const page = () => {
       setIsSubmitting(false);
     }
   };
+
   return (
     <div className={styles.pageContainer}>
       <video autoPlay muted loop className={styles.backgroundVideo}>
@@ -302,7 +326,7 @@ const page = () => {
               </div>
             )}
 
-            {/* 3. lépés: Kapcsolati adatok és üzenet */}
+            {/* 3. lépés: Kapcsolati adatok, dátum és üzenet */}
             {currentStep === 3 && (
               <div className={styles.step}>
                 <h3 className={styles.stepTitle}>Kapcsolati adatok</h3>
@@ -369,6 +393,42 @@ const page = () => {
                     <span className={styles.errorText}>{errors.phone}</span>
                   )}
                 </div>
+
+                {/* DÁTUM ÉS IDŐPONT MEGADÁSA */}
+                <div className={styles.inputWrapper}>
+                  <label className={styles.label}>Dátum</label>
+                  <input
+                    className={`${styles.input} ${
+                      errors.date ? styles.errorInput : ""
+                    }`}
+                    type="date"
+                    name="date"
+                    value={formData.date}
+                    onChange={handleChange}
+                    disabled={isSubmitting}
+                  />
+                  {errors.date && (
+                    <span className={styles.errorText}>{errors.date}</span>
+                  )}
+                </div>
+
+                <div className={styles.inputWrapper}>
+                  <label className={styles.label}>Időpont</label>
+                  <input
+                    className={`${styles.input} ${
+                      errors.time ? styles.errorInput : ""
+                    }`}
+                    type="time"
+                    name="time"
+                    value={formData.time}
+                    onChange={handleChange}
+                    disabled={isSubmitting}
+                  />
+                  {errors.time && (
+                    <span className={styles.errorText}>{errors.time}</span>
+                  )}
+                </div>
+                {/* ----------- */}
 
                 <div className={styles.inputWrapper}>
                   <textarea

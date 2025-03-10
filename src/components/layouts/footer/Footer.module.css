@@ -5,6 +5,8 @@
   align-items: center;
   padding:10rem 5vw 0rem 5vw;
   justify-content: space-between;
+  position: relative;
+  z-index: 2;
 }
 
 .legalContainer {

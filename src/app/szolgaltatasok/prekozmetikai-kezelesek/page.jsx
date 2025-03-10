@@ -15,16 +15,25 @@ import { servicesPage } from "@/data/photos";
 import "aos/dist/aos.css";
 import AOS from "aos";
 
+// Animation variants for more diversity
+const animationVariants = [
+  "fade-up", 
+  "fade-right", 
+  "fade-left", 
+  "zoom-in", 
+  "flip-up"
+];
+
 const ServiceItem = ({ src, title, slug, text, index }) => {
-  // Váltakozó animáció az egymást követő kártyáknak
-  const animation = index % 2 === 0 ? "fade-right" : "fade-left";
+  // Use animation variants array instead of just alternating between two
+  const animation = animationVariants[index % animationVariants.length];
   
   return (
     <div 
-      data-aos="fade-up"
+      data-aos={animation}
       data-aos-offset="100"
-      data-aos-delay={150 + (index * 50)} // Fokozatos késleltetés minden kártyának
-      data-aos-duration="1200"
+      data-aos-delay={100 + (index * 50)} // Slightly reduced delay from 150 to 100 for better responsiveness
+      data-aos-duration="1000" // Slightly reduced from 1200ms to 1000ms for snappier feel
       data-aos-easing="ease-in-out"
       data-aos-once="true"
       className={styles.ServiceItem}
@@ -44,44 +53,52 @@ const ServiceItem = ({ src, title, slug, text, index }) => {
 };
 
 const page = () => {
-  // Képernyőméret figyelése
+  // Screen size tracking
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Képernyőméret ellenőrzése és isMobile állapot beállítása
+    // Initialize AOS with global settings
+    AOS.init({
+      offset: 120,
+      delay: 0,
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false,
+      anchorPlacement: 'top-bottom',
+      disable: false
+    });
+
+    // Screen size check function
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    // Kezdeti ellenőrzés
-    checkIfMobile();
-    
-    // AOS inicializálása
-    AOS.init();
-    
-    // Mobilon frissítsük az AOS-t a state változás után
-    if (isMobile) {
-      setTimeout(() => {
-        AOS.refresh();
-      }, 100);
-    }
-
-    // Eseményfigyelő a képernyőméret változásához
-    window.addEventListener('resize', () => {
       const wasMobile = isMobile;
-      checkIfMobile();
+      const newIsMobile = window.innerWidth <= 768;
+      setIsMobile(newIsMobile);
       
-      // Ha változott a nézet típusa, frissítsük az AOS-t
-      if (wasMobile !== isMobile) {
+      // Only refresh AOS when switching between mobile/desktop
+      if (wasMobile !== newIsMobile) {
         setTimeout(() => {
           AOS.refresh();
         }, 100);
       }
-    });
+    };
+
+    // Initial check
+    checkIfMobile();
     
-    // Komponens leválasztásakor takarítunk
+    // Event listener for screen size changes
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Refresh AOS on window resize for better responsiveness
+    const handleResize = () => {
+      AOS.refresh();
+    };
+    window.addEventListener('resize', handleResize);
+    
+    // Cleanup on component unmount
     return () => {
       window.removeEventListener('resize', checkIfMobile);
+      window.removeEventListener('resize', handleResize);
     };
   }, [isMobile]);
 
@@ -143,9 +160,9 @@ const page = () => {
       </div>
       <section className={styles.containerHelper}>
         <div 
-          data-aos={isMobile ? "fade" : "fade-up"}
+          data-aos="fade-up" // Simplified, removed conditional based on isMobile
           data-aos-offset="150"
-          data-aos-delay="150"
+          data-aos-delay="100"
           data-aos-duration="1000"
           data-aos-easing="ease"
           data-aos-once="true"

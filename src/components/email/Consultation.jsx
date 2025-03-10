@@ -5,6 +5,8 @@ const ConsultationEmailTemplate = ({
   email,
   phone,
   message,
+  appointmentDate,
+  isAdminNotification
 }) => {
   // Színek
   const colors = {
@@ -114,26 +116,42 @@ const ConsultationEmailTemplate = ({
     margin: "0 0 10px 0",
   };
 
+  // Főcím dinamikus beállítása admin értesítés esetén
+  const title = isAdminNotification
+    ? `Új konzultációs igény: ${name}`
+    : "Konzultációs igény visszaigazolása";
+
   return (
     <div style={outerContainerStyle}>
       <div style={innerContainerStyle}>
-        <h1 style={titleStyle}>Konzultációs igény visszaigazolása</h1>
+        <h1 style={titleStyle}>{title}</h1>
 
         <p style={paragraphStyle}>
-          Kedves <span style={highlightStyle}>{name}</span>,
+          {isAdminNotification ? (
+            <>Új konzultációs igény érkezett a weboldalról.</>
+          ) : (
+            <>
+              Kedves <span style={highlightStyle}>{name}</span>,
+            </>
+          )}
         </p>
-        <p style={paragraphStyle}>
-          Köszönöm, hogy konzultációs igényt küldtél az EmyBeautyEstetics-hez!
-          Megkaptam az üzenetedet, és hamarosan személyesen felveszem Veled a kapcsolatot 
-          egy alkalmas időpont egyeztetése érdekében.
-        </p>
-
-        <div style={infoBoxStyle}>
-          <p style={{ margin: 0, fontWeight: "500" }}>
-            A konzultáció során részletesen megbeszéljük az igényeidet, és segítek kiválasztani 
-            a számodra legmegfelelőbb kezeléseket és megoldásokat.
+        
+        {!isAdminNotification && (
+          <p style={paragraphStyle}>
+            Köszönöm, hogy konzultációs igényt küldtél az EmyBeautyEstetics-hez!
+            Megkaptam az üzenetedet, és hamarosan személyesen felveszem Veled a kapcsolatot 
+            egy alkalmas időpont egyeztetése érdekében.
           </p>
-        </div>
+        )}
+
+        {!isAdminNotification && (
+          <div style={infoBoxStyle}>
+            <p style={{ margin: 0, fontWeight: "500" }}>
+              A konzultáció során részletesen megbeszéljük az igényeidet, és segítek kiválasztani 
+              a számodra legmegfelelőbb kezeléseket és megoldásokat.
+            </p>
+          </div>
+        )}
 
         <p
           style={{
@@ -143,7 +161,7 @@ const ConsultationEmailTemplate = ({
             color: colors.blue,
           }}
         >
-          Kérésed részletei:
+          {isAdminNotification ? "Kérés részletei:" : "Kérésed részletei:"}
         </p>
         <table style={tableStyle}>
           <tbody>
@@ -163,6 +181,12 @@ const ConsultationEmailTemplate = ({
               <td style={labelCellStyle}>Típus</td>
               <td style={valueCellStyle}>Konzultáció</td>
             </tr>
+            {appointmentDate && (
+              <tr>
+                <td style={labelCellStyle}>Tervezett időpont</td>
+                <td style={valueCellStyle}>{appointmentDate}</td>
+              </tr>
+            )}
             {message && (
               <tr>
                 <td style={labelCellStyle}>Megjegyzés</td>
@@ -172,10 +196,12 @@ const ConsultationEmailTemplate = ({
           </tbody>
         </table>
 
-        <p style={paragraphStyle}>
-          Kérlek, várj, amíg személyesen felveszem Veled a kapcsolatot. 
-          Amennyiben 24 órán belül nem jelentkezem, kérlek hívj a megadott telefonszámon.
-        </p>
+        {!isAdminNotification && (
+          <p style={paragraphStyle}>
+            Kérlek, várj, amíg személyesen felveszem Veled a kapcsolatot. 
+            Amennyiben 24 órán belül nem jelentkezem, kérlek hívj a megadott telefonszámon.
+          </p>
+        )}
 
         <div
           style={{

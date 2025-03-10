@@ -1,6 +1,14 @@
 import * as React from "react";
 
-const AppointmentEmailTemplate = ({ name, email, phone, service, message }) => {
+const AppointmentEmailTemplate = ({ 
+  name, 
+  email, 
+  phone, 
+  service, 
+  message, 
+  appointmentDate,
+  isAdminNotification
+}) => {
   // Színek
   const colors = {
     blue: "#004e9d",
@@ -190,19 +198,33 @@ const AppointmentEmailTemplate = ({ name, email, phone, service, message }) => {
     margin: "0 0 10px 0",
   };
 
+  // Főcím dinamikus beállítása admin értesítés esetén
+  const title = isAdminNotification
+    ? `Új időpontfoglalás: ${name}`
+    : "Időpontfoglalás visszaigazolás";
+
   return (
     <div style={outerContainerStyle}>
       <div style={innerContainerStyle}>
-        <h1 style={titleStyle}>Időpontfoglalás visszaigazolás</h1>
+        <h1 style={titleStyle}>{title}</h1>
 
         <p style={paragraphStyle}>
-          Kedves <span style={highlightStyle}>{name}</span>,
+          {isAdminNotification ? (
+            <>Új időpontfoglalás érkezett a weboldalról.</>
+          ) : (
+            <>
+              Kedves <span style={highlightStyle}>{name}</span>,
+            </>
+          )}
         </p>
-        <p style={paragraphStyle}>
-          Köszönöm, hogy időpontot foglaltál az EmyBeautyEstetics-nél!
-          Foglalásod megkaptam, és hamarosan felveszem Veled a kapcsolatot a
-          részletek egyeztetése és az időpont megerősítése érdekében.
-        </p>
+        
+        {!isAdminNotification && (
+          <p style={paragraphStyle}>
+            Köszönöm, hogy időpontot foglaltál az EmyBeautyEstetics-nél!
+            Foglalásod megkaptam, és hamarosan felveszem Veled a kapcsolatot a
+            részletek egyeztetése és az időpont megerősítése érdekében.
+          </p>
+        )}
 
         <p
           style={{
@@ -232,6 +254,12 @@ const AppointmentEmailTemplate = ({ name, email, phone, service, message }) => {
               <td style={labelCellStyle}>Szolgáltatás</td>
               <td style={valueCellStyle}>{service}</td>
             </tr>
+            {appointmentDate && (
+              <tr>
+                <td style={labelCellStyle}>Időpont</td>
+                <td style={valueCellStyle}>{appointmentDate}</td>
+              </tr>
+            )}
             {message && (
               <tr>
                 <td style={labelCellStyle}>Megjegyzés</td>
@@ -241,11 +269,13 @@ const AppointmentEmailTemplate = ({ name, email, phone, service, message }) => {
           </tbody>
         </table>
 
-        <p style={paragraphStyle}>
-          Kérlek, várj, amíg személyesen felveszem Veled a kapcsolatot a
-          foglalás részleteinek egyeztetése érdekében. Amennyiben 24 órán belül
-          nem kapsz visszajelzést, kérlek hívj a megadott telefonszámon.
-        </p>
+        {!isAdminNotification && (
+          <p style={paragraphStyle}>
+            Kérlek, várj, amíg személyesen felveszem Veled a kapcsolatot a
+            foglalás részleteinek egyeztetése érdekében. Amennyiben 24 órán belül
+            nem kapsz visszajelzést, kérlek hívj a megadott telefonszámon.
+          </p>
+        )}
 
         <div style={contactInfoStyle}>
           <p style={{ ...paragraphStyle, margin: "5px 0", fontWeight: "bold" }}>
