@@ -11,7 +11,6 @@
     #fce2ba 64.52%,
     #ffdaa4 97.21%
   );
-
   width: 100%;
 }
 
@@ -29,20 +28,15 @@
 
 .textGroup {
   display: flex;
-  animation: scrollLeft 40s linear infinite;
-  -webkit-animation: scrollLeft 40s linear infinite;
+  animation: scrollLeft 140s linear infinite;
+  /*Méglassabbanimáció(80s->120s)*/-webkit-animation: scrollLeft 140s linear infinite;
   justify-content: center;
   align-items: center;
   gap: 5rem;
+  -webkit-animation: scrollLeft 140s linear infinite;
 }
 
-.dot {
-  width: 0.6rem;
-  height: 0.6rem;
-  background-color: #9fd131;
-  border-radius: 50%;
-  margin: 0 1.75rem; /* Equal space on both sides of the dot */
-}
+/* Pont elemek eltávolítva */
 
 .pDark {
   color: #8c6831 !important;
@@ -57,6 +51,15 @@
 
 .p2 {
   color: #8c6831;
+}
+
+.linkText {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.linkText:hover {
+  color: #c19351;
 }
 
 @media screen and (max-width: 768px) {

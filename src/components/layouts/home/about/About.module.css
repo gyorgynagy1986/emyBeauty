@@ -84,13 +84,13 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  max-height: 550px;
 }
 
 .photoContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 
 @media screen and (min-width: 1980px) {
@@ -172,11 +172,10 @@
   .photoContainer {
     order: -1;
     width: 100%;
+    padding: 0;
   }
 
-  .photoContainer img {
-    max-height: 800px;
-  }
+
 
   .text {
     max-width: 600px;
