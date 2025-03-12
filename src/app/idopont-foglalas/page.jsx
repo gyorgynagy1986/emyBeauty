@@ -214,7 +214,7 @@ const page = () => {
 
   return (
     <div className={styles.pageContainer}>
-      <video autoPlay muted loop className={styles.backgroundVideo}>
+      <video autoPlay muted loop playsinline className={styles.backgroundVideo}>
         <source src="/video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
