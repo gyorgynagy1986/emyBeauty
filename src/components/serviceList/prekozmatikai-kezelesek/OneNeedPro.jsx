@@ -28,10 +28,10 @@ export default function OneNeedPro() {
 
     // Kezdeti ellenőrzés
     checkIfMobile();
-    
+
     // AOS inicializálása
     AOS.init();
-    
+
     // Mobilon frissítsük az AOS-t a state változás után
     if (isMobile) {
       setTimeout(() => {
@@ -40,10 +40,10 @@ export default function OneNeedPro() {
     }
 
     // Eseményfigyelő a képernyőméret változásához
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       const wasMobile = isMobile;
       checkIfMobile();
-      
+
       // Ha változott a nézet típusa, frissítsük az AOS-t
       if (wasMobile !== isMobile) {
         setTimeout(() => {
@@ -51,10 +51,10 @@ export default function OneNeedPro() {
         }, 100);
       }
     });
-    
+
     // Komponens leválasztásakor takarítunk
     return () => {
-      window.removeEventListener('resize', checkIfMobile);
+      window.removeEventListener("resize", checkIfMobile);
     };
   }, [isMobile]);
 
@@ -94,7 +94,7 @@ export default function OneNeedPro() {
       <section className={styles.container}>
         <div className={styles.helper}>
           {/* --- Fő cím + szöveg --- */}
-          <div 
+          <div
             data-aos={isMobile ? "fade" : "fade-right"}
             data-aos-offset="150"
             data-aos-delay="150"
@@ -124,7 +124,7 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- Kép --- */}
-          <div 
+          <div
             data-aos={isMobile ? "fade" : "fade-left"}
             data-aos-offset="150"
             data-aos-delay="100"
@@ -134,17 +134,28 @@ export default function OneNeedPro() {
             data-aos-once="true"
             className={styles.photoContainer}
           >
-            <Image
-              alt={alt.name}
-              src={servicesPage.onennedpro}
-              sizes={size.fullsize}
-            />
+            <div className={styles.videoContainer}>
+            <video
+            style={{maxWidth:'600px', width:'100%', marginInline:'auto'}}
+              playsInline
+              muted
+              autoPlay
+              loop
+              className={styles.backgroundVideo}
+              preload="auto"
+              onLoadedData={() => handleVideoLoad("desktop")}
+              onError={() => handleVideoError("desktop")}
+            >
+              <source src="/one.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            </div>
           </div>
 
           {/* --- 1. szekció --- */}
-          <div 
-              data-aos="fade-up"
-              data-aos-offset="150"
+          <div
+            data-aos="fade-up"
+            data-aos-offset="150"
             data-aos-delay="100"
             data-aos-duration="1000"
             data-aos-easing="ease"
@@ -164,14 +175,14 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 2. szekció --- */}
-          <div 
-              data-aos="fade-up"
-              data-aos-offset="150"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-              data-aos-easing="ease"
-              data-aos-mirror="true"
-              data-aos-once="true"
+          <div
+            data-aos="fade-up"
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
             className={styles.sectionSubTitles}
           >
             <h2 className={styles.title}>Sokrétű megoldás</h2>
@@ -188,7 +199,7 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 3. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="150"
             data-aos-delay="100"
@@ -213,7 +224,7 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 4. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="150"
             data-aos-delay="100"
@@ -235,7 +246,7 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 5. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="150"
             data-aos-delay="100"
@@ -273,7 +284,7 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 6. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="150"
             data-aos-delay="100"
@@ -299,7 +310,7 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 7. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="150"
             data-aos-delay="100"
@@ -320,7 +331,7 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- 8. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="150"
             data-aos-delay="100"
@@ -367,7 +378,7 @@ export default function OneNeedPro() {
           </div>
 
           {/* --- Árazás --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="150"
             data-aos-delay="100"

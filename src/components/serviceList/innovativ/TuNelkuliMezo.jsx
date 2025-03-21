@@ -107,7 +107,7 @@ export default function TuNelkuliMezoterapia() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.tunelkuli}
               sizes={size.fullsize}
             />
           </div>

@@ -1,17 +1,35 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./page.module.css";
-import { services, bookingTypes } from "@/data/services"; // Frissített import
+import { services, bookingTypes } from "@/data/services";
 
-const page = () => {
-  // Lépések kezelésére új állapot
+const Page = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [bookingType, setBookingType] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState({
+    mobile: false,
+    desktop: false,
+  });
 
-  console.log(bookingType);
+  useEffect(() => {
+    const checkIfMobile = () => {
+      const width = window.innerWidth;
+      console.log("Window width:", width, "Is mobile:", width <= 1024);
+      setIsMobile(width <= 1024);
+    };
 
-  // FORM ÁLLAPOT (Ide beillesztettük a date és time mezőket is)
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => window.removeEventListener("resize", checkIfMobile);
+  }, []);
+
+  // FORM ÁLLAPOT
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,13 +37,9 @@ const page = () => {
     service: "",
     message: "",
     consent: false,
-    date: "", // ÚJ
-    time: "", // ÚJ
+    date: "",
+    time: "",
   });
-
-  const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const validateName = (name) => {
     if (!name.trim()) return "Név megadása kötelező";
@@ -67,7 +81,6 @@ const page = () => {
 
   const handleBookingTypeChange = (type) => {
     setBookingType(type);
-    // Ha konzultációt választ, töröljük a service értéket
     if (type === "Konzultáció") {
       setFormData((prev) => ({
         ...prev,
@@ -79,7 +92,6 @@ const page = () => {
 
   const goToNextStep = () => {
     if (currentStep === 2) {
-      // Ha a második lépésen vagyunk, ellenőrizzük, hogy a service ki van-e választva (csak akkor, ha "Időpontfoglalás szolgáltatásra")
       if (
         bookingType === "Időpontfoglalás szolgáltatásra" &&
         !formData.service
@@ -98,7 +110,6 @@ const page = () => {
     setCurrentStep(currentStep - 1);
   };
 
-  // VALIDÁCIÓS FÜGGVÉNY (igény szerint bővíthető a date/time mezők ellenőrzésével is)
   const validateForm = () => {
     const newErrors = {
       name: validateName(formData.name),
@@ -109,12 +120,10 @@ const page = () => {
         : "",
     };
 
-    // Csak akkor ellenőrizzük a szolgáltatást, ha időpontfoglalásról van szó
     if (bookingType === "Időpontfoglalás szolgáltatásra") {
       newErrors.service = !formData.service
         ? "Kérlek válassz szolgáltatást"
         : "";
-      // Ha kötelező a dátum és idő, itt is ellenőrizhetjük
       if (!formData.date) {
         newErrors.date = "Kérlek válassz dátumot";
       }
@@ -122,16 +131,6 @@ const page = () => {
         newErrors.time = "Kérlek válassz időpontot";
       }
     }
-
-    // Ha konzultációnál is kötelezőnek szeretnéd, itt ugyanez:
-    // if (bookingType === "Konzultáció") {
-    //   if (!formData.date) {
-    //     newErrors.date = "Kérlek válassz dátumot";
-    //   }
-    //   if (!formData.time) {
-    //     newErrors.time = "Kérlek válassz időpontot";
-    //   }
-    // }
 
     setErrors(newErrors);
     return !Object.values(newErrors).some((error) => error);
@@ -147,7 +146,6 @@ const page = () => {
     }
 
     try {
-      // Az emailData objektumba átemeljük a date és time mezőket is
       const emailData = {
         bookingType,
         name: formData.name,
@@ -156,8 +154,8 @@ const page = () => {
         service: formData.service,
         message: formData.message,
         consent: formData.consent,
-        date: formData.date, // ÚJ
-        time: formData.time, // ÚJ
+        date: formData.date,
+        time: formData.time,
       };
 
       const response = await fetch("/api/send-email", {
@@ -178,9 +176,7 @@ const page = () => {
           );
         }
 
-        // Sikeres küldés
         setSubmitSuccess(true);
-        // Form reset
         setFormData({
           name: "",
           email: "",
@@ -212,12 +208,51 @@ const page = () => {
     }
   };
 
+  const handleVideoLoad = (type) => {
+    setVideoLoaded((prev) => ({
+      ...prev,
+      [type]: true,
+    }));
+    console.log(`${type} video loaded successfully`);
+  };
+
+  const handleVideoError = (type) => {
+    console.error(`Error loading ${type} video`);
+  };
+
   return (
     <div className={styles.pageContainer}>
-      <video playsInline muted autoPlay loop className={styles.backgroundVideo}>
-        <source src="/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {isMobile === false && (
+        <video
+          playsInline
+          muted
+          autoPlay
+          loop
+          className={styles.backgroundVideo}
+          preload="auto"
+          onLoadedData={() => handleVideoLoad("mobile")}
+          onError={() => handleVideoError("mobile")}
+        >
+          <source src="/desktop.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
+
+      {isMobile === true && (
+        <video
+          playsInline
+          muted
+          autoPlay
+          loop
+          className={styles.backgroundVideo}
+          preload="auto"
+          onLoadedData={() => handleVideoLoad("desktop")}
+          onError={() => handleVideoError("desktop")}
+        >
+          <source src="/mobile.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
 
       <div className={styles.container}>
         <div className={styles.innerContainer}>
@@ -493,4 +528,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

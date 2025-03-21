@@ -119,7 +119,7 @@ const page = () => {
 
   const serviceItems = [
     {
-      src: servicesPage.serices7,
+      src: servicesPage.voros,
       title: "O2LIFT SPA VÖRÖS SZŐNYEG KEZELÉS",
       slug: "o2lift-spa-voros-szonyeg-kezeles",
       text: "Luxus, oxigénalapú arckezelés, amely mélyen tisztít, hidratál és élénkíti a bőrt. Azonnali ragyogást biztosít különleges alkalmakra, érzékeny bőrre is alkalmas.",

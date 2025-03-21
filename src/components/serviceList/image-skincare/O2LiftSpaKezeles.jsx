@@ -18,11 +18,11 @@ import AOS from "aos";
 
 // Animation variants for more diversity
 const animationVariants = [
-  "fade-up", 
-  "fade-right", 
-  "fade-left", 
-  "zoom-in", 
-  "flip-up"
+  "fade-up",
+  "fade-right",
+  "fade-left",
+  "zoom-in",
+  "flip-up",
 ];
 
 export default function O2LiftSpaKezeles() {
@@ -37,20 +37,20 @@ export default function O2LiftSpaKezeles() {
 
     // Initial check
     checkIfMobile();
-    
+
     // AOS initialization
     AOS.init({
       offset: 120,
       delay: 0,
       duration: 1000,
-      easing: 'ease-in-out',
+      easing: "ease-in-out",
       once: true,
       mirror: false,
-      anchorPlacement: 'top-bottom',
+      anchorPlacement: "top-bottom",
       disable: false,
-      disableHorizontalScroll: true // Prevent horizontal scroll
+      disableHorizontalScroll: true, // Prevent horizontal scroll
     });
-    
+
     // Refresh AOS on mobile state change
     if (isMobile) {
       setTimeout(() => {
@@ -62,7 +62,7 @@ export default function O2LiftSpaKezeles() {
     const resizeHandler = () => {
       const wasMobile = isMobile;
       checkIfMobile();
-      
+
       // Only refresh AOS when switching between mobile/desktop
       if (wasMobile !== isMobile) {
         setTimeout(() => {
@@ -71,11 +71,11 @@ export default function O2LiftSpaKezeles() {
       }
     };
 
-    window.addEventListener('resize', resizeHandler);
-    
+    window.addEventListener("resize", resizeHandler);
+
     // Cleanup on component unmount
     return () => {
-      window.removeEventListener('resize', resizeHandler);
+      window.removeEventListener("resize", resizeHandler);
     };
   }, [isMobile]);
 
@@ -115,7 +115,7 @@ export default function O2LiftSpaKezeles() {
       <section className={styles.container}>
         <div className={styles.helper}>
           {/* --- Fő cím + szöveg --- */}
-          <div 
+          <div
             data-aos={isMobile ? "fade" : "fade-right"}
             data-aos-offset="150"
             data-aos-delay="100"
@@ -144,7 +144,7 @@ export default function O2LiftSpaKezeles() {
           </div>
 
           {/* --- Kép --- */}
-          <div 
+          <div
             data-aos={isMobile ? "fade" : "fade-left"}
             data-aos-offset="150"
             data-aos-delay="100"
@@ -153,15 +153,16 @@ export default function O2LiftSpaKezeles() {
             data-aos-once="true"
             className={styles.photoContainer}
           >
+            
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.voros2}
               sizes={size.fullsize}
             />
           </div>
 
           {/* --- 1. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"
@@ -183,7 +184,7 @@ export default function O2LiftSpaKezeles() {
           </div>
 
           {/* --- 2. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"
@@ -220,9 +221,26 @@ export default function O2LiftSpaKezeles() {
             </ul>
             <Abstract />
           </div>
+          <div>
+            <div className="videoContainer">
 
+          
+          <video
+          style={{maxWidth:'500px', width:'100%'}}
+          playsInline
+          muted
+          autoPlay
+          loop
+          className={styles.backgroundVideo}
+          preload="auto"
+        >
+          <source src="/voros.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        </div>
+          </div>
           {/* --- 3. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"
@@ -253,7 +271,7 @@ export default function O2LiftSpaKezeles() {
           </div>
 
           {/* --- 4. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"
@@ -273,7 +291,7 @@ export default function O2LiftSpaKezeles() {
           </div>
 
           {/* --- 5. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"
@@ -296,7 +314,7 @@ export default function O2LiftSpaKezeles() {
           </div>
 
           {/* --- Árazás --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"

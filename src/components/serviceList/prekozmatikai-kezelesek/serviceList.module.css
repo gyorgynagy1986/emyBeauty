@@ -236,3 +236,10 @@
 .sectionSubTitles h3 {
   font-size: 1.7rem !important;
 }
+
+.videoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

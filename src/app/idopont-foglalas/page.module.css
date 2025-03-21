@@ -2,6 +2,7 @@
   width: 100%;
   position: relative;
   height: 100%;
+  min-height: calc(100vh - 138px)
 }
 
 .container {
@@ -28,6 +29,19 @@
   z-index: -1;
   pointer-events: none !important; 
   user-select: none !important;
+}
+
+
+@media screen and (max-width:1024px) {
+
+
+  .pageContainer {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    min-height: calc(100vh - 128px)
+  }
+  
 }
 
 .innerContainer {

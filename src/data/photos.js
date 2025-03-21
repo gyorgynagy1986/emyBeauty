@@ -83,8 +83,19 @@ import plasma2 from "../../public/assets/services/prekozmetika/plasma2.webp"
   import t2 from "../../public/assets/services/tetovalas/2.webp" 
   import t3 from "../../public/assets/services/tetovalas/3.webp"
   import t4 from "../../public/assets/services/tetovalas/4.webp"
-
   import ferfi from "../../public/assets/services/ferfi.webp"
+
+  import voros from "../../public/assets/services/voros.webp"
+  import voros2 from "../../public/assets/services/voros2.webp"
+  import tunelkuli from "../../public/assets/services/tunelkuli.webp"
+  import genoled from "../../public/assets/services/genoled.webp"
+
+  import w1 from "../../public/assets/services/wax/1.webp"
+  import w2 from "../../public/assets/services/wax/2.webp"
+  import w3 from "../../public/assets/services/wax/3.webp"
+  import w4 from "../../public/assets/services/wax/4.webp"
+  import w5 from "../../public/assets/services/wax/5.webp"
+
 
 
 /* SERVICES  END*/
@@ -177,8 +188,16 @@ export const servicesPage = {
   t2:t2,
   t3:t3,  
   t4:t4, 
-
-  ferfi:ferfi
+  ferfi:ferfi,
+  voros,
+  voros2,
+  tunelkuli,
+  genoled,
+  w1,
+  w2,
+  w3,
+  w4,
+  w5
 };
 /* SERVICES DONE */
 

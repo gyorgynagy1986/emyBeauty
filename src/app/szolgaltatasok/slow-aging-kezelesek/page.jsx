@@ -119,13 +119,13 @@ const page = () => {
 
   const serviceItems = [
     {
-      src: servicesPage.serices1,
+      src: servicesPage.tunelkuli,
       title: "TŰ NÉLKÜLI MEZOTERÁPIA - ELEKTROPORÁCIÓ",
       slug: "/tu-nelkuli-mezoterapia",
       text: "Nobel-díjas hatásmechanizmusra épülő, tű nélküli mezoterápiás kezelés. A hatóanyagok 90%-a mély szövetekbe hatol, maximálisan hidratálja a bőrt és látványosan csökkenti a ráncokat.",
     },
     {
-      src: servicesPage.serices2,
+      src: servicesPage.genoled,
       title: "GENO-LED ALACSONY INTENZITÁSÚ LED FÉNY",
       slug: "/geno-led-alacsony-intenzitasu-led-feny",
       text: "Komplikált bőrproblémákat old meg LED fénnyel. A 287 speciális LED összetevő különböző hullámhosszúságú fényt sugározva regenerálja és nyugtatja a bőrt, mellékhatások nélkül.",

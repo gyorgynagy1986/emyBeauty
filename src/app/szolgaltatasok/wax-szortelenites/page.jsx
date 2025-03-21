@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./page.module.css";
-import Abstract from "@/components/astract/ObjectElement";
+import Wax from "@/components/serviceList/wax/wax";
 import Image from "next/image";
 import Link from "next/link";
 import icon from "../../../../public/assets/icon/right.svg";
@@ -36,12 +36,7 @@ const page = () => {
         </div>
       </div>
       <section className={styles.containerHelper}>
-        <div className={styles.titleContainer}>
-          <h1>Wax szőrtelenítés</h1>
-          <Abstract />
-          <p>Hamarosan</p>
-        </div>
-        <div className={styles.itemsContainer}></div>
+        <Wax />
       </section>
     </div>
   );

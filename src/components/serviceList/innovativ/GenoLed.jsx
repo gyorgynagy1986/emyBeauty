@@ -109,7 +109,7 @@ export default function GenoLedKezelés() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.genoled}
               sizes={size.fullsize}
             />
           </div>

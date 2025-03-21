@@ -226,3 +226,10 @@
 .priceItems p:nth-child(1) {
   font-weight: bold;
 }
+
+.videoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
