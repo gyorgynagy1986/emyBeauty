@@ -138,7 +138,7 @@ const ConsultationEmailTemplate = ({
         
         {!isAdminNotification && (
           <p style={paragraphStyle}>
-            Köszönöm, hogy konzultációs igényt küldtél az EmyBeautyEstetics-hez!
+            Köszönöm, hogy konzultációs igényt küldtél az Emy Beauty Estetics-hez!
             Megkaptam az üzenetedet, és hamarosan személyesen felveszem Veled a kapcsolatot 
             egy alkalmas időpont egyeztetése érdekében.
           </p>

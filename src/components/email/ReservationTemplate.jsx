@@ -220,7 +220,7 @@ const AppointmentEmailTemplate = ({
         
         {!isAdminNotification && (
           <p style={paragraphStyle}>
-            Köszönöm, hogy időpontot foglaltál az EmyBeautyEstetics-nél!
+            Köszönöm, hogy időpontot foglaltál az Emy Beauty Estetics-nél!
             Foglalásod megkaptam, és hamarosan felveszem Veled a kapcsolatot a
             részletek egyeztetése és az időpont megerősítése érdekében.
           </p>

@@ -196,7 +196,7 @@ const ContactEmailTemplate = ({
         {/* Footer */}
         <div style={footerContainerStyle}>
           <p style={footerTextStyle}>
-            Ez az email automatikusan lett elküldve az EmyBeautyEstetics weboldal kapcsolati űrlapján keresztül.
+            Ez az email automatikusan lett elküldve az Emy Beauty Estetics weboldal kapcsolati űrlapján keresztül.
           </p>
           <p style={footerTextStyle}>
             {new Date().getFullYear()} © EmyBeautyEstetics™️ | Minden jog fenntartva
