@@ -22,11 +22,11 @@ import map2 from "../../public/assets/pages/kapocslat/3.png";
 
 /* SERVICES */
 import serices1 from "../../public/assets/pages/services/1.png";
-import serices2 from "../../public/assets/pages/services/2.png";
+import serices2 from "../../public/assets/services/slowcover.webp";
 import serices3 from "../../public/assets/pages/services/3.png";
-import serices4 from "../../public/assets/pages/services/4.png";
-import serices5 from "../../public/assets/pages/services/5.png";
-import serices6 from "../../public/assets/pages/services/6.png";
+import serices4 from "../../public/assets/services/p4.webp";
+import serices5 from "../../public/assets/services/p5.webp";
+import serices6 from "../../public/assets/services/p6.webp";
 import serices7 from "../../public/assets/pages/services/7.png";
 import slug1 from "../../public/assets/pages/services/slug/1.png";
 import secret from "../../public/assets/services/secret.webp"
@@ -96,6 +96,24 @@ import plasma2 from "../../public/assets/services/prekozmetika/plasma2.webp"
   import w4 from "../../public/assets/services/wax/4.webp"
   import w5 from "../../public/assets/services/wax/5.webp"
 
+  import ge1 from "../../public/assets/services/ge1.webp"
+  import ge2 from "../../public/assets/services/ge2.webp"
+  import ge3 from "../../public/assets/services/ge3.webp"
+  import ge4 from "../../public/assets/services/ge4.webp"
+
+  import energize from "../../public/assets/services/energize.webp"
+  import scincover from "../../public/assets/services/sincarecover.webp"
+
+  import beclear from "../../public/assets/services/beclear.webp"
+  import illuminating from "../../public/assets/services/illuminating.webp"
+  import ossejt from "../../public/assets/services/ossejt.webp"
+  import contour from "../../public/assets/services/contour.webp"
+  import probi from "../../public/assets/services/probi.webp"
+  import mikrobiome from "../../public/assets/services/mikrobiome.webp"
+  import unnepi from "../../public/assets/services/unnepi.webp"
+  import radience from "../../public/assets/services/radience.webp"
+  import mask from "../../public/assets/services/mask.webp"
+  import gencell from "../../public/assets/services/gencell.webp"
 
 
 /* SERVICES  END*/
@@ -134,6 +152,22 @@ export const contact = {
 
 /* SERVICES  */
 export const servicesPage = {
+  gencell,
+  mask,
+  radience,
+  unnepi,
+  mikrobiome,
+  probi,
+  contour,
+  ossejt,
+  illuminating,
+  beclear,
+  scincover,
+  energize,
+  ge1,
+  ge2,
+  ge3,
+  ge4,
   serices1: serices1,
   serices2: serices2,
   serices3: serices3,

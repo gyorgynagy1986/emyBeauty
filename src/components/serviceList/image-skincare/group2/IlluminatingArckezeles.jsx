@@ -15,7 +15,7 @@ import styles from "../serviceList.module.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
 
-export default function IlluminatingArckezeles() {
+export default function ImageIlumaArckezeles() {
   // Screen size tracking
   const [isMobile, setIsMobile] = useState(false);
 
@@ -71,7 +71,7 @@ export default function IlluminatingArckezeles() {
 
   return (
     <>
-      <ImageSkincareHeader activePage="ILLUMINATING ARCKEZELÉS" />
+      <ImageSkincareHeader activePage="IMAGE ILUMA ARCKEZELÉS" />
 
       <section className={styles.container}>
         <div className={styles.helper}>
@@ -86,12 +86,16 @@ export default function IlluminatingArckezeles() {
             className={styles.titleContainer}
           >
             <div className={styles.titleHelper}>
-              <h1 className={styles.title}>ILLUMINATING arckezelés</h1>
+              <h1 className={styles.title}>IMAGE ILUMA arckezelés</h1>
               <Abstract />
             </div>
 
             <p>
-              A legújabb innovációs fehérítő és hámlasztó technológiákkal szabadítja meg a bőrt a sötét foltoktól. A kezelés hatására a bőrtónus azonnal javul, a bőr pedig ragyogóvá válik.
+              Az Image Iluma termékcsaláddal hatékonyan kezelhetjük a pigmentáció valamennyi formáját. Intenzív fehérítő hatóanyagok és növényi őssejt technológia kombinációjával segít korrigálni a bőr egyenetlen tónusát és megelőzésre is alkalmazható. A kezelés hatására a bőrtónus azonnal javul, a bőr pedig ragyogóvá válik.
+            </p>
+            
+            <p>
+              Minden évszakban alkalmazható (Fényvédelem minden nap javasolt). A kezelés hosszútávú hatékony eredmény érdekében komplex, személyre szabott otthoni bőrápolasi rutin javasolt.
             </p>
 
             <div className={styles.buttonContainer}>
@@ -112,7 +116,7 @@ export default function IlluminatingArckezeles() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.imageIluma || servicesPage.illuminating} // Feltételezzük, hogy létezik egy megfelelő kép
               sizes={size.fullsize}
             />
           </div>
@@ -129,7 +133,7 @@ export default function IlluminatingArckezeles() {
           >
             <h2 className={styles.title}>Bőrprobléma</h2>
             <p>
-              Pigmentfolt, fakó, érzékeny, fáradt bőr.
+              Pigmentáció, kipirosodásra való hajlam, fénykárosodott bőr
             </p>
            
             <Abstract />

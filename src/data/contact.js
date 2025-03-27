@@ -8,7 +8,6 @@ export const contacts = {
   facebookLink: "https://www.facebook.com/EmyBeautyStudio",
 };
 
-
 export const locations = [
   {
     title: "Szeged",
@@ -20,7 +19,7 @@ export const locations = [
   {
     title: "Budapest",
     businessName: "Waio Hair",
-    address: "XIII. kerület, Szabolcs utca 23-25.",
+    address: "XII. kerület, Rác Aladár út 158",
     phone: "+36 20 342 66 18",
     mapSrc: contact.map2,
   },

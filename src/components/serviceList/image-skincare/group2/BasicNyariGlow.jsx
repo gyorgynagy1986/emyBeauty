@@ -112,7 +112,7 @@ export default function BasicNyariGlow() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.radience}
               sizes={size.fullsize}
             />
           </div>

@@ -132,7 +132,7 @@ export default function IPeelWrinkleLift() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.wr}
               sizes={size.fullsize}
             />
           </div>

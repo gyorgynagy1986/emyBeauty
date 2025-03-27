@@ -1,13 +1,13 @@
 import * as React from "react";
 
-const AppointmentEmailTemplate = ({ 
-  name, 
-  email, 
-  phone, 
-  service, 
-  message, 
+const AppointmentEmailTemplate = ({
+  name,
+  email,
+  phone,
+  service,
+  message,
   appointmentDate,
-  isAdminNotification
+  isAdminNotification,
 }) => {
   // Színek
   const colors = {
@@ -217,7 +217,7 @@ const AppointmentEmailTemplate = ({
             </>
           )}
         </p>
-        
+
         {!isAdminNotification && (
           <p style={paragraphStyle}>
             Köszönöm, hogy időpontot foglaltál az Emy Beauty Estetics-nél!
@@ -272,8 +272,8 @@ const AppointmentEmailTemplate = ({
         {!isAdminNotification && (
           <p style={paragraphStyle}>
             Kérlek, várj, amíg személyesen felveszem Veled a kapcsolatot a
-            foglalás részleteinek egyeztetése érdekében. Amennyiben 24 órán belül
-            nem kapsz visszajelzést, kérlek hívj a megadott telefonszámon.
+            foglalás részleteinek egyeztetése érdekében. Amennyiben 24 órán
+            belül nem kapsz visszajelzést, kérlek hívj a megadott telefonszámon.
           </p>
         )}
 
@@ -365,10 +365,10 @@ const AppointmentEmailTemplate = ({
                       Budapest
                     </h4>
                     <p style={{ margin: "0 0 3px 0", fontSize: "14px" }}>
-                      XIII. kerület
+                      XII. kerület
                     </p>
                     <p style={{ margin: "0 0 3px 0", fontSize: "14px" }}>
-                      Szabolcs utca 23-25.
+                      Rác Aladár út 158
                     </p>
                   </div>
                 </td>

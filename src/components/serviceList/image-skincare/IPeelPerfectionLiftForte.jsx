@@ -129,7 +129,7 @@ export default function IPeelPerfectionLiftForte() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.perfectionliftforte}
               sizes={size.fullsize}
             />
           </div>

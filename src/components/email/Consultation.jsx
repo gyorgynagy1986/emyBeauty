@@ -6,7 +6,7 @@ const ConsultationEmailTemplate = ({
   phone,
   message,
   appointmentDate,
-  isAdminNotification
+  isAdminNotification,
 }) => {
   // Színek
   const colors = {
@@ -135,20 +135,22 @@ const ConsultationEmailTemplate = ({
             </>
           )}
         </p>
-        
+
         {!isAdminNotification && (
           <p style={paragraphStyle}>
-            Köszönöm, hogy konzultációs igényt küldtél az Emy Beauty Estetics-hez!
-            Megkaptam az üzenetedet, és hamarosan személyesen felveszem Veled a kapcsolatot 
-            egy alkalmas időpont egyeztetése érdekében.
+            Köszönöm, hogy konzultációs igényt küldtél az Emy Beauty
+            Estetics-hez! Megkaptam az üzenetedet, és hamarosan személyesen
+            felveszem Veled a kapcsolatot egy alkalmas időpont egyeztetése
+            érdekében.
           </p>
         )}
 
         {!isAdminNotification && (
           <div style={infoBoxStyle}>
             <p style={{ margin: 0, fontWeight: "500" }}>
-              A konzultáció során részletesen megbeszéljük az igényeidet, és segítek kiválasztani 
-              a számodra legmegfelelőbb kezeléseket és megoldásokat.
+              A konzultáció során részletesen megbeszéljük az igényeidet, és
+              segítek kiválasztani a számodra legmegfelelőbb kezeléseket és
+              megoldásokat.
             </p>
           </div>
         )}
@@ -198,8 +200,9 @@ const ConsultationEmailTemplate = ({
 
         {!isAdminNotification && (
           <p style={paragraphStyle}>
-            Kérlek, várj, amíg személyesen felveszem Veled a kapcsolatot. 
-            Amennyiben 24 órán belül nem jelentkezem, kérlek hívj a megadott telefonszámon.
+            Kérlek, várj, amíg személyesen felveszem Veled a kapcsolatot.
+            Amennyiben 24 órán belül nem jelentkezem, kérlek hívj a megadott
+            telefonszámon.
           </p>
         )}
 
@@ -242,7 +245,10 @@ const ConsultationEmailTemplate = ({
           >
             <tbody>
               <tr>
-                <td valign="top" style={{ textAlign: "center", padding: "0 10px" }}>
+                <td
+                  valign="top"
+                  style={{ textAlign: "center", padding: "0 10px" }}
+                >
                   <div
                     style={{
                       backgroundColor: colors.lightBlue,
@@ -270,7 +276,10 @@ const ConsultationEmailTemplate = ({
                     </p>
                   </div>
                 </td>
-                <td valign="top" style={{ textAlign: "center", padding: "0 10px" }}>
+                <td
+                  valign="top"
+                  style={{ textAlign: "center", padding: "0 10px" }}
+                >
                   <div
                     style={{
                       backgroundColor: colors.lightBlue,
@@ -291,10 +300,10 @@ const ConsultationEmailTemplate = ({
                       Budapest
                     </h4>
                     <p style={{ margin: "0 0 3px 0", fontSize: "13px" }}>
-                      XIII. kerület
+                      XII. kerület
                     </p>
                     <p style={{ margin: "0 0 3px 0", fontSize: "13px" }}>
-                      Szabolcs utca 23-25.
+                      Rác Aladár út 158
                     </p>
                   </div>
                 </td>
@@ -430,7 +439,8 @@ const ConsultationEmailTemplate = ({
 
           {/* 4. sor: jogi / copyright */}
           <p style={footerTextStyle}>
-            {new Date().getFullYear()} © EmyBeautyEstetics™️ | Minden jog fenntartva
+            {new Date().getFullYear()} © EmyBeautyEstetics™️ | Minden jog
+            fenntartva
           </p>
           <p style={footerTextStyle}>
             Designed and developed by{" "}

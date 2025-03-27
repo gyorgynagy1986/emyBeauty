@@ -15,7 +15,7 @@ import styles from "../serviceList.module.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
 
-export default function TheMaxContour() {
+export default function ArcfeszesitoKezeles() {
   // Screen size tracking
   const [isMobile, setIsMobile] = useState(false);
 
@@ -71,7 +71,7 @@ export default function TheMaxContour() {
 
   return (
     <>
-      <ImageSkincareHeader activePage="THE MAX CONTOUR KEZELÉS" />
+      <ImageSkincareHeader activePage="ARCFESZESÍTŐ KEZELÉS" />
 
       <section className={styles.container}>
         <div className={styles.helper}>
@@ -86,12 +86,16 @@ export default function TheMaxContour() {
             className={styles.titleContainer}
           >
             <div className={styles.titleHelper}>
-              <h1 className={styles.title}>THE MAX Contour kezelés</h1>
+              <h1 className={styles.title}>Arcfeszesítő kezelés</h1>
               <Abstract />
             </div>
 
             <p>
-              A növényi őssejtek és peptidek visszaállítják az arc alsó felének feszes és volumenizált megjelenését. A bőr nedvességtartalmának hatására felszabadulnak a hatóanyagok és a bőr kevésbé lesz hajlamos a megereszkedésre, köszönhetően a liftingelő és feltöltő hatású peptideknek.
+              Hatékony arcfeszesítő kezelés, mely már egy kezelés után is látható eredményt nyújt. Legyen bőröd ismét ragyogó és élettel teli! A bőrbe juttatott hatóanyagoknak köszönhetően a fáradt, idősödő bőr ismét ragyogó, élettel telibb és feszessé válik.
+            </p>
+            
+            <p>
+              A növényi őssejtek és peptidek visszaállítják az arc alsó felének feszes és volumenizált megjelenését. Kisimítja a szarkalábakat, mélyebb ráncokat, laza kötőszövetű bőrt. A bőr nedvességtartalmának hatására felszabadulnak a hatóanyagok és a bőr kevésbé lesz hajlamos a megereszkedésre, köszönhetően a liftingelő és feltöltő hatású peptideknek.
             </p>
 
             <div className={styles.buttonContainer}>
@@ -112,7 +116,7 @@ export default function TheMaxContour() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.arcfeszesito || servicesPage.contour} // Feltételezzük, hogy létezik egy arcfeszesito kép vagy visszaesik a contour-ra
               sizes={size.fullsize}
             />
           </div>
@@ -129,7 +133,7 @@ export default function TheMaxContour() {
           >
             <h2 className={styles.title}>Bőrprobléma</h2>
             <p>
-              Megereszkedett, idősödő bőr
+              Megereszkedett, idősödő bőr, szarkalábak, mélyebb ráncok, laza kötőszövetű bőr
             </p>
             <Abstract />
           </div>

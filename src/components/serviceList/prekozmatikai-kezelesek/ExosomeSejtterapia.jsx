@@ -28,10 +28,10 @@ export default function ExosomeSejtterapia() {
 
     // Kezdeti ellenőrzés
     checkIfMobile();
-    
+
     // AOS inicializálása
     AOS.init();
-    
+
     // Mobilon frissítsük az AOS-t a state változás után
     if (isMobile) {
       setTimeout(() => {
@@ -40,10 +40,10 @@ export default function ExosomeSejtterapia() {
     }
 
     // Eseményfigyelő a képernyőméret változásához
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       const wasMobile = isMobile;
       checkIfMobile();
-      
+
       // Ha változott a nézet típusa, frissítsük az AOS-t
       if (wasMobile !== isMobile) {
         setTimeout(() => {
@@ -51,10 +51,10 @@ export default function ExosomeSejtterapia() {
         }, 100);
       }
     });
-    
+
     // Komponens leválasztásakor takarítunk
     return () => {
-      window.removeEventListener('resize', checkIfMobile);
+      window.removeEventListener("resize", checkIfMobile);
     };
   }, [isMobile]);
 
@@ -94,7 +94,7 @@ export default function ExosomeSejtterapia() {
       <section className={styles.container}>
         <div className={styles.helper}>
           {/* --- Fő cím + szöveg --- */}
-          <div 
+          <div
             data-aos={isMobile ? "fade" : "fade-right"}
             data-aos-offset="150"
             data-aos-delay="100"
@@ -124,7 +124,7 @@ export default function ExosomeSejtterapia() {
           </div>
 
           {/* --- Kép --- */}
-          <div 
+          <div
             data-aos={isMobile ? "fade" : "fade-left"}
             data-aos-offset="100"
             data-aos-delay="100"
@@ -141,7 +141,7 @@ export default function ExosomeSejtterapia() {
           </div>
 
           {/* --- 1. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"
@@ -181,11 +181,22 @@ export default function ExosomeSejtterapia() {
               kezelést követő 6-8 hónapig az exoszómák folyamatosan aktívak, így
               az eredmény meglehetősen tartós.
             </p>
+            <video
+              playsInline
+              muted
+              autoPlay
+              style={{maxWidth:'100%'}}
+              loop
+              preload="auto"
+            >
+              <source src="/sejt.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             <Abstract />
           </div>
 
           {/* --- 2. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"
@@ -215,7 +226,7 @@ export default function ExosomeSejtterapia() {
           </div>
 
           {/* --- 3. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"
@@ -252,7 +263,7 @@ export default function ExosomeSejtterapia() {
           </div>
 
           {/* --- 4. szekció --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"
@@ -307,7 +318,7 @@ export default function ExosomeSejtterapia() {
           </div>
 
           {/* --- Árazás --- */}
-          <div 
+          <div
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"

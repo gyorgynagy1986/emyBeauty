@@ -191,14 +191,14 @@ const page = () => {
 
     // 19. ILLUMINATING ARCKEZELÉS
     {
-      src: servicesPage.serices7,
+      src: servicesPage.beclear,
       title: "BE CLEAR TISZTÍTÓ ARCKEZELÉS",
       slug: "be-clear-tisztito-arckezeles",
       text: "Antibakteriális összetevőket és nyugtató növényi hatóanyagokat kombinálva nyújt megoldást az aknés bőrproblémákra. Ideális a zsíros, pattanásos bőrre, irritáció nélkül.",
     },
 
     {
-      src: servicesPage.serices7,
+      src: servicesPage.illuminating,
       title: "ILLUMINATING ARCKEZELÉS",
       slug: "illuminating-arckezeles",
       text: "Innovatív fehérítő és hámlasztó technológiákkal szabadítja meg a bőrt a sötét foltoktól. Azonnali eredmény, ragyogóbb bőrtónus a fakó, érzékeny, fáradt bőrre.",
@@ -206,7 +206,7 @@ const page = () => {
 
     // 20. THE MAX ŐSSEJTES ARCKEZELÉS
     {
-      src: servicesPage.serices7,
+      src: servicesPage.ossejt,
       title: "THE MAX ŐSSEJTES ARCKEZELÉS",
       slug: "the-max-ossejtes-arckezeles",
       text: "Növényi őssejtekkel regenerálja a bőrt, serkenti a sejtosztódást, csökkenti a ráncokat. Tökéletes az idősödő, megereszkedett, fénykárosodott bőrre.",
@@ -214,7 +214,7 @@ const page = () => {
 
     // 21. THE MAX CONTOUR KEZELÉS
     {
-      src: servicesPage.serices7,
+      src: servicesPage.contour,
       title: "THE MAX CONTOUR KEZELÉS",
       slug: "the-max-contour-kezeles",
       text: "Növényi őssejtek és peptidek kombinációja, amely visszaállítja az arc feszességét. Liftingelő és feltöltő hatást biztosít a megereszkedett, idősödő bőrnek.",
@@ -230,7 +230,7 @@ const page = () => {
 
     // 23. IMAGE ÜNNEPI SIGNATURE „GLITZ AND GLOW" KEZELÉS
     {
-      src: servicesPage.serices7,
+      src: servicesPage.unnepi,
       title: "IMAGE ÜNNEPI SIGNATURE GLITZ AND GLOW KEZELÉS",
       slug: "image-glitz-and-glow-kezeles",
       text: "Gyümölcsenzimek, C-vitamin és hialuronsav kombinációja, amely táplál és ragyogást biztosít a fakó, fényét veszített bőrnek.",
@@ -246,7 +246,7 @@ const page = () => {
 
     // 25. IMAGE SKINCARE PROBIOTIKUS TISZTÍTÓ ARCKEZELÉS
     {
-      src: servicesPage.serices7,
+      src: servicesPage.probi,
       title: "IMAGE SKINCARE PROBIOTIKUS TISZTÍTÓ ARCKEZELÉS",
       slug: "image-probiotikus-tisztito-arckezeles",
       text: "Probiotikumok és antioxidánsok kombinációja, amely tisztítja és megújítja a bőrt. Hatékony az eltömődött pórusokra, aknéra és a fáradt, megviselt bőrre.",
@@ -254,7 +254,7 @@ const page = () => {
 
     // 26. MIKROBIOME+ BŐRBARRIER ERŐSÍTŐ KEZELÉS
     {
-      src: servicesPage.serices7,
+      src: servicesPage.mikrobiome,
       title: "MIKROBIOME+ BŐRBARRIER ERŐSÍTŐ KEZELÉS",
       slug: "mikrobiome-borbarrier-erosito-kezeles",
       text: "Az IMAGE első mikrobiombarát kezelése, amely a bőr védőrétegét erősíti természetes összetevőkkel. Védelmet nyújt a stressz, szárazság ellen.",
@@ -262,7 +262,7 @@ const page = () => {
 
     // 27. BASIC NYÁRI GLOW RADIANCE REFRESH KEZELES
     {
-      src: servicesPage.serices7,
+      src: servicesPage.radience,
       title: "BASIC NYÁRI GLOW RADIANCE REFRESH KEZELES",
       slug: "basic-nyari-glow-radiance-refresh-kezeles",
       text: "Kényeztető, visszatöltő kezelés a napozási károk regenerálására. Az Image Skincare Vital C és Ormedic termékcsaládjainak jótékony hatásaival.",
@@ -270,7 +270,7 @@ const page = () => {
 
     // 28. I MASK LAPMASZK KEZELÉS
     {
-      src: servicesPage.serices7,
+      src: servicesPage.mask,
       title: "I MASK LAPMASZK KEZELÉS",
       slug: "i-mask-lapmaszk-kezeles",
       text: "Gyors hidratáló kezelés 3D hidrogéles lapmaszkkal. Benntartja a nedvességet, segíti a hatóanyagok felszívódását, csökkenti a ráncokat a dehidratált bőrön.",

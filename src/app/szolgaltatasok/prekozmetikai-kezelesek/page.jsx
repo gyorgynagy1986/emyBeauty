@@ -156,7 +156,7 @@ const page = () => {
     {
       src: servicesPage.plasma,
       title: "Plazma G –RÁDIÓFREKVENCIÁS ARCKEZELÉS",
-      slug: "plazma-g",
+      slug: "plazma-g-collage-frakcionalt-radiofrekvencias-kezeles",
       text: "A CollAge egy frakcionált, mátrixpontos rádiófrekvenciás eljárás, mely a mono- és bipoláris rádiófrekvenciát ötvözi. A különlegessége, hogy rendkívül mélyen, ugyanakkor nagyon sűrűn hat a 36 aranyozott pont elektródának köszönhetően.",
     },
   ];

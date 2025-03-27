@@ -127,7 +127,7 @@ export default function IPeelBetaLift() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.betalfit}
               sizes={size.fullsize}
             />
           </div>

@@ -61,9 +61,9 @@ const ContactSection = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({ 
-      ...formData, 
-      [name]: type === 'checkbox' ? checked : value 
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
     });
 
     // Clear specific field error when user starts typing
@@ -101,7 +101,9 @@ const ContactSection = () => {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || "Hiba történt az üzenet küldése során.");
+        throw new Error(
+          result.error || "Hiba történt az üzenet küldése során."
+        );
       }
 
       // Sikeres küldés esetén
@@ -124,7 +126,9 @@ const ContactSection = () => {
       console.error("Form küldési hiba:", error);
       setFormErrors({
         ...formErrors,
-        submit: error.message || "Hiba történt a küldés során. Kérjük, próbálja újra később."
+        submit:
+          error.message ||
+          "Hiba történt a küldés során. Kérjük, próbálja újra később.",
       });
     } finally {
       setIsSubmitting(false);
@@ -141,8 +145,9 @@ const ContactSection = () => {
           </div>
           <div className={styles.textContainer}>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              lacinia auctor magna ac viverra.
+              Szépülnél vagy csak kérdésed van a kezelésekkel kapcsolatban? Vedd
+              fel velem a kapcsolatot, és segítek kiválasztani a bőrtípusodnak
+              legmegfelelőbb kezelést. Személyre szabott tanácsadással várlak!
             </p>
             <a href="mailto:emy@emybeautyestetics.hu">
               emy@emybeautyestetics.hu
@@ -155,14 +160,24 @@ const ContactSection = () => {
           {submitSuccess ? (
             <div className={styles.successContainer}>
               <div className={styles.successIcon}>
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#004e9d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="64"
+                  height="64"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#004e9d"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
               </div>
               <h4 className={styles.successTitle}>Köszönjük az üzenetet!</h4>
               <p className={styles.successText}>
-                Üzenetét sikeresen elküldtük. Hamarosan válaszolunk Önnek a megadott elérhetőségek egyikén.
+                Üzenetét sikeresen elküldtük. Hamarosan válaszolunk Önnek a
+                megadott elérhetőségek egyikén.
               </p>
             </div>
           ) : (
@@ -240,7 +255,14 @@ const ContactSection = () => {
                     className={styles.consentCheckbox}
                   />
                   <span className={styles.consentText}>
-                    Elfogadom az <a href="/adatkezeles" target="_blank" rel="noopener noreferrer">adatkezelési tájékoztatót</a>
+                    Elfogadom az{" "}
+                    <a
+                      href="/adatkezeles"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      adatkezelési tájékoztatót
+                    </a>
                   </span>
                 </label>
                 {formErrors.consent && (

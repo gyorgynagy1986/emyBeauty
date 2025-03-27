@@ -37,7 +37,7 @@ export default function IMaskLapmaszk() {
           <div className={styles.photoContainer}>
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.mask}
               sizes={size.fullsize}
             />
           </div>

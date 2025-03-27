@@ -60,7 +60,7 @@ export default async function Page({ params }) {
     return <DeepShootSkinBooster />;
   }
 
-  if (slug === "plazma-g") {
+  if (slug === "plazma-g-collage-frakcionalt-radiofrekvencias-kezeles") {
     return <PlasmaG />;
   }
   

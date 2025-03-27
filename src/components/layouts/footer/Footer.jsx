@@ -62,15 +62,15 @@ const Footer = () => {
 
           <div>
             <h4>Budapest</h4>
-            <p>XIII. kerület</p>
-            <p>Szabolcs utca 23-25. </p>
+            <p>XII. kerület</p>
+            <p>Rác Aladár út 158 </p>
           </div>
         </div>
       </div>
       <div className={styles.legalContainer}>
         <p>
           All rights reserved © emykozmetika.hu | 2025 Designed and developed by
-         <a href=""> Studio Bromo</a> 
+          <a href=""> Studio Bromo</a>
         </p>
       </div>
     </footer>

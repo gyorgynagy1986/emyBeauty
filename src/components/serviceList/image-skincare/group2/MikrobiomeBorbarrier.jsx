@@ -112,7 +112,7 @@ export default function MikrobiomeBorbarrier() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.mikrobiome}
               sizes={size.fullsize}
             />
           </div>

@@ -13,7 +13,7 @@ const Button2 = () => {
         href="/idopont-foglalas"
       >
         <Image className={style.iamge} alt={alt.name} src={icon} />
-        kérj konzultációt
+        Kérj konzultációt
       </Link>{" "}
     </>
   );

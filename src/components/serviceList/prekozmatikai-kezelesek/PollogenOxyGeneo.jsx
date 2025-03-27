@@ -226,6 +226,22 @@ export default function PollogenOxyGeneo() {
               rádiófrekvencia biztonságos és hatékony módot kínál az azonnali,
               látható eredmények elérésére.
             </p>
+            <div
+              data-aos="fade"
+              data-aos-offset="150"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+              data-aos-easing="ease"
+              data-aos-mirror="true"
+              data-aos-once="true"
+              className={styles.photoContainer}
+            >
+              <Image
+                alt={alt.name}
+                src={servicesPage.ge2}
+                sizes={size.fullsize}
+              />
+            </div>
             <h3>OxyGeneo™</h3>
             <p>
               A bőr hámlasztása az innovatív, bőrön aktiválódó és csiszoló
@@ -239,6 +255,22 @@ export default function PollogenOxyGeneo() {
               a szövetek oxigénszintje, fokozva a keringést és a sejtek
               anyagcseréjét.
             </p>
+            <div
+              data-aos="fade"
+              data-aos-offset="150"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+              data-aos-easing="ease"
+              data-aos-mirror="true"
+              data-aos-once="true"
+              className={styles.photoContainer}
+            >
+              <Image
+                alt={alt.name}
+                src={servicesPage.ge4}
+                sizes={size.fullsize}
+              />
+            </div>
             <h3>Ultrahang</h3>
             <p>
               Az oxigénizálás után, a kezelés utolsó fázisaként a bőrbe további
@@ -253,8 +285,53 @@ export default function PollogenOxyGeneo() {
               színezékek és tartósítószerek nélkül, célzottan a bőr speciális
               igényeit kielégítve.
             </p>
-            <Abstract />
+            <div
+              data-aos="fade"
+              data-aos-offset="150"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+              data-aos-easing="ease"
+              data-aos-mirror="true"
+              data-aos-once="true"
+              className={styles.photoContainer}
+            >
+              <Image
+                alt={alt.name}
+                src={servicesPage.ge3}
+                sizes={size.fullsize}
+              />
+            </div>
+            <h3>Energize</h3>
+                <p>
+                  Az OxyGeneo™ Energize OxyPod koffeinnel, kakaóbabbal és
+                  fahéjolajjal tölti fel a bőrt, serkenti a vérkeringést és
+                  támogatja a természetes méregtelenítési folyamatokat. Az
+                  Energize szérum pedig értékes olajokkal – moringa, olíva és
+                  marula – mélyen hidratálja és táplálja a bőrt. Mitől ilyen
+                  hatékony? Kakaóbab – 20x több antioxidáns, mint az áfonyában!
+                  Segít megelőzni a bőr öregedését és fokozza az oxigénellátást.
+                  Fahéjolaj – Antioxidánsokban gazdag, gyulladáscsökkentő és
+                  tisztító hatású. Különösen jó aknés bőrre! Koffein – Serkenti
+                  a vérkeringést, méregtelenít és támogatja a kollagéntermelést.
+                </p>
+                <div
+              data-aos="fade"
+              data-aos-offset="150"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+              data-aos-easing="ease"
+              data-aos-mirror="true"
+              data-aos-once="true"
+              className={styles.photoContainer}
+            >
+              <Image
+                alt={alt.name}
+                src={servicesPage.energize}
+                sizes={size.fullsize}
+              />
+            </div>
           </div>
+          <Abstract />
 
           {/* --- 4. szekció --- */}
           <div
@@ -268,10 +345,10 @@ export default function PollogenOxyGeneo() {
             className={styles.sectionSubTitles}
           >
             <h2 className={styles.title}>Választható kezeléstípusok</h2>
-            <p>
+            <h3>
               7 féle, nem-invazív kezeléssel a Geneo kezelések mindenki számára
               személyre szabhatóak.
-            </p>
+            </h3>
             <ul>
               <li>
                 <strong>Geneo BALANCE</strong> (Bambusz szénnel, zsíros és
@@ -293,6 +370,7 @@ export default function PollogenOxyGeneo() {
                     sizes={size.fullsize}
                   />
                 </div>
+                
               </li>
 
               <li>

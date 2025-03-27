@@ -106,7 +106,7 @@ export default function OneNeedProMikrotus() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.serices6}
               sizes={size.fullsize}
             />
           </div>

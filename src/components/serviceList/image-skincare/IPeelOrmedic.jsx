@@ -129,7 +129,7 @@ export default function IPeelOrmedic() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.ormedic}
               sizes={size.fullsize}
             />
           </div>

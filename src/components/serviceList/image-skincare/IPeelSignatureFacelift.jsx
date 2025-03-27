@@ -128,7 +128,7 @@ export default function IPeelSignatureFacelift() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.facelift}
               sizes={size.fullsize}
             />
           </div>

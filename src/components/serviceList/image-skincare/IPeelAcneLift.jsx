@@ -132,7 +132,7 @@ export default function IPeelAcneLift() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.ance}
               sizes={size.fullsize}
             />
           </div>

@@ -131,7 +131,7 @@ export default function IPeelPerfectionLift() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.perfectionlift}
               sizes={size.fullsize}
             />
           </div>

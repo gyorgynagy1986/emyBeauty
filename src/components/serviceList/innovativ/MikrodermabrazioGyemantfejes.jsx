@@ -109,7 +109,7 @@ export default function MikrodermabrazioGyemantfejes() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.serices5}
               sizes={size.fullsize}
             />
           </div>

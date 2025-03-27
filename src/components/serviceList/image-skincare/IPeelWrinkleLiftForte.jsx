@@ -129,7 +129,7 @@ export default function IPeelWrinkleLiftForte() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.wrforte}
               sizes={size.fullsize}
             />
           </div>

@@ -91,7 +91,7 @@ export default function ImageGlitzAndGlow() {
             </div>
 
             <p>
-              A Glitz and Glow kezelés a gyümölcsenzimek, a C-vitamin és a hialuronsav erejével táplál és ragyogást biztosít a bőrnek.
+              Ragyogó bőr bármilyen alkalomra! A Glitz and Glow kezelés a gyümölcsenzimek, a C-vitamin és a hialuronsav erejével táplál és ragyogást biztosít a bőrnek.
             </p>
 
             <div className={styles.buttonContainer}>
@@ -112,7 +112,7 @@ export default function ImageGlitzAndGlow() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.unnepi}
               sizes={size.fullsize}
             />
           </div>

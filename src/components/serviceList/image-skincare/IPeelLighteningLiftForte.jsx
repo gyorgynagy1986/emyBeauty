@@ -129,7 +129,7 @@ export default function IPeelLighteningLiftForte() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.lightliftforte}
               sizes={size.fullsize}
             />
           </div>

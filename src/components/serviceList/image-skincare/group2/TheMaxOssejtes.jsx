@@ -112,7 +112,7 @@ export default function TheMaxOssejtes() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.ossejt}
               sizes={size.fullsize}
             />
           </div>

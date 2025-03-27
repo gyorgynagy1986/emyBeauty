@@ -103,7 +103,7 @@ export default function GenosysSnowcell() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.gencell}
               sizes={size.fullsize}
             />
           </div>

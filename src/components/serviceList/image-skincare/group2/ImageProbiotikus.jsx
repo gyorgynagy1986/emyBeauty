@@ -112,7 +112,7 @@ export default function ImageProbiotikus() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.probi}
               sizes={size.fullsize}
             />
           </div>

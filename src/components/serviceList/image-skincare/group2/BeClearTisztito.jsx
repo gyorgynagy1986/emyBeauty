@@ -15,7 +15,7 @@ import styles from "../serviceList.module.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
 
-export default function IMaskLapmaszk() {
+export default function AkneTisztito() {
   // Screen size tracking
   const [isMobile, setIsMobile] = useState(false);
 
@@ -71,7 +71,7 @@ export default function IMaskLapmaszk() {
 
   return (
     <>
-      <ImageSkincareHeader activePage="I MASK LAPMASZK KEZELÉS" />
+      <ImageSkincareHeader activePage="AKNÉ TISZTÍTÓ KEZELÉS" />
 
       <section className={styles.container}>
         <div className={styles.helper}>
@@ -86,12 +86,12 @@ export default function IMaskLapmaszk() {
             className={styles.titleContainer}
           >
             <div className={styles.titleHelper}>
-              <h1 className={styles.title}>I MASK lapmaszk kezelés</h1>
+              <h1 className={styles.title}>Akné tisztító kezelés</h1>
               <Abstract />
             </div>
 
             <p>
-              Gyors megoldást nyújt a száraz és vízhiányos bőrnek. A 3D hidrogéles lapmaszk benntartja a bőrben a nedvességet, segítve a hatóanyagok mélyebbre szívódását. Már egyetlen kezelés növeli a bőr hidratáltságát, csökkenti a finomabb ráncokat és fiatalítja a bőrt.
+              Mondj búcsút a pattanásoknak! Ez a tisztító kezelés erős antibakteriális összetevőket és nyugtató növényi hatóanyagokat kombinálva nyújt megoldást az aknés elváltozásokkal szemben, miközben nem irritálja az érzékeny bőrt. A kezelés minden bőrtípusra ajánlott, tökéletes a zsíros, aknés, vagy aknéra hajlamos bőrre.
             </p>
 
             <div className={styles.buttonContainer}>
@@ -112,7 +112,7 @@ export default function IMaskLapmaszk() {
           >
             <Image
               alt={alt.name}
-              src={servicesPage.slug1}
+              src={servicesPage.beclear} // Feltételezzük, hogy létezik egy "acne" kép a servicesPage objektumban
               sizes={size.fullsize}
             />
           </div>
@@ -129,7 +129,7 @@ export default function IMaskLapmaszk() {
           >
             <h2 className={styles.title}>Bőrprobléma</h2>
             <p>
-              Dehidratált, száraz, fáradt bőr, szarkalábak
+              Pattanások, zsíros bőr, aknék
             </p>
             <Abstract />
           </div>
@@ -148,7 +148,7 @@ export default function IMaskLapmaszk() {
             <div className={styles.priceContainer}>
               <div className={styles.priceItems}>
                 <p>Arc kezelés 1 Alkalom</p>
-                <p>16.000 Ft</p>
+                <p>18.000 Ft</p>
               </div>
             </div>
             <Abstract />
