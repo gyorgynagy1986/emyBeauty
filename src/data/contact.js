@@ -19,7 +19,7 @@ export const locations = [
   {
     title: "Budapest",
     businessName: "Waio Hair",
-    address: "XII. kerület, Rác Aladár út 158",
+    address: "XII. kerület, Rácz Aladár út 158",
     phone: "+36 20 342 66 18",
     mapSrc: contact.map2,
   },

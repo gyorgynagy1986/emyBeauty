@@ -199,7 +199,7 @@ const page = () => {
 
     {
       src: servicesPage.illuminating,
-      title: "ILLUMINATING ARCKEZELÉS",
+      title: "ILLUMINATING PIGMENTFOLT HALVÁNYÍTÓ ARCKEZELÉS",
       slug: "illuminating-arckezeles",
       text: "Innovatív fehérítő és hámlasztó technológiákkal szabadítja meg a bőrt a sötét foltoktól. Azonnali eredmény, ragyogóbb bőrtónus a fakó, érzékeny, fáradt bőrre.",
     },
@@ -246,7 +246,7 @@ const page = () => {
 
     // 25. IMAGE SKINCARE PROBIOTIKUS TISZTÍTÓ ARCKEZELÉS
     {
-      src: servicesPage.probi,
+      src: servicesPage.prob3,
       title: "IMAGE SKINCARE PROBIOTIKUS TISZTÍTÓ ARCKEZELÉS",
       slug: "image-probiotikus-tisztito-arckezeles",
       text: "Probiotikumok és antioxidánsok kombinációja, amely tisztítja és megújítja a bőrt. Hatékony az eltömődött pórusokra, aknéra és a fáradt, megviselt bőrre.",
@@ -254,7 +254,7 @@ const page = () => {
 
     // 26. MIKROBIOME+ BŐRBARRIER ERŐSÍTŐ KEZELÉS
     {
-      src: servicesPage.mikrobiome,
+      src: servicesPage.probi,
       title: "MIKROBIOME+ BŐRBARRIER ERŐSÍTŐ KEZELÉS",
       slug: "mikrobiome-borbarrier-erosito-kezeles",
       text: "Az IMAGE első mikrobiombarát kezelése, amely a bőr védőrétegét erősíti természetes összetevőkkel. Védelmet nyújt a stressz, szárazság ellen.",
@@ -271,8 +271,8 @@ const page = () => {
     // 28. I MASK LAPMASZK KEZELÉS
     {
       src: servicesPage.mask,
-      title: "I MASK LAPMASZK KEZELÉS",
-      slug: "i-mask-lapmaszk-kezeles",
+      title: "I MASK HIDRATÁLÓ LAPMASZK KEZELÉS",
+      slug: "i-mask-hidratalo-lapmaszk-kezeles",
       text: "Gyors hidratáló kezelés 3D hidrogéles lapmaszkkal. Benntartja a nedvességet, segíti a hatóanyagok felszívódását, csökkenti a ráncokat a dehidratált bőrön.",
     },
   ];

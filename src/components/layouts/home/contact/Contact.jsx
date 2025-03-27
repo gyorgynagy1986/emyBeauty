@@ -87,7 +87,7 @@ const Contact = () => {
               className={styles.text}
             >
               <p>
-                Két városban is elérhető vagyok, hogy közelebb hozhassam
+                Szegeden és Budapesten is érhető vagyok, hogy közelebb hozhassam
                 számodra a szépség és harmónia élményét. Fordulj hozzám
                 bizalommal, és foglalj időpontot személyre szabott kezelésre egy
                 nyugodt, igényes környezetben!

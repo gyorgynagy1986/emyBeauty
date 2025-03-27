@@ -114,6 +114,9 @@ import plasma2 from "../../public/assets/services/prekozmetika/plasma2.webp"
   import radience from "../../public/assets/services/radience.webp"
   import mask from "../../public/assets/services/mask.webp"
   import gencell from "../../public/assets/services/gencell.webp"
+  import prob3 from "../../public/assets/services/prob3.webp"
+  import kek from "../../public/assets/services/kek.webp"
+  import kek2 from "../../public/assets/services/kek2.webp"
 
 
 /* SERVICES  END*/
@@ -152,6 +155,9 @@ export const contact = {
 
 /* SERVICES  */
 export const servicesPage = {
+  kek2,
+  kek,
+  prob3,
   gencell,
   mask,
   radience,

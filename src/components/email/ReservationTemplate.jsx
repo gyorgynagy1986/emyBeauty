@@ -368,7 +368,7 @@ const AppointmentEmailTemplate = ({
                       XII. kerület
                     </p>
                     <p style={{ margin: "0 0 3px 0", fontSize: "14px" }}>
-                      Rác Aladár út 158
+                      Rácz Aladár út 158
                     </p>
                   </div>
                 </td>

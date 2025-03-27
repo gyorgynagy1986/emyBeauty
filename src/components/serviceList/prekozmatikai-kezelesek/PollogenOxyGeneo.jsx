@@ -595,18 +595,12 @@ export default function PollogenOxyGeneo() {
                 <p>OxyGeneo arckezelés</p>
                 <p>49.990 Ft</p>
               </div>
-              <div className={styles.priceItems}>
-                <p>OxyGeneo arc-nyak kezelés</p>
-                <p>53.000 Ft</p>
-              </div>
+              
               <div className={styles.priceItems}>
                 <p>OxyGeneo arc-nyak-dekoltázs kezelés</p>
                 <p>59.000 Ft</p>
               </div>
-              <div className={styles.priceItems}>
-                <p>OxyGeneo GLAM Gold Prémium arckezelés</p>
-                <p>55.000 Ft</p>
-              </div>
+             
               <div className={styles.priceItems}>
                 <p>Kúra szerűen: 6 alkalom + 1 Ajándék kezelés</p>
                 <p></p>

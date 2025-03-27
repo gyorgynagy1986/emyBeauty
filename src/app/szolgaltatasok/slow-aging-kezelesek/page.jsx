@@ -137,7 +137,7 @@ const page = () => {
       text: "3 millió természetes szilícium mikrotűvel serkenti a bőr anyagcseréjét. Fájdalommentes megoldás, amely természetes módon rövidíti a bőr megújulási ciklusát és halványítja a pigmentfoltokat.",
     },
     {
-      src: servicesPage.serices4,
+      src: servicesPage.kek,
       title: "GENOSYS SNOWCELL",
       slug: "/genosys-snowcell",
       text: "Innovatív pigmentációkezelő és bőrfiatalító eljárás, amely gátolja a melanin termelődését. Nyáron is alkalmazható, halványítja a foltokat és stimulálja a kollagén termelődést.",

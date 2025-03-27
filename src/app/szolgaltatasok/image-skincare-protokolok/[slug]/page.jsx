@@ -151,7 +151,7 @@ export default async function Page({ params, searchParams }) {
     return <BasicNyariGlow />;
   }
   
-  if (slug === "i-mask-lapmaszk-kezeles") {
+  if (slug === "i-mask-hidratalo-lapmaszk-kezeles") {
     return <IMaskLapmaszk />;
   }
 

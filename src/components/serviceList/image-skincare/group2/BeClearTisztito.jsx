@@ -148,7 +148,7 @@ export default function AkneTisztito() {
             <div className={styles.priceContainer}>
               <div className={styles.priceItems}>
                 <p>Arc kezelés 1 Alkalom</p>
-                <p>18.000 Ft</p>
+                <p>25.000 Ft</p>
               </div>
             </div>
             <Abstract />

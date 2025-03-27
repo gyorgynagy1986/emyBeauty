@@ -249,7 +249,7 @@ const Page = () => {
           onLoadedData={() => handleVideoLoad("desktop")}
           onError={() => handleVideoError("desktop")}
         >
-          <source src="/mobile.mp4" type="video/mp4" />
+          <source src="/desktop.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       )}

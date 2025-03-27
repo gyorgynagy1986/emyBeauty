@@ -83,7 +83,7 @@ const Hero = () => {
             </p>
             <p>
               Ez a „BÉKE SZIGETE" ahol nyugalom vár rád, <br />
-              ahol nem csak a bőröd, hanem lelked is kisimul, megszépül.
+              és nem csak a bőröd, hanem lelked is kisimul, megszépül.
             </p>
             <p>
               Érkezz meg a gondolatok közötti csendbe, <br />

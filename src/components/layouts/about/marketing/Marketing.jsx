@@ -98,7 +98,7 @@ const Marketing = () => {
           data-aos-duration="1000"
           data-aos-offset="50"
         >
-          "Mindennap az motivál, hogy segítsek az embereknek megtalálni és
+          "Minden nap az motivál, hogy segítsek az embereknek megtalálni és
           kifejezni egyéni szépségüket, és felfedezni a bennük rejlő Istennőt.
           <br />
           Közben a lelküket is ápolom."

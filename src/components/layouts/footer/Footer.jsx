@@ -63,7 +63,7 @@ const Footer = () => {
           <div>
             <h4>Budapest</h4>
             <p>XII. kerület</p>
-            <p>Rác Aladár út 158 </p>
+            <p>Rácz Aladár út 158 </p>
           </div>
         </div>
       </div>

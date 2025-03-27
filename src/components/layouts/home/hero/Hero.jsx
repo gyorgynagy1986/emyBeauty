@@ -67,7 +67,7 @@ const Hero = () => {
             </div>
             <div>
               <p className={style.p}>
-                Ez a „BÉKE SZIGETE" ahol nyugalom vár rád, ahol nem csak a bőröd,
+                Ez a „BÉKE SZIGETE" ahol nyugalom vár rád, és nem csak a bőröd,
                 hanem lelked is kisimul, megszépül.
               </p>
             </div>
