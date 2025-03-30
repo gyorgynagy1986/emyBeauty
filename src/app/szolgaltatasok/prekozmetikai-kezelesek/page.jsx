@@ -168,6 +168,12 @@ const page = () => {
       slug: "plazma-g-collage-frakcionalt-radiofrekvencias-kezeles",
       text: "A CollAge egy frakcionált, mátrixpontos rádiófrekvenciás eljárás, mely a mono- és bipoláris rádiófrekvenciát ötvözi. A különlegessége, hogy rendkívül mélyen, ugyanakkor nagyon sűrűn hat a 36 aranyozott pont elektródának köszönhetően.",
     },
+    {
+      src: servicesPage.ejal,
+      title: "EJAL 40 kezelés",
+      slug: "ejal-40-kezeles",
+      text: "A kezelés egy innovatív bőrfiatalító eljárás, amely helyreállítja a bőr természetes hialuronsav szintjét, ezzel pedig biztosítja bőröd számára az ideális mélyhidratációt!",
+    },
   ];
 
   return (

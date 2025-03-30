@@ -6,6 +6,8 @@ import OneNeedPro from "@/components/serviceList/prekozmatikai-kezelesek/OneNeed
 import HollywoodCarbonPeeling from "@/components/serviceList/prekozmatikai-kezelesek/HollywoodCarbonPeeling";
 import DeepShootSkinBooster from "@/components/serviceList/prekozmatikai-kezelesek/DeepShootSkinBooster";
 import PlasmaG from "@/components/serviceList/prekozmatikai-kezelesek/PlazmaG";
+import Ejal from "@/components/serviceList/prekozmatikai-kezelesek/Ejal40Kezeles";
+
 
 
 export async function generateMetadata({ params, searchParams }, parent) {
@@ -63,6 +65,12 @@ export default async function Page({ params }) {
   if (slug === "plazma-g-collage-frakcionalt-radiofrekvencias-kezeles") {
     return <PlasmaG />;
   }
+
+  
+  if (slug === "ejal-40-kezeles") {
+    return <Ejal />;
+  }
+  
   
 
   // Egyébként dobhatsz hibaoldalt,

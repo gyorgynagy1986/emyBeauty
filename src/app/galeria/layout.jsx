@@ -1,10 +1,10 @@
 import React from 'react'
 
 export const metadata = {
-    title: 'Árak - Emy Beauty Estetics',
+    title: 'Galéria - Emy Beauty Estetics',
     description: '...',
     openGraph: {
-        title: 'Árak - Emy Beauty Estetics',
+        title: 'Galéria - Emy Beauty Estetics',
         description: '',
       },
   }

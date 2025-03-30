@@ -161,7 +161,6 @@ const GalleryPage = () => {
                     objectFit="cover"
                     className={styles.galleryImage}
                     placeholder="blur"
-                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
                   />
                   <div className={styles.imageOverlay}>
                     <div className={styles.zoomIcon}>
