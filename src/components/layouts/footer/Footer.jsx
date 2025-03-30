@@ -63,6 +63,7 @@ const Footer = () => {
           <div>
             <h4>Budapest</h4>
             <p>XII. kerület</p>
+            <p>2Contour Aesthetic Clinic</p>
             <p>Rácz Aladár út 158 </p>
           </div>
         </div>
@@ -70,7 +71,7 @@ const Footer = () => {
       <div className={styles.legalContainer}>
         <p>
           All rights reserved © emykozmetika.hu | 2025 Designed and developed by
-          <a href=""> Studio Bromo</a>
+          <a href="https://www.studiobromo.hu/"> Studio Bromo</a>
         </p>
       </div>
     </footer>

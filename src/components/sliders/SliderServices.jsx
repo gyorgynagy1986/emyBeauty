@@ -91,7 +91,7 @@ export default function ServicesPage() {
   //   {
   //     src: servicesPage.serices7,
   //     title: "ILLUMINATING ARCKEZELÉS",
-  //     slug: "/szolgaltatasok/image-skincare-protokolok/illuminating-arckezeles",
+  //     slug: "/szolgaltatasok/image-skincare-protokolok/illuminating-pigmenfolt-halvanyito-arckezeles",
   //     text: "Innovatív fehérítő és hámlasztó technológiákkal szabadítja meg a bőrt a sötét foltoktól. Azonnali eredmény, ragyogóbb bőrtónus a fakó, érzékeny, fáradt bőrre.",
   //   },
   //   {
@@ -188,27 +188,27 @@ export default function ServicesPage() {
 
   const serviceItems = [
     {
-      src: servicesPage.serices1,
+      src: servicesPage.konzultacio,
       title: "ARAMO 3D Mikroszkopikus BŐRDIAGNOSZTIKA",
-      slug: "/szolgaltatasok/aramo-3d-mikroszkopikus-bordiagnosztika",
+      slug: "/szolgaltatasok/aramo-bordiagnosztika-boranalizis-konzultacio",
       text: "Fejlett bőrdiagnosztikai eljárás, amely 3D mikroszkópos technológiával részletesen vizsgálja a bőr állapotát. Pontos képet ad a pórusokról, hidratáltságról és a bőr egyéb jellemzőiről, megalapozva a személyre szabott kezelési tervet.",
     },
     {
-      src: servicesPage.serices2,
+      src: servicesPage.secret,
       title: "Secret™ RF Mikrotűs Frakcionált Rádiófrekvenciás Kezelés",
-      slug: "/szolgaltatasok/secret-rf-mikrotus-frakcionalt-radiofrekvencias-kezeles",
+      slug: "/szolgaltatasok/prekozmetikai-kezelesek/secret-rf",
       text: "Innovatív kombinált technológia, amely mikrotűk és rádiófrekvencia együttes alkalmazásával stimulálja a kollagéntermelést. Hatékonyan kezeli a ráncokat, hegeket, tág pórusokat és javítja a bőr feszességét minimális felépülési idővel.",
     },
     {
-      src: servicesPage.serices3,
+      src: servicesPage.oxi2,
       title: "Oxygeneo™ Komplex Bőrmegújító Program",
-      slug: "/szolgaltatasok/oxygeneo-komplex-bormegujito-program",
+      slug: "/szolgaltatasok/prekozmetikai-kezelesek/pollogen-oxygeneo",
       text: "Háromfázisú luxus arckezelés, amely exfoliál, oxigénnel dúsít és tápláló hatóanyagokat juttat a bőrbe. Természetes módon serkenti a vérkeringést, azonnali ragyogást biztosít és hosszú távon javítja a bőr textúráját.",
     },
     {
-      src: servicesPage.serices4,
+      src: servicesPage.asceplus,
       title: "EXOSOME Sejtterápia",
-      slug: "/szolgaltatasok/exosome-sejtterapia",
+      slug: "/szolgaltatasok/prekozmetikai-kezelesek/exosome-sejtterapia",
       text: "Forradalmi anti-aging kezelés, amely őssejtekből származó exoszómákat használ a bőr regenerálására. Serkenti a sejtek közötti kommunikációt, felgyorsítja a bőr természetes megújulási folyamatait és jelentősen csökkenti az öregedés jeleit.",
     },
     {
@@ -218,35 +218,35 @@ export default function ServicesPage() {
       text: "Speciális bőrfiatalító eljárás, amely mikrotűkkel serkenti a kollagéntermelést. Cserélhető kezelőfejekkel személyre szabható, kezeli a ráncokat, pigmentfoltokat és a tág pórusokat.",
     },
     {
-      src: servicesPage.facelift,
+      src: servicesPage.carbon,
       title: "Hollywood Carbon Lézeres MEDICAL Peeling",
-      slug: "/szolgaltatasok/hollywood-carbon-lezeres-medical-peeling",
+      slug: "/szolgaltatasok/prekozmetikai-kezelesek/hollywood-carbon-peeling",
       text: "Prémium bőrfiatalító kezelés, amely szénrészecskéket és lézertechnológiát kombinál. Mélyen tisztítja a pórusokat, eltávolítja az elhalt hámsejteket, és csökkenti a faggyútermelést, azonnali ragyogást és fiatalosabb megjelenést biztosítva.",
     },
     {
-      src: servicesPage.ormedic,
+      src: servicesPage.deep4,
       title: "Deep SHOOT SKINBOOSTER",
-      slug: "/szolgaltatasok/deep-shoot-skinbooster",
+      slug: "/szolgaltatasok/prekozmetikai-kezelesek/deep-shoot-skin-booster",
       text: "Speciális bőrfeltöltő kezelés, amely mélyen hidratálja és táplálja a bőrt. Hialuronsavat és vitaminokat juttat a bőr mélyebb rétegeibe, javítva annak rugalmasságát, feszességét és általános megjelenését.",
     },
     {
-      src: servicesPage.lightlift,
+      src: servicesPage.plasma,
       title: "Plazma G Collage - Frakcionált rádiófrekvenciás kezelés",
       slug: "/szolgaltatasok/prekozmetikai-kezelesek/plazma-g-collage-frakcionalt-radiofrekvencias-kezeles",
       text: "Modern bőrfeszesítő eljárás, amely plazma és rádiófrekvenciás technológiát ötvöz. Stimulálja a kollagén és elasztin termelődését, feszesíti a laza bőrt és látványosan fiatalítja az arc, nyak és dekoltázs területét.",
     },
     {
-      src: servicesPage.serices1,
+      src: servicesPage.tunelkuli,
       title: "TŰ NÉLKÜLI MEZOTERÁPIA - ELEKTROPORÁCIÓ",
       slug: "/szolgaltatasok/slow-aging-kezelesek/tu-nelkuli-mezoterapia",
       text: "Nobel-díjas hatásmechanizmusra épülő, tű nélküli mezoterápiás kezelés. A hatóanyagok 90%-a mély szövetekbe hatol, maximálisan hidratálja a bőrt és látványosan csökkenti a ráncokat.",
     },
-    {
-      src: servicesPage.ance,
-      title: "Dr.Platon Atmoszférikus Hideg Plazma",
-      slug: "/szolgaltatasok/dr-platon-atmoszferikus-hideg-plazma",
-      text: "Innovatív technológia, amely hideg plazma alkalmazásával stimulálja a bőr természetes gyógyulási folyamatait. Antibakteriális hatású, javítja a bőr oxigénellátását, és hatékonyan kezeli az aknét, rozáceát és egyéb bőrproblémákat mellékhatások nélkül.",
-    },
+  // {
+  //   src: servicesPage.ance,
+  //   title: "Dr.Platon Atmoszférikus Hideg Plazma",
+  //   slug: "/szolgaltatasok/dr-platon-atmoszferikus-hideg-plazma",
+  //   text: "Innovatív technológia, amely hideg plazma alkalmazásával stimulálja a bőr természetes gyógyulási folyamatait. Antibakteriális hatású, javítja a bőr oxigénellátását, és hatékonyan kezeli az aknét, rozáceát és egyéb bőrproblémákat mellékhatások nélkül.",
+  // },
   ];
 
   // Slider beállítások - megtartva az eredeti struktúrát
@@ -256,7 +256,7 @@ export default function ServicesPage() {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 4000,
     responsive: [
       {

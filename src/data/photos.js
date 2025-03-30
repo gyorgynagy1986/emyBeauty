@@ -16,8 +16,8 @@ import photoAbout6 from "../../public/assets/pages/about/6.png";
 /* ABOUT PAGE DONE */
 
 /* kapcsolat  */
-import map1 from "../../public/assets/pages/kapocslat/1.png";
-import map2 from "../../public/assets/pages/kapocslat/3.png";
+import map1 from "../../public/assets/pages/kapocslat/mapszeged.webp";
+import map2 from "../../public/assets/pages/kapocslat/mapbudapest.webp";
 /* kapcsolat  */
 
 /* SERVICES */
@@ -118,6 +118,9 @@ import plasma2 from "../../public/assets/services/prekozmetika/plasma2.webp"
   import kek from "../../public/assets/services/kek.webp"
   import kek2 from "../../public/assets/services/kek2.webp"
 
+  import konzultacio from "../../public/assets/services/konzultacio.webp"
+  import harmony from "../../public/assets/services/harmony.webp"
+
 
 /* SERVICES  END*/
 
@@ -142,6 +145,8 @@ export const aboutPage = {
   photo4:photoAbout4,
   photo5:photoAbout5,
   photo6:photoAbout6,
+  harmony:harmony,
+
 };
 /* ABOUT PAGE DONE */
 
@@ -155,6 +160,7 @@ export const contact = {
 
 /* SERVICES  */
 export const servicesPage = {
+  konzultacio,
   kek2,
   kek,
   prob3,

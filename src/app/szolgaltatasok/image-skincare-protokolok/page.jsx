@@ -200,7 +200,7 @@ const page = () => {
     {
       src: servicesPage.illuminating,
       title: "ILLUMINATING PIGMENTFOLT HALVÁNYÍTÓ ARCKEZELÉS",
-      slug: "illuminating-arckezeles",
+      slug: "illuminating-pigmenfolt-halvanyito-arckezeles",
       text: "Innovatív fehérítő és hámlasztó technológiákkal szabadítja meg a bőrt a sötét foltoktól. Azonnali eredmény, ragyogóbb bőrtónus a fakó, érzékeny, fáradt bőrre.",
     },
 
@@ -221,12 +221,12 @@ const page = () => {
     },
 
     // 22. IMAGE ILUMA ARCKEZELÉS
-    {
-      src: servicesPage.serices7,
-      title: "IMAGE ILUMA ARCKEZELÉS",
-      slug: "image-iluma-arckezeles",
-      text: "Intenzív fehérítő hatóanyagok és növényi őssejt technológia a pigmentációs problémákra. Egyenletesebbé teszi a bőrtónust és megelőzi a foltok kialakulását.",
-    },
+    // {
+    //   src: servicesPage.serices7,
+    //   title: "IMAGE ILUMA ARCKEZELÉS",
+    //   slug: "image-iluma-arckezeles",
+    //   text: "Intenzív fehérítő hatóanyagok és növényi őssejt technológia a pigmentációs problémákra. Egyenletesebbé teszi a bőrtónust és megelőzi a foltok kialakulását.",
+    // },
 
     // 23. IMAGE ÜNNEPI SIGNATURE „GLITZ AND GLOW" KEZELÉS
     {
@@ -237,12 +237,12 @@ const page = () => {
     },
 
     // 24. IMAGE ARCFESZESÍTŐ-ÁTALAKÍTÓ KEZELÉS
-    {
-      src: servicesPage.serices7,
-      title: "IMAGE ARCFESZESÍTŐ-ÁTALAKÍTÓ KEZELÉS",
-      slug: "image-arcfeszesito-atalakito-kezeles",
-      text: "Hatékony arcfeszesítő kezelés, amely már egy alkalom után is látható eredményt nyújt. Kisimítja a szarkalábakat, mélyebb ráncokat is csökkenti az idősödő bőrön.",
-    },
+    // {
+    //   src: servicesPage.serices7,
+    //   title: "IMAGE ARCFESZESÍTŐ-ÁTALAKÍTÓ KEZELÉS",
+    //   slug: "image-arcfeszesito-atalakito-kezeles",
+    //   text: "Hatékony arcfeszesítő kezelés, amely már egy alkalom után is látható eredményt nyújt. Kisimítja a szarkalábakat, mélyebb ráncokat is csökkenti az idősödő bőrön.",
+    // },
 
     // 25. IMAGE SKINCARE PROBIOTIKUS TISZTÍTÓ ARCKEZELÉS
     {

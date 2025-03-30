@@ -11,7 +11,7 @@ import { alt } from "@/data/alt";
 import "aos/dist/aos.css";
 import AOS from "aos";
 
-const LocationCard = ({ title, businessName, address, phone, mapSrc }) => {
+const LocationCard = ({ title, businessName, address, phone, phone2, mapSrc }) => {
   useEffect(() => {
     AOS.init({
       offset: 100,
@@ -46,6 +46,9 @@ const LocationCard = ({ title, businessName, address, phone, mapSrc }) => {
           <p className={style.address}>{address}</p>
           <a className={style.tel} href={`tel:${phone}`}>
             {phone}
+          </a>
+          <a className={style.tel} href={`tel:${phone2}`}>
+            {phone2}
           </a>
         </div>
         <Button yellow={true} />

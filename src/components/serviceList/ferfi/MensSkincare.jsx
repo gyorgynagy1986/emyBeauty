@@ -250,7 +250,7 @@ export default function MensSkincare() {
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
-            <h2 className={styles.title}>Férfi carbon peeling kezelés</h2>
+            <h2 className={styles.title}>Férfi Hollywood Carbon Lézeres MEDICAL Peeling</h2>
             <p>
               Bármilyen bőrhibáról legyen szó – tág pórusok, hegek, pigmentfoltok, felületes ráncok, megunt tetoválás vagy körömgomba – a Q-kapcsolt Nd Yag lézer nyújt megoldást. A szelíd, nem roncsoló finom lézerrel végzett technika alapja a fény adszorpciós elnyelődése. A lézerfénnyel való találkozáskor a szénrészecskék „felrobbannak", ezzel megszüntetve az adott bőrproblémát. Ez a különleges eljárás fájdalommentes és gyors, nincs felépülési idő. Kúrakezelés keretében, heti rendszerességgel végzett 3-4 alkalom után folyamatosan javuló bőrképet érhetünk el.
             </p>

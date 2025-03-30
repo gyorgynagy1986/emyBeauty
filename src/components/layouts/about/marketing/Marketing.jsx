@@ -21,7 +21,7 @@ const marketingContent = [
   },
   {
     id: 2,
-    image: aboutPage.photo2,
+    image: aboutPage.harmony,
     title: "A Harmónia és Szépség egyensúlya",
     description:
       "Célom, hogy megszépítsem a Nők bőrét, és egyensúlyba hozzam testi és lelki egészségük működését. Már több mint egy évtizede vagyok Veletek, a szépség szolgálatában. Szakmai tudásommal igyekszem lefedni a kozmetikus szakma minden területét. A szakmám a hivatásom és a szenvedélyem; az odafigyelésről és gondoskodásról szól.",

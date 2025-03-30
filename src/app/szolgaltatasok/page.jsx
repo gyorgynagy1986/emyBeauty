@@ -78,6 +78,7 @@ const Page = () => {
   }, []);
 
   const serviceItems = [
+    { src: servicesPage.konzultacio, title: "Aramo bőrdiagnosztika, bőranalízis , konzultáció ", slug: "aramo-bordiagnosztika-boranalizis-konzultacio" },
     { src: servicesPage.pre, title: "Prekozmetikai Kezelések", slug: "prekozmetikai-kezelesek" },
     { src: servicesPage.serices2, title: "Slow Aging Kezelések ", slug: "slow-aging-kezelesek" },
     { src: servicesPage.scincover, title: "IMAGE Skincare Protokolok", slug: "image-skincare-protokolok" },

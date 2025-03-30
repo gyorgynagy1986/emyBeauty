@@ -17,29 +17,32 @@ import AOS from "aos";
 
 // Animation variants for more diversity
 const animationVariants = [
-  "fade-up", 
-  "fade-right", 
-  "fade-left", 
-  "zoom-in", 
-  "flip-up"
+  "fade-up",
+  "fade-right",
+  "fade-left",
+  "zoom-in",
+  "flip-up",
 ];
 
 const ServiceItem = ({ src, title, slug, text, index }) => {
   // Use animation variants array for diversity
   const animation = animationVariants[index % animationVariants.length];
-  
+
   // Function to limit text to 300 characters and add ellipsis if needed
   const limitText = (text, limit = 300) => {
     if (text.length <= limit) return text;
-    return text.slice(0, limit).trim() + '...';
+    return text.slice(0, limit).trim() + "...";
   };
-  
+
   return (
-    <Link href={`/szolgaltatasok/slow-aging-kezelesek/${slug}`} className={styles.serviceLink}>
-      <div 
+    <Link
+      href={`/szolgaltatasok/slow-aging-kezelesek/${slug}`}
+      className={styles.serviceLink}
+    >
+      <div
         data-aos={animation}
         data-aos-offset="100"
-        data-aos-delay={100 + (index * 50)} 
+        data-aos-delay={100 + index * 50}
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"
         data-aos-once="true"
@@ -76,12 +79,12 @@ const page = () => {
       offset: 120,
       delay: 0,
       duration: 1000,
-      easing: 'ease-in-out',
+      easing: "ease-in-out",
       once: true,
       mirror: false,
-      anchorPlacement: 'top-bottom',
+      anchorPlacement: "top-bottom",
       disable: false,
-      disableHorizontalScroll: true // Add this to prevent horizontal scroll
+      disableHorizontalScroll: true, // Add this to prevent horizontal scroll
     });
 
     // Screen size check function
@@ -89,7 +92,7 @@ const page = () => {
       const wasMobile = isMobile;
       const newIsMobile = window.innerWidth <= 768;
       setIsMobile(newIsMobile);
-      
+
       // Only refresh AOS when switching between mobile/desktop
       if (wasMobile !== newIsMobile) {
         setTimeout(() => {
@@ -100,20 +103,20 @@ const page = () => {
 
     // Initial check
     checkIfMobile();
-    
+
     // Event listener for screen size changes
-    window.addEventListener('resize', checkIfMobile);
-    
+    window.addEventListener("resize", checkIfMobile);
+
     // Refresh AOS on window resize for better responsiveness
     const handleResize = () => {
       AOS.refresh();
     };
-    window.addEventListener('resize', handleResize);
-    
+    window.addEventListener("resize", handleResize);
+
     // Cleanup on component unmount
     return () => {
-      window.removeEventListener('resize', checkIfMobile);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", checkIfMobile);
+      window.removeEventListener("resize", handleResize);
     };
   }, [isMobile]);
 
@@ -178,12 +181,12 @@ const page = () => {
             className={styles.active}
             href="/szolgaltatasok/slow-aging-kezelesek"
           >
-          SLOW AGING KEZELÉSEK
+            SLOW AGING KEZELÉSEK
           </Link>
         </div>
       </div>
       <section className={styles.containerHelper}>
-        <div 
+        <div
           data-aos="fade-up"
           data-aos-offset="150"
           data-aos-delay="100"
@@ -192,13 +195,16 @@ const page = () => {
           data-aos-once="true"
           className={styles.titleContainer}
         >
-          <h1>Slow Aging Kezelések</h1>
+          <h1>Slow Aging kezelések – Természetes, fokozatos bőrfiatalítás</h1>
           <Abstract />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            efficitur est tellus, ut eleifend metus placerat eget. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia curae; Ut condimentum magna vel sodales tempor.
+            A Slow Aging filozófiája az öregedés lassítására, nem pedig az
+            azonnali és drasztikus beavatkozásokra épül. A cél a bőr természetes
+            regenerációjának támogatása, a kollagéntermelés serkentése és az
+            egészséges, fiatalos megjelenés megőrzése hosszú távon. <br/><br/> A Slow Aging
+            kezelések azoknak ideálisak, akik nem szeretnének drasztikus
+            esztétikai beavatkozásokat, de hosszú távon fiatalos és egészséges
+            bőrt szeretnének fenntartani.
           </p>
         </div>
         <div className={styles.itemsContainer}>

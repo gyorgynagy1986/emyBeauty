@@ -365,10 +365,10 @@ const AppointmentEmailTemplate = ({
                       Budapest
                     </h4>
                     <p style={{ margin: "0 0 3px 0", fontSize: "14px" }}>
-                      XII. kerület
+                      2Contour Aesthetic Clinic{" "}
                     </p>
                     <p style={{ margin: "0 0 3px 0", fontSize: "14px" }}>
-                      Rácz Aladár út 158
+                      XII. kerület, Rácz Aladár út 158{" "}
                     </p>
                   </div>
                 </td>

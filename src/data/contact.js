@@ -18,9 +18,10 @@ export const locations = [
   },
   {
     title: "Budapest",
-    businessName: "Waio Hair",
+    businessName: "2Contour Aesthetic Clinic",
     address: "XII. kerület, Rácz Aladár út 158",
     phone: "+36 20 342 66 18",
+    phone2: "+70 638 2638",
     mapSrc: contact.map2,
   },
 ];

@@ -1,0 +1,276 @@
+/* Meglévő stílusok megtartása - ne módosítsd ezeket */
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 6rem 3vw;
+}
+
+.helper {
+  width: 100%;
+  padding: 8rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1200px; /* Növeltem a szélességet a galériához */
+  margin-inline: auto;
+  background: white;
+  border: 1px solid transparent;
+  border-image: linear-gradient(
+      162.8deg,
+      rgba(36, 144, 232, 0.2) -4.69%,
+      rgba(19, 114, 198, 0.2) 58.82%,
+      rgba(0, 78, 157, 0.2) 99.47%
+    )
+    1;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
+
+.title {
+  font-size: var(--titleSmall);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 3rem;
+  max-width: 48.4rem;
+  text-align: center;
+  color: #004e9d;
+  font-family: var(--font-libre);
+}
+
+/* Galéria specifikus stílusok */
+.galleryContainer {
+  width: 100%;
+  padding: 0 2rem 2rem 2rem;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.galleryItem {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galleryItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 78, 157, 0.1);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.galleryImage {
+  transition: transform 0.5s ease;
+}
+
+.galleryItem:hover .galleryImage {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 78, 157, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.galleryItem:hover .imageOverlay {
+  opacity: 1;
+}
+
+.zoomIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #004e9d;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.galleryItem:hover .zoomIcon {
+  transform: scale(1);
+}
+
+/* Modal stílusok */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 100%;
+  max-height: 90vh;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modalImageContainer {
+  position: relative;
+  width: 80vw;
+  height: 80vh;
+  max-width: 1200px;
+}
+
+.modalImage {
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.closeButton,
+.navButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.closeButton:hover,
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.closeButton {
+  top: -60px;
+  right: 0;
+}
+
+.prevButton {
+  left: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nextButton {
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prevButton:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nextButton:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.imageCounter {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+/* Reszponzív stílusok */
+@media (max-width: 1024px) {
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .modalImageContainer {
+    width: 90vw;
+    height: 70vh;
+  }
+  
+  .navButton {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .prevButton {
+    left: 10px;
+  }
+  
+  .nextButton {
+    right: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .galleryContainer {
+    padding: 0 1rem 1rem 1rem;
+  }
+  
+  .modalImageContainer {
+    width: 95vw;
+    height: 60vh;
+  }
+  
+  .closeButton {
+    top: -50px;
+    right: 0;
+  }
+  
+  .imageCounter {
+    bottom: -30px;
+  }
+}

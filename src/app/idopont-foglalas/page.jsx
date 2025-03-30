@@ -490,7 +490,7 @@ const Page = () => {
                     disabled={isSubmitting}
                   />
                   <label className={styles.label}>
-                    Elfogadom az adatkezelési szabályzatot
+                   <a href="/dokumentumok/adatkezeles"> Elfogadom az <span style={{textDecoration:'underline'}}>adatkezelési szabályzatot!</span> </a> 
                   </label>
                 </div>
                 {errors.consent && (

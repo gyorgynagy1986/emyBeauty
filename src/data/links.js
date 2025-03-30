@@ -3,6 +3,7 @@ export const links = [
   { name: "RÓLAM", href: "/rolam", id: 2 },
   { name: "SZOLGÁLTATÁSAIM ", href: "/szolgaltatasok", id: 3 },
   { name: "ÁRAK", href: "/arak", id: 4 },
-  { name: "ELÉRHETŐSÉG", href: "/kapcsolat", id: 5 },
-  { name: "WEBSHOP", href: "https://emybeauty.imageskincare.hu", id: 6 },
+  { name: "GALÉRIA", href: "/galeria", id: 5 },
+  { name: "ELÉRHETŐSÉG", href: "/kapcsolat", id: 6 },
+  { name: "WEBSHOP", href: "https://emybeauty.imageskincare.hu", id: 7 },
 ];

@@ -39,8 +39,9 @@
 }
 
 .photoContainer {
-  height: 200px;
+  height: 250px;
   overflow: hidden;
+  background-color: #0063c7;
 }
 
 .img {
@@ -48,6 +49,10 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+}
+
+.imageWrapper {
+  height: 100%;
 }
 
 .SwiperContainer:hover .img {

@@ -257,7 +257,7 @@ const ContactSection = () => {
                   <span className={styles.consentText}>
                     Elfogadom az{" "}
                     <a
-                      href="/adatkezeles"
+                      href="/dokumentumok/adatkezeles"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

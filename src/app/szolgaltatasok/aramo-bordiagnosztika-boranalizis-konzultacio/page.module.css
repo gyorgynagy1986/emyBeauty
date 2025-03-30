@@ -28,17 +28,11 @@
   font-family: var(--font-fig);
   line-height: 120%;
   white-space: nowrap;
-  transition: color 0.3s ease;
-}
-
-.items a:hover {
-  color: var(--color-blue);
 }
 
 .active {
   color: var(--color-blue);
 }
-
 .container {
   background-color: white;
 }
@@ -67,12 +61,6 @@
   color: var(--color-blue);
 }
 
-.titleContainer p {
-  max-width: 70.3rem;
-  text-align: center;
-  margin-top: 1rem;
-}
-
 .itemsContainer {
   max-width: var(--maxWidth);
   margin-inline: auto;
@@ -94,18 +82,6 @@
   }
 }
 
-/* Link wrapper for entire card */
-.serviceLink {
-  display: block;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.serviceLink:hover {
-  transform: translateY(-5px);
-}
-
 .ServiceItem {
   max-width: 37.8rem;
   box-shadow: 0px -2px 30px 0px #854e0f0f;
@@ -117,12 +93,6 @@
       rgba(0, 78, 157, 0.2) 99.47%
     )
     1;
-  transition: box-shadow 0.3s ease;
-  overflow: hidden;
-}
-
-.ServiceItem:hover {
-  box-shadow: 0px 5px 25px 0px rgba(0, 78, 157, 0.15);
 }
 
 @media screen and (max-width: 1000px) {
@@ -131,21 +101,10 @@
   }
 }
 
-.imageWrapper {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-}
-
 .img {
   width: 100%;
-  height: 300px;
+  max-height: 250px;
   object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.ServiceItem:hover .img {
-  transform: scale(1.1);
 }
 
 .titleContainer {
@@ -155,14 +114,9 @@
   align-items: center;
   padding-left: 3rem;
   padding-right: 3rem;
-  transition: background-color 0.3s ease;
 }
 
-.ServiceItem:hover .titleContainer {
-  background-color: rgba(0, 78, 157, 0.03);
-}
-
-.titleContainer span {
+.titleContainer a {
   font-family: var(--font-fig);
   font-weight: 500;
   font-size: 1.9rem;
@@ -170,11 +124,12 @@
   letter-spacing: 0%;
   text-align: center;
   color: var(--color-blue);
-  transition: color 0.3s ease;
 }
 
-.ServiceItem:hover .titleContainer span {
-  color: #0063c7;
+.titleContainer p {
+  max-width: 60.3rem;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .ServiceItemInfo {
@@ -188,20 +143,4 @@
   padding-left: 3rem;
   padding-right: 3rem;
   padding-bottom: 3rem;
-  transition: background-color 0.3s ease;
-}
-
-.ServiceItem:hover .ServiceItemInfo {
-  background-color: rgba(0, 78, 157, 0.01);
-}
-
-.ServiceItemInfo p {
-  transition: color 0.3s ease;
-  min-height: 5rem; /* Set a consistent minimum height */
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit to 3 lines */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0; /* Reset margins for consistent spacing */
 }

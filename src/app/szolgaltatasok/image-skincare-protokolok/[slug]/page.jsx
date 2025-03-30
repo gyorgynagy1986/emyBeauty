@@ -10,7 +10,9 @@ import IPeelBetaLift from "@/components/serviceList/image-skincare/IPeelBetaLift
 import IPeelPerfectionLiftForte from "@/components/serviceList/image-skincare/IPeelPerfectionLiftForte";
 import IPeelPerfectionLift from "@/components/serviceList/image-skincare/IPeelPerfectionLift";
 
-{/*  GROUP2 */}
+{
+  /*  GROUP2 */
+}
 import BeClearTisztito from "@/components/serviceList/image-skincare/group2/BeClearTisztito";
 import IlluminatingArckezeles from "@/components/serviceList/image-skincare/group2/IlluminatingArckezeles";
 import TheMaxOssejtes from "@/components/serviceList/image-skincare/group2/TheMaxOssejtes";
@@ -26,31 +28,45 @@ import IMaskLapmaszk from "@/components/serviceList/image-skincare/group2/IMaskL
 export async function generateMetadata({ params, searchParams }, parent) {
   // read route params
   const { slug } = await params;
-  
+
   // Készítsünk egy térképet a tényleges címekhez
   const titleMap = {
     "o2lift-spa-voros-szonyeg-kezeles": "O2LIFT SPA VÖRÖS SZŐNYEG KEZELÉS",
-    "i-peel-ormedic-lift": "I PEEL | ORMEDIC LIFT™ - FELÜLET MEGÚJÍTÓ BIO PEELING",
-    "i-peel-signature-facelift": "I PEEL | SIGNATURE FACELIFT® - C VITAMIN SPECIALISTA",
-    "i-peel-lightening-lift-borvilagosito-hamlasztas": "I PEEL | LIGHTENING LIFT® - BŐRVILÁGOSÍTÓ HÁMLASZTÁS",
-    "i-peel-lightening-lift-forte-intenziv-borvilagosito-hamlasztas": "I PEEL | LIGHTENING LIFT® FORTE - INTENZÍV BŐRVILÁGOSÍTÓ HÁMLASZTÁS",
-    "i-peel-wrinkle-lift-hamlaszto-kezeles": "I PEEL | WRINKLE LIFT® - HÁMLASZTÓ KEZELÉS",
-    "i-peel-wrinkle-lift-forte-intenziv-hamlaszto-kezeles": "I PEEL | WRINKLE LIFT® FORTE - INTENZÍV HÁMLASZTÓ KEZELÉS",
-    "i-peel-acne-lift-aknes-bor-kezelese": "I PEEL | ACNE LIFT® - AKNÉS BŐR KEZELÉSE",
-    "i-peel-beta-lift-aknekezelo-hamlasztas": "I PEEL | BETA LIFT - AKNÉKEZELŐ HÁMLASZTÁS",
-    "i-peel-perfection-lift-bormegujito-kezeles": "I PEEL | PERFECTION LIFT™ - BŐRMEGÚJÍTÓ KEZELÉS",
-    "i-peel-perfection-lift-forte-intenziv-bormegujito-kezeles": "I PEEL | PERFECTION LIFT® FORTE - INTENZÍV BŐRMEGÚJÍTÓ KEZELÉS",
+    "i-peel-ormedic-lift":
+      "I PEEL | ORMEDIC LIFT™ - FELÜLET MEGÚJÍTÓ BIO PEELING",
+    "i-peel-signature-facelift":
+      "I PEEL | SIGNATURE FACELIFT® - C VITAMIN SPECIALISTA",
+    "i-peel-lightening-lift-borvilagosito-hamlasztas":
+      "I PEEL | LIGHTENING LIFT® - BŐRVILÁGOSÍTÓ HÁMLASZTÁS",
+    "i-peel-lightening-lift-forte-intenziv-borvilagosito-hamlasztas":
+      "I PEEL | LIGHTENING LIFT® FORTE - INTENZÍV BŐRVILÁGOSÍTÓ HÁMLASZTÁS",
+    "i-peel-wrinkle-lift-hamlaszto-kezeles":
+      "I PEEL | WRINKLE LIFT® - HÁMLASZTÓ KEZELÉS",
+    "i-peel-wrinkle-lift-forte-intenziv-hamlaszto-kezeles":
+      "I PEEL | WRINKLE LIFT® FORTE - INTENZÍV HÁMLASZTÓ KEZELÉS",
+    "i-peel-acne-lift-aknes-bor-kezelese":
+      "I PEEL | ACNE LIFT® - AKNÉS BŐR KEZELÉSE",
+    "i-peel-beta-lift-aknekezelo-hamlasztas":
+      "I PEEL | BETA LIFT - AKNÉKEZELŐ HÁMLASZTÁS",
+    "i-peel-perfection-lift-bormegujito-kezeles":
+      "I PEEL | PERFECTION LIFT™ - BŐRMEGÚJÍTÓ KEZELÉS",
+    "i-peel-perfection-lift-forte-intenziv-bormegujito-kezeles":
+      "I PEEL | PERFECTION LIFT® FORTE - INTENZÍV BŐRMEGÚJÍTÓ KEZELÉS",
     "be-clear-tisztito-arckezeles": "BE CLEAR TISZTÍTÓ ARCKEZELÉS",
-    "illuminating-arckezeles": "ILLUMINATING ARCKEZELÉS",
+    "illuminating-pigmenfolt-halvanyito-arckezeles": "ILLUMINATING ARCKEZELÉS",
     "the-max-ossejtes-arckezeles": "THE MAX ŐSSEJTES ARCKEZELÉS",
     "the-max-contour-kezeles": "THE MAX CONTOUR KEZELÉS",
-    "image-iluma-arckezeles": "IMAGE ILUMA ARCKEZELÉS",
-    "image-glitz-and-glow-kezeles": "IMAGE ÜNNEPI SIGNATURE GLITZ AND GLOW KEZELÉS",
-    "image-arcfeszesito-atalakito-kezeles": "IMAGE ARCFESZESÍTŐ-ÁTALAKÍTÓ KEZELÉS",
-    "image-probiotikus-tisztito-arckezeles": "IMAGE SKINCARE PROBIOTIKUS TISZTÍTÓ ARCKEZELÉS",
-    "mikrobiome-borbarrier-erosito-kezeles": "MIKROBIOME+ BŐRBARRIER ERŐSÍTŐ KEZELÉS",
-    "basic-nyari-glow-radiance-refresh-kezeles": "BASIC NYÁRI GLOW RADIANCE REFRESH KEZELES",
-    "i-mask-lapmaszk-kezeles": "I MASK LAPMASZK KEZELÉS"
+    // "image-iluma-arckezeles": "IMAGE ILUMA ARCKEZELÉS",
+    "image-glitz-and-glow-kezeles":
+      "IMAGE ÜNNEPI SIGNATURE GLITZ AND GLOW KEZELÉS",
+    // "image-arcfeszesito-atalakito-kezeles": "IMAGE ARCFESZESÍTŐ-ÁTALAKÍTÓ KEZELÉS",
+    "image-probiotikus-tisztito-arckezeles":
+      "IMAGE SKINCARE PROBIOTIKUS TISZTÍTÓ ARCKEZELÉS",
+    "mikrobiome-borbarrier-erosito-kezeles":
+      "MIKROBIOME+ BŐRBARRIER ERŐSÍTŐ KEZELÉS",
+    "basic-nyari-glow-radiance-refresh-kezeles":
+      "BASIC NYÁRI GLOW RADIANCE REFRESH KEZELES",
+    "i-mask-lapmaszk-kezeles": "I MASK LAPMASZK KEZELÉS",
   };
 
   return {
@@ -65,13 +81,13 @@ export default async function Page({ params, searchParams }) {
   if (slug === "o2lift-spa-voros-szonyeg-kezeles") {
     return <O2LiftSpaKezeles />;
   }
-  
+
   // A következő esetekben frissítenünk kell a régi slug-okat az új, egyeztetett slug-okra
   if (slug === "i-peel-signature-facelift") {
     return <IPeelSignatureFacelift />;
   }
 
-  if (slug === "i-peel-ormedic-lift" ) {
+  if (slug === "i-peel-ormedic-lift") {
     return <IPeelOrmedic />;
   }
 
@@ -81,7 +97,6 @@ export default async function Page({ params, searchParams }) {
 
   if (
     slug === "i-peel-lightening-lift-forte-intenzive-borvilagosito-hamlasztas"
-   
   ) {
     return <IPeelLighteningLiftForte />;
   }
@@ -97,7 +112,7 @@ export default async function Page({ params, searchParams }) {
   if (slug === "i-peel-acne-lift-aknes-bor-kezelese") {
     return <IPeelAcneLift />;
   }
-  
+
   if (slug === "i-peel-beta-lift-aknekezelo-hamlasztas") {
     return <IPeelBetaLift />;
   }
@@ -114,43 +129,43 @@ export default async function Page({ params, searchParams }) {
   if (slug === "be-clear-tisztito-arckezeles") {
     return <BeClearTisztito />;
   }
-  
-  if (slug === "illuminating-arckezeles") {
+
+  if (slug === "illuminating-pigmenfolt-halvanyito-arckezeles") {
     return <IlluminatingArckezeles />;
   }
-  
+
   if (slug === "the-max-ossejtes-arckezeles") {
     return <TheMaxOssejtes />;
   }
-  
+
   if (slug === "the-max-contour-kezeles") {
     return <TheMaxContour />;
   }
-  
+
   if (slug === "image-iluma-arckezeles") {
     return <ImageIluma />;
   }
-  
+
   if (slug === "image-glitz-and-glow-kezeles") {
     return <ImageGlitzAndGlow />;
   }
-  
+
   if (slug === "image-arcfeszesito-atalakito-kezeles") {
     return <ImageArcfeszesito />;
   }
-  
+
   if (slug === "image-probiotikus-tisztito-arckezeles") {
     return <ImageProbiotikus />;
   }
-  
+
   if (slug === "mikrobiome-borbarrier-erosito-kezeles") {
     return <MikrobiomeBorbarrier />;
   }
-  
+
   if (slug === "basic-nyari-glow-radiance-refresh-kezeles") {
     return <BasicNyariGlow />;
   }
-  
+
   if (slug === "i-mask-hidratalo-lapmaszk-kezeles") {
     return <IMaskLapmaszk />;
   }

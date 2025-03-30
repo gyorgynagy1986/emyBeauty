@@ -86,7 +86,7 @@ export default function ImageIlumaArckezeles() {
             className={styles.titleContainer}
           >
             <div className={styles.titleHelper}>
-              <h1 className={styles.title}>IMAGE ILUMA pigmentfolt halványító arckezelés</h1>
+              <h1 className={styles.title}>IMAGE ILUMA - pigmentfolt halványító arckezelés</h1>
               <Abstract />
             </div>
 
