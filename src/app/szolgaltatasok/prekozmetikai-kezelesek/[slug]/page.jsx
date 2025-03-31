@@ -8,23 +8,26 @@ import DeepShootSkinBooster from "@/components/serviceList/prekozmatikai-kezeles
 import PlasmaG from "@/components/serviceList/prekozmatikai-kezelesek/PlazmaG";
 import Ejal from "@/components/serviceList/prekozmatikai-kezelesek/Ejal40Kezeles";
 
+import { alt } from "@/data/alt";
 
 
 export async function generateMetadata({ params, searchParams }, parent) {
   // read route params
   const { slug } = await params;
+
   
   // Készítsünk egy térképet a tényleges címekhez
   const titleMap = {
-    "secret-rf": "Secret™ RF",
-    "secret-booster": "Secret™ Booster",
-    "pollogen-oxygeneo": "Oxy Geneo™ by Pollogen",
-    "exosome-sejtterapia": "EXOSOME SEJTTERÁPIA",
-    "1-need-pro": "1 NEED PRO",
-    "hollywood-carbon-peeling": "Hollywood Carbon Lézeres MEDICAL Peeling",
-    "deep-shoot-skin-booster": "DEEP SHOOT SKIN BOOSTER",
-    "plazma-g": "Plazma G –RÁDIÓFREKVENCIÁS ARCKEZELÉS",
-  };
+    "secret-rf": "Secret™ RF" + ' - ' + alt.shortName,
+    "secret-booster": "Secret™ Booster" + ' - ' + alt.shortName,
+    "pollogen-oxygeneo": "Oxy Geneo™ by Pollogen" + ' - ' + alt.shortName,
+    "exosome-sejtterapia": "EXOSOME SEJTTERÁPIA" + ' - ' + alt.shortName,
+    "1-need-pro": "1 NEED PRO" + ' - ' + alt.shortName,
+    "hollywood-carbon-peeling": "Hollywood Carbon Lézeres MEDICAL Peeling" + ' - ' + alt.shortName,
+    "deep-shoot-skin-booster": "DEEP SHOOT SKIN BOOSTER" + ' - ' + alt.shortName,
+    "plazma-g": "Plazma G –RÁDIÓFREKVENCIÁS ARCKEZELÉS" + ' - ' + alt.shortName,
+    "ejal-40-kezeles": "EJAL 40 kezelés" + ' - ' + alt.shortName,
+};
 
   return {
     title: titleMap[slug] || slug,

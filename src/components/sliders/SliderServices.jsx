@@ -241,12 +241,12 @@ export default function ServicesPage() {
       slug: "/szolgaltatasok/slow-aging-kezelesek/tu-nelkuli-mezoterapia",
       text: "Nobel-díjas hatásmechanizmusra épülő, tű nélküli mezoterápiás kezelés. A hatóanyagok 90%-a mély szövetekbe hatol, maximálisan hidratálja a bőrt és látványosan csökkenti a ráncokat.",
     },
-  // {
-  //   src: servicesPage.ance,
-  //   title: "Dr.Platon Atmoszférikus Hideg Plazma",
-  //   slug: "/szolgaltatasok/dr-platon-atmoszferikus-hideg-plazma",
-  //   text: "Innovatív technológia, amely hideg plazma alkalmazásával stimulálja a bőr természetes gyógyulási folyamatait. Antibakteriális hatású, javítja a bőr oxigénellátását, és hatékonyan kezeli az aknét, rozáceát és egyéb bőrproblémákat mellékhatások nélkül.",
-  // },
+     {
+       src: servicesPage.ejal,
+       title: "EJAL 40 kezelés",
+       slug: "/szolgaltatasok/prekozmetikai-kezelesek/ejal-40-kezeles",
+       text: "A kezelés egy innovatív bőrfiatalító eljárás, amely helyreállítja a bőr természetes hialuronsav szintjét, ezzel pedig biztosítja bőröd számára az ideális mélyhidratációt!",
+      },
   ];
 
   // Slider beállítások - megtartva az eredeti struktúrát
@@ -256,7 +256,7 @@ export default function ServicesPage() {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 4000,
     responsive: [
       {

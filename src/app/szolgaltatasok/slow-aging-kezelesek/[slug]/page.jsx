@@ -4,21 +4,22 @@ import SqtBioMikrotusKezeles from "@/components/serviceList/innovativ/SqtBioMikr
 import GenosysSnowcell from "@/components/serviceList/innovativ/GenosysSnowcell";
 import MikrodermabrazioGyemantfejes from "@/components/serviceList/innovativ/MikrodermabrazioGyemantfejes";
 import OneNeedProMikrotus from "@/components/serviceList/innovativ/OneNeedProMikrotus";
+import { alt } from "@/data/alt";
 
 export async function generateMetadata({ params, searchParams }, parent) {
   // read route params
   const { slug } = await params;
   
   // Készítsünk egy térképet a tényleges címekhez
-  const titleMap = {
-    "tu-nelkuli-mezoterapia": "TŰ NÉLKÜLI MEZOTERÁPIA - ELEKTROPORÁCIÓ",
-    "geno-led-alacsony-intenzitasu-led-feny": "GENO-LED ALACSONY INTENZITÁSÚ LED FÉNY",
-    "sqt-bio-mikrotus-kezeles": "SQT® BIO MIKROTŰS SZIVACSTŰ KEZELÉS",
-    "genosys-snowcell": "GENOSYS SNOWCELL",
-    "mikrodermabrazio-gyemantfejes-technologia": "MIKRODERMABRÁZIÓ - GYÉMÁNTFEJES TECHNOLOGIA",
-    "1-need-pro-mikrotus-kezeles": "1 NEED PRO MIKROTŰS KEZELÉS"
-  };
 
+  const titleMap = {
+      "tu-nelkuli-mezoterapia": "TŰ NÉLKÜLI MEZOTERÁPIA - ELEKTROPORÁCIÓ" + ' - ' + alt.shortName,
+      "geno-led-alacsony-intenzitasu-led-feny": "GENO-LED ALACSONY INTENZITÁSÚ LED FÉNY" + ' - ' + alt.shortName,
+      "sqt-bio-mikrotus-kezeles": "SQT® BIO MIKROTŰS SZIVACSTŰ KEZELÉS" + ' - ' + alt.shortName,
+      "genosys-snowcell": "GENOSYS SNOWCELL" + ' - ' + alt.shortName,
+      "mikrodermabrazio-gyemantfejes-technologia": "MIKRODERMABRÁZIÓ - GYÉMÁNTFEJES TECHNOLOGIA" + ' - ' + alt.shortName,
+      "1-need-pro-mikrotus-kezeles": "1 NEED PRO MIKROTŰS KEZELÉS" + ' - ' + alt.shortName
+  };
   return {
     title: titleMap[slug] || slug,
   };

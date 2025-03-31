@@ -25,48 +25,68 @@ import MikrobiomeBorbarrier from "@/components/serviceList/image-skincare/group2
 import BasicNyariGlow from "@/components/serviceList/image-skincare/group2/BasicNyariGlow";
 import IMaskLapmaszk from "@/components/serviceList/image-skincare/group2/IMaskLapmaszk";
 
+import { alt } from "@/data/alt";
+
 export async function generateMetadata({ params, searchParams }, parent) {
   // read route params
   const { slug } = await params;
 
   // Készítsünk egy térképet a tényleges címekhez
   const titleMap = {
-    "o2lift-spa-voros-szonyeg-kezeles": "O2LIFT SPA VÖRÖS SZŐNYEG KEZELÉS",
+    "o2lift-spa-voros-szonyeg-kezeles":
+      "O2LIFT SPA VÖRÖS SZŐNYEG KEZELÉS" + " - " + alt.shortName,
     "i-peel-ormedic-lift":
-      "I PEEL | ORMEDIC LIFT™ - FELÜLET MEGÚJÍTÓ BIO PEELING",
+      "I PEEL | ORMEDIC LIFT™ - FELÜLET MEGÚJÍTÓ BIO PEELING" +
+      " - " +
+      alt.shortName,
     "i-peel-signature-facelift":
-      "I PEEL | SIGNATURE FACELIFT® - C VITAMIN SPECIALISTA",
+      "I PEEL | SIGNATURE FACELIFT® - C VITAMIN SPECIALISTA" +
+      " - " +
+      alt.shortName,
     "i-peel-lightening-lift-borvilagosito-hamlasztas":
-      "I PEEL | LIGHTENING LIFT® - BŐRVILÁGOSÍTÓ HÁMLASZTÁS",
+      "I PEEL | LIGHTENING LIFT® - BŐRVILÁGOSÍTÓ HÁMLASZTÁS" +
+      " - " +
+      alt.shortName,
     "i-peel-lightening-lift-forte-intenziv-borvilagosito-hamlasztas":
-      "I PEEL | LIGHTENING LIFT® FORTE - INTENZÍV BŐRVILÁGOSÍTÓ HÁMLASZTÁS",
+      "I PEEL | LIGHTENING LIFT® FORTE - INTENZÍV BŐRVILÁGOSÍTÓ HÁMLASZTÁS" +
+      " - " +
+      alt.shortName,
     "i-peel-wrinkle-lift-hamlaszto-kezeles":
-      "I PEEL | WRINKLE LIFT® - HÁMLASZTÓ KEZELÉS",
+      "I PEEL | WRINKLE LIFT® - HÁMLASZTÓ KEZELÉS" + " - " + alt.shortName,
     "i-peel-wrinkle-lift-forte-intenziv-hamlaszto-kezeles":
-      "I PEEL | WRINKLE LIFT® FORTE - INTENZÍV HÁMLASZTÓ KEZELÉS",
+      "I PEEL | WRINKLE LIFT® FORTE - INTENZÍV HÁMLASZTÓ KEZELÉS" +
+      " - " +
+      alt.shortName,
     "i-peel-acne-lift-aknes-bor-kezelese":
-      "I PEEL | ACNE LIFT® - AKNÉS BŐR KEZELÉSE",
+      "I PEEL | ACNE LIFT® - AKNÉS BŐR KEZELÉSE" + " - " + alt.shortName,
     "i-peel-beta-lift-aknekezelo-hamlasztas":
-      "I PEEL | BETA LIFT - AKNÉKEZELŐ HÁMLASZTÁS",
+      "I PEEL | BETA LIFT - AKNÉKEZELŐ HÁMLASZTÁS" + " - " + alt.shortName,
     "i-peel-perfection-lift-bormegujito-kezeles":
-      "I PEEL | PERFECTION LIFT™ - BŐRMEGÚJÍTÓ KEZELÉS",
+      "I PEEL | PERFECTION LIFT™ - BŐRMEGÚJÍTÓ KEZELÉS" + " - " + alt.shortName,
     "i-peel-perfection-lift-forte-intenziv-bormegujito-kezeles":
-      "I PEEL | PERFECTION LIFT® FORTE - INTENZÍV BŐRMEGÚJÍTÓ KEZELÉS",
-    "be-clear-tisztito-arckezeles": "BE CLEAR TISZTÍTÓ ARCKEZELÉS",
-    "illuminating-pigmenfolt-halvanyito-arckezeles": "ILLUMINATING ARCKEZELÉS",
-    "the-max-ossejtes-arckezeles": "THE MAX ŐSSEJTES ARCKEZELÉS",
-    "the-max-contour-kezeles": "THE MAX CONTOUR KEZELÉS",
+      "I PEEL | PERFECTION LIFT® FORTE - INTENZÍV BŐRMEGÚJÍTÓ KEZELÉS" +
+      " - " +
+      alt.shortName,
+    "be-clear-tisztito-arckezeles":
+      "BE CLEAR TISZTÍTÓ ARCKEZELÉS" + " - " + alt.shortName,
+    "illuminating-pigmenfolt-halvanyito-arckezeles":
+      "ILLUMINATING ARCKEZELÉS" + " - " + alt.shortName,
+    "the-max-ossejtes-arckezeles":
+      "THE MAX ŐSSEJTES ARCKEZELÉS" + " - " + alt.shortName,
+    "the-max-contour-kezeles":
+      "THE MAX CONTOUR KEZELÉS" + " - " + alt.shortName,
     // "image-iluma-arckezeles": "IMAGE ILUMA ARCKEZELÉS",
     "image-glitz-and-glow-kezeles":
-      "IMAGE ÜNNEPI SIGNATURE GLITZ AND GLOW KEZELÉS",
+      "IMAGE ÜNNEPI SIGNATURE GLITZ AND GLOW KEZELÉS" + " - " + alt.shortName,
     // "image-arcfeszesito-atalakito-kezeles": "IMAGE ARCFESZESÍTŐ-ÁTALAKÍTÓ KEZELÉS",
     "image-probiotikus-tisztito-arckezeles":
-      "IMAGE SKINCARE PROBIOTIKUS TISZTÍTÓ ARCKEZELÉS",
+      "IMAGE SKINCARE PROBIOTIKUS TISZTÍTÓ ARCKEZELÉS" + " - " + alt.shortName,
     "mikrobiome-borbarrier-erosito-kezeles":
-      "MIKROBIOME+ BŐRBARRIER ERŐSÍTŐ KEZELÉS",
+      "MIKROBIOME+ BŐRBARRIER ERŐSÍTŐ KEZELÉS" + " - " + alt.shortName,
     "basic-nyari-glow-radiance-refresh-kezeles":
-      "BASIC NYÁRI GLOW RADIANCE REFRESH KEZELES",
-    "i-mask-lapmaszk-kezeles": "I MASK LAPMASZK KEZELÉS",
+      "BASIC NYÁRI GLOW RADIANCE REFRESH KEZELES" + " - " + alt.shortName,
+    "i-mask-lapmaszk-kezeles":
+      "I MASK LAPMASZK KEZELÉS" + " - " + alt.shortName,
   };
 
   return {
