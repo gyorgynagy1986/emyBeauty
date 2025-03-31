@@ -95,7 +95,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 }
 
 export default async function Page({ params, searchParams }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   // GROUP1 - Az eredeti kezelések
   if (slug === "o2lift-spa-voros-szonyeg-kezeles") {

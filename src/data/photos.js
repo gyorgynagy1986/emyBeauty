@@ -126,6 +126,11 @@ import plasma2 from "../../public/assets/services/prekozmetika/plasma2.webp"
   import ejal2 from "../../public/assets/services/ejal2.webp"
   import ejal3 from "../../public/assets/services/ejal3.webp"
 
+  import z from "../../public/assets/services/z.webp"
+  import s from "../../public/assets/services/s.webp"
+  import v from "../../public/assets/services/v.webp"
+  import k from "../../public/assets/services/k.webp"
+
 
 /* SERVICES  END*/
 
@@ -165,6 +170,10 @@ export const contact = {
 
 /* SERVICES  */
 export const servicesPage = {
+  z,
+  s,
+  v,
+  k,
   ejal,
   ejal1,
   ejal2,

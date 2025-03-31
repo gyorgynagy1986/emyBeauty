@@ -25,8 +25,8 @@ export async function generateMetadata({ params, searchParams }, parent) {
   };
 }
 
-export default async function Page({ params,}) {
-  const { slug } = params;
+export default async function Page({ params}) {
+  const { slug } = await params;
 
   if (slug === "tu-nelkuli-mezoterapia") {
     return <TuNelkuli />;

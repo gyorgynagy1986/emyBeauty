@@ -35,7 +35,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 }
 
 export default async function Page({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   if (slug === "secret-rf") {
     return <SecretRf />;

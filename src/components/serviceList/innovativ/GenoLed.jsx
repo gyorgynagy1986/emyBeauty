@@ -228,7 +228,7 @@ export default function GenoLedKezelés() {
             data-aos-once="true"
             className={styles.sectionSubTitles}
           >
-            <h2 className={styles.title}>Piros fény</h2>
+            <h2 className={styles.title}>Vörös fény</h2>
             <ul className={styles.ul2Col}>
               <li>Hullámhossz: 640 nm</li>
               <li>Behatolási mélység: 1-6 mm</li>
@@ -241,6 +241,22 @@ export default function GenoLedKezelés() {
               <li>Kezeli a hajhullást</li>
               <li>Anti-aging kezeléshez tökéletes kiegészítés</li>
             </ul>
+            <div 
+            data-aos={isMobile ? "fade-up" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
+            <Image
+              alt={alt.name}
+              src={servicesPage.v}
+              sizes={size.fullsize}
+            />
+          </div>
             <Abstract />
           </div>
 
@@ -273,6 +289,22 @@ export default function GenoLedKezelés() {
               érkezik. A napfény káros sugarai ellen fényvédelemmel védekezünk.
               A LED terápiás maszk kék színe kíméletesen kezeli a bőrt.
             </p>
+            <div 
+            data-aos={isMobile ? "fade-up" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
+            <Image
+              alt={alt.name}
+              src={servicesPage.k}
+              sizes={size.fullsize}
+            />
+          </div>
             <Abstract />
           </div>
 
@@ -298,6 +330,22 @@ export default function GenoLedKezelés() {
                 Ajánlott bőregységesítő, halványító kezelés kiegészítésére
               </li>
             </ul>
+            <div 
+            data-aos={isMobile ? "fade-up" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
+            <Image
+              alt={alt.name}
+              src={servicesPage.z}
+              sizes={size.fullsize}
+            />
+          </div>
             <Abstract />
           </div>
 
@@ -320,6 +368,22 @@ export default function GenoLedKezelés() {
               <li>Korai szakaszában gyógyítja a herpeszt</li>
               <li>Gyulladásos, piros bőr kezelésére alkalmas</li>
             </ul>
+            <div 
+            data-aos={isMobile ? "fade-up" : "fade-left"}
+            data-aos-offset="150"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className={styles.photoContainer}
+          >
+            <Image
+              alt={alt.name}
+              src={servicesPage.s}
+              sizes={size.fullsize}
+            />
+          </div>
             <Abstract />
           </div>
 
