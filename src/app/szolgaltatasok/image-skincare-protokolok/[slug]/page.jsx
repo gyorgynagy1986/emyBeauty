@@ -85,7 +85,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
       "MIKROBIOME+ BŐRBARRIER ERŐSÍTŐ KEZELÉS" + " - " + alt.shortName,
     "basic-nyari-glow-radiance-refresh-kezeles":
       "BASIC NYÁRI GLOW RADIANCE REFRESH KEZELES" + " - " + alt.shortName,
-    "i-mask-lapmaszk-kezeles":
+    "i-mask-hidratalo-lapmaszk-kezeles":
       "I MASK LAPMASZK KEZELÉS" + " - " + alt.shortName,
   };
 
@@ -116,7 +116,7 @@ export default async function Page({ params, searchParams }) {
   }
 
   if (
-    slug === "i-peel-lightening-lift-forte-intenzive-borvilagosito-hamlasztas"
+    slug === "i-peel-lightening-lift-forte-intenziv-borvilagosito-hamlasztas"
   ) {
     return <IPeelLighteningLiftForte />;
   }

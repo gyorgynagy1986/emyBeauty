@@ -115,6 +115,13 @@
     1;
 }
 
+@media screen and (min-width: 1980px) {
+  .itemContainer {
+    max-width: 35rem;
+    min-height: 35rem;
+  }
+}
+
 .textContainer {
   display: flex;
   justify-content: center;

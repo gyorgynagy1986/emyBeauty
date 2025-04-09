@@ -124,37 +124,37 @@ const page = () => {
     {
       src: servicesPage.tunelkuli,
       title: "TŰ NÉLKÜLI MEZOTERÁPIA - ELEKTROPORÁCIÓ",
-      slug: "/tu-nelkuli-mezoterapia",
+      slug: "tu-nelkuli-mezoterapia",
       text: "Nobel-díjas hatásmechanizmusra épülő, tű nélküli mezoterápiás kezelés. A hatóanyagok 90%-a mély szövetekbe hatol, maximálisan hidratálja a bőrt és látványosan csökkenti a ráncokat.",
     },
     {
       src: servicesPage.genoled,
       title: "GENO-LED ALACSONY INTENZITÁSÚ LED FÉNY",
-      slug: "/geno-led-alacsony-intenzitasu-led-feny",
+      slug: "geno-led-alacsony-intenzitasu-led-feny",
       text: "Komplikált bőrproblémákat old meg LED fénnyel. A 287 speciális LED összetevő különböző hullámhosszúságú fényt sugározva regenerálja és nyugtatja a bőrt, mellékhatások nélkül.",
     },
     {
       src: servicesPage.sqt4,
       title: "SQT® BIO MIKROTŰS SZIVACSTŰ KEZELÉS",
-      slug: "/sqt-bio-mikrotus-kezeles",
+      slug: "sqt-bio-mikrotus-kezeles",
       text: "3 millió természetes szilícium mikrotűvel serkenti a bőr anyagcseréjét. Fájdalommentes megoldás, amely természetes módon rövidíti a bőr megújulási ciklusát és halványítja a pigmentfoltokat.",
     },
     {
       src: servicesPage.kek,
       title: "GENOSYS SNOWCELL",
-      slug: "/genosys-snowcell",
+      slug: "genosys-snowcell",
       text: "Innovatív pigmentációkezelő és bőrfiatalító eljárás, amely gátolja a melanin termelődését. Nyáron is alkalmazható, halványítja a foltokat és stimulálja a kollagén termelődést.",
     },
     {
       src: servicesPage.serices5,
       title: "MIKRODERMABRÁZIÓ - GYÉMÁNTFEJES TECHNOLOGIA",
-      slug: "/mikrodermabrazio-gyemantfejes-technologia",
+      slug: "mikrodermabrazio-gyemantfejes-technologia",
       text: "Fájdalommentes bőrhámlasztó kezelés, amely gyémántfejes technológiával megújítja a bőrt. Csökkenti a ráncokat, halványítja a pigmentfoltokat és segíti a hatóanyagok felszívódását.",
     },
     {
       src: servicesPage.serices6,
       title: "1 NEED PRO MIKROTŰS KEZELÉS",
-      slug: "/1-need-pro-mikrotus-kezeles",
+      slug: "1-need-pro-mikrotus-kezeles",
       text: "Speciális bőrfiatalító eljárás, amely mikrotűkkel serkenti a kollagéntermelést. Cserélhető kezelőfejekkel személyre szabható, kezeli a ráncokat, pigmentfoltokat és a tág pórusokat.",
     },
   ];
