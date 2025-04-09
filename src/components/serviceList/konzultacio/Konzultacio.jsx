@@ -83,7 +83,6 @@ export default function MensSkincare() {
             </p>
 
             <div className={styles.buttonContainer}>
-              <Button />
               <Button2 />
             </div>
           </div>

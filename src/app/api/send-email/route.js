@@ -9,9 +9,20 @@ export async function POST(request) {
   try {
     // Kérés adatainak feldolgozása
     const formData = await request.json();
-    // Kivesszük külön a date és time mezőket
-    const { name, email, phone, service, message, bookingType, date, time } =
-      formData;
+    // Kivesszük a szükséges mezőket
+    const { 
+      name, 
+      email, 
+      phone, 
+      city, 
+      service, 
+      message, 
+      bookingType, 
+      date, 
+      time,
+      consent,
+      requiresDeposit 
+    } = formData;
 
     // Alap validáció - ezek minden esetben kötelezők
     if (!name || !email || !phone) {
@@ -21,7 +32,7 @@ export async function POST(request) {
       );
     }
 
-    // Ha 'Időpontfoglalás szolgáltatásra' lett kiválasztva, akkor date és time is kell
+    // Ha 'Időpontfoglalás szolgáltatásra' lett kiválasztva, akkor date, time és city is kell
     let appointmentDate = "";
     if (date && time) {
       // Összefűzzük a dátumot és az időt
@@ -30,6 +41,14 @@ export async function POST(request) {
       // Időpontfoglalás esetén kötelező a dátum és idő megadása
       return NextResponse.json(
         { error: "Dátum és idő megadása kötelező időpontfoglalás esetén!" },
+        { status: 400 }
+      );
+    }
+
+    // Időpontfoglalásnál a város is kötelező
+    if (bookingType === "Időpontfoglalás szolgáltatásra" && !city) {
+      return NextResponse.json(
+        { error: "Város megadása kötelező időpontfoglalás esetén!" },
         { status: 400 }
       );
     }
@@ -55,28 +74,35 @@ export async function POST(request) {
         name,
         email,
         phone,
+        city,
         service,
         message,
         appointmentDate,
+        requiresDeposit,
+        consent,
+        isAdminNotification: false
       }),
     });
 
-    // Értesítés a szalon részére
+    // Értesítés a szalon részére - Admin verzió küldése (kevesebb információval)
     await resend.emails.send({
       from: process.env.EMAIL_FROM,
       to: [process.env.ADMIN_EMAIL || "info@emybeautyestetics.hu"],
       subject:
         bookingType === "Időpontfoglalás szolgáltatásra"
-          ? `Új időpontfoglalás: ${name}`
+          ? `Új időpontfoglalás: ${name} - ${city}`
           : `Új konzultációs igény: ${name}`,
       react: EmailTemplate({
         name,
         email,
         phone,
+        city,
         service,
         message,
         appointmentDate,
-        isAdminNotification: true,
+        requiresDeposit,
+        consent,
+        isAdminNotification: true
       }),
     });
 

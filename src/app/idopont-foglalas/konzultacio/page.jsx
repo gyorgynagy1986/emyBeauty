@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import styles from "./page.module.css";
-import { services, serviceDeposits } from "@/data/services"; // Importáljuk a serviceDeposits objektumot is
+import styles from "../page.module.css";
 import { CustomDatePicker } from "@/components/custom-date-picker";
 import { useRouter } from "next/navigation";
 import hu from "date-fns/locale/hu";
@@ -18,33 +17,7 @@ setDefaultLocale("hu");
 // Define the cities
 const cities = ["Budapest", "Szeged"];
 
-// Modal komponens a felugró ablakhoz
-const DepositModal = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-
-  return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modalContent}>
-        <h3 className={styles.modalTitle}>Előlegfizetés szükséges</h3>
-        <p className={styles.modalText}>
-          Az Ön által választott szolgáltatás előlegfizetéshez kötött. Az előleg
-          mértéke a szolgáltatás árának 50%-a.
-        </p>
-        <p className={styles.modalText}>
-          Bankszámlaszám: <strong>12345678-12345678-12345678</strong>
-        </p>
-        <p className={styles.modalText}>
-          Az időpont csak az előleg beérkezése után válik véglegessé.
-        </p>
-        <button className={styles.modalButton} onClick={onClose}>
-          Értettem
-        </button>
-      </div>
-    </div>
-  );
-};
-
-const IdopontfoglalasPage = () => {
+const KonzultacioPage = () => {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [errors, setErrors] = useState({});
@@ -56,8 +29,6 @@ const IdopontfoglalasPage = () => {
     mobile: false,
     desktop: false,
   });
-  // Új állapot a modal megjelenítéséhez
-  const [showDepositModal, setShowDepositModal] = useState(false);
 
   // FORM ÁLLAPOT
   const [formData, setFormData] = useState({
@@ -65,7 +36,6 @@ const IdopontfoglalasPage = () => {
     email: "",
     phone: "",
     city: "",
-    service: "",
     message: "",
     consent: false,
     date: "",
@@ -200,17 +170,6 @@ const IdopontfoglalasPage = () => {
       return;
     }
 
-    // Ellenőrizzük, hogy a kiválasztott szolgáltatásnak van-e előleg követelménye
-    if (name === "service" && value) {
-      // Ellenőrizzük, hogy a szolgáltatás előlegköteles-e
-      const requiresDeposit = serviceDeposits[value] === true;
-
-      if (requiresDeposit) {
-        // Megjelenítjük a felugró ablakot
-        setShowDepositModal(true);
-      }
-    }
-
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
@@ -222,11 +181,6 @@ const IdopontfoglalasPage = () => {
         [name]: "",
       }));
     }
-  };
-
-  // Modal bezárása
-  const closeDepositModal = () => {
-    setShowDepositModal(false);
   };
 
   // Modify the handleDateChange function to check for weekends
@@ -252,14 +206,6 @@ const IdopontfoglalasPage = () => {
 
   const goToNextStep = () => {
     if (currentStep === 1) {
-      if (!formData.service) {
-        setErrors((prev) => ({
-          ...prev,
-          service: "Kérlek válassz szolgáltatást",
-        }));
-        return;
-      }
-
       // Ellenőrizzük, hogy van-e kiválasztott város
       if (!formData.city) {
         setErrors((prev) => ({
@@ -289,7 +235,6 @@ const IdopontfoglalasPage = () => {
       consent: !formData.consent
         ? "Az adatkezelési szabályzat elfogadása kötelező"
         : "",
-      service: !formData.service ? "Kérlek válassz szolgáltatást" : "",
       city: !formData.city ? "Kérlek válassz várost" : "",
     };
 
@@ -318,18 +263,16 @@ const IdopontfoglalasPage = () => {
 
     try {
       const emailData = {
-        bookingType: "Időpontfoglalás szolgáltatásra",
+        bookingType: "Konzultáció",
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
         city: formData.city,
-        service: formData.service,
+        service: "",
         message: formData.message,
         consent: formData.consent,
         date: formData.date,
         time: formData.time,
-        // Hozzáadjuk az előleg információt is
-        requiresDeposit: serviceDeposits[formData.service] === true,
       };
 
       const response = await fetch("/api/send-email", {
@@ -356,7 +299,6 @@ const IdopontfoglalasPage = () => {
           email: "",
           phone: "",
           city: "",
-          service: "",
           message: "",
           consent: false,
           date: "",
@@ -399,9 +341,6 @@ const IdopontfoglalasPage = () => {
 
   return (
     <div className={styles.pageContainer}>
-      {/* Előleg Modal */}
-      <DepositModal isOpen={showDepositModal} onClose={closeDepositModal} />
-
       {isMobile === false && (
         <video
           playsInline
@@ -436,10 +375,9 @@ const IdopontfoglalasPage = () => {
 
       <div className={styles.container}>
         <div className={styles.innerContainer}>
-          <h2 className={styles.h2}>Időpontfoglalás</h2>
+          <h2 className={styles.h2}>Konzultáció</h2>
           <p className={styles.p}>
-            Foglalj időpontot a kiválasztott szolgáltatásra, és amint
-            lehetőségem van, visszahívlak!
+            Kérj konzultációt, és amint lehetőségem van, visszahívlak!
           </p>
 
           {submitSuccess && (
@@ -449,34 +387,16 @@ const IdopontfoglalasPage = () => {
           )}
 
           <form className={styles.form} onSubmit={handleSubmit} noValidate>
-            {/* 1. lépés: Szolgáltatás és város választása */}
+            {/* 1. lépés: Város választása */}
             {currentStep === 1 && (
               <div className={styles.step}>
-                <h3 className={styles.stepTitle}>
-                  Melyik szolgáltatásra szeretnél időpontot foglalni?
-                </h3>
+                <h3 className={styles.stepTitle}>Konzultáció részletei</h3>
 
-                <div className={styles.inputWrapper}>
-                  <select
-                    className={`${styles.select} ${
-                      errors.service ? styles.errorInput : ""
-                    }`}
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    disabled={isSubmitting}
-                  >
-                    <option value="">Válassz szolgáltatást...</option>
-                    {services.map((service, index) => (
-                      <option key={index} value={service}>
-                        {service}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.service && (
-                    <span className={styles.errorText}>{errors.service}</span>
-                  )}
-                </div>
+                <p className={styles.consultationInfo}>
+                  Válaszd ezt az opciót, ha szeretnél előzetes konzultációt a
+                  szolgáltatásokról, vagy egyedi igényeid megbeszélése
+                  érdekében.
+                </p>
 
                 {/* Város választása */}
                 <div className={styles.inputWrapper}>
@@ -506,12 +426,12 @@ const IdopontfoglalasPage = () => {
                   <div className={styles.cityInfo}>
                     {formData.city === "Budapest" ? (
                       <p className={styles.infoText}>
-                        Budapesten hétfőn és kedden vagyok elérhető!
+                        Budapesten hétfőn és kedden vagyunk elérhetőek.
                       </p>
                     ) : (
                       <p className={styles.infoText}>
-                        Szegeden szerdán, csütörtökön és pénteken vagyok
-                        elérhető!
+                        Szegeden szerdán, csütörtökön és pénteken vagyunk
+                        elérhetőek.
                       </p>
                     )}
                   </div>
@@ -636,9 +556,11 @@ const IdopontfoglalasPage = () => {
                   )}
                   {isWeekendSelected && (
                     <span className={styles.errorText}>
+                      {" "}
                       Hétvégi időpontfoglalás kizárólag előzetes egyeztetést
                       követően lehetséges! Kérjük, hétvégi időpont
-                      egyeztetéséhez hívjon a következő telefonszámon:+36 20 342 66 18
+                      egyeztetéséhez hívjon a következő telefonszámon:+36 20 342
+                      66 18
                     </span>
                   )}
                 </div>
@@ -671,17 +593,6 @@ const IdopontfoglalasPage = () => {
                     disabled={isSubmitting}
                   />
                 </div>
-
-                {/* Előleg emlékeztető, ha előleges szolgáltatást választott */}
-                {formData.service && serviceDeposits[formData.service] && (
-                  <div className={styles.depositReminder}>
-                    <p className={styles.reminderText}>
-                      <strong>Emlékeztető:</strong> A választott szolgáltatás
-                      előlegfizetéshez kötött. Az időpont csak az előleg
-                      beérkezése után válik véglegessé.
-                    </p>
-                  </div>
-                )}
 
                 <div
                   className={`${styles.checkboxContainer} ${
@@ -750,4 +661,4 @@ const IdopontfoglalasPage = () => {
   );
 };
 
-export default IdopontfoglalasPage;
+export default KonzultacioPage;

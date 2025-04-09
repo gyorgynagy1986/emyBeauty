@@ -10,7 +10,7 @@ const Button2 = () => {
     <>
       <Link
         className={`${style.button2}`}
-        href="/idopont-foglalas"
+        href="/idopont-foglalas/konzultacio"
       >
         <Image className={style.iamge} alt={alt.name} src={icon} />
         Kérj konzultációt

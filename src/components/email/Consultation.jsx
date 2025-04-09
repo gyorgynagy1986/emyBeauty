@@ -4,8 +4,10 @@ const ConsultationEmailTemplate = ({
   name,
   email,
   phone,
+  city,               
   message,
   appointmentDate,
+  consent,            
   isAdminNotification,
 }) => {
   // Színek
@@ -19,7 +21,7 @@ const ConsultationEmailTemplate = ({
     border: "#e0e0e0",
   };
 
-  // Fő konténerek
+  // Stílusok
   const outerContainerStyle = {
     backgroundColor: colors.background,
     padding: "30px 0",
@@ -39,7 +41,6 @@ const ConsultationEmailTemplate = ({
     textAlign: "left",
   };
 
-  // Általános stílusok
   const titleStyle = {
     fontSize: "24px",
     fontWeight: 700,
@@ -102,7 +103,7 @@ const ConsultationEmailTemplate = ({
     fontWeight: "bold",
   };
 
-  // Footer stílusok (táblázatos megoldás)
+  // Footer stílusok
   const footerContainerStyle = {
     borderTop: `1px solid ${colors.border}`,
     marginTop: "35px",
@@ -116,44 +117,115 @@ const ConsultationEmailTemplate = ({
     margin: "0 0 10px 0",
   };
 
-  // Főcím dinamikus beállítása admin értesítés esetén
-  const title = isAdminNotification
-    ? `Új konzultációs igény: ${name}`
-    : "Konzultációs igény visszaigazolása";
+  // Ha ez admin értesítés, csak az alapvető információkat jelenítjük meg
+  if (isAdminNotification) {
+    return (
+      <div style={outerContainerStyle}>
+        <div style={innerContainerStyle}>
+          <h1 style={titleStyle}>Új konzultációs igény: {name}</h1>
 
+          <p style={paragraphStyle}>
+          Kedves Emy, új konzultációs igény érkezett a weboldalról.🤗 
+          </p>
+
+          <p
+            style={{
+              ...paragraphStyle,
+              fontWeight: "600",
+              marginTop: "25px",
+              color: colors.blue,
+            }}
+          >
+            Kérés részletei:
+          </p>
+          <table style={tableStyle}>
+            <tbody>
+              <tr>
+                <td style={labelCellStyle}>Név</td>
+                <td style={valueCellStyle}>{name}</td>
+              </tr>
+              <tr>
+                <td style={labelCellStyle}>Email</td>
+                <td style={valueCellStyle}>
+                  <a href={`mailto:${email}`} style={linkStyle}>{email}</a>
+                </td>
+              </tr>
+              <tr>
+                <td style={labelCellStyle}>Telefonszám</td>
+                <td style={valueCellStyle}>
+                  <a href={`tel:${phone}`} style={linkStyle}>{phone}</a>
+                </td>
+              </tr>
+              {city && (
+                <tr>
+                  <td style={labelCellStyle}>Város</td>
+                  <td style={valueCellStyle}>{city}</td>
+                </tr>
+              )}
+              <tr>
+                <td style={labelCellStyle}>Típus</td>
+                <td style={valueCellStyle}>Konzultáció</td>
+              </tr>
+              {appointmentDate && (
+                <tr>
+                  <td style={labelCellStyle}>Tervezett időpont</td>
+                  <td style={valueCellStyle}>{appointmentDate}</td>
+                </tr>
+              )}
+              {message && (
+                <tr>
+                  <td style={labelCellStyle}>Megjegyzés</td>
+                  <td style={valueCellStyle}>{message}</td>
+                </tr>
+              )}
+              <tr>
+                <td style={labelCellStyle}>Beérkezés ideje</td>
+                <td style={valueCellStyle}>
+                  {new Date().toLocaleString('hu-HU', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                  })}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p style={paragraphStyle}>
+            Közvetlen válasz küldése: <a href={`mailto:${email}`} style={linkStyle}>{email}</a><br />
+            Telefon: <a href={`tel:${phone}`} style={linkStyle}>{phone}</a>
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // Felhasználói verzió - teljes sablon a lábléccel
   return (
     <div style={outerContainerStyle}>
       <div style={innerContainerStyle}>
-        <h1 style={titleStyle}>{title}</h1>
+        <h1 style={titleStyle}>Konzultációs igény visszaigazolása</h1>
 
         <p style={paragraphStyle}>
-          {isAdminNotification ? (
-            <>Új konzultációs igény érkezett a weboldalról.</>
-          ) : (
-            <>
-              Kedves <span style={highlightStyle}>{name}</span>,
-            </>
-          )}
+          Kedves <span style={highlightStyle}>{name}</span>,
         </p>
 
-        {!isAdminNotification && (
-          <p style={paragraphStyle}>
-            Köszönöm, hogy konzultációs igényt küldtél az Emy Beauty
-            Estetics-hez! Megkaptam az üzenetedet, és hamarosan személyesen
-            felveszem Veled a kapcsolatot egy alkalmas időpont egyeztetése
-            érdekében.
-          </p>
-        )}
+        <p style={paragraphStyle}>
+          Köszönöm, hogy konzultációs igényt küldtél az Emy Beauty
+          Estetics-hez! Megkaptam az üzenetedet, és hamarosan személyesen
+          felveszem Veled a kapcsolatot egy alkalmas időpont egyeztetése
+          érdekében.
+        </p>
 
-        {!isAdminNotification && (
-          <div style={infoBoxStyle}>
-            <p style={{ margin: 0, fontWeight: "500" }}>
-              A konzultáció során részletesen megbeszéljük az igényeidet, és
-              segítek kiválasztani a számodra legmegfelelőbb kezeléseket és
-              megoldásokat.
-            </p>
-          </div>
-        )}
+        <div style={infoBoxStyle}>
+          <p style={{ margin: 0, fontWeight: "500" }}>
+            A konzultáció során részletesen megbeszéljük az igényeidet, és
+            segítek kiválasztani a számodra legmegfelelőbb kezeléseket és
+            megoldásokat.
+          </p>
+        </div>
 
         <p
           style={{
@@ -163,7 +235,7 @@ const ConsultationEmailTemplate = ({
             color: colors.blue,
           }}
         >
-          {isAdminNotification ? "Kérés részletei:" : "Kérésed részletei:"}
+          Kérésed részletei:
         </p>
         <table style={tableStyle}>
           <tbody>
@@ -179,6 +251,12 @@ const ConsultationEmailTemplate = ({
               <td style={labelCellStyle}>Telefonszám</td>
               <td style={valueCellStyle}>{phone}</td>
             </tr>
+            {city && (
+              <tr>
+                <td style={labelCellStyle}>Város</td>
+                <td style={valueCellStyle}>{city}</td>
+              </tr>
+            )}
             <tr>
               <td style={labelCellStyle}>Típus</td>
               <td style={valueCellStyle}>Konzultáció</td>
@@ -198,13 +276,11 @@ const ConsultationEmailTemplate = ({
           </tbody>
         </table>
 
-        {!isAdminNotification && (
-          <p style={paragraphStyle}>
-            Kérlek, várj, amíg személyesen felveszem Veled a kapcsolatot.
-            Amennyiben 24 órán belül nem jelentkezem, kérlek hívj a megadott
-            telefonszámon.
-          </p>
-        )}
+        <p style={paragraphStyle}>
+          Kérlek, várj, amíg személyesen felveszem Veled a kapcsolatot.
+          Amennyiben 24 órán belül nem jelentkezem, kérlek hívj a megadott
+          telefonszámon.
+        </p>
 
         <div
           style={{

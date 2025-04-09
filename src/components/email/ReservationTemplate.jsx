@@ -4,9 +4,11 @@ const AppointmentEmailTemplate = ({
   name,
   email,
   phone,
+  city,
   service,
   message,
   appointmentDate,
+  requiresDeposit,
   isAdminNotification,
 }) => {
   // Színek
@@ -18,6 +20,8 @@ const AppointmentEmailTemplate = ({
     background: "#f9f9f9",
     white: "#ffffff",
     border: "#e0e0e0",
+    warning: "#FFF5E6",
+    warningBorder: "#D0A079",
   };
 
   // Stílusok
@@ -86,13 +90,12 @@ const AppointmentEmailTemplate = ({
     width: "60%",
   };
 
-  const contactInfoStyle = {
-    marginTop: "20px",
-    marginBottom: "20px",
+  const depositWarningStyle = {
+    backgroundColor: colors.warning,
+    borderLeft: `4px solid ${colors.warningBorder}`,
     padding: "15px",
-    backgroundColor: colors.lightBlue,
     borderRadius: "6px",
-    textAlign: "center",
+    margin: "20px 0",
   };
 
   const linkStyle = {
@@ -101,129 +104,139 @@ const AppointmentEmailTemplate = ({
     fontWeight: "bold",
   };
 
-  const locationHeadingStyle = {
-    color: colors.blue,
-    fontSize: "16px",
-    fontWeight: "bold",
-    margin: "0 0 5px 0",
-  };
+  // Ha ez admin értesítés
+  if (isAdminNotification) {
+    return (
+      <div style={outerContainerStyle}>
+        <div style={innerContainerStyle}>
+          <h1 style={titleStyle}>Új időpontfoglalás: {name}</h1>
 
-  const locationTextStyle = {
-    margin: "0 0 3px 0",
-    fontSize: "14px",
-  };
+          <p style={paragraphStyle}>
+            Kedves Emy, új időpontfoglalás érkezett a weboldalról.🤗 
+          </p>
 
-  // Mobilbarát footer stílusok
-  const footerContainerStyle = {
-    borderTop: `1px solid ${colors.border}`,
-    marginTop: "35px",
-    paddingTop: "25px",
-    textAlign: "center",
-  };
+          {/* Előleg figyelmeztetés adminnak */}
+          {requiresDeposit && (
+            <div style={depositWarningStyle}>
+              <p style={{ margin: "0 0 10px 0", fontWeight: "bold", color: colors.warningBorder }}>
+                Fontos: Előlegfizetés szükséges!
+              </p>
+              <p style={{ margin: "0" }}>
+                A választott szolgáltatás előlegfizetéshez kötött (50%).
+              </p>
+            </div>
+          )}
 
-  const footerSectionStyle = {
-    marginBottom: "20px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    gap: "20px",
-  };
+          <p
+            style={{
+              ...paragraphStyle,
+              fontWeight: "600",
+              marginTop: "25px",
+              color: colors.blue,
+            }}
+          >
+            Foglalás részletei:
+          </p>
+          <table style={tableStyle}>
+            <tbody>
+              <tr>
+                <td style={labelCellStyle}>Név</td>
+                <td style={valueCellStyle}>{name}</td>
+              </tr>
+              <tr>
+                <td style={labelCellStyle}>Email</td>
+                <td style={valueCellStyle}>
+                  <a href={`mailto:${email}`} style={linkStyle}>{email}</a>
+                </td>
+              </tr>
+              <tr>
+                <td style={labelCellStyle}>Telefonszám</td>
+                <td style={valueCellStyle}>
+                  <a href={`tel:${phone}`} style={linkStyle}>{phone}</a>
+                </td>
+              </tr>
+              {city && (
+                <tr>
+                  <td style={labelCellStyle}>Város</td>
+                  <td style={valueCellStyle}>{city}</td>
+                </tr>
+              )}
+              <tr>
+                <td style={labelCellStyle}>Szolgáltatás</td>
+                <td style={valueCellStyle}>{service}</td>
+              </tr>
+              {appointmentDate && (
+                <tr>
+                  <td style={labelCellStyle}>Időpont</td>
+                  <td style={valueCellStyle}>{appointmentDate}</td>
+                </tr>
+              )}
+              {message && (
+                <tr>
+                  <td style={labelCellStyle}>Megjegyzés</td>
+                  <td style={valueCellStyle}>{message}</td>
+                </tr>
+              )}
+              {requiresDeposit && (
+                <tr>
+                  <td style={labelCellStyle}>Előleg</td>
+                  <td style={valueCellStyle}>Szükséges (50%)</td>
+                </tr>
+              )}
+              <tr>
+                <td style={labelCellStyle}>Beérkezés ideje</td>
+                <td style={valueCellStyle}>
+                  {new Date().toLocaleString('hu-HU', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                  })}
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-  const locationContainerStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    width: "100%",
-    gap: "20px",
-  };
+          <p style={paragraphStyle}>
+            Közvetlen válasz küldése: <a href={`mailto:${email}`} style={linkStyle}>{email}</a><br />
+            Telefon: <a href={`tel:${phone}`} style={linkStyle}>{phone}</a>
+          </p>
+        </div>
+      </div>
+    );
+  }
 
-  const footerLocationStyle = {
-    padding: "15px 20px",
-    backgroundColor: colors.lightBlue,
-    borderRadius: "6px",
-    width: "100%",
-    maxWidth: "280px",
-    textAlign: "center",
-  };
-
-  const footerContactStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    gap: "10px",
-    marginTop: "15px",
-    marginBottom: "20px",
-    width: "100%",
-  };
-
-  const contactItemStyle = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "8px",
-    margin: "5px 0",
-  };
-
-  const socialLinksStyle = {
-    display: "flex",
-    justifyContent: "center",
-    gap: "15px",
-    marginTop: "15px",
-  };
-
-  const footerDividerStyle = {
-    height: "1px",
-    background: colors.border,
-    margin: "15px auto",
-    width: "80%",
-  };
-
-  const socialButtonStyle = {
-    display: "inline-block",
-    width: "36px",
-    height: "36px",
-    borderRadius: "50%",
-    background: colors.lightBlue,
-    color: colors.blue,
-    textAlign: "center",
-    lineHeight: "36px",
-    textDecoration: "none",
-    fontWeight: "bold",
-    fontSize: "16px",
-  };
-
-  const footerTextStyle = {
-    fontSize: "14px",
-    color: colors.text,
-    margin: "0 0 10px 0",
-  };
-
-  // Főcím dinamikus beállítása admin értesítés esetén
-  const title = isAdminNotification
-    ? `Új időpontfoglalás: ${name}`
-    : "Időpontfoglalás visszaigazolás";
-
+  // Ügyfél verzió - a teljes sablon a lábléccel együtt
   return (
     <div style={outerContainerStyle}>
       <div style={innerContainerStyle}>
-        <h1 style={titleStyle}>{title}</h1>
+        <h1 style={titleStyle}>Időpontfoglalás visszaigazolás</h1>
 
         <p style={paragraphStyle}>
-          {isAdminNotification ? (
-            <>Új időpontfoglalás érkezett a weboldalról.</>
-          ) : (
-            <>
-              Kedves <span style={highlightStyle}>{name}</span>,
-            </>
-          )}
+          Kedves <span style={highlightStyle}>{name}</span>,
         </p>
 
-        {!isAdminNotification && (
-          <p style={paragraphStyle}>
-            Köszönöm, hogy időpontot foglaltál az Emy Beauty Estetics-nél!
-            Foglalásod megkaptam, és hamarosan felveszem Veled a kapcsolatot a
-            részletek egyeztetése és az időpont megerősítése érdekében.
-          </p>
+        <p style={paragraphStyle}>
+          Köszönöm, hogy időpontot foglaltál az Emy Beauty Estetics-nél!
+          Foglalásod megkaptam, és hamarosan felveszem Veled a kapcsolatot a
+          részletek egyeztetése és az időpont megerősítése érdekében.
+        </p>
+
+        {/* Előleg figyelmeztetés */}
+        {requiresDeposit && (
+          <div style={depositWarningStyle}>
+            <p style={{ margin: "0 0 10px 0", fontWeight: "bold", color: colors.warningBorder }}>
+              Fontos: Előlegfizetés szükséges!
+            </p>
+            <p style={{ margin: "0 0 5px 0" }}>
+              A választott szolgáltatás előlegfizetéshez kötött. Az időpont csak az előleg 
+              beérkezése után válik véglegessé. Az előleg mértéke a szolgáltatás árának 50%-a.
+            </p>
+            <p style={{ margin: "5px 0 0 0" }}>
+              Bankszámlaszám: <strong>12345678-12345678-12345678</strong>
+            </p>
+          </div>
         )}
 
         <p
@@ -250,6 +263,12 @@ const AppointmentEmailTemplate = ({
               <td style={labelCellStyle}>Telefonszám</td>
               <td style={valueCellStyle}>{phone}</td>
             </tr>
+            {city && (
+              <tr>
+                <td style={labelCellStyle}>Város</td>
+                <td style={valueCellStyle}>{city}</td>
+              </tr>
+            )}
             <tr>
               <td style={labelCellStyle}>Szolgáltatás</td>
               <td style={valueCellStyle}>{service}</td>
@@ -266,18 +285,31 @@ const AppointmentEmailTemplate = ({
                 <td style={valueCellStyle}>{message}</td>
               </tr>
             )}
+            {requiresDeposit && (
+              <tr>
+                <td style={labelCellStyle}>Előleg</td>
+                <td style={valueCellStyle}>Szükséges (50%)</td>
+              </tr>
+            )}
           </tbody>
         </table>
 
-        {!isAdminNotification && (
-          <p style={paragraphStyle}>
-            Kérlek, várj, amíg személyesen felveszem Veled a kapcsolatot a
-            foglalás részleteinek egyeztetése érdekében. Amennyiben 24 órán
-            belül nem kapsz visszajelzést, kérlek hívj a megadott telefonszámon.
-          </p>
-        )}
+        <p style={paragraphStyle}>
+          Kérlek, várj, amíg személyesen felveszem Veled a kapcsolatot a
+          foglalás részleteinek egyeztetése érdekében. Amennyiben 24 órán
+          belül nem kapsz visszajelzést, kérlek hívj a megadott telefonszámon.
+        </p>
 
-        <div style={contactInfoStyle}>
+        <div
+          style={{
+            marginTop: "20px",
+            marginBottom: "20px",
+            padding: "15px",
+            backgroundColor: colors.lightBlue,
+            borderRadius: "6px",
+            textAlign: "center",
+          }}
+        >
           <p style={{ ...paragraphStyle, margin: "5px 0", fontWeight: "bold" }}>
             <span style={highlightStyle}>Időpontfoglalás</span>
             <br />

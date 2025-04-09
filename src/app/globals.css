@@ -131,3 +131,172 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
+
+
+/* Egyedi stílusok a DatePicker komponenshez */
+.react-datepicker {
+  font-family: inherit;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.react-datepicker__header {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #eee;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-top: 10px;
+}
+
+.react-datepicker__day--selected {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+}
+
+.react-datepicker__day--disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.react-datepicker__day:hover {
+  border-radius: 50%;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: rgba(0, 123, 255, 0.2);
+  border-radius: 50%;
+}
+
+.react-datepicker__navigation {
+  top: 12px;
+}
+
+.react-datepicker__day-name {
+  color: #666;
+}
+
+.react-datepicker__triangle {
+  display: none;
+}
+
+/* Egyedi stílusok a DayPicker komponenshez */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #007bff;
+  --rdp-background-color: rgba(0, 123, 255, 0.1);
+  --rdp-accent-color-dark: #0056b3;
+  --rdp-background-color-dark: rgba(0, 123, 255, 0.2);
+  --rdp-outline: 2px solid var(--rdp-accent-color);
+  --rdp-outline-selected: 2px solid var(--rdp-accent-color);
+  margin: 0;
+}
+
+/* Naptár konténer */
+.calendarWrapper {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+/* Kiválasztott nap */
+.rdp-day_selected {
+  background-color: var(--rdp-accent-color) !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+/* Mai nap */
+.rdp-day_today {
+  border: 1px solid var(--rdp-accent-color);
+  font-weight: bold;
+}
+
+/* Letiltott napok */
+.rdp-day_disabled {
+  opacity: 0.3;
+}
+
+/* Fejléc */
+.rdp-head_cell {
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* Hónap navigáció */
+.rdp-nav {
+  padding: 0.5rem;
+}
+
+.rdp-nav_button {
+  color: var(--rdp-accent-color);
+}
+
+.rdp-nav_button:hover {
+  background-color: var(--rdp-background-color);
+}
+
+/* Hónap kiválasztó */
+.rdp-caption {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rdp-caption_label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Napok */
+.rdp-cell {
+  text-align: center;
+}
+
+.rdp-day {
+  border-radius: 50%;
+  transition: all 0.2s;
+  height: var(--rdp-cell-size);
+  width: var(--rdp-cell-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rdp-day:hover:not(.rdp-day_disabled) {
+  background-color: var(--rdp-background-color);
+  color: var(--rdp-accent-color);
+}
+
+/* Táblázat */
+.rdp-months {
+  display: flex;
+  justify-content: center;
+}
+
+.rdp-month {
+  margin: 0.5rem;
+}
+
+/* Reszponzív beállítások */
+@media (max-width: 640px) {
+  .rdp {
+    --rdp-cell-size: 36px;
+    font-size: 14px;
+  }
+
+  .rdp-caption_label {
+    font-size: 0.9rem;
+  }
+
+  .rdp-head_cell {
+    font-size: 0.7rem;
+  }
+}
