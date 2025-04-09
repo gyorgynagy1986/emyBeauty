@@ -197,12 +197,23 @@ const Nav = () => {
           <ul className={styles.ul}>
             {links.map((linkItem) => (
               <li key={linkItem.id}>
-                <Link
-                  href={linkItem.href}
-                  className={path === linkItem.href ? styles.active : undefined}
-                >
-                  {linkItem.name}
-                </Link>
+                {linkItem.href.startsWith('http') ? (
+                  <a 
+                    href={linkItem.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={path === linkItem.href ? styles.active : undefined}
+                  >
+                    {linkItem.name}
+                  </a>
+                ) : (
+                  <Link
+                    href={linkItem.href}
+                    className={path === linkItem.href ? styles.active : undefined}
+                  >
+                    {linkItem.name}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -231,13 +242,25 @@ const Nav = () => {
                     variants={menuItemVariants}
                     whileHover={{ backgroundColor: "#f5f5f5" }}
                   >
-                    <Link
-                      href={linkItem.href}
-                      className={path === linkItem.href ? styles.active : undefined}
-                      onClick={toggleMenu} // Használjuk a toggleMenu függvényt a menü bezárásához
-                    >
-                      {linkItem.name}
-                    </Link>
+                    {linkItem.href.startsWith('http') ? (
+                      <a 
+                        href={linkItem.href} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={path === linkItem.href ? styles.active : undefined}
+                        onClick={toggleMenu}
+                      >
+                        {linkItem.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={linkItem.href}
+                        className={path === linkItem.href ? styles.active : undefined}
+                        onClick={toggleMenu}
+                      >
+                        {linkItem.name}
+                      </Link>
+                    )}
                   </motion.li>
                 ))}
               </motion.ul>

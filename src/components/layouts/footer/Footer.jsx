@@ -16,11 +16,22 @@ const links = [
   { href: "/rolam", label: "RÓLAM" },
   { href: "/szolgaltatasok", label: "SZOLGÁLTATÁSAIM" },
   { href: "/arak", label: "ÁRAK" },
-  { href: "/kapcsolat", label: "KAPCSOLAT" },
+  { href: "/kapcsolat", label: "ELÉRHETŐSÉG" },
 ];
 
 const Footer = () => {
   const path = usePathname();
+
+  // Functions to open Google Maps for specific locations
+  const openSzegedMap = (e) => {
+    e.stopPropagation(); // Stop event from bubbling up to parent
+    window.open("https://maps.google.com/?q=Nádas+utca+14.a,+Szeged,+Hungary", "_blank", "noopener,noreferrer");
+  };
+
+  const openBudapestMap = (e) => {
+    e.stopPropagation(); // Stop event from bubbling up to parent
+    window.open("https://maps.google.com/?q=Rácz+Aladár+út+158,+Budapest+XII+kerület,+Hungary", "_blank", "noopener,noreferrer");
+  };
 
   return (
     <footer className={styles.container}>
@@ -54,13 +65,23 @@ const Footer = () => {
         </div>
 
         <div className={styles.textRight}>
-          <div>
+          <div 
+            id="mapSzeged" 
+            onClick={openSzegedMap}
+            style={{ cursor: 'pointer' }}
+            title="Mutasd a térképen"
+          >
             <h4>Szeged</h4>
             <p>EmyBeautyEstetics™️</p>
             <p>Nádas utca 14./a</p>
           </div>
 
-          <div>
+          <div 
+            id="mapBudapest" 
+            onClick={openBudapestMap}
+            style={{ cursor: 'pointer' }}
+            title="Mutasd a térképen"
+          >
             <h4>Budapest</h4>
             <p>XII. kerület</p>
             <p>2Contour Aesthetic Clinic</p>

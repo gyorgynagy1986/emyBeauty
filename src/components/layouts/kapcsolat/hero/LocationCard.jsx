@@ -21,6 +21,15 @@ const LocationCard = ({ title, businessName, address, phone, phone2, mapSrc }) =
     });
   }, []);
 
+  // Function to open the correct map based on the title
+  const openMap = () => {
+    if (title === "Szeged") {
+      window.open("https://maps.google.com/?q=Nádas+utca+14.a,+Szeged,+Hungary", "_blank", "noopener,noreferrer");
+    } else if (title === "Budapest") {
+      window.open("https://maps.google.com/?q=Rácz+Aladár+út+158,+Budapest+XII+kerület,+Hungary", "_blank", "noopener,noreferrer");
+    }
+  };
+
   return (
     <div 
       data-aos="fade-up" 
@@ -33,8 +42,11 @@ const LocationCard = ({ title, businessName, address, phone, phone2, mapSrc }) =
         className={style.img}
         alt={alt.name}
         fill
-        size={size.fullsize}
+        sizes={size.fullsize}
         src={mapSrc}
+        onClick={openMap}
+        style={{ cursor: 'pointer' }}
+        title="Kattints a Google Maps megnyitásához"
       />
       <div className={style.itemContainer}>
         <div className={style.titleContainer}>
@@ -44,14 +56,24 @@ const LocationCard = ({ title, businessName, address, phone, phone2, mapSrc }) =
         <div className={style.textContainer}>
           <p className={style.name}>{businessName}</p>
           <p className={style.address}>{address}</p>
-          <a className={style.tel} href={`tel:${phone}`}>
+          <a 
+            className={style.tel} 
+            href={`tel:${phone}`}
+          >
             {phone}
           </a>
-          <a className={style.tel} href={`tel:${phone2}`}>
-            {phone2}
-          </a>
+          {phone2 && (
+            <a 
+              className={style.tel} 
+              href={`tel:${phone2}`}
+            >
+              {phone2}
+            </a>
+          )}
         </div>
-        <Button yellow={true} />
+        <Button 
+          yellow={true}
+        />
       </div>
     </div>
   );

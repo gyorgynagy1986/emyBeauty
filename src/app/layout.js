@@ -25,10 +25,10 @@ const fig = Figtree({
 });
 
 export const metadata = {
-  title: 'Emy Beauty Estetics',
+  title: 'Emy Beauty Estetics - Emy kozmetika',
   description: '...',
   openGraph: {
-      title: 'Emy Beauty Estetics',
+      title: 'Emy Beauty Estetics- Emy kozmetika',
       description: '',
     },
 }
